@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+  "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-cross-tools-glibc-headers" role="wrap">
+  <?dbhtml filename="glibc-headers.html"?>
+
+  <title>Glibc-&glibc-version; Headers</title>
+
+  <indexterm zone="ch-cross-tools-glibc-headers">
+    <primary sortas="a-Glibc">Glibc</primary>
+    <secondary>cross tools, headers</secondary>
+  </indexterm>
+
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+  href="../common/glibc.xml"
+  xpointer="xpointer(//*[@role='package'])"/>
+
+  <sect2 role="installation">
+    <title>Installation of Glibc Headers</title>
+
+    <para os="s1">The following sed removes a dependency of gcc 3.4.x from
+    the glibc we are using in cross-lfs. The reason we are changing it is
+    because this only installs the headers, no compiling takes place. In the
+    next glibc chapter, we use the gcc that's build right after this chapter.</para>
+ 	
+<screen os="s2"><userinput>cp configure{,.orig}
+sed -e 's/3.4/3.[0-9]/g' configure.orig > configure</userinput></screen>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../common/glibc.xml"
+    xpointer="xpointer(//*[@os='b'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../common/glibc.xml"
+    xpointer="xpointer(//*[@os='c'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../common/glibc.xml"
+    xpointer="xpointer(//*[@os='d'])"/>
+
+<screen os="e"><userinput>echo "libc_cv_forced_unwind=yes" &gt; config.cache
+echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache
+echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../common/glibc.xml"
+    xpointer="xpointer(//*[@os='f'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../common/glibc.xml"
+    xpointer="xpointer(//*[@os='g'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../common/glibc.xml"
+    xpointer="xpointer(//*[@os='h'])"/>
+
+<screen os="i"><userinput>CC=gcc ../glibc-&glibc-version;/configure --prefix=/usr \
+   --host=${LFS_TARGET} --build=${LFS_HOST} \
+   --with-headers=${LFS}/usr/include --cache-file=config.cache</userinput></screen>
+
+    <variablelist os="dj">
+       <title>The meaning of the configure options:</title>
+ 	
+          <varlistentry os="dj1">
+             <term><parameter>CC=gcc</parameter></term>
+             <listitem>
+                <para>Tells GLIBC to use the hosts GCC compiler.</para>
+             </listitem>
+          </varlistentry>
+ 	
+       <varlistentry os="dj2">
+           <term><parameter>--with-headers=/tools/include</parameter></term>
+           <listitem>
+              <para>This tells Glibc to compile itself against the headers
+              recently installed to the <filename class="directory">/tools</filename>
+              directory, so that it knows exactly what features the kernel has
+              and can optimize itself accordingly.</para>
+           </listitem>
+       </varlistentry>
+	
+     </variablelist>
+ 	
+   <para os="k">Now, install the headers:</para>
+
+<screen os="l"><userinput>make install-headers</userinput></screen>
+
+   <para os="m">Some files aren't installed by the above command, then
+    we will copy the header files we need:</para>
+
+   <para os="n">First we will copy a common file over to <filename 
+   class="directory">/tools/include</filename>:</para>
+
+<screen os="o"><userinput>install -dv ${LFS}/usr/include/bits
+cp -v bits/stdio_lim.h ${LFS}/usr/include/bits</userinput></screen>
+
+   <para os="p">Now we will create a blank stub file:</para>
+
+<screen os="q"><userinput>touch ${LFS}/usr/include/gnu/stubs.h</userinput></screen>
+
+   <para os="r">For NPTL we use the following command:</para>
+   
+<screen os="s"><userinput>cp -v ../glibc-&glibc-version;/../glibc-2.4/ports/sysdeps/unix/sysv/linux/arm/nptl/bits/pthreadtypes.h \
+    ${LFS}/usr/include/bits</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Details on this package are located in <xref
+    linkend="contents-glibc" role="."/></para>
+
+  </sect2>
+
+</sect1>
