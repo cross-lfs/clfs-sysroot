@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+  "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-cross-tools-gcc-static" role="wrap">
+  <?dbhtml filename="gcc-static.html"?>
+
+  <title>Cross GCC-&gcc-version; - Static</title>
+
+  <indexterm zone="ch-cross-tools-gcc-static">
+    <primary sortas="a-GCC">GCC</primary>
+    <secondary>cross tools, static</secondary>
+  </indexterm>
+
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+  href="../../final-system/common/gcc.xml"
+  xpointer="xpointer(//*[@role='package'])"/>
+
+  <sect2 role="installation">
+    <title>Installation of Cross GCC Compiler with Static libgcc
+    and no Threads</title>
+
+    <para os="aa">To make sure that a couple of tools use the proper syntax,
+    apply the following patch:</para>
+
+<screen os="ab"><userinput>patch -Np1 -i ../&gcc-posix-patch;</userinput></screen>
+
+    <para os="ac">The following patch ensures that <command>gcc</command> does not
+    search the <filename class="directory">/usr</filename> directory for
+    <filename class="libraryfile">libgcc_s.so</filename> when
+    cross-compiling:</para>
+
+<screen os="ad"><userinput>patch -Np1 -i ../&gcc-cross_search-patch;</userinput></screen>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../../final-system/common/gcc.xml"
+    xpointer="xpointer(//*[@os='f'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../../final-system/common/gcc.xml"
+    xpointer="xpointer(//*[@os='g'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../../final-system/common/gcc.xml"
+    xpointer="xpointer(//*[@os='h'])"/>
+
+<screen os="ae"><userinput>../gcc-&gcc-version;/configure --prefix=/cross-tools \
+    --host=${LFS_HOST} --target=${LFS_TARGET} --disable-multilib \
+    --with-sysroot=${LFS} --disable-nls --disable-shared \
+    --disable-threads --enable-languages=c</userinput></screen>
+
+    <variablelist os="af">
+      <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--disable-shared</parameter></term>
+        <listitem>
+          <para>Disables the creation of the shared libraries.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-threads</parameter></term>
+        <listitem>
+          <para>This will prevent GCC from looking for the multi-thread
+          include files, since they haven't been created for this architecture
+          yet. GCC will be able to find the multi-thread information after
+          the Glibc headers are created.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-languages=c</parameter></term>
+        <listitem>
+          <para>This option ensures that only the C compiler is built.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para os="ag">Continue with compiling the package:</para>
+
+<screen os="ah"><userinput>make all-gcc</userinput></screen>
+
+    <para os="ai">Install the package:</para>
+
+<screen os="aj"><userinput>make install-gcc</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Details on this package are located in <xref
+    linkend="contents-gcc" role="."/></para>
+
+  </sect2>
+
+</sect1>

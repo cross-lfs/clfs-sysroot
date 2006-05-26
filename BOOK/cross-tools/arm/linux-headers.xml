@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+  "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-linux-headers" role="wrap">
+  <?dbhtml filename="linux-headers.html"?>
+
+  <title>Linux-Headers-&linux-headers-version;</title>
+
+  <indexterm zone="ch-system-linux-headers">
+    <primary sortas="a-Linux-Headers">Linux-Headers</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The Linux Headers package contains the
+    <quote>sanitized</quote> kernel headers.</para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Linux-Headers</title>
+
+    <para os="a">For years it has been common practice to use
+    <quote>raw</quote> kernel headers (straight from a kernel tarball) in
+    <filename class="directory">/usr/include</filename>, but over the last few
+    years, the kernel developers have taken a strong stance that this
+    should not be done. This gave birth to the Linux-Libc-Headers Project,
+    which was designed to maintain an API stable version of the Linux
+    headers. Recently this project stopped producing updates, so the Cross-LFS
+    team started development on our own project to sanitize the headers.</para>
+
+    <para os="b">Install the header files that are common to all architectures:</para>
+
+<screen os="c"><userinput>install -dv ${LFS}/usr/include/{asm,asm-generic,linux,net,mtd,scsi,sound}
+cp -av include/asm-generic/* ${LFS}/usr/include/asm-generic
+cp -av include/linux/* ${LFS}/usr/include/linux
+cp -av include/mtd/* ${LFS}/usr/include/mtd
+cp -av include/net/* ${LFS}/usr/include/net
+cp -av include/scsi/* ${LFS}/usr/include/scsi
+cp -av include/sound/* ${LFS}/usr/include/sound</userinput></screen>
+
+    <para os="d">Install the header files that are specific to this architecture:</para>
+
+<screen><userinput>cp -av include/asm-arm/* ${LFS}/usr/include/asm</userinput></screen>
+
+    <para os="e">Make sure the users can read the headers:</para>
+
+<screen os="f"><userinput>find ${LFS}/usr/include/{asm,asm-generic,linux,mtd,net,scsi,sound} -type d -exec chmod -v 755 {} \;
+find ${LFS}/usr/include/{asm,asm-generic,linux,mtd,net,scsi,sound} -type f -exec chmod -v 644 {} \;</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-linux-headers" role="content">
+    <title>Contents of Linux-Headers</title>
+
+    <segmentedlist>
+      <segtitle>Installed headers</segtitle>
+
+      <seglistitem>
+        <seg>/usr/include/{asm,linux}/*.h</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="linux-headers">
+        <term><filename
+        class="headerfile">/usr/include/{asm,linux}/*.h</filename></term>
+        <listitem>
+          <para>The Linux API headers</para>
+          <indexterm zone="ch-system-linux-headers linux-headers">
+            <primary
+            sortas="e-/usr/include/{asm,linux}/*.h">/usr/include/{asm,linux}/*.h</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
