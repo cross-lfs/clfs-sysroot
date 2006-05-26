@@ -27,7 +27,7 @@
   target machine, you can use the table at the bottom of this page. Set
   the command using the method listed below:</para>
 
-<screen os="d"><userinput>export LFS_TARGET="{target triplet}"</userinput></screen>
+<screen os="d"><userinput>export LFS_TARGET="arm-unknown-linux-gnu"</userinput></screen>
 
   <bridgehead renderas="sect4">Copy settings to Environment</bridgehead>
 
@@ -36,37 +36,5 @@
 
 <screen os="f"><userinput>echo export LFS_HOST=\""${LFS_HOST}\"" &gt;&gt; ~/.bashrc
 echo export LFS_TARGET=\""${LFS_TARGET}\"" &gt;&gt; ~/.bashrc</userinput></screen>
-
-  <table os="g">
-    <title>Processor Type and  Target Triplets</title>
-    <tgroup cols="2" align="center">
-      <colspec colname="Processor"/>
-      <colspec colname="Triplet"/>
-      <thead>
-        <row>
-          <entry>Processor</entry>
-          <entry>Target Triplet</entry>
-        </row>
-      </thead>
-      <tbody>
-        <row>
-          <entry>486 Compatibles</entry>
-          <entry>i486-pc-linux-gnu</entry>
-        </row>
-        <row>
-          <entry>Pentium, K6, 586 Compatibles</entry>
-          <entry>i586-pc-linux-gnu</entry>
-        </row>
-        <row>
-          <entry>Pentium II, Pentium III, Pentium 4</entry>
-          <entry>i686-pc-linux-gnu</entry>
-        </row>
-        <row>
-          <entry>Athlon, Duron</entry>
-          <entry>i686-pc-linux-gnu</entry>
-        </row>
-      </tbody>
-    </tgroup>
-  </table>
 
 </sect1>
