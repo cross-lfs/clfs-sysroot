@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+  "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-cross-tools-file">
+  <?dbhtml filename="file.html"?>
+
+  <title>File-&file-version;</title>
+
+  <sect2 role="installation">
+    <title>Installation of File</title>
+
+    <note>You only need to install <package>file</package> if your host has
+    a version other then file-&file-version; installed.</note>
+
+    <para>Prepare File for compilation:</para>
+
+<screen><userinput>./configure --prefix=/cross-tools</userinput></screen>
+
+    <para>Compile the Package:</para>
+
+<screen><userinput>make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput>make install</userinput></screen>
+
+  </sect2>
+
+</sect1>

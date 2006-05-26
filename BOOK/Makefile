@@ -121,7 +121,7 @@ help:
 	@echo -e "  \e[0;32mtrouble \e[0;34m$(ARCHS_TROUBLE)\e[0;0m"
 	@echo
 	@echo "Dump-Commands Targets"
-	@echo -e "  \e[0;32mtdump-commands \e[0;34m$(ARCHS_DUMP)\e[0;0m"
+	@echo -e "  \e[0;32mdump-commands \e[0;34m$(ARCHS_DUMP)\e[0;0m"
 	@echo
 	@echo "Download-List Targets"
 	@echo -e "  \e[0;32mdownload-list \e[0;34m$(ARCHS_DLLIST)\e[0;0m"
