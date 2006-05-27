@@ -25,17 +25,23 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
-    <para os="p1">The following patch fixes the searching of multilib dirs for
+    <para os="p1">To make sure that a couple of tools use the proper syntax,
+    apply the following patch:</para>
+
+<screen os="p2"><userinput>patch -Np1 -i ../gcc-4.1.1-posix-1.patch</userinput></screen>
+
+    <para os="p3">The following patch fixes the searching of multilib dirs for
     specs file:</para>
 
-<screen os="p2"><userinput>patch -Np1 -i ../&gcc-PR20425-patch;</userinput></screen>
+<screen os="p4"><userinput>patch -Np1 -i ../&gcc-PR20425-patch;</userinput></screen>
 
     <para os="a">Apply a <command>sed</command> substitution that will suppress the
     installation of <filename class="libraryfile">libiberty.a</filename>. The
     version of <filename class="libraryfile">libiberty.a</filename> provided by
     Binutils will be used instead:</para>
 
-<screen os="b"><userinput>sed -i 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in</userinput></screen>
+<screen os="b"><userinput>cp libiberty/Makefile.in{,.orig}
+sed 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in.orig > libiberty/Makefile.in</userinput></screen>
 
     <para os="e1">GCC provides a <command>gccbug</command> script which detects at
     compile time whether mktemp is present, and hardcodes the result in a test.
@@ -43,7 +49,8 @@
     random names for temporary files.  We will be installing mktemp
     later, so the following sed will simulate its presence:</para>
 
-<screen os="e2"><userinput>sed -i 's/@have_mktemp_command@/yes/' gcc/gccbug.in</userinput></screen>
+<screen os="e2"><userinput>cp gcc/gccbug.in{,.orig}
+sed 's/@have_mktemp_command@/yes/' gcc/gccbug.in.orig > gcc/gccbug.in</userinput></screen>
 
     <para os="c">The GCC documentation recommends building GCC outside of the source
     directory in a dedicated build directory:</para>
@@ -53,7 +60,7 @@ cd ../gcc-build</userinput></screen>
 
     <para os="e">Prepare GCC for compilation:</para>
 
-<screen os="f"><userinput>../gcc-4.1.0/configure --prefix=/usr --libexecdir=/usr/lib \
+<screen os="f"><userinput>../gcc-&gcc-version;/configure --prefix=/usr --libexecdir=/usr/lib \
     --build=${LFS_HOST} --host=${LFS_TARGET} --target=${LFS_TARGET} \
     --enable-shared --enable-threads=posix --enable-__cxa_atexit \
     --enable-c99 --enable-long-long --enable-clocale=gnu \
