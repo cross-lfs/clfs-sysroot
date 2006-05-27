@@ -15,8 +15,8 @@
 
 <screen><userinput>mkdir -pv ${LFS}/{bin,boot,etc/opt,home,lib,mnt,opt}
 mkdir -pv ${LFS}/{media/{floppy,cdrom},sbin,srv,var}
-install -dv -m 0750 /root
-install -dv -m 1777 /tmp /var/tmp
+install -dv -m 0750 ${LFS}/root
+install -dv -m 1777 ${LFS}/tmp ${LFS}/var/tmp
 mkdir -pv ${LFS}/usr/{,local/}{bin,include,lib,sbin,src}
 mkdir -pv ${LFS}/usr/{,local/}share/{doc,info,locale,man}
 mkdir -v  ${LFS}/usr/{,local/}share/{misc,terminfo,zoneinfo}

@@ -26,7 +26,7 @@
   <para>Create the <filename>/etc/passwd</filename> file by running the following
   command:</para>
 
-<screen><userinput>cat &gt; %{LFS}/etc/passwd &lt;&lt; "EOF"
+<screen><userinput>cat &gt; ${LFS}/etc/passwd &lt;&lt; "EOF"
 <literal>root:x:0:0:root:/root:/bin/bash</literal>
 EOF</userinput></screen>
 

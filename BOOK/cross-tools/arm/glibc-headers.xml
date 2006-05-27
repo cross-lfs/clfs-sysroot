@@ -25,10 +25,18 @@
     <para os="s1">The following sed removes a dependency of gcc 3.4.x from
     the glibc we are using in cross-lfs. The reason we are changing it is
     because this only installs the headers, no compiling takes place. In the
-    next glibc chapter, we use the gcc that's build right after this chapter.</para>
+    next glibc chapter, we use the gcc that's built right after this chapter.</para>
  	
 <screen os="s2"><userinput>cp configure{,.orig}
 sed -e 's/3.4/3.[0-9]/g' configure.orig > configure</userinput></screen>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="glibc.xml"
+    xpointer="xpointer(//*[@os='u1'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="glibc.xml"
+    xpointer="xpointer(//*[@os='u2'])"/>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/glibc.xml"
@@ -92,7 +100,7 @@ echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
     we will copy the header files we need:</para>
 
    <para os="n">First we will copy a common file over to <filename 
-   class="directory">/tools/include</filename>:</para>
+   class="directory">${LFS}/usr/include</filename>:</para>
 
 <screen os="o"><userinput>install -dv ${LFS}/usr/include/bits
 cp -v bits/stdio_lim.h ${LFS}/usr/include/bits</userinput></screen>

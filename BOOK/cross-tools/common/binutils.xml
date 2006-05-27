@@ -34,15 +34,15 @@
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../../final-system/common/binutils.xml"
-    xpointer="xpointer(//*[@os='g'])"/>
+    xpointer="xpointer(//*[@os='a'])"/>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../../final-system/common/binutils.xml"
-    xpointer="xpointer(//*[@os='h'])"/>
+    xpointer="xpointer(//*[@os='b'])"/>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../../final-system/common/binutils.xml"
-    xpointer="xpointer(//*[@os='i'])"/>
+    xpointer="xpointer(//*[@os='c'])"/>
 
 <screen os="bc"><userinput>../binutils-&binutils-version;/configure --prefix=/cross-tools \
    --host=${LFS_HOST} --target=${LFS_TARGET} --with-sysroot=${LFS} \

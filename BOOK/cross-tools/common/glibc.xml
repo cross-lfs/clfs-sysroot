@@ -76,10 +76,10 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
     --with-binutils=/cross-tools/bin --with-headers=${LFS}/usr/include \
     --cache-file=config.cache</userinput></screen>
 
-    <variablelist os="dj">
+    <variablelist os="j">
       <title>The meaning of the new configure options:</title>
 
-      <varlistentry os="dj1">
+      <varlistentry os="j1">
         <term><parameter>BUILD_CC="gcc"</parameter></term>
         <listitem>
           <para>This sets Glibc to use the current compiler on our system. This is
@@ -87,7 +87,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry os="dj2">
+      <varlistentry os="j2">
         <term><parameter>CC="${LFS_TARGET}-gcc"</parameter></term>
         <listitem>
           <para>This forces Glibc to use the GCC compiler that we made for our target
@@ -95,7 +95,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry os="dj3">
+      <varlistentry os="j3">
         <term><parameter>AR="${LFS_TARGET}-ar"</parameter></term>
         <listitem>
           <para>This forces Glibc to use the <command>ar</command> utility
@@ -103,7 +103,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry os="dj4">
+      <varlistentry os="j4">
         <term><parameter>RANLIB="${LFS_TARGET}-ranlib"</parameter></term>
         <listitem>
           <para>This forces Glibc to use the <command>ranlib</command> utility
@@ -111,7 +111,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry os="dj5">
+      <varlistentry os="j5">
         <term><parameter>--disable-profile</parameter></term>
         <listitem>
           <para>This builds the libraries without profiling information. 
@@ -119,7 +119,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry os="dj6">
+      <varlistentry os="j6">
         <term><parameter>--enable-add-ons</parameter></term>
         <listitem>
           <para>This tells Glibc to utilize all add-ons that are
@@ -127,14 +127,14 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry os="dj7">
+      <varlistentry os="j7">
         <term><parameter>--with-tls</parameter></term>
         <listitem>
           <para>This tells Glibc to use Thread Local Storage.</para>
         </listitem>
       </varlistentry>
 
-      <varlistentry os="dj8">
+      <varlistentry os="j8">
         <term><parameter>--with-__thread</parameter></term>
         <listitem>
           <para>This tells Glibc to use use the __thread for libc and
@@ -142,7 +142,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry os="dj9">
+      <varlistentry os="j9">
         <term><parameter>--with-binutils=/cross-tools/bin</parameter></term>
         <listitem>
           <para>This tells Glibc to use the Binutils that are specific to
@@ -150,7 +150,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry os="dj10">
+      <varlistentry os="j10">
         <term><parameter>--cache-file=config.cache</parameter></term>
         <listitem>
           <para>This tells Glibc to utilize a premade cache file.</para>

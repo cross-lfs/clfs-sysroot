@@ -9,20 +9,20 @@
   <?dbhtml filename="packages-ARM.html"?>
 
   <title>Additional Packages for ARM</title>
-<!--
+
   <variablelist role="materials">
 
-    <varlistentry os="grub">
-      <term>GRUB (&grub-version;) - <token>&grub-size;</token>:</term>
+    <varlistentry>
+      <term>Glibc-ports (&glibc-ports-version;) - <token>&glibc-ports-size;</token>:</term>
       <listitem>
-        <para>Home page: <ulink url="&grub-home;"/></para>
-        <para>Download: <ulink url="&grub-url;"/></para>
-        <para>MD5 sum: <literal>&grub-md5;</literal></para>
+        <para>Home page: <ulink url="&glibc-ports-home;"/></para>
+        <para>Download: <ulink url="&glibc-ports-url;"/></para>
+        <para>MD5 sum: <literal>&glibc-ports-md5;</literal></para>
       </listitem>
     </varlistentry>
 
   </variablelist>
--->
+
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
   href="../common/packages.xml"
   xpointer="xpointer(//*[@os='a'])"/>
