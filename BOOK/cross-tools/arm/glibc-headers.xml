@@ -81,10 +81,10 @@ echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
           </varlistentry>
  	
        <varlistentry os="dj2">
-           <term><parameter>--with-headers=/tools/include</parameter></term>
+           <term><parameter>--with-headers=${LFS}/usr/include</parameter></term>
            <listitem>
               <para>This tells Glibc to compile itself against the headers
-              recently installed to the <filename class="directory">/tools</filename>
+              recently installed to the <filename class="directory">${LFS}/usr/include</filename>
               directory, so that it knows exactly what features the kernel has
               and can optimize itself accordingly.</para>
            </listitem>

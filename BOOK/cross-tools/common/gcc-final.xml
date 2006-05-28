@@ -60,8 +60,8 @@
 
 <screen os="ae"><userinput>../gcc-&gcc-version;/configure --prefix=/cross-tools \
     --host=${LFS_HOST} --target=${LFS_TARGET} --disable-multilib \
-    --with-sysroot=${LFS} --disable-nls --disable-shared \
-    --disable-threads --enable-languages=c,c++ --enable-__cxa_atexit \
+    --with-sysroot=${LFS} --disable-nls --enable-shared \
+    --enable-languages=c,c++ --enable-__cxa_atexit \
     --enable-c99 --enable-long-long --enable-threads=posix</userinput></screen>
 
     <variablelist os="af">

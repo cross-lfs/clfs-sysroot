@@ -53,7 +53,7 @@
 <screen os="ae"><userinput>../gcc-&gcc-version;/configure --prefix=/cross-tools \
     --host=${LFS_HOST} --target=${LFS_TARGET} --disable-multilib \
     --with-sysroot=${LFS} --disable-nls --disable-shared \
-    --disable-threads --enable-languages=c</userinput></screen>
+    --enable-languages=c</userinput></screen>
 
     <variablelist os="af">
       <title>The meaning of the configure options:</title>
