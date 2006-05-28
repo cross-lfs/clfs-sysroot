@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+  "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-bootable-chowning">
+  <?dbhtml filename="chowning.html"?>
+
+  <title>Changing the Ownership Of The CLFS System</title>
+
+  <para>Throughout the book, every package has been compiled and installed as
+  the <systemitem class="username">lfs</systemitem> user. The final system
+  should be owned by <systemitem class="username">root</systemitem>.</para>
+
+  <important>
+
+    <para>The commands in the remainder of this book must be performed while
+    logged in as <systemitem class="username">root</systemitem>. Check that
+    $LFS is still set:</para>
+
+    <screen><userinput>echo $LFS</userinput></screen>
+
+  </important>
+
+  <para>First, Change the <systemitem class="username">user</systemitem>:
+  <systemitem class="group">group</systemitem> on the entire lfs system.</para>
+
+<screen><userinput>chown -Rv root:root ${LFS}</userinput></screen>
+
+  <para>The following files require a <systemitem class="username">user</systemitem>
+  :<systemitem class="group">group</systemitem> combination other then
+  <systemitem class="username">root</systemitem>:<systemitem class="group">root
+  </systemitem>.</para>
+
+<screen><userinput>chgrp -v utmp ${LFS}/var/run/utmp ${LFS}/var/log/lastlog</userinput></screen>
+
+  <para>The following device nodes need to be created for the system to
+  boot.</para>
+
+<screen><userinput>mknod -m 0666 ${LFS}/dev/null c 1 3
+mknod -m 0600 ${LFS}/dev/console c 5 1</userinput></screen>
+
+  <para>If you did not create the following rules in <xref linkend="ch-scripts-udev-rules"/>. You
+  need to create them now.</para>
+
+<screen><userinput>mknod -m 0666 ${LFS}/lib/udev/devices/null c 1 3
+mknod -m 0600 ${LFS}/lib/udev/devices/console c 5 1</userinput></screen>
+
+</sect1>

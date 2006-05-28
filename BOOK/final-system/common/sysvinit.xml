@@ -42,16 +42,16 @@ sed 's@Sending processes@&amp; started by init@g' \
     <para os="s1">The following sed makes changes in the Makefile required for cross-compiling</para>
 
 <screen os="s2"><userinput>cp -v src/Makefile src/Makefile.orig
-sed -e 's@root@0@g' \
-    -e "s@/dev/initctl@${LFS}&amp;@g" \
+sed -e 's@/dev/initctl@$(ROOT)&amp;@g' \
     -e 's@\(mknod \)-m \([0-9]* \)\(.* \)p@\1\3p; chmod \2\3@g' \
-    -e "s@/usr/lib@${LFS}&amp;@" \
+    -e '/^ifeq/s/$(ROOT)//' \
+    -e 's@/usr/lib@$(ROOT)&amp;@' \
     src/Makefile.orig &gt; src/Makefile</userinput></screen>
 
     <para os="c">Compile the package:</para>
 
 <screen os="d"><userinput>make -C src clobber
-make -C src CC="${CC}"</userinput></screen>
+make -C src ROOT=${LFS} CC="${CC}"</userinput></screen>
 
     <para os="e">Install the package:</para>
 

@@ -98,7 +98,6 @@ EOF</userinput></screen>
   proper permissions:</para>
 
 <screen><userinput>touch ${LFS}/var/run/utmp ${LFS}/var/log/{btmp,lastlog,wtmp}
-chgrp -v utmp ${LFS}/var/run/utmp ${LFS}/var/log/lastlog
 chmod -v 664 ${LFS}/var/run/utmp ${LFS}/var/log/lastlog</userinput></screen>
 
   <para>The <filename>/var/run/utmp</filename> file records the users
