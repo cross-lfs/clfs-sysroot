@@ -32,19 +32,22 @@
     <envar>PAGER</envar> variable so that escape sequences are
     properly handled by Less:</para>
 
-<screen os="c"><userinput>sed -i 's@-is@&amp;R@g' configure</userinput></screen>
+<screen os="c"><userinput>cp configure{,.orig}
+sed 's@-is@&amp;R@g' configure.orig &gt; configure</userinput></screen>
 
     <para os="d">Another <command>sed</command> substitution comments out the
     <quote>MANPATH /usr/man</quote> line in the <filename>man.conf</filename>
     file to prevent redundant results when using programs such as
     <command>whatis</command>:</para>
 
-<screen os="e"><userinput>sed -i 's@MANPATH./usr/man@#&amp;@g' src/man.conf.in</userinput></screen>
+<screen os="e"><userinput>cp src/man.conf.in{,.orig}
+sed 's@MANPATH./usr/man@#&amp;@g' src/man.conf.in.orig &gt; src/man.conf.in</userinput></screen>
 
     <para os="f">Finally, correct a syntax error in the
     <command>makewhatis</command> script:</para>
 
-<screen os="g"><userinput>sed -i 's@)) |@) |@' src/makewhatis.sh</userinput></screen>
+<screen os="g"><userinput>cp src/makewhatis.sh{,.orig}
+sed 's@)) |@) |@' src/makewhatis.sh.orig &gt; src/makewhatis.sh</userinput></screen>
 
     <para os="h">Prepare Man for compilation:</para>
 

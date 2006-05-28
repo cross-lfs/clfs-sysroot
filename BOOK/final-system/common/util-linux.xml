@@ -33,8 +33,9 @@
     location for the <filename>adjtime</filename> file. To make the
     <command>hwclock</command> program FHS-compliant, run the following:</para>
 
-<screen><userinput>sed -i 's@etc/adjtime@var/lib/hwclock/adjtime@g' \
-    hwclock/hwclock.c
+<screen><userinput>cp hwclock/hwclock.c{,.orig}
+sed 's@etc/adjtime@var/lib/hwclock/adjtime@g' \
+    hwclock/hwclock.c.orig &gt; hwclock/hwclock.c
 mkdir -pv /var/lib/hwclock</userinput></screen>
 
   </sect2>

@@ -72,8 +72,10 @@
     <para os="h">Disable the installation of the <command>groups</command>
     program and its man pages, as Coreutils provides a better version:</para>
 
-<screen os="i"><userinput>sed -i 's/groups$(EXEEXT) //' src/Makefile
-sed -i '/groups/d' man/Makefile</userinput></screen>
+<screen os="i"><userinput>cp src/Makefile{,.orig}
+sed 's/groups$(EXEEXT) //' src/Makefile.orig &gt; src/Makefile
+cp man/Makefile{,.orig}
+sed '/groups/d' man/Makefile.orig &gt; man/Makefile</userinput></screen>
 
     <para os="j">Compile the package:</para>
 
@@ -120,7 +122,8 @@ sed -i '/groups/d' man/Makefile</userinput></screen>
       this <command>sed</command> to correct the path to the Cracklib
       dictionary:</para>
 
-<screen><userinput>sed -i 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' ${LFS}/etc/login.defs</userinput></screen>
+<screen><userinput>cp {LFS}/etc/login.defs login.defs.orig
+sed 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' login.defs.orig &gt; ${LFS}/etc/login.defs</userinput></screen>
     </note>
 
     <para os="v">Move a misplaced program to its proper location:</para>

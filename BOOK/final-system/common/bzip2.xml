@@ -47,7 +47,7 @@
     <para os="s1">Disable running of the testsuite after a successful build:</para>
 
 <screen os="s2"><userinput>cp Makefile{,.orig}
-sed -e "/^all:/s/ test//" Makefile.orig %gt; Makefile</userinput></screen>
+sed -e "/^all:/s/ test//" Makefile.orig &gt; Makefile</userinput></screen>
 
     <para os="a">The Bzip2 package does not contain a <command>configure</command>
     script. Compile it with:</para>

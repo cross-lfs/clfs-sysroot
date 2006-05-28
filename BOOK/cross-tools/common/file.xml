@@ -13,8 +13,8 @@
   <sect2 role="installation">
     <title>Installation of File</title>
 
-    <note>You only need to install <package>file</package> if your host has
-    a version other then file-&file-version; installed.</note>
+    <note><para>You only need to install <package>file</package> if your host has
+    a version other then file-&file-version; installed.</para></note>
 
     <para>Prepare File for compilation:</para>
 
@@ -27,6 +27,14 @@
     <para>Install the package:</para>
 
 <screen><userinput>make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Details on this package are located in <xref
+    linkend="contents-file" role="."/></para>
 
   </sect2>
 

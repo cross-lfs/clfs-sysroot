@@ -25,7 +25,14 @@
   <sect2 role="installation">
     <title>Installation of IPRoute2</title>
 
-    <para os="s1">The <command>arpd</command> binary included in this package is
+    <para os="s1">The following command prevents install trying to strip the binaries</para>
+
+<screen os="s2"><userinput>for dir in ip misc tc; do
+    cp ${dir}/Makefile{,.orig}
+    sed 's/0755 -s/0755/' ${dir}/Makefile.orig &gt; ${dir}/Makefile
+done</userinput></screen>
+
+    <para os="s3">The <command>arpd</command> binary included in this package is
     dependent on Berkeley DB.  Because <command>arpd</command> is not a
     very common requirement on a base Linux system, remove the dependency
     on Berkeley DB by applying the <command>sed</command> command below.
@@ -33,7 +40,8 @@
     compiling Berkeley DB can be found in the BLFS Book at <ulink
     url="&blfs-root;view/svn/server/databases.html#db"/>.</para>
 
-<screen os="s2"><userinput>sed -i '/^TARGETS/s@arpd@@g' misc/Makefile</userinput></screen>
+<screen os="s4"><userinput>cp misc/Makefile{,.orig}
+sed '/^TARGETS/s@arpd@@g' misc/Makefile.orig &gt; misc/Makefile</userinput></screen>
 
     <para os="a">Compile the package:</para>
 

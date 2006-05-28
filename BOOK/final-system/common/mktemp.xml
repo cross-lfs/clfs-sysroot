@@ -34,8 +34,8 @@
     <para os="s1">The following sed removes -s from the install command which
     will try to strip the installed files:</para>
 
-<screen os="s2"><userinput>cp Makefile{,.orig}
-sed -e 's/-s $(PROG)/$(PROG)/' Makefile.orig &gt; Makefile</userinput></screen>
+<screen os="s2"><userinput>cp Makefile.in{,.orig}
+sed -e 's/-s $(PROG)/$(PROG)/' Makefile.in.orig &gt; Makefile.in</userinput></screen>
 
     <para os="c">Prepare Mktemp for compilation:</para>
 

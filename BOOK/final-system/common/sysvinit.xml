@@ -35,8 +35,9 @@
     <quote>Sending processes started by init the TERM signal</quote>
     instead:</para>
 
-<screen os="b"><userinput>sed -i 's@Sending processes@&amp; started by init@g' \
-    src/init.c</userinput></screen>
+<screen os="b"><userinput>cp src/init.c{,.orig}
+sed 's@Sending processes@&amp; started by init@g' \
+    src/init.c.orig &gt; src/init.c</userinput></screen>
 
     <para os="s1">The following sed makes changes in the Makefile required for cross-compiling</para>
 
@@ -44,6 +45,7 @@
 sed -e 's@root@0@g' \
     -e "s@/dev/initctl@${LFS}&amp;@g" \
     -e 's@\(mknod \)-m \([0-9]* \)\(.* \)p@\1\3p; chmod \2\3@g' \
+    -e "s@/usr/lib@${LFS}&amp;@" \
     src/Makefile.orig &gt; src/Makefile</userinput></screen>
 
     <para os="c">Compile the package:</para>
@@ -53,7 +55,7 @@ make -C src CC="${CC}"</userinput></screen>
 
     <para os="e">Install the package:</para>
 
-<screen os="f"><userinput>make -C src install</userinput></screen>
+<screen os="f"><userinput>make -C src ROOT=${LFS} INSTALL="install" install</userinput></screen>
 
   </sect2>
 

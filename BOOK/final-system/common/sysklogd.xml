@@ -42,7 +42,7 @@ sed -e 's/-o ${MAN_USER} -g ${MAN_GROUP}//' \
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="g"><userinput>make prefix=${LFS} install</userinput></screen>
 
   </sect2>
 

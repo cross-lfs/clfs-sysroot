@@ -33,7 +33,7 @@
     <para os="s1">The following sed tells the Makefile to pass r to AR:</para>
 
 <screen os="s2"><userinput>cp Makefile.in{,.orig}
-sed 's/$(AR) $@/$(AR) r $@/' Makefile.in &gt; Makefile.in</userinput></screen>
+sed 's/$(AR) $@/$(AR) r $@/' Makefile.in.orig &gt; Makefile.in</userinput></screen>
 
     <para os="a">Prepare Zlib for compilation:</para>
 
@@ -58,7 +58,7 @@ ln -svf ../../lib/libz.so.1 ${LFS}/usr/lib/libz.so</userinput></screen>
 
     <para os="i">Now we fix the permissions on the static library:</para>
 
-<screen os="j"><userinput>chmod -v 644 /usr/lib/libz.a</userinput></screen>
+<screen os="j"><userinput>chmod -v 644 ${LFS}/usr/lib/libz.a</userinput></screen>
 
   </sect2>
 

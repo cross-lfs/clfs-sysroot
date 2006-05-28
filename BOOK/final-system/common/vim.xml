@@ -33,7 +33,7 @@
   <sect2 role="installation">
     <title>Installation of Vim</title>
 
-    <important>The cross-compilation of vim is currently a mystery. Help would be greatly apreciated</important>
+    <important os="w1"><para>The cross-compilation of vim is currently a mystery. Help would be greatly apreciated</para></important>
 
     <para os="a">First, unpack both <filename>vim-&vim-version;.tar.bz2</filename>
     and (optionally) <filename>vim-&vim-version;-lang.tar.gz</filename>

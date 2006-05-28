@@ -22,25 +22,8 @@
   <command>strip</command> command, it is a good idea to make a
   backup of the current situation.</para>
 
-  <para os="c">Before performing the stripping, take special care to ensure that
-  none of the binaries that are about to be stripped are running. If
-  unsure whether the user entered chroot with the command given in
-  <!-- <xref linkend="chapter-chroot" role=","/> --> first exit from
-  chroot:</para>
-
-<screen os="d" role="nodump"><userinput>logout</userinput></screen>
-
-    <para os="e">Then reenter it with:</para>
-
-<screen os="f" role="nodump"><userinput>chroot $LFS /tools/bin/env -i \
-    HOME=/root TERM=$TERM PS1='\u:\w\$ ' \
-    PATH=/bin:/usr/bin:/sbin:/usr/sbin \
-    /tools/bin/bash --login</userinput></screen>
-
-    <para os="g">Now the binaries and libraries can be safely stripped:</para>
-
-<screen os="h"><userinput>/tools/bin/find /{,usr/}{bin,lib,sbin} -type f \
-   -exec /tools/bin/strip --strip-debug '{}' ';'</userinput></screen>
+<screen os="c"><userinput>find ${LFS}/{,usr/}{bin,lib,sbin} -type f \
+   -exec ${LFS_TARGET}-strip --strip-debug '{}' ';'</userinput></screen>
 
     <para os="i">A large number of files will be reported as having their file
     format not recognized. These warnings can be safely ignored. These

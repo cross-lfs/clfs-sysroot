@@ -50,7 +50,7 @@
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make install</userinput></screen>
+<screen os="g"><userinput>make DESTDIR=${LFS} install</userinput></screen>
 
     <para os="h">There is no reason for the <command>pstree</command> and
     <command>pstree.x11</command> programs to reside in <filename
