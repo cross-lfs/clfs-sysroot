@@ -45,13 +45,13 @@
 <!ENTITY bin86-md5 "c9e8d72dd2e7457b52d0e3164fc199a1">
 <!ENTITY bin86-home "http://freshmeat.net/projects/bin86/">
 
-<!ENTITY binutils-version "2.16.92">
-<!ENTITY binutils-size "13,374 KB">
+<!ENTITY binutils-version "2.16.93">
+<!ENTITY binutils-size "13,416 KB">
 <!---
 <!ENTITY binutils-url "&gnu;binutils/binutils-&binutils-version;.tar.bz2">
 -->
 <!ENTITY binutils-url "ftp://sourceware.org/pub/binutils/snapshots/binutils-&binutils-version;.tar.bz2">
-<!ENTITY binutils-md5 "1cc2db046dbe33ee9ab97d4bf9a0631f">
+<!ENTITY binutils-md5 "c815ff14c4b3e2a854a849f3369fe25b">
 <!ENTITY binutils-home "http://sources.redhat.com/binutils/">
 
 <!ENTITY bison-version "2.2">
@@ -250,10 +250,10 @@
 <!ENTITY linux-md5 "5cb158630f9615983ab32cea9ace3025">
 <!ENTITY linux-home "http://www.kernel.org/">
 
-<!ENTITY linux-headers-version "&linux-version;-05222006">
+<!ENTITY linux-headers-version "&linux-version;-05292006">
 <!ENTITY linux-headers-size "1,468 KB">
 <!ENTITY linux-headers-url "http://ftp.jg555.com/headers/linux-headers-&linux-headers-version;.tar.bz2">
-<!ENTITY linux-headers-md5 "77ff1120edc9d7bdd5ee3573a8f8dc8a">
+<!ENTITY linux-headers-md5 "793c3f935c3845ad81825ced9f9fe142">
 <!ENTITY linux-headers-home "http://headers.cross-lfs.org/">
 
 <!ENTITY m4-version "1.4.4">
@@ -394,10 +394,10 @@
 <!ENTITY tree-md5 "e0d090c564e7ea5afa16bac80620c7e0">
 <!ENTITY tree-home " ">
 
-<!ENTITY udev-version "091">
-<!ENTITY udev-size "189 KB">
+<!ENTITY udev-version "093">
+<!ENTITY udev-size "193 KB">
 <!ENTITY udev-url "&kernel;linux/utils/kernel/hotplug/udev-&udev-version;.tar.bz2">
-<!ENTITY udev-md5 "4151022ea7b4dcfaa768c1b7bf2ab9e5">
+<!ENTITY udev-md5 "9f8e105b692fed1cdb162f2aaf982849">
 <!ENTITY udev-home "http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html">
 
 <!ENTITY udev-cross-lfs-version "0.1-05142006">
