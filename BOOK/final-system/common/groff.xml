@@ -40,7 +40,7 @@
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make prefix=${LFS} install</userinput></screen>
+<screen os="g"><userinput>make prefix=${LFS}/usr install</userinput></screen>
 
     <para os="h">Some documentation programs, such as <command>xman</command>,
     will not work properly without the following symlinks:</para>

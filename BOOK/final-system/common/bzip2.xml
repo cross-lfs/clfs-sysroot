@@ -67,7 +67,7 @@ make clean</userinput></screen>
 
     <note os="f">
     <para>If reinstalling Bzip2, perform
-    <userinput>rm -vf /usr/bin/bz*</userinput> first, otherwise the
+    <userinput>rm -vf ${LFS}/usr/bin/bz*</userinput> first, otherwise the
     following <command>make PREFIX=${LFS}/usr install</command> will fail.</para>
     </note>
 
@@ -79,8 +79,8 @@ make clean</userinput></screen>
     <filename class="directory">/bin</filename> directory, make
     some necessary symbolic links, and clean up:</para>
 
-<screen os="j"><userinput>cp -v ${LFS}bzip2-shared ${LFS}/bin/bzip2
-cp -av ${LFS}libbz2.so* ${LFS}/lib
+<screen os="j"><userinput>cp -v bzip2-shared ${LFS}/bin/bzip2
+cp -av libbz2.so* ${LFS}/lib
 ln -sv ../../lib/libbz2.so.1.0 ${LFS}/usr/lib/libbz2.so
 rm -v ${LFS}/usr/bin/{bunzip2,bzcat,bzip2}
 ln -sv bzip2 ${LFS}/bin/bunzip2

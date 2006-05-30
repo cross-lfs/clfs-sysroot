@@ -60,8 +60,8 @@ sed -e 's/-s $(PROG)/$(PROG)/' Makefile.in.orig &gt; Makefile.in</userinput></sc
 
     <para os="h">Install the package:</para>
 
-<screen os="i"><userinput>make prefix=${LFS} install
-make prefix=${LFS} install-tempfile</userinput></screen>
+<screen os="i"><userinput>make prefix=${LFS}/usr install
+make prefix=${LFS}/usr install-tempfile</userinput></screen>
 
   </sect2>
 
