@@ -102,10 +102,10 @@
 <!ENTITY dvhtool-md5 "4448c01e6a015685af90a79fbea8da4e">
 <!ENTITY dvhtool-home "http://packages.qa.debian.org/d/dvhtool.html">
 
-<!ENTITY e2fsprogs-version "1.38">
-<!ENTITY e2fsprogs-size "3,537 KB">
+<!ENTITY e2fsprogs-version "1.39">
+<!ENTITY e2fsprogs-size "3,612 KB">
 <!ENTITY e2fsprogs-url "&sourceforge;e2fsprogs/e2fsprogs-&e2fsprogs-version;.tar.gz?download">
-<!ENTITY e2fsprogs-md5 "d774d4412bfb80d12cf3a4fdfd59de5a">
+<!ENTITY e2fsprogs-md5 "06f7806782e357797fad1d34b7ced0c6">
 <!ENTITY e2fsprogs-home "http://e2fsprogs.sourceforge.net/">
 
 <!ENTITY elftoaout-version "2.3">
@@ -244,16 +244,16 @@
 
 <!ENTITY linux-dl-version "2.6">
 
-<!ENTITY linux-version "2.6.16.18">
-<!ENTITY linux-size "39,884 KB">
+<!ENTITY linux-version "2.6.16.19">
+<!ENTITY linux-size "39,880 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-dl-version;/linux-&linux-version;.tar.bz2">
-<!ENTITY linux-md5 "5cb158630f9615983ab32cea9ace3025">
+<!ENTITY linux-md5 "b1e3c65992b0049fdbee825eb2a856af">
 <!ENTITY linux-home "http://www.kernel.org/">
 
-<!ENTITY linux-headers-version "&linux-version;-05292006">
-<!ENTITY linux-headers-size "1,468 KB">
+<!ENTITY linux-headers-version "&linux-version;-06042006">
+<!ENTITY linux-headers-size "1,480 KB">
 <!ENTITY linux-headers-url "http://ftp.jg555.com/headers/linux-headers-&linux-headers-version;.tar.bz2">
-<!ENTITY linux-headers-md5 "793c3f935c3845ad81825ced9f9fe142">
+<!ENTITY linux-headers-md5 "62df9fe3c27aae0f1305a6fd72e4b3a2">
 <!ENTITY linux-headers-home "http://headers.cross-lfs.org/">
 
 <!ENTITY m4-version "1.4.4">
@@ -274,10 +274,10 @@
 <!ENTITY man-md5 "ac1e7d60dfedb7d1c6f398ae5b038996">
 <!ENTITY man-home "http://primates.ximian.com/~flucifredi/man/">
 
-<!ENTITY man-pages-version "2.32">
+<!ENTITY man-pages-version "2.33">
 <!ENTITY man-pages-size "1,752 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/manpages/man-pages-&man-pages-version;.tar.bz2">
-<!ENTITY man-pages-md5 "8e90f8312bdd35ec3e789bf67c9b0ee3">
+<!ENTITY man-pages-md5 "e9f61ec73b5390c582530da173c12b10">
 <!ENTITY man-pages-home " ">
 
 <!ENTITY mktemp-version "1.5">
@@ -400,7 +400,7 @@
 <!ENTITY udev-md5 "9f8e105b692fed1cdb162f2aaf982849">
 <!ENTITY udev-home "http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html">
 
-<!ENTITY udev-cross-lfs-version "0.1-05142006">
+<!ENTITY udev-cross-lfs-version "0.1-05292006">
 <!ENTITY udev-cross-lfs-size "9 KB">
 <!ENTITY udev-cross-lfs-url "http://ftp.jg555.com/udev/udev-cross-lfs-&udev-cross-lfs-version;.tar.bz2">
 <!ENTITY udev-cross-lfs-md5 "1d88251e017ad549a2225f96b0719cff">

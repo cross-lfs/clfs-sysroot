@@ -40,6 +40,19 @@
       <para>May 29, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added a patch to fix a missing declaration of R_OK
+                             in util-linux.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated to e2fsprogs-1.39, man-pages-2.33, and linux-headers-2.6.16.19-06042006.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 29, 2006</para>
+      <itemizedlist>
+        <listitem>
           <para>[jciccone] - Updated to linux-headers-05292006, udev-093, and binutils-2.16.93.</para>
         </listitem>
       </itemizedlist>

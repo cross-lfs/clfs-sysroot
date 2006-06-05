@@ -52,6 +52,11 @@ mkdir -pv /var/lib/hwclock</userinput></screen>
 
 <screen os="p4"><userinput>patch -Np1 -i ../&util-linux-gcc4_fixes-patch;</userinput></screen>
 
+   <para os="p5">The following patch fixes swapon.c, it tries to find the
+   variable R_OK, but the header that has R_OK is not included:</para>
+
+<screen os="p6"><userinput>patch -Np1 -i ../&util-linux-missing_header-patch;</userinput></screen>
+
     <para os="s1">The following sed prevents the installed files from being
     owned by root</para>
 
@@ -134,7 +139,7 @@ mv -v ${LFS}/usr/bin/logger ${LFS}/bin</userinput></screen>
         mkfs.cramfs, mkfs.minix, mkswap, more, mount, namei, pg, pivot_root,
         ramsize (link to rdev), raw, rdev, readprofile, rename, renice, rev,
         rootflags (link to rdev), script, setfdprm, setsid, setterm, sfdisk,
-        swapdev, swapoff (link to swapon), swapon, tunelp, ul, umount, vidmode
+        swapoff (link to swapon), swapon, tunelp, ul, umount, vidmode
         (link to rdev), whereis, and write</seg>
       </seglistitem>
     </segmentedlist>
@@ -690,16 +695,6 @@ mv -v ${LFS}/usr/bin/logger ${LFS}/bin</userinput></screen>
           <para>A disk partition table manipulator</para>
           <indexterm zone="ch-system-util-linux sfdisk">
             <primary sortas="b-sfdisk">sfdisk</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="swapdev">
-        <term><command>swapdev</command></term>
-        <listitem>
-          <para>Sets the swap device in a bootable image</para>
-          <indexterm zone="ch-system-util-linux swapdev">
-            <primary sortas="b-swapdev">swapdev</primary>
           </indexterm>
         </listitem>
       </varlistentry>

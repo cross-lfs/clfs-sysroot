@@ -92,7 +92,7 @@ sed '/^TARGETS/s@arpd@@g' misc/Makefile.orig &gt; misc/Makefile</userinput></scr
         <listitem>
           <para>Connection status utility</para>
           <indexterm zone="ch-system-iproute2 ctstat">
-            <primary sortas="b-cstat">ctstat</primary>
+            <primary sortas="b-ctstat">ctstat</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -164,7 +164,7 @@ sed '/^TARGETS/s@arpd@@g' misc/Makefile.orig &gt; misc/Makefile</userinput></scr
           feature-complete replacement for the old <command>rtstat</command>
           program</para>
           <indexterm zone="ch-system-iproute2 lnstat">
-            <primary sortas="b-cstat">lnstat</primary>
+            <primary sortas="b-lnstat">lnstat</primary>
           </indexterm>
         </listitem>
       </varlistentry>
