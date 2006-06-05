@@ -24,15 +24,13 @@
 
   </important>
 
-  <para>First, Change the <systemitem class="username">user</systemitem>:
-  <systemitem class="group">group</systemitem> on the entire lfs system.</para>
+  <para>Make <systemitem class="username">root</systemitem> the owner of the
+  entire lfs system.</para>
 
 <screen><userinput>chown -Rv root:root ${LFS}</userinput></screen>
 
-  <para>The following files require a <systemitem class="username">user</systemitem>
-  :<systemitem class="group">group</systemitem> combination other then
-  <systemitem class="username">root</systemitem>:<systemitem class="group">root
-  </systemitem>.</para>
+  <para>The following files are not the be owned by
+  <systemitem class="username">root</systemitem>.</para>
 
 <screen><userinput>chgrp -v utmp ${LFS}/var/run/utmp ${LFS}/var/log/lastlog</userinput></screen>
 
