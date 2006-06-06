@@ -48,7 +48,7 @@
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make prefixR=${LFS}/usr install</userinput></screen>
+<screen os="g"><userinput>make prefix=${LFS}/usr install</userinput></screen>
 
     <para os="h">Move less to /bin:</para>
 

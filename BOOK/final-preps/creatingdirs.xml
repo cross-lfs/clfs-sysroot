@@ -13,8 +13,8 @@
   <para>It is time to create some structure in the LFS file system. Create a
   standard directory tree by issuing the following commands:</para>
 
-<screen><userinput>mkdir -pv ${LFS}/{bin,boot,etc/opt,home,lib,mnt,opt}
-mkdir -pv ${LFS}/{media/{floppy,cdrom},sbin,srv,var}
+<screen><userinput>mkdir -pv ${LFS}/{bin,boot,dev,etc/opt,home,lib,mnt,opt}
+mkdir -pv ${LFS}/{proc,media/{floppy,cdrom},sbin,srv,sys,var}
 install -dv -m 0750 ${LFS}/root
 install -dv -m 1777 ${LFS}/tmp ${LFS}/var/tmp
 mkdir -pv ${LFS}/usr/{,local/}{bin,include,lib,sbin,src}

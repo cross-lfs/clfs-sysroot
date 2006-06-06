@@ -38,8 +38,8 @@ sed -e "s@&amp;&amp; ./conftest@@" configure.orig &gt; configure</userinput></sc
     <para os="s3">The following sed removes -s from the install command which
     will try to strip the installed files:</para>
 
-<screen os="s4"><userinput>cp src/Makefile{,.orig}
-sed -e "s/install -s/install/" src/Makefile.orig &gt; src/Makefile</userinput></screen>
+<screen os="s4"><userinput>cp src/Makefile.in{,.orig}
+sed -e "s/install -s/install/" src/Makefile.in.orig &gt; src/Makefile.in</userinput></screen>
 
     <para os="a">Prepare Kbd for compilation:</para>
 

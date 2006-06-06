@@ -37,11 +37,9 @@ sed -e "/^install  :=/s/--owner 0 --group 0//" \
 
 <screen os="b"><userinput>make</userinput></screen>
 
-    <para os="c">This package does not come with a test suite.</para>
+    <para os="c">Install the package:</para>
 
-    <para os="d">Install the package:</para>
-
-<screen os="e"><userinput>make DESTDIR=${LFS} lib64=lib install</userinput></screen>
+<screen os="d"><userinput>make DESTDIR=${LFS} lib64=lib install</userinput></screen>
 
   </sect2>
 
