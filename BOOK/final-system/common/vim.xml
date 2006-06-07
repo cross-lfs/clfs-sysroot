@@ -33,16 +33,19 @@
   <sect2 role="installation">
     <title>Installation of Vim</title>
 
-    <important os="w1"><para>The cross-compilation of vim is currently a mystery. Help would be greatly apreciated</para></important>
-
     <para os="a">First, unpack both <filename>vim-&vim-version;.tar.bz2</filename>
     and (optionally) <filename>vim-&vim-version;-lang.tar.gz</filename>
     archives into the same directory.</para>
 
-    <para os="p1">The following patch contains updates from the maintainer. The
+    <para os="p1">The following patch fixes numerous issues with
+    cross-compiling vim</para>
+
+<screen os="p2"><userinput>patch -Np1 -i ../&vim-cross_compile-patch;</userinput></screen>
+
+    <para os="p3">The following patch contains updates from the maintainer. The
     maintainer of Vim only releases these patches to fix serious issues.</para>
 
-<screen os="p2"><userinput>patch -Np1 -i ../&vim-fixes-patch;</userinput></screen>
+<screen os="p4"><userinput>patch -Np1 -i ../&vim-fixes-patch;</userinput></screen>
 
     <para os="b">Change the default location of
     the <filename>vimrc</filename> configuration file to <filename
@@ -52,7 +55,12 @@
 
     <para os="d">Prepare Vim for compilation:</para>
 
-<screen os="e"><userinput>./configure --prefix=/usr --enable-multibyte</userinput></screen>
+<screen os="e"><userinput>./configure --prefix=/usr --host=${LFS_TARGET} \
+    --enable-multibyte --enable-gui=no \
+    --disable-gtktest --disable-xim \
+    --with-features=normal --disable-gpm \
+    --without-x --disable-netbeans \
+    --with-tlib=ncurses</userinput></screen>
 
     <variablelist os="f">
       <title>The meaning of the configure options:</title>
@@ -75,29 +83,24 @@
 
 <screen os="h"><userinput>make</userinput></screen>
 
-    <para os="i">To test the results, issue: <userinput>make test</userinput>.
-    However, this test suite outputs a lot of binary data to the
-    screen, which can cause issues with the settings of the current terminal.
-    This can be resolved by redirecting the output to a log file.</para>
+    <para os="i">Install the package:</para>
 
-    <para os="j">Install the package:</para>
+<screen os="j"><userinput>make DESTDIR=${LFS} install</userinput></screen>
 
-<screen os="k"><userinput>make install</userinput></screen>
-
-    <para os="l">Many users are used to using <command>vi</command> instead of
+    <para os="k">Many users are used to using <command>vi</command> instead of
     <command>vim</command>. To allow execution of <command>vim</command>
     when users habitually enter <command>vi</command>, create a
     symlink:</para>
 
-<screen os="m"><userinput>ln -sv vim /usr/bin/vi</userinput></screen>
+<screen os="l"><userinput>ln -sv vim ${LFS}/usr/bin/vi</userinput></screen>
 
-<para os="n">By default, Vim's documentation is installed in
+<para os="m">By default, Vim's documentation is installed in
 <filename class="directory">/usr/share/vim</filename>.  The following symlink
 allows the documentation to be accessed via
 <filename class="directory">/usr/share/doc/vim-&vim-version;</filename>, making
 it consistent with the location of documentation for other packages:</para>
 
-<screen os="o"><userinput>ln -sv ../vim/vim&vim-version2;/doc /usr/share/doc/vim-&vim-version;</userinput></screen>
+<screen os="n"><userinput>ln -sv ../vim/vim&vim-version2;/doc ${LFS}/usr/share/doc/vim-&vim-version;</userinput></screen>
 
     <para os="p">If an X Window System is going to be installed on the LFS
     system, it may be necessary to recompile Vim after installing X. Vim
@@ -126,7 +129,7 @@ it consistent with the location of documentation for other packages:</para>
     default <command>vim</command> configuration file by running the
     following:</para>
 
-<screen><userinput>cat &gt; /etc/vimrc &lt;&lt; "EOF"
+<screen><userinput>cat &gt; ${LFS}/etc/vimrc &lt;&lt; "EOF"
 <literal>" Begin /etc/vimrc
 
 set nocompatible

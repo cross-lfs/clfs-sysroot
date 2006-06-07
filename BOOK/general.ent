@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!ENTITY version "SVN-20060605">
+<!ENTITY version "SVN-20060606">
 <!ENTITY version-ARM "&version;-ARM">
 
 <!ENTITY releasedate "June 6, 2006">

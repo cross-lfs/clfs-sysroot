@@ -37,6 +37,15 @@
 -->
 
     <listitem>
+      <para>June 6, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Added information about cross-compiling vim.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 29, 2006</para>
       <itemizedlist>
 	<listitem>
