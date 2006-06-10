@@ -73,7 +73,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
     --host=${LFS_TARGET} --build=${LFS_HOST} \
     --disable-profile --enable-add-ons \
     --with-tls --enable-kernel=2.6.0 --with-__thread \
-    --with-binutils=/cross-tools/bin --with-headers=${LFS}/usr/include \
+    --with-binutils=${LFS}/cross-tools/bin --with-headers=${LFS}/usr/include \
     --cache-file=config.cache</userinput></screen>
 
     <variablelist os="j">
@@ -143,7 +143,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
       </varlistentry>
 
       <varlistentry os="j9">
-        <term><parameter>--with-binutils=/cross-tools/bin</parameter></term>
+        <term><parameter>--with-binutils=${LFS}/cross-tools/bin</parameter></term>
         <listitem>
           <para>This tells Glibc to use the Binutils that are specific to
           our target architecture.</para>

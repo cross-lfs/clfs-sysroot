@@ -47,7 +47,7 @@
     href="../../final-system/common/binutils.xml"
     xpointer="xpointer(//*[@os='c'])"/>
 
-<screen os="bc"><userinput>../binutils-&binutils-version;/configure --prefix=/cross-tools \
+<screen os="bc"><userinput>../binutils-&binutils-version;/configure --prefix=${LFS}/cross-tools \
    --host=${LFS_HOST} --target=${LFS_TARGET} --with-sysroot=${LFS} \
    --disable-nls --enable-shared --disable-multilib</userinput></screen>
 
@@ -55,10 +55,10 @@
       <title>The meaning of the configure options:</title>
 
       <varlistentry os="bd1">
-        <term><parameter>--prefix=/cross-tools</parameter></term>
+        <term><parameter>--prefix=${LFS}/cross-tools</parameter></term>
         <listitem>
           <para>This tells the configure script to prepare to install the
-          package in the <filename class="directory">/cross-tools</filename>
+          package in the <filename class="directory">${LFS}/cross-tools</filename>
           directory.</para>
         </listitem>
       </varlistentry>

@@ -51,9 +51,9 @@
   compiler.</para>
 
   <para>The process of building cross-compile tools first involves installing
-  binutils into /cross-tools, so that the linker can be used with the building
+  binutils into ${LFS}/cross-tools, so that the linker can be used with the building
   of everything else in the temp-system. GCC is then compiled statically and
-  installed into /cross-tools, and this cross-compiler is used to build glibc
+  installed into ${LFS}/cross-tools, and this cross-compiler is used to build glibc
   into /tools for the temp-system. The GCC cross-compiler is then rebuilt
   dynamically - this final cross-compiler is what will be used to build the
   rest of the temporary system. When this is done, the CLFS installation
@@ -63,7 +63,7 @@
 explanation, especially the reasoning for compiling gcc statically then dynamically... --></para>
 
   <para>The packages in <!-- <xref linkend="chapter-temp-system"/> --> are then built
-  using the cross-compiled tools in /cross-tools, and linked against the
+  using the cross-compiled tools in ${LFS}/cross-tools, and linked against the
   C library that was installed during the building of the cross-tools.</para>
 
   <para>This effort to isolate the new system from the host distribution
