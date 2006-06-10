@@ -36,7 +36,7 @@
 <screen><userinput>cp hwclock/hwclock.c{,.orig}
 sed 's@etc/adjtime@var/lib/hwclock/adjtime@g' \
     hwclock/hwclock.c.orig &gt; hwclock/hwclock.c
-mkdir -pv /var/lib/hwclock</userinput></screen>
+mkdir -pv ${LFS}/var/lib/hwclock</userinput></screen>
 
   </sect2>
 

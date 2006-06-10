@@ -41,7 +41,8 @@
     location of the binary is changed later, the following command ensures
     that the new location gets placed into the script:</para>
 
-<screen os="d"><userinput>cp gzexe.in{,.orig}
+<screen os="d"><userinput>chmod +w gzexe.in
+cp gzexe.in{,.orig}
 sed 's@"BINDIR"@/bin@g' gzexe.in.orig &gt; gzexe.in</userinput></screen>
 
     <para os="e">Compile the package:</para>
