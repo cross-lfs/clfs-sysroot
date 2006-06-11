@@ -48,7 +48,20 @@
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="g"><userinput>make DESTDIR=${LFS} INSTALL=install install</userinput></screen>
+
+    <variablelist os="h">
+      <title>The meaning of the make parameter:</title>
+      <varlistentry>
+        <term><parameter>INSTALL=install</parameter></term>
+        <listitem>
+          <para>Normally, make install will not install the binaries if they
+          already exist. This option overrides that behavior by calling
+          <command>install</command> instead of using the default wrapper
+          script.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
 
   </sect2>
 

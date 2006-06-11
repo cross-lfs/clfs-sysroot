@@ -40,7 +40,7 @@
 
     <para os="d">Prepare Shadow for compilation:</para>
 
-<screen os="e"><userinput>./configure --libdir=/lib --enable-shared \
+<screen os="e"><userinput>./configure --libdir=/lib --sysconfdir=/etc --enable-shared \
     --without-libpam --without-audit --without-selinux \
     --host=${LFS_TARGET} --cache-file=config.cache</userinput></screen>
 
@@ -58,7 +58,7 @@
     <varlistentry>
       <term><parameter>--without-audit</parameter></term>
       <listitem><para>Support for auditing is enabled by default, but a
-      a library that it needs is not installed in a base LFS system. This
+      library that it needs is not installed in a base LFS system. This
       switch disables auditing support.</para></listitem>
     </varlistentry>
     <varlistentry>
@@ -85,20 +85,6 @@ sed '/groups/d' man/Makefile.orig &gt; man/Makefile</userinput></screen>
 
 <screen os="m"><userinput>make DESTDIR=${LFS} install</userinput></screen>
 
-    <para id="shadow-limits-login_access" os="n">Shadow uses two files to configure
-    authentication settings for the system. Install these two configuration
-    files:</para>
-
-    <indexterm zone="shadow-limits-login_access" os="o">
-      <primary sortas="e-/etc/limits">/etc/limits</primary>
-    </indexterm>
-
-    <indexterm zone="shadow-limits-login_access" os="p">
-      <primary sortas="e-/etc/login.access">/etc/login.access</primary>
-    </indexterm>
-
-<screen os="q"><userinput>cp -v etc/{limits,login.access} ${LFS}/etc</userinput></screen>
-
     <para id="shadow-login_defs" os="r">Instead of using the default
     <emphasis>crypt</emphasis> method, use the more secure
     <emphasis>MD5</emphasis> method of password encryption, which also allows
@@ -113,9 +99,10 @@ sed '/groups/d' man/Makefile.orig &gt; man/Makefile</userinput></screen>
       <primary sortas="e-/etc/login.defs">/etc/login.defs</primary>
     </indexterm>
 
-<screen os="t"><userinput>sed -e's@#MD5_CRYPT_ENAB.no@MD5_CRYPT_ENAB yes@' \
+<screen os="t"><userinput>cp {LFS}/etc/login.defs login.defs.orig
+sed -e's@#MD5_CRYPT_ENAB.no@MD5_CRYPT_ENAB yes@' \
     -e 's@/var/spool/mail@/var/mail@' \
-    etc/login.defs &gt; ${LFS}/etc/login.defs</userinput></screen>
+    login.defs.orig &gt; ${LFS}/etc/login.defs</userinput></screen>
 
     <note os="u">
       <para>If you built Shadow with Cracklib support, execute
@@ -192,9 +179,9 @@ ln -svf ../../lib/libshadow.so.0 ${LFS}/usr/lib/libshadow.so</userinput></screen
       <seglistitem>
         <seg>chage, chfn, chpasswd, chgpasswd, chsh, expiry, faillog, gpasswd,
         groupadd, groupdel, groupmod, grpck, grpconv, grpunconv, lastlog,
-        login, logoutd, newgrp, newusers, passwd, pwck, pwconv, pwunconv,
-        sg (link to newgrp), useradd, userdel, usermod, vigr (link to vipw),
-        and vipw</seg>
+        login, logoutd, newgrp, newusers, nologin, passwd, pwck, pwconv,
+        pwunconv, sg (link to newgrp), useradd, userdel, usermod,
+        vigr (link to vipw), and vipw</seg>
         <seg>libshadow.[a,so]</seg>
       </seglistitem>
     </segmentedlist>
@@ -402,6 +389,18 @@ ln -svf ../../lib/libshadow.so.0 ${LFS}/usr/lib/libshadow.so</userinput></screen
           accounts</para>
           <indexterm zone="ch-system-shadow newusers">
             <primary sortas="b-newusers">newusers</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="nologin">
+        <term><command>nologin</command></term>
+        <listitem>
+          <para>Displays a message that an account is not available. Designed
+          to be used as the default shell for accounts that have been
+          disabled</para>
+          <indexterm zone="ch-system-shadow nologin">
+            <primary sortas="b-nologin">nologin</primary>
           </indexterm>
         </listitem>
       </varlistentry>

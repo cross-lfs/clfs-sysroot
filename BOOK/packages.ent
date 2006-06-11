@@ -21,6 +21,7 @@
 <!ENTITY autoconf-home "&gnu-software;autoconf/">
 
 <!ENTITY automake-version "1.9.6">
+<!ENTITY automake-version2 "1.9">
 <!ENTITY automake-size "748 KB">
 <!ENTITY automake-url "&gnu;automake/automake-&automake-version;.tar.bz2">
 <!ENTITY automake-md5 "c11b8100bb311492d8220378fd8bf9e0">
@@ -250,7 +251,7 @@
 <!ENTITY linux-md5 "382aa4178ff79d58925622a8a97561eb">
 <!ENTITY linux-home "http://www.kernel.org/">
 
-<!ENTITY linux-headers-version "&linux-version;-06052006">
+<!ENTITY linux-headers-version "&linux-version;-06092006">
 <!ENTITY linux-headers-size "1,480 KB">
 <!ENTITY linux-headers-url "http://ftp.jg555.com/headers/linux-headers-&linux-headers-version;.tar.bz2">
 <!ENTITY linux-headers-md5 "c6f8b2340d79e0a4094ed8e685814559">
@@ -259,7 +260,7 @@
 <!ENTITY m4-version "1.4.4">
 <!ENTITY m4-size "300 KB">
 <!ENTITY m4-url "&gnu;m4/m4-&m4-version;.tar.bz2">
-<!ENTITY m4-md5 "eb93bfbcb12cf00165583302bb31a822">
+<!ENTITY m4-md5 "6ab673550854113c3d0607ddb2a32453">
 <!ENTITY m4-home "&gnu-software;m4/">
 
 <!ENTITY make-version "3.81">
@@ -346,10 +347,10 @@
 <!ENTITY sed-md5 "7a1cbbbb3341287308e140bd4834c3ba">
 <!ENTITY sed-home "&gnu-software;sed/">
 
-<!ENTITY shadow-version "4.0.15">
-<!ENTITY shadow-size "1,265 KB">
+<!ENTITY shadow-version "4.0.16">
+<!ENTITY shadow-size "1,412 KB">
 <!ENTITY shadow-url "ftp://ftp.pld.org.pl/software/shadow/shadow-&shadow-version;.tar.bz2">
-<!ENTITY shadow-md5 "a0452fa989f8ba45023cc5a08136568e">
+<!ENTITY shadow-md5 "1d91f7479143d1d705b94180c0d4874b">
 <!ENTITY shadow-home " ">
 
 <!ENTITY silo-version "1.4.11">
