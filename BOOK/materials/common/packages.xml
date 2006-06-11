@@ -96,15 +96,6 @@
     </varlistentry>
 
     <varlistentry>
-      <term>DejaGNU (&dejagnu-version;) - <token>&dejagnu-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&dejagnu-home;"/></para>
-        <para>Download: <ulink url="&dejagnu-url;"/></para>
-        <para>MD5 sum: <literal>&dejagnu-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>Diffutils (&diffutils-version;) - <token>&diffutils-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&diffutils-home;"/></para>
@@ -119,15 +110,6 @@
         <para>Home page: <ulink url="&e2fsprogs-home;"/></para>
         <para>Download: <ulink url="&e2fsprogs-url;"/></para>
         <para>MD5 sum: <literal>&e2fsprogs-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term>Expect (&expect-version;) - <token>&expect-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&expect-home;"/></para>
-        <para>Download: <ulink url="&expect-url;"/></para>
-        <para>MD5 sum: <literal>&expect-md5;</literal></para>
       </listitem>
     </varlistentry>
 
@@ -461,15 +443,6 @@
         <para>Home page: <ulink url="&tar-home;"/></para>
         <para>Download: <ulink url="&tar-url;"/></para>
         <para>MD5 sum: <literal>&tar-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term>Tcl (&tcl-version;) - <token>&tcl-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&tcl-home;"/></para>
-        <para>Download: <ulink url="&tcl-url;"/></para>
-        <para>MD5 sum: <literal>&tcl-md5;</literal></para>
       </listitem>
     </varlistentry>
 
