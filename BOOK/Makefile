@@ -17,8 +17,11 @@ ARCHS_TROUBLE	:= $(ARCHS:%=%$(S)trouble)
 ARCHS_DUMP	:= $(ARCHS:%=%$(S)dump)
 ARCHS_DLLIST	:= $(ARCHS:%=%$(S)dllist)
 
+.PHONY: lfs tidy render titlepage $(ARCHS_HTML) nochunks $(ARCHS_NOCHUNKS) pdf $(ARCHS_PDF) text $(ARCHS_TEXT) validate $(ARCHS_VALIDATE) trouble $(ARCHS_TROUBLE) dump-commands $(ARCHS_DUMP) download-list $(ARCHS_DLLIST)
+
 lfs: render tidy
 
+ifeq ($(shell which tidy >/dev/null 2>&1 && echo yes),yes)
 tidy:
 	@echo Running tidy on the created HTML
 	@for filename in `find $(BASEDIR) -name "*.html"`; do \
@@ -27,6 +30,10 @@ tidy:
 	  sh obfuscate.sh $$filename; \
 	  sed -i -e "s@text/html@application/xhtml+xml@g" $$filename; \
 	done;
+else
+tidy:
+	@echo Tidy is not installed on this system
+endif
 
 render: $(ARCHS_HTML) titlepage
 
