@@ -37,6 +37,15 @@
 -->
 
     <listitem>
+      <para>June 15, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated to Binutils-2.16.94.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>June 11, 2006</para>
       <itemizedlist>
         <listitem>
