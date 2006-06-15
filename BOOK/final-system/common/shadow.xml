@@ -99,7 +99,7 @@ sed '/groups/d' man/Makefile.orig &gt; man/Makefile</userinput></screen>
       <primary sortas="e-/etc/login.defs">/etc/login.defs</primary>
     </indexterm>
 
-<screen os="t"><userinput>cp {LFS}/etc/login.defs login.defs.orig
+<screen os="t"><userinput>cp ${LFS}/etc/login.defs login.defs.orig
 sed -e's@#MD5_CRYPT_ENAB.no@MD5_CRYPT_ENAB yes@' \
     -e 's@/var/spool/mail@/var/mail@' \
     login.defs.orig &gt; ${LFS}/etc/login.defs</userinput></screen>
