@@ -37,6 +37,15 @@
 -->
 
     <listitem>
+      <para>June 16, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Added informations about cross-compiling perl.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>June 15, 2006</para>
       <itemizedlist>
         <listitem>
