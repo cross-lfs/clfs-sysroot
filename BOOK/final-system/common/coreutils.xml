@@ -25,14 +25,20 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
-    <para os="a">Prevent Coreutils from installing binaries that will be
+    <para os="p1">Prevent Coreutils from installing binaries that will be
     installed by other packages:</para>
 
-<screen os="b"><userinput>patch -Np1 -i ../&coreutils-suppress-patch;</userinput></screen>
+<screen os="p2"><userinput>patch -Np1 -i ../&coreutils-suppress-patch;</userinput></screen>
+
+    <para os="a">Configure doesn't properly handle the following tests
+    when cross-compiling:</para>
+
+<screen os="b"><userinput>echo "ac_cv_func_setvbuf_reversed=yes" &gt; config.cache
+echo "fu_cv_sys_stat_statfs2_bsize=yes" &gt;&gt; config.cache</userinput></screen>
 
     <para os="c">Now prepare Coreutils for compilation:</para>
 
-<screen os="d"><userinput>./configure --prefix=/usr \
+<screen os="d"><userinput>./configure --prefix=/usr --cache-file=config.cache \
    --build=${LFS_HOST} --host=${LFS_TARGET}</userinput></screen>
 
     <para os="e">Compile the package:</para>
