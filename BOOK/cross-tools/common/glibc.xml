@@ -48,6 +48,12 @@
 
 <screen os="p4"><userinput>patch -Np1 -i ../&glibc-localedef_segfault-patch;</userinput></screen>
 
+    <para os="p5">The following patch changes the way glibc generates it's
+    timezone information so that it can be generated when
+    cross-compiling:</para>
+
+<screen os="p6"><userinput>patch -Np1 -i ../&glibc-crosscompile_timezone_fix-patch;</userinput></screen>
+
     <para os="b">The Glibc documentation recommends building Glibc outside of the
     source directory in a dedicated build directory:</para>
 
@@ -272,15 +278,15 @@ EOF</userinput></screen>
 
     <para>To determine the local time zone, run the following script:</para>
 
-<screen role="nodump"><userinput>tzselect</userinput></screen>
+<screen role="nodump"><userinput>${LFS}/usr/bin/tzselect</userinput></screen>
 
     <para>After answering a few questions about the location, the script will
     output the name of the time zone (e.g., <emphasis>EST5EDT</emphasis> or
     <emphasis>Canada/Eastern</emphasis>). Then create the
     <filename>/etc/localtime</filename> file by running:</para>
 
-<screen><userinput>cp -v --remove-destination /usr/share/zoneinfo/<replaceable>[xxx]</replaceable> \
-    /etc/localtime</userinput></screen>
+<screen><userinput>cp -v --remove-destination ${LFS}/usr/share/zoneinfo/<replaceable>[xxx]</replaceable> \
+    ${LFS}/etc/localtime</userinput></screen>
 
     <para>Replace <replaceable>[xxx]</replaceable> with the name of the time zone
     that <command>tzselect</command> provided (e.g., Canada/Eastern).</para>
