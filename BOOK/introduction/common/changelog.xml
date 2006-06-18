@@ -37,10 +37,20 @@
 -->
 
     <listitem>
+      <para>June 18, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Added the glibc crosscompile_timezone-fix to glibc
+          which installs timezone info when cross-compiling.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>June 16, 2006</para>
       <itemizedlist>
         <listitem>
-          <para>[jciccone] - Added informations about cross-compiling perl.</para>
+          <para>[jciccone] - Added information about cross-compiling perl.</para>
         </listitem>
       </itemizedlist>
     </listitem>
