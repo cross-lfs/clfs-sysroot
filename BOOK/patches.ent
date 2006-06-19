@@ -45,7 +45,7 @@
 <!ENTITY gcc-posix-patch-size "9 KB">
 
 <!ENTITY glibc-crosscompile_timezone_fix-patch "glibc-&glibc-version;-crosscompile_timezone-fix-1.patch">
-<!ENTITY glibc-crosscompile_timezone_fix-patch-md5 "19f7f1fcd25409fa888b5af0364c8ec4">
+<!ENTITY glibc-crosscompile_timezone_fix-patch-md5 "d46ffc949ebc894974d719c8235be6f6">
 <!ENTITY glibc-crosscompile_timezone_fix-patch-size "4 KB">
 
 <!ENTITY glibc-libgcc_eh-patch "glibc-&glibc-version;-libgcc_eh-1.patch">
