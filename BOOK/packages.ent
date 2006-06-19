@@ -232,16 +232,16 @@
 
 <!ENTITY linux-dl-version "2.6">
 
-<!ENTITY linux-version "2.6.16.20">
-<!ENTITY linux-size "39,884 KB">
+<!ENTITY linux-version "2.6.17">
+<!ENTITY linux-size "40,352 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-dl-version;/linux-&linux-version;.tar.bz2">
-<!ENTITY linux-md5 "382aa4178ff79d58925622a8a97561eb">
+<!ENTITY linux-md5 "37ddefe96625502161f075b9d907f21e">
 <!ENTITY linux-home "http://www.kernel.org/">
 
-<!ENTITY linux-headers-version "&linux-version;-06092006">
-<!ENTITY linux-headers-size "1,480 KB">
+<!ENTITY linux-headers-version "&linux-version;-06192006">
+<!ENTITY linux-headers-size "1,496 KB">
 <!ENTITY linux-headers-url "http://ftp.jg555.com/headers/linux-headers-&linux-headers-version;.tar.bz2">
-<!ENTITY linux-headers-md5 "c6f8b2340d79e0a4094ed8e685814559">
+<!ENTITY linux-headers-md5 "4410d6e3b30aca67a130fcebf3f38ff3">
 <!ENTITY linux-headers-home "http://headers.cross-lfs.org/">
 
 <!ENTITY m4-version "1.4.4">
@@ -256,10 +256,10 @@
 <!ENTITY make-md5 "354853e0b2da90c527e35aabb8d6f1e6">
 <!ENTITY make-home "&gnu-software;make/">
 
-<!ENTITY man-version "1.6c">
-<!ENTITY man-size "240 KB">
+<!ENTITY man-version "1.6d">
+<!ENTITY man-size "268 KB">
 <!ENTITY man-url "http://primates.ximian.com/~flucifredi/man/man-&man-version;.tar.gz">
-<!ENTITY man-md5 "ac1e7d60dfedb7d1c6f398ae5b038996">
+<!ENTITY man-md5 "36d3f65bcc10f0754a3234e00d92ad6d">
 <!ENTITY man-home "http://primates.ximian.com/~flucifredi/man/">
 
 <!ENTITY man-pages-version "2.33">

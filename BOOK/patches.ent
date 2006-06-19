@@ -48,6 +48,10 @@
 <!ENTITY glibc-crosscompile_timezone_fix-patch-md5 "d46ffc949ebc894974d719c8235be6f6">
 <!ENTITY glibc-crosscompile_timezone_fix-patch-size "4 KB">
 
+<!ENTITY glibc-iconv_fix-patch "glibc-&glibc-version;-iconv_fix-1.patch">
+<!ENTITY glibc-iconv_fix-patch-md5 "9c8e681226ccf7a1f25c6467674f915e">
+<!ENTITY glibc-iconv_fix-patch-size "4 KB">
+
 <!ENTITY glibc-libgcc_eh-patch "glibc-&glibc-version;-libgcc_eh-1.patch">
 <!ENTITY glibc-libgcc_eh-patch-md5 "e5122ea7b89a5f22615eaadf8e46b334">
 <!ENTITY glibc-libgcc_eh-patch-size "1 KB">
