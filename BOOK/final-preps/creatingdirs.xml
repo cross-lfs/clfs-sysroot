@@ -16,12 +16,12 @@
 <screen><userinput>mkdir -pv ${LFS}/{bin,boot,dev,etc/opt,home,lib,mnt,opt}
 mkdir -pv ${LFS}/{proc,media/{floppy,cdrom},sbin,srv,sys,var}
 install -dv -m 0750 ${LFS}/root
-install -dv -m 1777 ${LFS}/tmp ${LFS}/var/tmp
+install -dv -m 1777 ${LFS}{/var,}/tmp
 mkdir -pv ${LFS}/usr/{,local/}{bin,include,lib,sbin,src}
 mkdir -pv ${LFS}/usr/{,local/}share/{doc,info,locale,man}
 mkdir -v  ${LFS}/usr/{,local/}share/{misc,terminfo,zoneinfo}
 mkdir -pv ${LFS}/usr/{,local/}share/man/man{1..8}
-for dir in ${LFS}/usr ${LFS}/usr/local; do
+for dir in ${LFS}/usr{,/local}; do
   ln -sv share/{man,doc,info} $dir
 done
 mkdir -v ${LFS}/var/{lock,log,mail,run,spool}
