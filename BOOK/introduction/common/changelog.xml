@@ -40,10 +40,13 @@
       <para>June 22, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Vim 7.0 fixes patch to -5.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to linux-headers-2.6.17.1-06212006.</para>
         </listitem>
         <listitem>
-          <para>[jciccone] - Updated Vim 7.0 patch.</para>
+          <para>[jciccone] - Updated Vim 7.0 fixes patch to -4.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Added mktemp to the Linux dependency list. New
