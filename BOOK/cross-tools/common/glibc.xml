@@ -226,8 +226,6 @@ localedef -i fr_FR@euro -f ISO-8859-15 fr_FR@euro
 localedef -i it_IT -f ISO-8859-1 it_IT
 localedef -i ja_JP -f EUC-JP ja_JP</userinput></screen>
 
-<screen role="nodump"><userinput>mkdir -pv /usr/lib/locale
-
     <para>Some locales installed by the <command>make
     localedata/install-locales</command> command above are not properly
     supported by some applications that are in the LFS and BLFS books. Because
