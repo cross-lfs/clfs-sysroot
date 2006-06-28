@@ -111,7 +111,7 @@ cp -v bits/stdio_lim.h ${LFS}/usr/include/bits</userinput></screen>
 
    <para os="r">For NPTL we use the following command:</para>
    
-<screen os="s"><userinput>cp -v ../glibc-&glibc-version;/../glibc-2.4/ports/sysdeps/unix/sysv/linux/arm/nptl/bits/pthreadtypes.h \
+<screen os="s"><userinput>cp -v ../glibc-&glibc-version;/ports/sysdeps/unix/sysv/linux/arm/nptl/bits/pthreadtypes.h \
     ${LFS}/usr/include/bits</userinput></screen>
 
   </sect2>
