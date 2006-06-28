@@ -126,7 +126,7 @@
           location occasionally remove older versions when new ones are
           released. An alternative download location that may have the
           correct version available is <ulink
-          url="http://www.linuxfromscratch.org/lfs/download.html#ftp"/>.</para>
+          url="&packages-root;"/>.</para>
         </note>
       </listitem>
     </varlistentry>
@@ -414,7 +414,7 @@
           location occasionally remove older versions when new ones are
           released. An alternative download location that may have the
           correct version available is <ulink
-          url="http://www.linuxfromscratch.org/lfs/download.html#ftp"/>.</para>
+          url="&packages-root;"/>.</para>
         </note>
       </listitem>
     </varlistentry>
