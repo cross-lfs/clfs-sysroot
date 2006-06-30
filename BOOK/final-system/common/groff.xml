@@ -36,7 +36,7 @@
 
     <para os="d">Compile the package:</para>
 
-<screen os="e"><userinput>make GROFFBIN=groff GROFF_BIN_PATH= GROFF_BIN_DIR=</userinput></screen>
+<screen os="e"><userinput>make TROFFBIN=troff GROFFBIN=groff GROFF_BIN_PATH=</userinput></screen>
 
     <para os="f">Install the package:</para>
 
