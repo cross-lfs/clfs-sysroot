@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!ENTITY month "06"> <!-- Use two digits -->
+<!ENTITY month_name "June">
+<!ENTITY day "28"> <!-- Use two digits -->
+<!ENTITY year "2006"> <!-- Use four digits -->
+
+<!ENTITY releasedate "&month_name; &day;, &year;">
+
 <!ENTITY major-version "2">
 <!ENTITY minor-version "0">
 <!ENTITY extra-version "0">
-
-<!ENTITY version "SVN-&major-version;.&minor-version;.&extra-version;-20060628">
-<!ENTITY releasedate "June 28, 2006">
 <!ENTITY milestone "2.0.0">
-<!ENTITY generic-version "svn-2.0"> <!-- Use "svn", "testing", or "x.y[-pre{x}]" -->
+<!ENTITY generic-version "svn-2.0"> <!-- Use "svn", "testing", or "x.y.z[-pre{x}]" -->
+
+<!ENTITY version "SVN-&major-version;.&minor-version;.&extra-version;-&year;&month;&day;">
 
 <!ENTITY version-ARM "&version;-ARM">
 
