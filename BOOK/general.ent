@@ -18,7 +18,7 @@
 <!ENTITY version-ARM "&version;-ARM">
 
 <!ENTITY lfs-root "http://www.linuxfromscratch.org/">
-<!ENTITY clfs-root "http:/trac.cross-lfs.org/">
+<!ENTITY clfs-root "http://trac.cross-lfs.org/">
 <!ENTITY blfs-root "&lfs-root;blfs/">
 <!ENTITY faq-root "&lfs-root;faq/">
 <!ENTITY hints-root "&lfs-root;hints/downloads/files/">
