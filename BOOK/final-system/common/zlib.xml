@@ -40,7 +40,7 @@
 
     <para os="e">Install the pacakge:</para>
 
-<screen os="f"><userinput>make prefix=${LFS}/usr install</userinput></screen>
+<screen os="f"><userinput>make prefix=${CLFS}/usr install</userinput></screen>
 
     <para os="g">The previous command installed a <filename
     class="extension">.so</filename> file in <filename
@@ -48,12 +48,12 @@
     <filename class="directory">/lib</filename> and then relink it
     to <filename class="directory">/usr/lib</filename>:</para>
 
-<screen os="h"><userinput>mv -v ${LFS}/usr/lib/libz.so.* ${LFS}/lib
-ln -svf ../../lib/libz.so.1 ${LFS}/usr/lib/libz.so</userinput></screen>
+<screen os="h"><userinput>mv -v ${CLFS}/usr/lib/libz.so.* ${CLFS}/lib
+ln -svf ../../lib/libz.so.1 ${CLFS}/usr/lib/libz.so</userinput></screen>
 
     <para os="i">Now we fix the permissions on the static library:</para>
 
-<screen os="j"><userinput>chmod -v 644 ${LFS}/usr/lib/libz.a</userinput></screen>
+<screen os="j"><userinput>chmod -v 644 ${CLFS}/usr/lib/libz.a</userinput></screen>
 
   </sect2>
 

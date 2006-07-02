@@ -39,7 +39,7 @@ sed -e 's/-s $(PROG)/$(PROG)/' Makefile.in.orig &gt; Makefile.in</userinput></sc
 
     <para os="c">Prepare Mktemp for compilation:</para>
 
-<screen os="d"><userinput>./configure --prefix=/usr --with-libc  --host=${LFS_TARGET}</userinput></screen>
+<screen os="d"><userinput>./configure --prefix=/usr --with-libc  --host=${CLFS_TARGET}</userinput></screen>
 
     <variablelist os="e">
       <title>The meaning of the configure option:</title>
@@ -60,8 +60,8 @@ sed -e 's/-s $(PROG)/$(PROG)/' Makefile.in.orig &gt; Makefile.in</userinput></sc
 
     <para os="h">Install the package:</para>
 
-<screen os="i"><userinput>make prefix=${LFS}/usr install
-make prefix=${LFS}/usr install-tempfile</userinput></screen>
+<screen os="i"><userinput>make prefix=${CLFS}/usr install
+make prefix=${CLFS}/usr install-tempfile</userinput></screen>
 
   </sect2>
 

@@ -42,7 +42,7 @@
 
 <screen os="e"><userinput>./configure --libdir=/lib --sysconfdir=/etc --enable-shared \
     --without-libpam --without-audit --without-selinux \
-    --host=${LFS_TARGET} --cache-file=config.cache</userinput></screen>
+    --host=${CLFS_TARGET} --cache-file=config.cache</userinput></screen>
 
 <para os="f">The meaning of the configure options:</para>
 
@@ -83,7 +83,7 @@ sed '/groups/d' man/Makefile.orig &gt; man/Makefile</userinput></screen>
 
     <para os="l">Install the package:</para>
 
-<screen os="m"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="m"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para id="shadow-login_defs" os="r">Instead of using the default
     <emphasis>crypt</emphasis> method, use the more secure
@@ -99,10 +99,10 @@ sed '/groups/d' man/Makefile.orig &gt; man/Makefile</userinput></screen>
       <primary sortas="e-/etc/login.defs">/etc/login.defs</primary>
     </indexterm>
 
-<screen os="t"><userinput>cp ${LFS}/etc/login.defs login.defs.orig
+<screen os="t"><userinput>cp ${CLFS}/etc/login.defs login.defs.orig
 sed -e's@#MD5_CRYPT_ENAB.no@MD5_CRYPT_ENAB yes@' \
     -e 's@/var/spool/mail@/var/mail@' \
-    login.defs.orig &gt; ${LFS}/etc/login.defs</userinput></screen>
+    login.defs.orig &gt; ${CLFS}/etc/login.defs</userinput></screen>
 
     <note os="u">
       <para>If you built Shadow with Cracklib support, execute
@@ -110,19 +110,19 @@ sed -e's@#MD5_CRYPT_ENAB.no@MD5_CRYPT_ENAB yes@' \
       dictionary:</para>
 
 <screen><userinput>cp {LFS}/etc/login.defs login.defs.orig
-sed 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' login.defs.orig &gt; ${LFS}/etc/login.defs</userinput></screen>
+sed 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' login.defs.orig &gt; ${CLFS}/etc/login.defs</userinput></screen>
     </note>
 
     <para os="v">Move a misplaced program to its proper location:</para>
 
-<screen os="w"><userinput>mv -v ${LFS}/usr/bin/passwd ${LFS}/bin</userinput></screen>
+<screen os="w"><userinput>mv -v ${CLFS}/usr/bin/passwd ${CLFS}/bin</userinput></screen>
 
     <para os="x">Move Shadow's dynamic libraries to a more appropriate
     location:</para>
 
-<screen os="y"><userinput>mv -v ${LFS}/lib/libshadow.*a ${LFS}/usr/lib
-rm -v ${LFS}/lib/libshadow.so
-ln -svf ../../lib/libshadow.so.0 ${LFS}/usr/lib/libshadow.so</userinput></screen>
+<screen os="y"><userinput>mv -v ${CLFS}/lib/libshadow.*a ${CLFS}/usr/lib
+rm -v ${CLFS}/lib/libshadow.so
+ln -svf ../../lib/libshadow.so.0 ${CLFS}/usr/lib/libshadow.so</userinput></screen>
 
   </sect2>
 

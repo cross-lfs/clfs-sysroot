@@ -76,7 +76,7 @@ sed 's@)) |@) |@' src/makewhatis.sh.orig &gt; src/makewhatis.sh</userinput></scr
 
     <para os="o">Install the package:</para>
 
-<screen os="p"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="p"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <note os="q">
       <para>If you will be working on a terminal that does not support

@@ -37,7 +37,7 @@ cd build</userinput></screen>
 
 <screen os="d"><userinput>../configure --prefix=/usr --with-root-prefix="" \
     --enable-elf-shlibs --disable-evms \
-    --host=${LFS_TARGET}</userinput></screen>
+    --host=${CLFS_TARGET}</userinput></screen>
 
     <variablelist os="e">
       <title>The meaning of the configure options:</title>
@@ -84,11 +84,11 @@ cd build</userinput></screen>
 
     <para os="h">Install the binaries and documentation:</para>
 
-<screen os="i"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="i"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="j">Install the shared libraries:</para>
 
-<screen os="k"><userinput>make DESTDIR=${LFS} install-libs</userinput></screen>
+<screen os="k"><userinput>make DESTDIR=${CLFS} install-libs</userinput></screen>
 
   </sect2>
 

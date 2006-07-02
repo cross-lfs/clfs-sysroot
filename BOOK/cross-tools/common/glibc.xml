@@ -73,17 +73,17 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
     <para os="f">The following line needs to be added to
     <filename>configparms</filename> to adjust instalation paths:</para>
 
-<screen os="g"><userinput>echo "install_root=${LFS}" &gt; configparms</userinput></screen>
+<screen os="g"><userinput>echo "install_root=${CLFS}" &gt; configparms</userinput></screen>
 
     <para os="h">Prepare Glibc for compilation:</para>
 
-<screen os="i"><userinput>BUILD_CC="gcc" CC="${LFS_TARGET}-gcc" \
-    AR="${LFS_TARGET}-ar" RANLIB="${LFS_TARGET}-ranlib" \
+<screen os="i"><userinput>BUILD_CC="gcc" CC="${CLFS_TARGET}-gcc" \
+    AR="${CLFS_TARGET}-ar" RANLIB="${CLFS_TARGET}-ranlib" \
     ../glibc-&glibc-version;/configure --prefix=/usr --libexecdir=/usr/lib/glibc \
-    --host=${LFS_TARGET} --build=${LFS_HOST} \
+    --host=${CLFS_TARGET} --build=${CLFS_HOST} \
     --disable-profile --enable-add-ons \
     --with-tls --enable-kernel=2.6.0 --with-__thread \
-    --with-binutils=${LFS}/cross-tools/bin --with-headers=${LFS}/usr/include \
+    --with-binutils=${CLFS}/cross-tools/bin --with-headers=${CLFS}/usr/include \
     --cache-file=config.cache</userinput></screen>
 
     <variablelist os="j">
@@ -98,7 +98,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
       </varlistentry>
 
       <varlistentry os="j2">
-        <term><parameter>CC="${LFS_TARGET}-gcc"</parameter></term>
+        <term><parameter>CC="${CLFS_TARGET}-gcc"</parameter></term>
         <listitem>
           <para>This forces Glibc to use the GCC compiler that we made for our target
           architecture.</para>
@@ -106,7 +106,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
       </varlistentry>
 
       <varlistentry os="j3">
-        <term><parameter>AR="${LFS_TARGET}-ar"</parameter></term>
+        <term><parameter>AR="${CLFS_TARGET}-ar"</parameter></term>
         <listitem>
           <para>This forces Glibc to use the <command>ar</command> utility
           we made for our target architecture.</para>
@@ -114,7 +114,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
       </varlistentry>
 
       <varlistentry os="j4">
-        <term><parameter>RANLIB="${LFS_TARGET}-ranlib"</parameter></term>
+        <term><parameter>RANLIB="${CLFS_TARGET}-ranlib"</parameter></term>
         <listitem>
           <para>This forces Glibc to use the <command>ranlib</command> utility
           we made for our target architecture.</para>
@@ -153,7 +153,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
       </varlistentry>
 
       <varlistentry os="j9">
-        <term><parameter>--with-binutils=${LFS}/cross-tools/bin</parameter></term>
+        <term><parameter>--with-binutils=${CLFS}/cross-tools/bin</parameter></term>
         <listitem>
           <para>This tells Glibc to use the Binutils that are specific to
           our target architecture.</para>
@@ -213,7 +213,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
     will install the minimum set of locales necessary for the tests to run
     successfully:</para>
 
-<screen role="nodump"><userinput>mkdir -pv ${LFS}/usr/lib/locale
+<screen role="nodump"><userinput>mkdir -pv ${CLFS}/usr/lib/locale
 localedef -i de_DE -f ISO-8859-1 de_DE
 localedef -i de_DE@euro -f ISO-8859-15 de_DE@euro
 localedef -i en_HK -f ISO-8859-1 en_HK
@@ -262,7 +262,7 @@ localedef -i ja_JP -f EUC-JP ja_JP</userinput></screen>
     <para>Create a new file <filename>/etc/nsswitch.conf</filename> by running
     the following:</para>
 
-<screen><userinput>cat &gt; ${LFS}/etc/nsswitch.conf &lt;&lt; "EOF"
+<screen><userinput>cat &gt; ${CLFS}/etc/nsswitch.conf &lt;&lt; "EOF"
 <literal># Begin /etc/nsswitch.conf
 
 passwd: files
@@ -282,15 +282,15 @@ EOF</userinput></screen>
 
     <para>To determine the local time zone, run the following script:</para>
 
-<screen role="nodump"><userinput>${LFS}/usr/bin/tzselect</userinput></screen>
+<screen role="nodump"><userinput>${CLFS}/usr/bin/tzselect</userinput></screen>
 
     <para>After answering a few questions about the location, the script will
     output the name of the time zone (e.g., <emphasis>EST5EDT</emphasis> or
     <emphasis>Canada/Eastern</emphasis>). Then create the
     <filename>/etc/localtime</filename> file by running:</para>
 
-<screen><userinput>cp -v --remove-destination ${LFS}/usr/share/zoneinfo/<replaceable>[xxx]</replaceable> \
-    ${LFS}/etc/localtime</userinput></screen>
+<screen><userinput>cp -v --remove-destination ${CLFS}/usr/share/zoneinfo/<replaceable>[xxx]</replaceable> \
+    ${CLFS}/etc/localtime</userinput></screen>
 
     <para>Replace <replaceable>[xxx]</replaceable> with the name of the time zone
     that <command>tzselect</command> provided (e.g., Canada/Eastern).</para>
@@ -336,7 +336,7 @@ EOF</userinput></screen>
     <para>Create a new file <filename>/etc/ld.so.conf</filename> by running the
     following:</para>
 
-<screen><userinput>cat &gt; ${LFS}/etc/ld.so.conf &lt;&lt; "EOF"
+<screen><userinput>cat &gt; ${CLFS}/etc/ld.so.conf &lt;&lt; "EOF"
 <literal># Begin /etc/ld.so.conf
 
 /usr/local/lib

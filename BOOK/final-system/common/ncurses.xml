@@ -28,7 +28,7 @@
     <para os="a">Prepare Ncurses for compilation:</para>
 
 <screen os="b"><userinput>./configure --prefix=/usr --libdir=/lib \
-   --host=${LFS_TARGET} --with-shared \
+   --host=${CLFS_TARGET} --with-shared \
    --without-debug --without-ada --with-build-cc=gcc</userinput></screen>
 
     <para os="c">Compile the package:</para>
@@ -37,24 +37,24 @@
 
     <para os="e">Install the package:</para>
 
-<screen os="f"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="g">Move the Ncurses static libraries to the proper location:</para>
 
-<screen os="h"><userinput>mv -v ${LFS}/lib/lib{panel,menu,form,ncurses,ncurses++,curses}.a ${LFS}/usr/lib</userinput></screen>
+<screen os="h"><userinput>mv -v ${CLFS}/lib/lib{panel,menu,form,ncurses,ncurses++,curses}.a ${CLFS}/usr/lib</userinput></screen>
 
     <para os="i">Create symlinks in <filename class="directory">/usr/lib:</filename></para>
 
-<screen os="j"><userinput>rm -v ${LFS}/lib/lib{ncurses,menu,panel,form,curses}.so
-ln -svf ../../lib/libncurses.so.5 ${LFS}/usr/lib/libcurses.so
-ln -svf ../../lib/libncurses.so.5 ${LFS}/usr/lib/libncurses.so
-ln -svf ../../lib/libmenu.so.5 ${LFS}/usr/lib/libmenu.so
-ln -svf ../../lib/libpanel.so.5 ${LFS}/usr/lib/libpanel.so
-ln -svf ../../lib/libform.so.5 ${LFS}/usr/lib/libform.so</userinput></screen>
+<screen os="j"><userinput>rm -v ${CLFS}/lib/lib{ncurses,menu,panel,form,curses}.so
+ln -svf ../../lib/libncurses.so.5 ${CLFS}/usr/lib/libcurses.so
+ln -svf ../../lib/libncurses.so.5 ${CLFS}/usr/lib/libncurses.so
+ln -svf ../../lib/libmenu.so.5 ${CLFS}/usr/lib/libmenu.so
+ln -svf ../../lib/libpanel.so.5 ${CLFS}/usr/lib/libpanel.so
+ln -svf ../../lib/libform.so.5 ${CLFS}/usr/lib/libform.so</userinput></screen>
 
     <para os="k">Give the Ncurses libraries execute permissions:</para>
 
-<screen os="l"><userinput>chmod -v 755 ${LFS}/lib/lib{panel,menu,form,ncurses}.so.&ncurses-version;</userinput></screen>
+<screen os="l"><userinput>chmod -v 755 ${CLFS}/lib/lib{panel,menu,form,ncurses}.so.&ncurses-version;</userinput></screen>
 
   </sect2>
 

@@ -46,7 +46,7 @@ sed "s|htmldir = @htmldir@|htmldir = /usr/share/doc/bash-&bash-version;|" \
     <para os="e">Prepare Bash for compilation:</para>
 
 <screen os="f"><userinput>./configure --prefix=/usr --bindir=/bin \
-    --host=${LFS_TARGET} --cache-file=config.cache \
+    --host=${CLFS_TARGET} --cache-file=config.cache \
     --without-bash-malloc --with-installed-readline</userinput></screen>
 
     <variablelist os="g">
@@ -69,11 +69,11 @@ sed "s|htmldir = @htmldir@|htmldir = /usr/share/doc/bash-&bash-version;|" \
 
     <para os="j">Install the package:</para>
 
-<screen os="k"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="k"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="l">Create /bin/sh:</para>
 
-<screen os="m" role="nodump"><userinput>ln -sv bash ${LFS}/bin/sh</userinput></screen>
+<screen os="m" role="nodump"><userinput>ln -sv bash ${CLFS}/bin/sh</userinput></screen>
 
   </sect2>
 

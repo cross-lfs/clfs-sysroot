@@ -139,7 +139,7 @@ LC_ALL=[locale name] locale int_prefix</userinput></screen>
   <para>Once the proper locale settings have been determined, create the
   <filename>/etc/profile</filename> file:</para>
 
-<screen><userinput>cat &gt; ${LFS}/etc/profile &lt;&lt; "EOF"
+<screen><userinput>cat &gt; ${CLFS}/etc/profile &lt;&lt; "EOF"
 <literal># Begin /etc/profile
 
 export LANG=<replaceable>[ll]</replaceable>_<replaceable>[CC]</replaceable>.<replaceable>[charmap]</replaceable>

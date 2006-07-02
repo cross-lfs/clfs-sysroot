@@ -29,11 +29,11 @@
     replaces these rules. So we must first remove all the old rule
     sets:</para>
 
-<screen os="b"><userinput>rm -vf ${LFS}/etc/udev/rules.d/*</userinput></screen>
+<screen os="b"><userinput>rm -vf ${CLFS}/etc/udev/rules.d/*</userinput></screen>
 
     <para os="c">Install the package:</para>
 
-<screen os="d"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="d"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
   </sect2>
 

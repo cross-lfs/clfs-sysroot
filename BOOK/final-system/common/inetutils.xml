@@ -44,7 +44,7 @@ done</userinput></screen>
 
     <para os="a">Prepare Inetutils for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/usr --host=${LFS_TARGET} \
+<screen os="b"><userinput>./configure --prefix=/usr --host=${CLFS_TARGET} \
     --libexecdir=/usr/sbin --sysconfdir=/etc \
     --localstatedir=/var --disable-logger \
     --disable-syslogd --disable-whois --disable-servers</userinput></screen>
@@ -101,12 +101,12 @@ done</userinput></screen>
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="g"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="h">Move the <command>ping</command> program to its FHS-compliant
     place:</para>
 
-<screen os="i"><userinput>mv -v ${LFS}/usr/bin/ping ${LFS}/bin</userinput></screen>
+<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/ping ${CLFS}/bin</userinput></screen>
 
   </sect2>
 

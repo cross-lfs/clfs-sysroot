@@ -42,7 +42,7 @@ sed -e 's/-o ${MAN_USER} -g ${MAN_GROUP}//' \
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make prefix=${LFS} install</userinput></screen>
+<screen os="g"><userinput>make prefix=${CLFS} install</userinput></screen>
 
   </sect2>
 
@@ -60,7 +60,7 @@ sed -e 's/-o ${MAN_USER} -g ${MAN_GROUP}//' \
     <para>Create a new <filename>/etc/syslog.conf</filename> file by running
     the following:</para>
 
-<screen><userinput>cat &gt; ${LFS}/etc/syslog.conf &lt;&lt; "EOF"
+<screen><userinput>cat &gt; ${CLFS}/etc/syslog.conf &lt;&lt; "EOF"
 <literal># Begin /etc/syslog.conf
 
 auth,authpriv.* -/var/log/auth.log

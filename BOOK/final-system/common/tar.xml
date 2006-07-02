@@ -42,7 +42,7 @@ GCC-&gcc-version;:</para>
     <para os="a">Prepare Tar for compilation:</para>
 
 <screen os="b"><userinput>./configure --prefix=/usr --bindir=/bin \
-    --libexecdir=/usr/sbin --host=${LFS_TARGET}</userinput></screen>
+    --libexecdir=/usr/sbin --host=${CLFS_TARGET}</userinput></screen>
 
     <para os="c">Compile the package:</para>
 
@@ -50,7 +50,7 @@ GCC-&gcc-version;:</para>
 
     <para os="e">Install the package:</para>
 
-<screen os="f"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
   </sect2>
 

@@ -27,7 +27,7 @@
 
     <para os="a">Compile the package:</para>
 
-<screen os="b"><userinput>make CROSS_COMPILE="${LFS_TARGET}-" CC="${CC}" LD="${CC}" \
+<screen os="b"><userinput>make CROSS_COMPILE="${CLFS_TARGET}-" CC="${CC}" LD="${CC}" \
     EXTRAS="extras/floppy extras/cdrom_id extras/firmware \
     extras/scsi_id extras/volume_id extras/ata_id extras/usb_id \
     extras/edd_id extras/dasd_id extras/path_id" udevdir=/dev</userinput></screen>
@@ -49,25 +49,25 @@
 
     <para os="c">Install the package:</para>
 
-<screen os="d"><userinput>make DESTDIR="${LFS}" \
+<screen os="d"><userinput>make DESTDIR="${CLFS}" \
     EXTRAS="extras/floppy extras/cdrom_id extras/firmware \
     extras/scsi_id extras/volume_id extras/ata_id extras/usb_id \
     extras/edd_id extras/dasd_id extras/path_id" udevdir=/dev install</userinput></screen>
 
     <para os="e">Install necessary helpers.</para>
 
-<screen os="f"><userinput>install -v extras/eventrecorder.sh ${LFS}/lib/udev</userinput></screen>
+<screen os="f"><userinput>install -v extras/eventrecorder.sh ${CLFS}/lib/udev</userinput></screen>
 
     <para os="g">Install the documentation that explains how to create
     Udev rules:</para>
 
 <screen os="h"><userinput>install -v -m644 -D docs/writing_udev_rules/index.html \
-    ${LFS}/usr/share/doc/udev-&udev-version;/index.html</userinput></screen>
+    ${CLFS}/usr/share/doc/udev-&udev-version;/index.html</userinput></screen>
 
     <para os="i">Create a directory for storing firmware that can be
     loaded by <command>udev</command>:</para>
 
-<screen os="j"><userinput>install -dv ${LFS}/lib/firmware</userinput></screen>
+<screen os="j"><userinput>install -dv ${CLFS}/lib/firmware</userinput></screen>
 
   </sect2>
 

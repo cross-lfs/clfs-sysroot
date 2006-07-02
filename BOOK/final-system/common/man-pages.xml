@@ -26,7 +26,7 @@
 
     <para os="a">Install Man-pages by running:</para>
 
-<screen os="b"><userinput>make prefix=${LFS} install</userinput></screen>
+<screen os="b"><userinput>make prefix=${CLFS} install</userinput></screen>
 
   </sect2>
 

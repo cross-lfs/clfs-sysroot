@@ -27,7 +27,7 @@
     <para os="a">Prepare Sed for compilation:</para>
 
 <screen os="b"><userinput>./configure --prefix=/usr --bindir=/bin \
-    --host=${LFS_TARGET} --enable-html</userinput></screen>
+    --host=${CLFS_TARGET} --enable-html</userinput></screen>
 
     <variablelist os="c">
       <title>The meaning of the new configure option:</title>
@@ -47,7 +47,7 @@
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="g"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
   </sect2>
 

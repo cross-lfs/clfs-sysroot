@@ -41,7 +41,7 @@
   <para os="d">Create a new file <filename>/etc/sysconfig/clock</filename> by running
   the following:</para>
 
-<screen><userinput>cat &gt; ${LFS}/etc/sysconfig/clock &lt;&lt; "EOF"
+<screen><userinput>cat &gt; ${CLFS}/etc/sysconfig/clock &lt;&lt; "EOF"
 <literal># Begin /etc/sysconfig/clock
 
 UTC=1

@@ -27,7 +27,7 @@
 
     <para os="a">Prepare Module-Init-Tools for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/ --enable-zlib --host=${LFS_TARGET}</userinput></screen>
+<screen os="b"><userinput>./configure --prefix=/ --enable-zlib --host=${CLFS_TARGET}</userinput></screen>
 
     <variablelist os="c">
       <title>The meaning of the configure options:</title>
@@ -48,7 +48,7 @@
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make DESTDIR=${LFS} INSTALL=install install</userinput></screen>
+<screen os="g"><userinput>make DESTDIR=${CLFS} INSTALL=install install</userinput></screen>
 
     <variablelist os="h">
       <title>The meaning of the make parameter:</title>

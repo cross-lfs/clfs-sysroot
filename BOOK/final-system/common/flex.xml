@@ -32,7 +32,7 @@ sed "s/-I@includedir@//g" Makefile.in.orig &gt; Makefile.in</userinput></screen>
 
     <para os="c">Prepare Flex for compilation:</para>
 
-<screen os="d"><userinput>./configure --prefix=/usr --host=${LFS_TARGET}</userinput></screen>
+<screen os="d"><userinput>./configure --prefix=/usr --host=${CLFS_TARGET}</userinput></screen>
 
     <para os="e">Compile the package:</para>
 
@@ -40,14 +40,14 @@ sed "s/-I@includedir@//g" Makefile.in.orig &gt; Makefile.in</userinput></screen>
 
     <para os="g">Install the package:</para>
 
-<screen os="h"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="h"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="i">There are some packages that expect to find the
     <filename class="libraryfile">lex</filename> library in <filename
     class="directory">/usr/lib</filename>. Create a symlink to account for
     this:</para>
 
-<screen os="j"><userinput>ln -sv libfl.a ${LFS}/usr/lib/libl.a</userinput></screen>
+<screen os="j"><userinput>ln -sv libfl.a ${CLFS}/usr/lib/libl.a</userinput></screen>
 
     <para os="k">A few programs do not know about <command>flex</command> yet and
     try to run its predecessor, <command>lex</command>. To support those
@@ -55,7 +55,7 @@ sed "s/-I@includedir@//g" Makefile.in.orig &gt; Makefile.in</userinput></screen>
     calls <filename>flex</filename> in <command>lex</command> emulation
     mode:</para>
 
-<screen os="l"><userinput>cat &gt; ${LFS}/usr/bin/lex &lt;&lt; "EOF"
+<screen os="l"><userinput>cat &gt; ${CLFS}/usr/bin/lex &lt;&lt; "EOF"
 <literal>#!/bin/sh
 # Begin /usr/bin/lex
 
@@ -63,7 +63,7 @@ exec /usr/bin/flex -l "$@"
 
 # End /usr/bin/lex</literal>
 EOF
-chmod -v 755 ${LFS}/usr/bin/lex</userinput></screen>
+chmod -v 755 ${CLFS}/usr/bin/lex</userinput></screen>
 
   </sect2>
 

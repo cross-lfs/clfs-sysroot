@@ -65,7 +65,7 @@ sed '/^TARGETS/s@arpd@@g' misc/Makefile.orig &gt; misc/Makefile</userinput></scr
 
     <para os="e">Install the package:</para>
 
-<screen os="f"><userinput>make DESTDIR=${LFS} SBINDIR=/sbin install</userinput></screen>
+<screen os="f"><userinput>make DESTDIR=${CLFS} SBINDIR=/sbin install</userinput></screen>
 
   </sect2>
 

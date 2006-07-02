@@ -33,7 +33,7 @@
     <para os="c">Prepare Gawk for compilation:</para>
 
 <screen os="d"><userinput>./configure --prefix=/usr --libexecdir=/usr/lib \
-    --build=${LFS_HOST} --host=${LFS_TARGET}</userinput></screen>
+    --build=${CLFS_HOST} --host=${CLFS_TARGET}</userinput></screen>
 
     <para os="e">Compile the package:</para>
 
@@ -41,7 +41,7 @@
 
     <para os="g">Install the package:</para>
 
-<screen os="h"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="h"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
   </sect2>
 

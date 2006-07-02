@@ -33,7 +33,7 @@
 
     <para os="c">Install the package:</para>
 
-<screen os="d"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="d"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
   </sect2>
 

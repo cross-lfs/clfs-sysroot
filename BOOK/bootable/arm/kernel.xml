@@ -53,7 +53,7 @@
     packages outside of LFS at <ulink
     url="&blfs-root;view/svn/longindex.html#kernel-config-index"/>:</para>
 
-<screen os="i"><userinput>make ARCH=arm CROSS_COMPILE=${LFS_TARGET}- menuconfig</userinput></screen>
+<screen os="i"><userinput>make ARCH=arm CROSS_COMPILE=${CLFS_TARGET}- menuconfig</userinput></screen>
 
     <para os="j">Alternatively, <command>make oldconfig</command> may be more
     appropriate in some situations. See the <filename>README</filename>
@@ -68,7 +68,7 @@
 
     <para os="m">Compile the kernel image and modules:</para>
 
-<screen os="n"><userinput>make ARCH=arm CROSS_COMPILE=${LFS_TARGET}-</userinput></screen>
+<screen os="n"><userinput>make ARCH=arm CROSS_COMPILE=${CLFS_TARGET}-</userinput></screen>
 
     <para os="o">If using kernel modules, an
     <filename>/etc/modprobe.conf</filename> file may be needed.
@@ -96,30 +96,30 @@
     <para os="s">Install the modules, if the kernel configuration uses
     them:</para>
 
-<screen os="t"><userinput>make ARCH=arm CROSS_COMPILE=${LFS_TARGET}- \
-    INSTALL_MOD_PATH=${LFS} modules_install</userinput></screen>
+<screen os="t"><userinput>make ARCH=arm CROSS_COMPILE=${CLFS_TARGET}- \
+    INSTALL_MOD_PATH=${CLFS} modules_install</userinput></screen>
 
     <para os="u">After kernel compilation is complete, additional steps are
     required to complete the installation. Some files need to be copied to
-    the <filename class="directory">${LFS}/boot</filename> directory.</para>
+    the <filename class="directory">${CLFS}/boot</filename> directory.</para>
 
     <para os="v">Issue the following command to install the kernel:</para>
 
-<screen><userinput>cp arch/i386/boot/bzImage ${LFS}/boot/lfskernel-&linux-version;</userinput></screen>
+<screen><userinput>cp arch/i386/boot/bzImage ${CLFS}/boot/lfskernel-&linux-version;</userinput></screen>
 
     <para os="w"><filename>System.map</filename> is a symbol file for the kernel.
     It maps the function entry points of every function in the kernel API,
     as well as the addresses of the kernel data structures for the running
     kernel. Issue the following command to install the map file:</para>
 
-<screen os="w1"><userinput>cp System.map ${LFS}/boot/System.map-&linux-version;</userinput></screen>
+<screen os="w1"><userinput>cp System.map ${CLFS}/boot/System.map-&linux-version;</userinput></screen>
 
     <para os="x">The kernel configuration file <filename>.config</filename>
     produced by the <command>make menuconfig</command> step above contains
     all the configuration selections for the kernel that was just compiled.
     It is a good idea to keep this file for future reference:</para>
 
-<screen os="x1"><userinput>cp .config ${LFS}/boot/config-&linux-version;</userinput></screen>
+<screen os="x1"><userinput>cp .config ${CLFS}/boot/config-&linux-version;</userinput></screen>
 
     <warning os="z">
       <para>Some kernel documentation recommends creating a symlink from

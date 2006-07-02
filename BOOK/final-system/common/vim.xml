@@ -55,7 +55,7 @@
 
     <para os="d">Prepare Vim for compilation:</para>
 
-<screen os="e"><userinput>./configure --prefix=/usr --host=${LFS_TARGET} \
+<screen os="e"><userinput>./configure --prefix=/usr --host=${CLFS_TARGET} \
     --enable-multibyte --enable-gui=no \
     --disable-gtktest --disable-xim \
     --with-features=normal --disable-gpm \
@@ -85,7 +85,7 @@
 
     <para os="i">Install the package:</para>
 
-<screen os="j"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="j"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="k">Many users are accustomed to using <command>vi</command>
     instead of <command>vim</command>. Some programs, such as
@@ -94,7 +94,7 @@
     <command>vim</command> when users habitually enter <command>vi</command>
     and allow programs that use <command>vi</command> to work:</para>
 
-<screen os="l"><userinput>ln -sv vim ${LFS}/usr/bin/vi</userinput></screen>
+<screen os="l"><userinput>ln -sv vim ${CLFS}/usr/bin/vi</userinput></screen>
 
 <para os="m">By default, Vim's documentation is installed in
 <filename class="directory">/usr/share/vim</filename>.  The following symlink
@@ -102,7 +102,7 @@ allows the documentation to be accessed via
 <filename class="directory">/usr/share/doc/vim-&vim-version;</filename>, making
 it consistent with the location of documentation for other packages:</para>
 
-<screen os="n"><userinput>ln -sv ../vim/vim&vim-version2;/doc ${LFS}/usr/share/doc/vim-&vim-version;</userinput></screen>
+<screen os="n"><userinput>ln -sv ../vim/vim&vim-version2;/doc ${CLFS}/usr/share/doc/vim-&vim-version;</userinput></screen>
 
     <para os="o">If an X Window System is going to be installed on the LFS
     system, you may want to recompile Vim after installing X. Vim
@@ -131,7 +131,7 @@ it consistent with the location of documentation for other packages:</para>
     default <command>vim</command> configuration file by running the
     following:</para>
 
-<screen><userinput>cat &gt; ${LFS}/etc/vimrc &lt;&lt; "EOF"
+<screen><userinput>cat &gt; ${CLFS}/etc/vimrc &lt;&lt; "EOF"
 <literal>" Begin /etc/vimrc
 
 set nocompatible

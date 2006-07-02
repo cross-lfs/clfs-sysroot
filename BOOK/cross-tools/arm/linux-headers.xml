@@ -36,22 +36,22 @@
 
     <para os="b">Install the header files that are common to all architectures:</para>
 
-<screen os="c"><userinput>install -dv ${LFS}/usr/include/{asm,asm-generic,linux,net,mtd,scsi,sound}
-cp -av include/asm-generic/* ${LFS}/usr/include/asm-generic
-cp -av include/linux/* ${LFS}/usr/include/linux
-cp -av include/mtd/* ${LFS}/usr/include/mtd
-cp -av include/net/* ${LFS}/usr/include/net
-cp -av include/scsi/* ${LFS}/usr/include/scsi
-cp -av include/sound/* ${LFS}/usr/include/sound</userinput></screen>
+<screen os="c"><userinput>install -dv ${CLFS}/usr/include/{asm,asm-generic,linux,net,mtd,scsi,sound}
+cp -av include/asm-generic/* ${CLFS}/usr/include/asm-generic
+cp -av include/linux/* ${CLFS}/usr/include/linux
+cp -av include/mtd/* ${CLFS}/usr/include/mtd
+cp -av include/net/* ${CLFS}/usr/include/net
+cp -av include/scsi/* ${CLFS}/usr/include/scsi
+cp -av include/sound/* ${CLFS}/usr/include/sound</userinput></screen>
 
     <para os="d">Install the header files that are specific to this architecture:</para>
 
-<screen><userinput>cp -av include/asm-arm/* ${LFS}/usr/include/asm</userinput></screen>
+<screen><userinput>cp -av include/asm-arm/* ${CLFS}/usr/include/asm</userinput></screen>
 
     <para os="e">Make sure the users can read the headers:</para>
 
-<screen os="f"><userinput>find ${LFS}/usr/include/{asm,asm-generic,linux,mtd,net,scsi,sound} -type d -exec chmod -v 755 {} \;
-find ${LFS}/usr/include/{asm,asm-generic,linux,mtd,net,scsi,sound} -type f -exec chmod -v 644 {} \;</userinput></screen>
+<screen os="f"><userinput>find ${CLFS}/usr/include/{asm,asm-generic,linux,mtd,net,scsi,sound} -type d -exec chmod -v 755 {} \;
+find ${CLFS}/usr/include/{asm,asm-generic,linux,mtd,net,scsi,sound} -type f -exec chmod -v 644 {} \;</userinput></screen>
 
   </sect2>
 

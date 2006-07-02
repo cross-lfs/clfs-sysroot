@@ -39,7 +39,7 @@ sed -e "/^install  :=/s/--owner 0 --group 0//" \
 
     <para os="c">Install the package:</para>
 
-<screen os="d"><userinput>make DESTDIR=${LFS} lib64=lib install</userinput></screen>
+<screen os="d"><userinput>make DESTDIR=${CLFS} lib64=lib install</userinput></screen>
 
   </sect2>
 

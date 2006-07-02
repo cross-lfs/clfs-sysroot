@@ -39,7 +39,7 @@ echo "fu_cv_sys_stat_statfs2_bsize=yes" &gt;&gt; config.cache</userinput></scree
     <para os="c">Now prepare Coreutils for compilation:</para>
 
 <screen os="d"><userinput>./configure --prefix=/usr --cache-file=config.cache \
-   --build=${LFS_HOST} --host=${LFS_TARGET}</userinput></screen>
+   --build=${CLFS_HOST} --host=${CLFS_TARGET}</userinput></screen>
 
     <para os="e">Compile the package:</para>
 
@@ -47,23 +47,23 @@ echo "fu_cv_sys_stat_statfs2_bsize=yes" &gt;&gt; config.cache</userinput></scree
 
     <para os="g">Install the package:</para>
 
-<screen os="h"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="h"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="i">Move programs to the locations specified by the FHS:</para>
 
-<screen os="j"><userinput>mv -v ${LFS}/usr/bin/{[,basename,cat,chgrp,chmod,chown,cp} ${LFS}/bin
-mv -v ${LFS}/usr/bin/{date,dd,df,echo,false,hostname,install,ln} ${LFS}/bin
-mv -v ${LFS}/usr/bin/{ls,mkdir,mknod,mv,nice,pwd,readlink,rm,rmdir,sync} ${LFS}/bin
-mv -v ${LFS}/usr/bin/{stty,test,touch,true,uname} ${LFS}/bin
-mv -v ${LFS}/usr/bin/chroot ${LFS}/usr/sbin
-ln -svf ../../bin/install ${LFS}/usr/bin</userinput></screen>
+<screen os="j"><userinput>mv -v ${CLFS}/usr/bin/{cat,chgrp,chmod,chown,cp,date} ${CLFS}/bin
+mv -v ${CLFS}/usr/bin/{dd,df,echo,false,hostname,ln,ls,mkdir,mknod} ${CLFS}/bin
+mv -v ${CLFS}/usr/bin/{mv,pwd,rm,rmdir,stty,true,uname} ${CLFS}/bin
+mv -v ${CLFS}/usr/bin/chroot ${CLFS}/usr/sbin</userinput></screen>
 
-    <para os="k">Some of the scripts in the LFS-Bootscripts package depend on
-    <command>head</command> and <command>sleep</command>. As <filename
+    <para os="k">Other Coreutils programs are used by some of the scripts
+    in the CLFS-Bootscripts pacakge. As <filename
     class="directory">/usr</filename> may not be available during the early
     stages of booting, those binaries need to be on the root partition:</para>
 
-<screen os="l"><userinput>mv -v ${LFS}/usr/bin/{head,sleep} ${LFS}/bin</userinput></screen>
+<screen os="l"><userinput>mv -v ${CLFS}/usr/bin/{[,basename,head,install,nice} ${CLFS}/bin
+mv -v ${CLFS}/usr/bin/{readlink,sleep,sync,test,touch} ${CLFS}/bin
+ln -svf ../../bin/install ${CLFS}/usr/bin</userinput></screen>
 
   </sect2>
 

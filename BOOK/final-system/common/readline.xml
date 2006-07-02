@@ -32,7 +32,7 @@
 
     <para os="a">Prepare Readline for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/usr --libdir=/lib --host=${LFS_TARGET}</userinput></screen>
+<screen os="b"><userinput>./configure --prefix=/usr --libdir=/lib --host=${CLFS_TARGET}</userinput></screen>
 
     <para os="c">Compile the package:</para>
 
@@ -52,24 +52,24 @@
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="g"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="h">Give Readline's dynamic libraries more appropriate
     permissions:</para>
 
-<screen os="i"><userinput>chmod -v 755 ${LFS}/lib/lib{readline,history}.so*</userinput></screen>
+<screen os="i"><userinput>chmod -v 755 ${CLFS}/lib/lib{readline,history}.so*</userinput></screen>
 
     <para os="j">Now move the static libraries to a more appropriate location:</para>
 
-<screen os="k"><userinput>mv -v ${LFS}/lib/lib{readline,history}.a ${LFS}/usr/lib</userinput></screen>
+<screen os="k"><userinput>mv -v ${CLFS}/lib/lib{readline,history}.a ${CLFS}/usr/lib</userinput></screen>
 
     <para os="l">Next, remove the <filename class="extension">.so</filename>
     files in <filename class="directory">/lib</filename> and relink them into
     <filename class="directory">/usr/lib</filename>.</para>
 
-<screen os="m"><userinput>rm -v ${LFS}/lib/lib{readline,history}.so
-ln -svf ../../lib/libreadline.so.5 ${LFS}/usr/lib/libreadline.so
-ln -svf ../../lib/libhistory.so.5 ${LFS}/usr/lib/libhistory.so</userinput></screen>
+<screen os="m"><userinput>rm -v ${CLFS}/lib/lib{readline,history}.so
+ln -svf ../../lib/libreadline.so.5 ${CLFS}/usr/lib/libreadline.so
+ln -svf ../../lib/libhistory.so.5 ${CLFS}/usr/lib/libhistory.so</userinput></screen>
 
   </sect2>
 

@@ -67,8 +67,8 @@ echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
     xpointer="xpointer(//*[@os='h'])"/>
 
 <screen os="i"><userinput>CC=gcc ../glibc-&glibc-version;/configure --prefix=/usr \
-   --host=${LFS_TARGET} --build=${LFS_HOST} \
-   --with-headers=${LFS}/usr/include --cache-file=config.cache</userinput></screen>
+   --host=${CLFS_TARGET} --build=${CLFS_HOST} \
+   --with-headers=${CLFS}/usr/include --cache-file=config.cache</userinput></screen>
 
     <variablelist os="dj">
        <title>The meaning of the configure options:</title>
@@ -81,10 +81,10 @@ echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
           </varlistentry>
  	
        <varlistentry os="dj2">
-           <term><parameter>--with-headers=${LFS}/usr/include</parameter></term>
+           <term><parameter>--with-headers=${CLFS}/usr/include</parameter></term>
            <listitem>
               <para>This tells Glibc to compile itself against the headers
-              recently installed to the <filename class="directory">${LFS}/usr/include</filename>
+              recently installed to the <filename class="directory">${CLFS}/usr/include</filename>
               directory, so that it knows exactly what features the kernel has
               and can optimize itself accordingly.</para>
            </listitem>
@@ -100,19 +100,19 @@ echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
     we will copy the header files we need:</para>
 
    <para os="n">First we will copy a common file over to <filename 
-   class="directory">${LFS}/usr/include</filename>:</para>
+   class="directory">${CLFS}/usr/include</filename>:</para>
 
-<screen os="o"><userinput>install -dv ${LFS}/usr/include/bits
-cp -v bits/stdio_lim.h ${LFS}/usr/include/bits</userinput></screen>
+<screen os="o"><userinput>install -dv ${CLFS}/usr/include/bits
+cp -v bits/stdio_lim.h ${CLFS}/usr/include/bits</userinput></screen>
 
    <para os="p">Now we will create a blank stub file:</para>
 
-<screen os="q"><userinput>touch ${LFS}/usr/include/gnu/stubs.h</userinput></screen>
+<screen os="q"><userinput>touch ${CLFS}/usr/include/gnu/stubs.h</userinput></screen>
 
    <para os="r">For NPTL we use the following command:</para>
    
 <screen os="s"><userinput>cp -v ../glibc-&glibc-version;/ports/sysdeps/unix/sysv/linux/arm/nptl/bits/pthreadtypes.h \
-    ${LFS}/usr/include/bits</userinput></screen>
+    ${CLFS}/usr/include/bits</userinput></screen>
 
   </sect2>
 

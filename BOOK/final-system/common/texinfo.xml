@@ -32,7 +32,7 @@
 
     <para os="a">Prepare Texinfo for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/usr --host=${LFS_TARGET}</userinput></screen>
+<screen os="b"><userinput>./configure --prefix=/usr --host=${CLFS_TARGET}</userinput></screen>
 
     <para os="c">Compile the package:</para>
 
@@ -40,12 +40,12 @@
 
     <para os="e">Install the package:</para>
 
-<screen os="f"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="g">Optionally, install the components belonging in a TeX
     installation:</para>
 
-<screen os="h"><userinput>make DESTDIR=${LFS} TEXMF=/usr/share/texmf install-tex</userinput></screen>
+<screen os="h"><userinput>make DESTDIR=${CLFS} TEXMF=/usr/share/texmf install-tex</userinput></screen>
 
     <variablelist os="i">
       <title>The meaning of the make parameter:</title>
@@ -69,7 +69,7 @@
     <filename>/usr/share/info/dir</filename> file ever needs to be recreated,
     the following optional commands will accomplish the task:</para>
 
-<screen os="k" role="nodump"><userinput>cd ${LFS}/usr/share/info
+<screen os="k" role="nodump"><userinput>cd ${CLFS}/usr/share/info
 rm dir
 for f in *
 do install-info $f dir 2&gt;/dev/null

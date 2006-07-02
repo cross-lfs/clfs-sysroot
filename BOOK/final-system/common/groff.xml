@@ -32,7 +32,7 @@
 
     <para os="b">Prepare Groff for compilation:</para>
 
-<screen os="c"><userinput>PAGE=<replaceable>[paper_size]</replaceable> ./configure --prefix=/usr --host=${LFS_TARGET}</userinput></screen>
+<screen os="c"><userinput>PAGE=<replaceable>[paper_size]</replaceable> ./configure --prefix=/usr --host=${CLFS_TARGET}</userinput></screen>
 
     <para os="d">Compile the package:</para>
 
@@ -40,14 +40,14 @@
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make prefix=${LFS}/usr install</userinput></screen>
+<screen os="g"><userinput>make prefix=${CLFS}/usr install</userinput></screen>
 
     <para os="h">Some documentation programs, such as <command>xman</command>,
     will not work properly without the following symlinks:</para>
 
-<screen os="i"><userinput>ln -sv soelim ${LFS}/usr/bin/zsoelim
-ln -sv eqn ${LFS}/usr/bin/geqn
-ln -sv tbl ${LFS}/usr/bin/gtbl</userinput></screen>
+<screen os="i"><userinput>ln -sv soelim ${CLFS}/usr/bin/zsoelim
+ln -sv eqn ${CLFS}/usr/bin/geqn
+ln -sv tbl ${CLFS}/usr/bin/gtbl</userinput></screen>
 
   </sect2>
 

@@ -38,7 +38,7 @@
     <para>The following command creates a sample <filename>ipv4</filename>
     file for the <filename class="devicefile">eth0</filename> device:</para>
 
-<screen><userinput>cd ${LFS}/etc/sysconfig/network-devices &amp;&amp;
+<screen><userinput>cd ${CLFS}/etc/sysconfig/network-devices &amp;&amp;
 mkdir ifconfig.eth0 &amp;&amp;
 cat &gt; ifconfig.eth0/ipv4 &lt;&lt; "EOF"
 <literal>ONBOOT=yes
@@ -94,7 +94,7 @@ EOF</userinput></screen>
     the ISP or network administrator, into <filename>/etc/resolv.conf</filename>.
     Create the file by running the following:</para>
 
-<screen><userinput>cat &gt; ${LFS}/etc/resolv.conf &lt;&lt; "EOF"
+<screen><userinput>cat &gt; ${CLFS}/etc/resolv.conf &lt;&lt; "EOF"
 <literal># Begin /etc/resolv.conf
 
 domain {<replaceable>[Your Domain Name]</replaceable>}

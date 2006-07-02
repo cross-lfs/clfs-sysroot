@@ -34,7 +34,7 @@
 
     <para os="a">Prepare Gzip for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/usr --host=${LFS_TARGET}</userinput></screen>
+<screen os="b"><userinput>./configure --prefix=/usr --host=${CLFS_TARGET}</userinput></screen>
 
     <para os="c">The <command>gzexe</command> script has the location of the
     <command>gzip</command> binary hard-wired into it. Because the
@@ -51,18 +51,18 @@ sed 's@"BINDIR"@/bin@g' gzexe.in.orig &gt; gzexe.in</userinput></screen>
 
     <para os="g">Install the package:</para>
 
-<screen os="h"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="h"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="i">Move the <command>gzip</command> program to the <filename
     class="directory">/bin</filename> directory and create some commonly
     used symlinks to it:</para>
 
-<screen os="j"><userinput>mv -v ${LFS}/usr/bin/gzip ${LFS}/bin
-rm -v ${LFS}/usr/bin/{gunzip,zcat}
-ln -sv gzip ${LFS}/bin/gunzip
-ln -sv gzip ${LFS}/bin/zcat
-ln -sv gzip ${LFS}/bin/compress
-ln -sv gunzip ${LFS}/bin/uncompress</userinput></screen>
+<screen os="j"><userinput>mv -v ${CLFS}/usr/bin/gzip ${CLFS}/bin
+rm -v ${CLFS}/usr/bin/{gunzip,zcat}
+ln -sv gzip ${CLFS}/bin/gunzip
+ln -sv gzip ${CLFS}/bin/zcat
+ln -sv gzip ${CLFS}/bin/compress
+ln -sv gunzip ${CLFS}/bin/uncompress</userinput></screen>
 
   </sect2>
 

@@ -36,7 +36,7 @@
 <screen><userinput>cp hwclock/hwclock.c{,.orig}
 sed 's@etc/adjtime@var/lib/hwclock/adjtime@g' \
     hwclock/hwclock.c.orig &gt; hwclock/hwclock.c
-mkdir -pv ${LFS}/var/lib/hwclock</userinput></screen>
+mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
 
   </sect2>
 
@@ -120,8 +120,8 @@ CPUOPT="" ARCH="" CPU=""</userinput></screen>
     LFS-Bootscripts package:</para>
 
 <screen os="g"><userinput>make HAVE_KILL=yes HAVE_SLN=yes \
-CPUOPT="" ARCH="" CPU="" USE_TTY_GROUP=no DESTDIR=${LFS} install
-mv -v ${LFS}/usr/bin/logger ${LFS}/bin</userinput></screen>
+CPUOPT="" ARCH="" CPU="" USE_TTY_GROUP=no DESTDIR=${CLFS} install
+mv -v ${CLFS}/usr/bin/logger ${CLFS}/bin</userinput></screen>
 
   </sect2>
 

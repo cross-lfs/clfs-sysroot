@@ -39,8 +39,8 @@ cd ../binutils-build</userinput></screen>
     <para os="c">Prepare Binutils for compilation:</para>
 
 <screen os="d"><userinput>../binutils-&binutils-version;/configure --prefix=/usr \
-    --build=${LFS_HOST} --host=${LFS_TARGET} \
-    --target=${LFS_TARGET} --enable-shared</userinput></screen>
+    --build=${CLFS_HOST} --host=${CLFS_TARGET} \
+    --target=${CLFS_TARGET} --enable-shared</userinput></screen>
 
     <para os="e">Compile the package:</para>
 
@@ -75,12 +75,12 @@ can get `Flex' from any GNU archive site.</computeroutput></screen>
 
     <para os="j">Install the package:</para>
 
-<screen os="k"><userinput>make DESTDIR=${LFS} tooldir=/usr install</userinput></screen>
+<screen os="k"><userinput>make DESTDIR=${CLFS} tooldir=/usr install</userinput></screen>
 
     <para os="l">Install the <filename class="headerfile">libiberty</filename> header
     file that is needed by some packages:</para>
 
-<screen os="m"><userinput>cp -v ../binutils-&binutils-version;/include/libiberty.h ${LFS}/usr/include</userinput></screen>
+<screen os="m"><userinput>cp -v ../binutils-&binutils-version;/include/libiberty.h ${CLFS}/usr/include</userinput></screen>
 
   </sect2>
 

@@ -27,7 +27,7 @@
 
     <para os="a">Prepare Automake for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/usr --host=${LFS_TARGET}</userinput></screen>
+<screen os="b"><userinput>./configure --prefix=/usr --host=${CLFS_TARGET}</userinput></screen>
 
     <para os="c">Compile the package:</para>
 
@@ -35,7 +35,7 @@
 
     <para os="e">Install the package:</para>
 
-<screen os="f"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
   </sect2>
 

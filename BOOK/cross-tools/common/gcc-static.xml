@@ -50,9 +50,9 @@
     href="../../final-system/common/gcc.xml"
     xpointer="xpointer(//*[@os='e'])"/>
 
-<screen os="ae"><userinput>../gcc-&gcc-version;/configure --prefix=${LFS}/cross-tools \
-    --host=${LFS_HOST} --target=${LFS_TARGET} --disable-multilib \
-    --with-sysroot=${LFS} --disable-nls --disable-shared \
+<screen os="ae"><userinput>../gcc-&gcc-version;/configure --prefix=${CLFS}/cross-tools \
+    --host=${CLFS_HOST} --target=${CLFS_TARGET} --disable-multilib \
+    --with-sysroot=${CLFS} --disable-nls --disable-shared \
     --enable-languages=c</userinput></screen>
 
     <variablelist os="af">

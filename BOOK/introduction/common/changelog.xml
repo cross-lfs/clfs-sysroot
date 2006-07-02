@@ -37,6 +37,21 @@
 -->
 
     <listitem>
+      <para>July 2, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated passwd and group file creation
+                to only create minimal users and groups and
+                include information on other users/groups.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated to Cross-LFS Bootscripts. Added check for
+	  for /etc/sysconfig/createfiles.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>June 28, 2006</para>
       <itemizedlist>
         <listitem>

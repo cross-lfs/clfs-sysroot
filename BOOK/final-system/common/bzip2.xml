@@ -67,24 +67,24 @@ make clean</userinput></screen>
 
     <note os="f">
     <para>If reinstalling Bzip2, perform
-    <userinput>rm -vf ${LFS}/usr/bin/bz*</userinput> first, otherwise the
-    following <command>make PREFIX=${LFS}/usr install</command> will fail.</para>
+    <userinput>rm -vf ${CLFS}/usr/bin/bz*</userinput> first, otherwise the
+    following <command>make PREFIX=${CLFS}/usr install</command> will fail.</para>
     </note>
 
     <para os="g">Install the programs:</para>
 
-<screen os="h"><userinput>make PREFIX=${LFS}/usr install</userinput></screen>
+<screen os="h"><userinput>make PREFIX=${CLFS}/usr install</userinput></screen>
 
     <para os="i">Install the shared <command>bzip2</command> binary into the
     <filename class="directory">/bin</filename> directory, make
     some necessary symbolic links, and clean up:</para>
 
-<screen os="j"><userinput>cp -v bzip2-shared ${LFS}/bin/bzip2
-cp -av libbz2.so* ${LFS}/lib
-ln -sv ../../lib/libbz2.so.1.0 ${LFS}/usr/lib/libbz2.so
-rm -v ${LFS}/usr/bin/{bunzip2,bzcat,bzip2}
-ln -sv bzip2 ${LFS}/bin/bunzip2
-ln -sv bzip2 ${LFS}/bin/bzcatt</userinput></screen>
+<screen os="j"><userinput>cp -v bzip2-shared ${CLFS}/bin/bzip2
+cp -av libbz2.so* ${CLFS}/lib
+ln -sv ../../lib/libbz2.so.1.0 ${CLFS}/usr/lib/libbz2.so
+rm -v ${CLFS}/usr/bin/{bunzip2,bzcat,bzip2}
+ln -sv bzip2 ${CLFS}/bin/bunzip2
+ln -sv bzip2 ${CLFS}/bin/bzcatt</userinput></screen>
 
   </sect2>
 

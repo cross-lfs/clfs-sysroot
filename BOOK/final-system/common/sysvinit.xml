@@ -51,11 +51,11 @@ sed -e 's@/dev/initctl@$(ROOT)&amp;@g' \
     <para os="c">Compile the package:</para>
 
 <screen os="d"><userinput>make -C src clobber
-make -C src ROOT=${LFS} CC="${CC}"</userinput></screen>
+make -C src ROOT=${CLFS} CC="${CC}"</userinput></screen>
 
     <para os="e">Install the package:</para>
 
-<screen os="f"><userinput>make -C src ROOT=${LFS} INSTALL="install" install</userinput></screen>
+<screen os="f"><userinput>make -C src ROOT=${CLFS} INSTALL="install" install</userinput></screen>
 
   </sect2>
 
@@ -73,7 +73,7 @@ make -C src ROOT=${LFS} CC="${CC}"</userinput></screen>
     <para>Create a new file <filename>/etc/inittab</filename> by running the
     following:</para>
 
-<screen><userinput>cat &gt; ${LFS}/etc/inittab &lt;&lt; "EOF"
+<screen><userinput>cat &gt; ${CLFS}/etc/inittab &lt;&lt; "EOF"
 <literal># Begin /etc/inittab
 
 id:3:initdefault:

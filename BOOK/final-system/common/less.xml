@@ -27,7 +27,7 @@
     <para os="a">Prepare Less for compilation:</para>
 
 <screen os="b"><userinput>./configure --prefix=/usr --sysconfdir=/etc \
-    --host=${LFS_TARGET}</userinput></screen>
+    --host=${CLFS_TARGET}</userinput></screen>
 
     <variablelist os="c">
       <title>The meaning of the configure option:</title>
@@ -48,11 +48,11 @@
 
     <para os="f">Install the package:</para>
 
-<screen os="g"><userinput>make prefix=${LFS}/usr install</userinput></screen>
+<screen os="g"><userinput>make prefix=${CLFS}/usr install</userinput></screen>
 
     <para os="h">Move less to /bin:</para>
 
-<screen os="i"><userinput>mv -v ${LFS}/usr/bin/less ${LFS}/bin</userinput></screen>
+<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/less ${CLFS}/bin</userinput></screen>
 
   </sect2>
 

@@ -47,43 +47,43 @@
     href="../../final-system/common/binutils.xml"
     xpointer="xpointer(//*[@os='c'])"/>
 
-<screen os="bc"><userinput>../binutils-&binutils-version;/configure --prefix=${LFS}/cross-tools \
-   --host=${LFS_HOST} --target=${LFS_TARGET} --with-sysroot=${LFS} \
+<screen os="bc"><userinput>../binutils-&binutils-version;/configure --prefix=${CLFS}/cross-tools \
+   --host=${CLFS_HOST} --target=${CLFS_TARGET} --with-sysroot=${CLFS} \
    --disable-nls --enable-shared --disable-multilib</userinput></screen>
 
     <variablelist os="bd">
       <title>The meaning of the configure options:</title>
 
       <varlistentry os="bd1">
-        <term><parameter>--prefix=${LFS}/cross-tools</parameter></term>
+        <term><parameter>--prefix=${CLFS}/cross-tools</parameter></term>
         <listitem>
           <para>This tells the configure script to prepare to install the
-          package in the <filename class="directory">${LFS}/cross-tools</filename>
+          package in the <filename class="directory">${CLFS}/cross-tools</filename>
           directory.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry os="bd2">
-        <term><parameter>--host=${LFS_HOST}</parameter></term>
+        <term><parameter>--host=${CLFS_HOST}</parameter></term>
         <listitem>
           <para>When used with --target, this creates a cross-architecture
-          executable that creates files for ${LFS_TARGET} but runs on ${LFS_HOST).</para>
+          executable that creates files for ${CLFS_TARGET} but runs on ${CLFS_HOST).</para>
         </listitem>
       </varlistentry>
 
       <varlistentry os="bd3">
-        <term><parameter>--target=${LFS_TARGET}</parameter></term>
+        <term><parameter>--target=${CLFS_TARGET}</parameter></term>
         <listitem>
           <para>When used with --host, this creates a cross-architecture
-          executable that creates files for ${LFS_TARGET} but runs on ${LFS_HOST).</para>
+          executable that creates files for ${CLFS_TARGET} but runs on ${CLFS_HOST).</para>
         </listitem>
       </varlistentry>
 
       <varlistentry os="bd4">
-        <term><parameter>--with-sysroot=${LFS}</parameter></term>
+        <term><parameter>--with-sysroot=${CLFS}</parameter></term>
         <listitem>
-          <para>This tells configure that ${LFS} is going to be the root
-          of our system. It will now use the specified sysroot, ${LFS} as
+          <para>This tells configure that ${CLFS} is going to be the root
+          of our system. It will now use the specified sysroot, ${CLFS} as
           a prefix of the default search paths.</para>
         </listitem>
       </varlistentry>
@@ -136,9 +136,9 @@ make</userinput></screen>
 <screen os="bi"><userinput>make install</userinput></screen>
 
     <para os="bj">Copy the <filename class="headerfile">libiberty.h</filename> file to
-    <filename class="directory">${LFS}/usr/include</filename> directory:</para>
+    <filename class="directory">${CLFS}/usr/include</filename> directory:</para>
 
-<screen os="bk"><userinput>cp -v ../binutils-&binutils-version;/include/libiberty.h ${LFS}/usr/include</userinput></screen>
+<screen os="bk"><userinput>cp -v ../binutils-&binutils-version;/include/libiberty.h ${CLFS}/usr/include</userinput></screen>
 
   </sect2>
 

@@ -26,7 +26,7 @@
 
     <para os="a">Prepare Bison for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/usr --host=${LFS_TARGET}</userinput></screen>
+<screen os="b"><userinput>./configure --prefix=/usr --host=${CLFS_TARGET}</userinput></screen>
 
     <para os="b1">The configure system causes bison to be built without support
     for internationalization of error messages if a <command>bison</command>
@@ -41,7 +41,7 @@
 
     <para os="e">Install the package:</para>
 
-<screen os="f"><userinput>make DESTDIR=${LFS} install</userinput></screen>
+<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
   </sect2>
 

@@ -22,8 +22,8 @@
   <command>strip</command> command, it is a good idea to make a
   backup of the current situation.</para>
 
-<screen os="c"><userinput>find ${LFS}/{,usr/}{bin,lib,sbin} -type f \
-   -exec ${LFS_TARGET}-strip --strip-debug '{}' ';'</userinput></screen>
+<screen os="c"><userinput>find ${CLFS}/{,usr/}{bin,lib,sbin} -type f \
+   -exec ${CLFS_TARGET}-strip --strip-debug '{}' ';'</userinput></screen>
 
     <para os="i">A large number of files will be reported as having their file
     format not recognized. These warnings can be safely ignored. These
