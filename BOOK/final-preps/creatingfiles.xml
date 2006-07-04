@@ -57,8 +57,8 @@ EOF</userinput></screen>
   <para>The actual password for <systemitem class="username">root</systemitem>
   (the <quote>x</quote> used here is just a placeholder) will be set later.</para>
 
-  <variablelist os="b">TO BE WRITTEN: more text describing additional users
-  
+  <variablelist os="b"><!--TO BE WRITTEN: more text describing additional users-->
+
     <title>Additional users you may want to add:</title>
 
     <varlistentry>
@@ -146,7 +146,7 @@ cdrom:x:15:</literal>
 EOF</userinput></screen>
 
   <variablelist os="c">
- 
+
     <title>Additional groups you may want to add</title>
 
     <varlistentry>
