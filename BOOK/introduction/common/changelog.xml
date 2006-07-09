@@ -37,8 +37,12 @@
 -->
 
     <listitem>
-      <para>Date</para>
+      <para>July 9, 2006</para>
       <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated Udev rules to 07062006, Fixed cdrom
+          permissions and groups. </para>
+        </listitem>
         <listitem>
           <para>[jciccone] - Fixes a possible issue with bootscripts if the
           /usr partition is not mounted during startup. Moved find to /bin
