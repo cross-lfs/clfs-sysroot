@@ -40,6 +40,9 @@
       <para>July 9, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated to linux-2.6.17.4 and
+          linux-headers-2.6.17.4-07072006.</para>
+        <listitem>
           <para>[jciccone] - Updated Udev rules to 07062006, Fixed cdrom
           permissions and groups. </para>
         </listitem>
