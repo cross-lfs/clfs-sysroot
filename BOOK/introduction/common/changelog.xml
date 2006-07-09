@@ -37,6 +37,17 @@
 -->
 
     <listitem>
+      <para>Date</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Fixes a possible issue with bootscripts if the
+          /usr partition is not mounted during startup. Moved find to /bin
+          and moved some kbd utilities to /bin.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>July 2, 2006</para>
       <itemizedlist>
         <listitem>

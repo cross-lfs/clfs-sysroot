@@ -109,7 +109,7 @@ sed -e's@#MD5_CRYPT_ENAB.no@MD5_CRYPT_ENAB yes@' \
       this <command>sed</command> to correct the path to the Cracklib
       dictionary:</para>
 
-<screen><userinput>cp {LFS}/etc/login.defs login.defs.orig
+<screen role="nodump"><userinput>cp {LFS}/etc/login.defs login.defs.orig
 sed 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' login.defs.orig &gt; ${CLFS}/etc/login.defs</userinput></screen>
     </note>
 
@@ -152,7 +152,7 @@ ln -svf ../../lib/libshadow.so.0 ${CLFS}/usr/lib/libshadow.so</userinput></scree
 <screen role="nodump"><userinput>grpconv</userinput></screen>
 
     <para>To view or change the default settings for new user accounts that
-    you create, you can edit <filename>/etc/default/useradd</filename>. See 
+    you create, you can edit <filename>/etc/default/useradd</filename>. See
     <command>man useradd</command> or
     <ulink url="&blfs-root;view/svn/postlfs/skel.html"/> for more
     information.</para>
