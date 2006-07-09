@@ -380,7 +380,7 @@ EOF</userinput></screen>
           <para>Spell checks a file and generates the syntax statements
           necessary to highlight in <command>vim</command>. This script
           requires the old Unix <command>spell</command> command, which
-          is provided neither in LFS nor in BLFS</para>
+          is provided neither in CLFS nor in BLFS</para>
           <indexterm zone="ch-system-vim vimspell.sh">
             <primary sortas="b-vimspell.sh">vimspell.sh</primary>
           </indexterm>

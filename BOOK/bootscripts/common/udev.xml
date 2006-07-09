@@ -8,7 +8,7 @@
 <sect1 id="ch-scripts-udev">
   <?dbhtml filename="udev.html"?>
 
-  <title>Device and Module Handling on an LFS System</title>
+  <title>Device and Module Handling on an CLFS System</title>
 
   <indexterm zone="ch-scripts-udev">
     <primary sortas="a-Udev">Udev</primary>

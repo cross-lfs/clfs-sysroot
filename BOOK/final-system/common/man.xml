@@ -112,7 +112,7 @@ sed 's@)) |@) |@' src/makewhatis.sh.orig &gt; src/makewhatis.sh</userinput></scr
     <command>man2dvi</command> program for localized man pages in
     non-ISO 8859-1 locales. Also, it does not work with multibyte
     character sets. The first problem does not currently have a solution.
-    The second issue is not of concern because the LFS installation does
+    The second issue is not of concern because the CLFS installation does
     not support multibyte character sets.</para>
 
     <para os="v">Additional information with regards to the compression of

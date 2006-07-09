@@ -20,7 +20,7 @@
   <para>If you cannot find your problem listed in the FAQ, search the mailing
   lists at <ulink url="&lfs-root;search.html"/>.</para>
 
-  <para>We also have a wonderful LFS community that is willing to offer
+  <para>We also have a wonderful CLFS community that is willing to offer
   assistance through the mailing lists and IRC (see the <xref
   linkend="ch-intro-resources"/> section of this book). However, we
   get several support questions everyday and many of them can be easily
@@ -58,7 +58,7 @@
 
     <note>
       <para>Deviating from this book does <emphasis>not</emphasis>
-      mean that we will not help you. After all, the LFS project is
+      mean that we will not help you. After all, the CLFS project is
       about personal preference. Being upfront about any changes to
       the established procedure helps us evaluate and determine
       possible causes of your problem.</para>

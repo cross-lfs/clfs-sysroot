@@ -19,7 +19,7 @@
   <ulink url="&blfs-root;view/svn/postlfs/filesystems.html"/>.</para>
 
   <para os="b">To create an <systemitem class="filesystem">ext2</systemitem> file
-  system on the LFS partition, run the following:</para>
+  system on the CLFS partition, run the following:</para>
 
 <screen os="c"><userinput>mke2fs /dev/<replaceable>[xxx]</replaceable></userinput></screen>
 
@@ -42,7 +42,7 @@
     large_file; resize_inode or sparse_super then your host system may have custom
     enhancements.  In that case, to avoid later problems, you should compile the
     stock E2fsprogs package and use the resulting binaries to re-create the
-    filesystem on your LFS partition:</para>
+    filesystem on your CLFS partition:</para>
 
 <screen os="g"><userinput>cd /tmp
 tar xjf /path/to/sources/e2fsprogs-&e2fsprogs-version;.tar.bz2
