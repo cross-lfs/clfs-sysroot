@@ -34,7 +34,7 @@
   <para os="e">Now we will add these to <filename>~/.bashrc</filename>, just in
   case you have to exit and restart building later:</para>
 
-<screen os="f"><userinput>echo export LFS_HOST=\""${CLFS_HOST}\"" &gt;&gt; ~/.bashrc
-echo export LFS_TARGET=\""${CLFS_TARGET}\"" &gt;&gt; ~/.bashrc</userinput></screen>
+<screen os="f"><userinput>echo export CLFS_HOST=\""${CLFS_HOST}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_TARGET=\""${CLFS_TARGET}\"" &gt;&gt; ~/.bashrc</userinput></screen>
 
 </sect1>
