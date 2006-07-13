@@ -11,21 +11,21 @@
   <title>How to Build a CLFS System</title>
 
   <para>The CLFS system will be built by using a previously installed
-  Linux distribution (such as Debian, Mandrake, Red Hat, or SuSE). This
-  existing Linux system (the host) will be used as a starting point to
+  Linux distribution (such as Debian, Mandrake, Red Hat, or SuSE, or Ubuntu).
+  This existing Linux system (the host) will be used as a starting point to
   provide necessary programs, including a compiler, linker, and shell,
   to build the new system. Select the <quote>development</quote> option
   during the distribution installation to be able to access these
   tools.</para>
 
   <para>As an alternative to installing an entire separate distribution
-  onto your machine, you may wish to
-  use the Linux From Scratch LiveCD. The CD works well as a host system,
-  providing all the tools you need to successfully follow the instructions
-  in this book. Additionally, it contains all the source packages, patches
-  and a copy of this book. So once you have the CD, no network connection
-  or additional downloads are necessary. For more information about the
-  LFS LiveCD or to download a copy, visit <ulink url="&livecd-root;"/></para>
+  onto your machine, you may wish to use the Linux From Scratch LiveCD.
+  The CD works well as a host system, providing all the tools you need to
+  successfully follow the instructions in this book. Additionally, it
+  contains all the source packages, patches and a copy of this book. So
+  once you have the CD, no network connection or additional downloads are
+  necessary. For more information about the LFS LiveCD or to download a copy,
+  visit <ulink url="&livecd-root;"/></para>
 
   <para><xref linkend="chapter-partitioning"/> of this book describes how
   to create a new Linux native partition and file system, the place
@@ -51,17 +51,16 @@
   cross-compiler is what will be used to build the final-system.</para>
 
   <para>In <xref linkend="chapter-building-system"/>, the full CLFS system is
-  cross-compiled. The system is built using a sysroot. Sysroot is a parameter
-  passed to binutils and gcc that modifies its default search paths.</para>
+  cross-compiled. The system is built using a sysroot compiler. Sysroot is a
+  parameter passed to binutils and gcc that modifies its default search paths.
+  </para>
 
   <para>To finish the installation, the CLFS-Bootscripts are set up in <xref
   linkend="chapter-bootscripts"/>, and the kernel and boot loader are set
-  up in <xref linkend="chapter-bootable"/>. <xref
-  linkend="chapter-finalizing"/> contains information on furthering the
-  CLFS experience beyond this book.  After the steps in this book have
-  been implemented, the computer will be ready to reboot into the new
-  CLFS system.</para>
-  <!-- -->
+  up in <xref linkend="chapter-bootable"/>. <xref linkend="chapter-finalizing"/>
+  contains information on furthering the CLFS experience beyond this book.
+  After the steps in this book have been implemented, the computer will be
+  ready to reboot into the new CLFS system.</para>
 
   <para>This is the process in a nutshell. Detailed information on each
   step is discussed in the following chapters and package descriptions.
