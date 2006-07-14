@@ -38,8 +38,8 @@ echo "fu_cv_sys_stat_statfs2_bsize=yes" &gt;&gt; config.cache</userinput></scree
 
     <para os="c">Now prepare Coreutils for compilation:</para>
 
-<screen os="d"><userinput>./configure --prefix=/usr --cache-file=config.cache \
-   --build=${CLFS_HOST} --host=${CLFS_TARGET}</userinput></screen>
+<screen os="d"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
+    --prefix=/usr --cache-file=config.cache </userinput></screen>
 
     <para os="e">Compile the package:</para>
 

@@ -41,8 +41,8 @@ GCC-&gcc-version;:</para>
 
     <para os="a">Prepare Tar for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/usr --bindir=/bin \
-    --libexecdir=/usr/sbin --host=${CLFS_TARGET}</userinput></screen>
+<screen os="b"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
+    --prefix=/usr --bindir=/bin --libexecdir=/usr/sbin</userinput></screen>
 
     <para os="c">Compile the package:</para>
 

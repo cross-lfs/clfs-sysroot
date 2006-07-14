@@ -27,7 +27,8 @@
 
     <para os="a">Prepare Module-Init-Tools for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/ --enable-zlib --host=${CLFS_TARGET}</userinput></screen>
+<screen os="b"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
+    --prefix=/ --enable-zlib</userinput></screen>
 
     <variablelist os="c">
       <title>The meaning of the configure options:</title>

@@ -55,11 +55,10 @@
 
     <para os="d">Prepare Vim for compilation:</para>
 
-<screen os="e"><userinput>./configure --prefix=/usr --host=${CLFS_TARGET} \
-    --enable-multibyte --enable-gui=no \
-    --disable-gtktest --disable-xim \
-    --with-features=normal --disable-gpm \
-    --without-x --disable-netbeans \
+<screen os="e"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
+    --prefix=/usr --enable-multibyte --enable-gui=no \
+    --disable-gtktest --disable-xim --with-features=normal \
+    --disable-gpm --without-x --disable-netbeans \
     --with-tlib=ncurses</userinput></screen>
 
     <variablelist os="f">

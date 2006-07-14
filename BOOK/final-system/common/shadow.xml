@@ -40,9 +40,10 @@
 
     <para os="d">Prepare Shadow for compilation:</para>
 
-<screen os="e"><userinput>./configure --libdir=/lib --sysconfdir=/etc --enable-shared \
+<screen os="e"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
+    --libdir=/lib --sysconfdir=/etc --enable-shared \
     --without-libpam --without-audit --without-selinux \
-    --host=${CLFS_TARGET} --cache-file=config.cache</userinput></screen>
+    --cache-file=config.cache</userinput></screen>
 
 <para os="f">The meaning of the configure options:</para>
 
