@@ -26,17 +26,26 @@
   <sect2 role="installation">
     <title>Installation of Patch</title>
 
-    <para os="a">Prepare Patch for compilation:</para>
+    <para os="a">Configure would like to hardcode the full path to
+    <command>ed</command>. When <command>ed</command> isn't found it falls
+    back on just "<command>ed</command>". Since <command>ed</command>
+    isn't installed by default but it may be installed on the host, Lets
+    force the fallback value.</para>
 
-<screen os="b"><userinput>./configure --prefix=/usr --host=${CLFS_TARGET}</userinput></screen>
+<screen os="b"><userinput>echo "ac_cv_path_ed_PROGRAM=ed" &gt; config.cache</userinput></screen>
 
-    <para os="c">Compile the package:</para>
+    <para os="c">Prepare Patch for compilation:</para>
 
-<screen os="d"><userinput>make</userinput></screen>
+<screen os="d"><userinput>./configure --prefix=/usr --host=${CLFS_TARGET} \
+    --cache-file=config.cache</userinput></screen>
 
-    <para os="e">Install the package:</para>
+    <para os="e">Compile the package:</para>
 
-<screen os="f"><userinput>make prefix=${CLFS}/usr install</userinput></screen>
+<screen os="f"><userinput>make</userinput></screen>
+
+    <para os="g">Install the package:</para>
+
+<screen os="h"><userinput>make prefix=${CLFS}/usr install</userinput></screen>
 
   </sect2>
 
