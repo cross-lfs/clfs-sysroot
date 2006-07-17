@@ -67,7 +67,7 @@
     to point to the new location for <command>find</command>:</para>
 
 <screen os="k"><userinput>cp ${CLFS}/usr/bin/updatedb{,.orig}
-sed 's@find:=${BINDIR}@find:=/bin@' /usr/bin/updatedb.orig > /usr/bin/updatedb
+sed 's@find:=${BINDIR}@find:=/bin@' /usr/bin/updatedb.orig &gt; /usr/bin/updatedb
 rm /usr/bin/updatedb.orig</userinput></screen>
 
   </sect2>
