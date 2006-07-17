@@ -40,7 +40,8 @@
       <para>June 16, 2006</para>
       <itemizedlist>
         <listitem>
-          <para>[name] - New changelog entry.</para>
+          <para>[jciccone] - Added a sed to fix updatedb due to the new
+          location of find.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Removed unneeded chown and chmod commands from

@@ -58,9 +58,17 @@
     <para os="h">Find from Findutils is used by some of the scripts
     in the CLFS-Bootscripts package. As <filename
     class="directory">/usr</filename> may not be available during the early
-    stages of booting, those binaries need to be on the root partition:</para>
+    stages of booting, the <command>find</command>  binary need to be on 
+    the root partition:</para>
 
 <screen os="i"><userinput>mv -v ${CLFS}/usr/bin/find ${CLFS}/bin/find</userinput></screen>
+
+    <para os="j">The <command>updatedb</command> script needs to be modified
+    to point to the new location for <command>find</command>:</para>
+
+<screen os="k"><userinput>cp ${CLFS}/usr/bin/updatedb{,.orig}
+sed 's@find:=${BINDIR}@find:=/bin@' /usr/bin/updatedb.orig > /usr/bin/updatedb
+rm /usr/bin/updatedb.orig</userinput></screen>
 
   </sect2>
 
