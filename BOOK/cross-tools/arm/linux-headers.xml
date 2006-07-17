@@ -48,11 +48,6 @@ cp -av include/sound/* ${CLFS}/usr/include/sound</userinput></screen>
 
 <screen><userinput>cp -av include/asm-arm/* ${CLFS}/usr/include/asm</userinput></screen>
 
-    <para os="e">Make sure the users can read the headers:</para>
-
-<screen os="f"><userinput>find ${CLFS}/usr/include/{asm,asm-generic,linux,mtd,net,scsi,sound} -type d -exec chmod -v 755 {} \;
-find ${CLFS}/usr/include/{asm,asm-generic,linux,mtd,net,scsi,sound} -type f -exec chmod -v 644 {} \;</userinput></screen>
-
   </sect2>
 
   <sect2 id="contents-linux-headers" role="content">
