@@ -26,7 +26,7 @@
   get several support questions everyday and many of them can be easily
   answered by going to the FAQ and by searching the mailing lists first.
   So for us to offer the best assistance possible, you need to do some
-  research on your own first. That allows us to focus on the more unusual
+  research on your own first. This allows us to focus on the more unusual
   support needs. If your searches do not produce a solution, please include
   all relevant information (mentioned below) in your request for help.</para>
 
@@ -71,13 +71,13 @@
 
     <para>If something goes wrong while running the <command>configure</command>
     script, review the <filename>config.log</filename> file. This file may
-    contain errors encountered during <command>configure</command> which were
-    not printed to the screen. Include the <emphasis>relevant</emphasis>
-    lines if you need to ask for help.</para>
+    contain the errors you encountered <command>configure</command>. This file
+    logs errors that may have not been printed to the screen. Include only the
+    <emphasis>relevant</emphasis> lines if you need to ask for help.</para>
 
   </sect2>
 
-  <sect2>
+  <sect2 id="ch-intro-askforhelp-compilation-problems">
     <title>Compilation Problems</title>
 
     <para>Both the screen output and the contents of various files are
