@@ -45,6 +45,12 @@ sed -e "s/install -s/install/" src/Makefile.in.orig &gt; src/Makefile.in</userin
 
 <screen os="b"><userinput>./configure --datadir=/lib/kbd</userinput></screen>
 
+    <para os="s5">Configure detects the architecture of the host system. The
+    following sed changes this value to your target architecture.</para>
+
+<screen os="s6"><userinput>cp make_include{,.orig}
+sed "/^ARCH/s/=.*/=arm/" make_include.orig &gt; make_include</userinput></screen>
+
     <para os="c">Compile the package:</para>
 
 <screen os="d"><userinput>make CC="${CC}"</userinput></screen>
