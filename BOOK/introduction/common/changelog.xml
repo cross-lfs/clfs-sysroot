@@ -40,6 +40,10 @@
       <para>June 20, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added groff to cross-tools to satisfy a dependency
+          when cross-compiling it later in the final system.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to Udev-096.</para>
         </listitem>
         <listitem>

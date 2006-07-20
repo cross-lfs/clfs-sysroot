@@ -13,8 +13,9 @@
   <sect2 role="installation">
     <title>Installation of File</title>
 
-    <note><para>You only need to install <package>file</package> if your host has
-    a version other then file-&file-version; installed.</para></note>
+    <note><para>You only need to install <package>file</package> if your host
+    has a version of <package>file</package> older then
+    <package>file-&file-version;</package> installed.</para></note>
 
     <para>Prepare File for compilation:</para>
 
