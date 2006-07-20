@@ -246,7 +246,7 @@
 <!ENTITY m4-version "1.4.4">
 <!ENTITY m4-size "300 KB">
 <!ENTITY m4-url "&gnu;m4/m4-&m4-version;.tar.bz2">
-<!ENTITY m4-md5 "6ab673550854113c3d0607ddb2a32453">
+<!ENTITY m4-md5 "eb93bfbcb12cf00165583302bb31a822">
 <!ENTITY m4-home "&gnu-software;m4/">
 
 <!ENTITY make-version "3.81">
