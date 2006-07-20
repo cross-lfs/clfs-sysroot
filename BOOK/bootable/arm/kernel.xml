@@ -125,7 +125,7 @@
       <para>Some kernel documentation recommends creating a symlink from
       <filename class="symlink">/usr/src/linux</filename> pointing to the
       kernel source directory. This is specific to kernels prior to the
-      2.6 series and <emphasis>must not</emphasis> be created on an LFS
+      2.6 series and <emphasis>must not</emphasis> be created on an CLFS
       system as it can cause problems for packages you may wish to build
       once your base CLFS system is complete.</para>
 

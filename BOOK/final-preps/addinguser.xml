@@ -60,7 +60,7 @@ useradd -s /bin/bash -g clfs -m -k /dev/null clfs</userinput></screen>
     </varlistentry>
 
     <varlistentry>
-      <term><parameter>lfs</parameter></term>
+      <term><parameter>clfs</parameter></term>
       <listitem>
         <para>This is the actual name for the created group and user.</para>
       </listitem>
@@ -79,7 +79,7 @@ useradd -s /bin/bash -g clfs -m -k /dev/null clfs</userinput></screen>
 
   <para>Grant <systemitem class="username">clfs</systemitem> full access to
   <filename class="directory">$CLFS</filename> by making <systemitem
-  class="username">lfs</systemitem> the directory's owner:</para>
+  class="username">clfs</systemitem> the directory's owner:</para>
 
 <screen><userinput>chown -Rv clfs $CLFS</userinput></screen>
 

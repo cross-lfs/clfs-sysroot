@@ -25,7 +25,7 @@
   </important>
 
   <para>Make <systemitem class="username">root</systemitem> the owner of the
-  entire lfs system.</para>
+  entire CLFS system.</para>
 
 <screen><userinput>chown -Rv root:root ${CLFS}</userinput></screen>
 

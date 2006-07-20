@@ -103,7 +103,7 @@ it consistent with the location of documentation for other packages:</para>
 
 <screen os="n"><userinput>ln -sv ../vim/vim&vim-version2;/doc ${CLFS}/usr/share/doc/vim-&vim-version;</userinput></screen>
 
-    <para os="o">If an X Window System is going to be installed on the LFS
+    <para os="o">If an X Window System is going to be installed on the CLFS
     system, you may want to recompile Vim after installing X. Vim
     comes with a GUI version of the editor that requires X and some
     additional libraries to be installed. For more information, refer to the

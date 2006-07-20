@@ -110,7 +110,7 @@ sed -e's@#MD5_CRYPT_ENAB.no@MD5_CRYPT_ENAB yes@' \
       this <command>sed</command> to correct the path to the Cracklib
       dictionary:</para>
 
-<screen role="nodump"><userinput>cp {LFS}/etc/login.defs login.defs.orig
+<screen role="nodump"><userinput>cp ${CLFS}/etc/login.defs login.defs.orig
 sed 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' login.defs.orig &gt; ${CLFS}/etc/login.defs</userinput></screen>
     </note>
 

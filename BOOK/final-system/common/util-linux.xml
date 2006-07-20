@@ -117,7 +117,7 @@ CPUOPT="" ARCH="" CPU=""</userinput></screen>
 
     <para os="f">Install the package and move the <command>logger</command> binary
     to <filename class="directory">/bin</filename> as it is needed by the
-    LFS-Bootscripts package:</para>
+    CLFS-Bootscripts package:</para>
 
 <screen os="g"><userinput>make HAVE_KILL=yes HAVE_SLN=yes \
 CPUOPT="" ARCH="" CPU="" USE_TTY_GROUP=no DESTDIR=${CLFS} install
