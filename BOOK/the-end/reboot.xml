@@ -10,11 +10,6 @@
 
   <title>Rebooting the System</title>
 
-  <para>If you built your final system using the boot method, just run
-  <command>shutdown -r now</command> to reboot again, using your newly-built
-  kernel instead of the miminal one currently in use. If you chrooted,
-  there are a few more steps.</para>
-
   <para>The system you have created in this book is quite minimal, and most
   likely will not have the functionality you would need to be able to
   continue forward. By installing a few extra packages from the BLFS
@@ -29,31 +24,7 @@
   this point might also be useful.</para>
 
   <para>Now that we have said that, lets move on to booting our shiny
-  new CLFS installation for the first time! First exit from the chroot
-  environment:</para>
-
-<screen><userinput>logout</userinput></screen>
-
-  <para>Then unmount the virtual file systems:</para>
-
-<screen><userinput>umount $CLFS/dev/pts
-umount $CLFS/dev/shm
-umount $CLFS/dev
-umount $CLFS/proc
-umount $CLFS/sys</userinput></screen>
-
-  <para>Unmount the CLFS file system itself:</para>
-
-<screen><userinput>umount $CLFS</userinput></screen>
-
-  <para>If multiple partitions were created, unmount the other
-  partitions before unmounting the main one, like this:</para>
-
-<screen><userinput>umount $CLFS/usr
-umount $CLFS/home
-umount $CLFS</userinput></screen>
-
-  <para>Now, reboot the system with:</para>
+  new CLFS installation for the first time! Reboot the system with:</para>
 
 <screen><userinput>shutdown -r now</userinput></screen>
 
