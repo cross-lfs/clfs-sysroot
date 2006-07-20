@@ -37,6 +37,19 @@
 -->
 
     <listitem>
+      <para>June 20, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated to Udev-096.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated to linux-2.6.17.6 and
+          linux-headers-2.6.17.6-07202006.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>June 16, 2006</para>
       <itemizedlist>
         <listitem>
