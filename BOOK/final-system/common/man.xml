@@ -117,7 +117,7 @@ sed 's@)) |@) |@' src/makewhatis.sh.orig &gt; src/makewhatis.sh</userinput></scr
 
     <para os="v">Additional information with regards to the compression of
     man and info pages can be found in the BLFS book at
-    <ulink url="&blfs-root;view/cvs/postlfs/compressdoc.html"/>.</para>
+    <ulink url="&blfs-root;view/svn/postlfs/compressdoc.html"/>.</para>
 
   </sect2>
 
