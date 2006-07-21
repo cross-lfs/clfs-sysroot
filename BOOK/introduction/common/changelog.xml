@@ -37,6 +37,18 @@
 -->
 
     <listitem>
+      <para>June 21, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Added TZDIR="${CLFS}/usr/share/zoneinfo" to the
+          tzselect command. This makes sure that the tzselect command looks in
+          zoneinfo dir that was just installed by glibc instead of the host.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>June 20, 2006</para>
       <itemizedlist>
         <listitem>
