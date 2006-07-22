@@ -37,7 +37,20 @@
 -->
 
     <listitem>
-      <para>June 21, 2006</para>
+      <para>July 22, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated the perl cross-compile patch to -2 to
+          support x86.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Added x86 to the book.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>July 21, 2006</para>
       <itemizedlist>
         <listitem>
           <para>[jciccone] - Added TZDIR="${CLFS}/usr/share/zoneinfo" to the
@@ -49,7 +62,7 @@
     </listitem>
 
     <listitem>
-      <para>June 20, 2006</para>
+      <para>July 20, 2006</para>
       <itemizedlist>
         <listitem>
           <para>[jciccone] - Added groff to cross-tools to satisfy a dependency
@@ -66,7 +79,7 @@
     </listitem>
 
     <listitem>
-      <para>June 16, 2006</para>
+      <para>July 16, 2006</para>
       <itemizedlist>
         <listitem>
           <para>[jciccone] - Added a sed to fix updatedb due to the new
