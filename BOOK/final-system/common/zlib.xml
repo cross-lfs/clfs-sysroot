@@ -44,9 +44,9 @@
 
     <para os="g">The previous command installed a <filename
     class="extension">.so</filename> file in <filename
-    class="directory">/usr/lib</filename>. We will move it into
-    <filename class="directory">/lib</filename> and then relink it
-    to <filename class="directory">/usr/lib</filename>:</para>
+    class="directory">${CLFS}/usr/lib</filename>. We will move it into
+    <filename class="directory">${CLFS}/lib</filename> and then relink it
+    to <filename class="directory">${CLFS}/usr/lib</filename>:</para>
 
 <screen os="h"><userinput>mv -v ${CLFS}/usr/lib/libz.so.* ${CLFS}/lib
 ln -svf ../../lib/libz.so.1 ${CLFS}/usr/lib/libz.so</userinput></screen>
