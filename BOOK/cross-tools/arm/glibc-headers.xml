@@ -116,7 +116,7 @@ cp -v bits/stdio_lim.h ${CLFS}/usr/include/bits</userinput></screen>
 
   </sect2>
 
-  <sect2 role="content">
+  <sect2 role="content" id="contents-glibc-headers">
     <title/>
 
     <para>Details on this package are located in <xref

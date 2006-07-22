@@ -131,3 +131,9 @@
 <!ENTITY zlib-fpic-patch "zlib-&zlib-version;-fPIC-1.patch">
 <!ENTITY zlib-fpic-patch-md5 "545d60b20bfde6f53023de44438cef59">
 <!ENTITY zlib-fpic-patch-size "3.2 KB">
+
+<!-- Start of x86/x86_64 patches -->
+
+<!ENTITY coreutils-x86_uname-patch "coreutils-&coreutils-version;-uname-1.patch">
+<!ENTITY coreutils-x86_uname-patch-md5 "c05b735710fbd62239588c07084852a0">
+<!ENTITY coreutils-x86_uname-patch-size "4.5 KB">

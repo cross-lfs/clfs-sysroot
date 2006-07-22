@@ -102,16 +102,20 @@ hr {
       </div>
       <div class="toc">
         <h3>
-          <xsl:text>32 Bit Builds</xsl:text>
+          <xsl:text>32 Bit Builds (Under Development)</xsl:text>
         </h3>
         <ul>
-	  <h3>
-	    <xsl:text>Under Development.</xsl:text>
-          </h3>
           <li>
             <h4>
               <a href="arm">
                 <xsl:text>ARM</xsl:text>
+              </a>
+            </h4>
+          </li>
+          <li>
+            <h4>
+              <a href="x86">
+                <xsl:text>X86</xsl:text>
               </a>
             </h4>
           </li>

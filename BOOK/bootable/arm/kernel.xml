@@ -105,7 +105,7 @@
 
     <para os="v">Issue the following command to install the kernel:</para>
 
-<screen><userinput>cp arch/i386/boot/bzImage ${CLFS}/boot/clfskernel-&linux-version;</userinput></screen>
+<screen><userinput>cp vmlinux ${CLFS}/boot/clfskernel-&linux-version;</userinput></screen>
 
     <para os="w"><filename>System.map</filename> is a symbol file for the kernel.
     It maps the function entry points of every function in the kernel API,
@@ -119,7 +119,7 @@
     all the configuration selections for the kernel that was just compiled.
     It is a good idea to keep this file for future reference:</para>
 
-<screen os="x1"><userinput>cp .config ${CLFS}/boot/config-&linux-version;</userinput></screen>
+<screen os="y"><userinput>cp .config ${CLFS}/boot/config-&linux-version;</userinput></screen>
 
     <warning os="z">
       <para>Some kernel documentation recommends creating a symlink from

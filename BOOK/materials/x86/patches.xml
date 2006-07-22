@@ -5,11 +5,11 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-materials-patches-arm">
-  <?dbhtml filename="patches-arm.html"?>
+<sect1 id="ch-materials-patches-x86">
+  <?dbhtml filename="patches-x86.html"?>
 
-  <title>Additional Patches for ARM</title>
-<!--
+  <title>Additional Patches for X86</title>
+
   <variablelist role="materials">
 
     <varlistentry os="coreutils-x86_uname-patch">
@@ -22,7 +22,6 @@
     </varlistentry>
 
   </variablelist>
--->
 
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
   href="../common/patches.xml"
