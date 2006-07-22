@@ -27,13 +27,16 @@
 
     <para os="a">A few adjustments need to be made to the sources of Man.</para>
 
-    <para os="b">First, a <command>sed</command> substitution is
-    needed to add the <option>-R</option> switch to the
-    <envar>PAGER</envar> variable so that escape sequences are
-    properly handled by Less:</para>
+    <para os="b">First, a <command>sed</command> substitution is needed to
+    modify <command>configure</command>'s default search path for executables.
+    It cycles through the values in <envar>PREPATH</envar> until it finds the
+    program it is looking for. The <option>-R</option> switch is added to the
+    <envar>PAGER</envar> variable so that escape sequences are properly handled
+    by Less:</para>
 
 <screen os="c"><userinput>cp configure{,.orig}
-sed 's@-is@&amp;R@g' configure.orig &gt; configure</userinput></screen>
+sed -e "/PREPATH=/s@=.*@=\"$(eval echo ${CLFS}/{,usr/}{sbin,bin})\"@g" \
+    -e 's@-is@&amp;R@g' configure.orig &gt; configure</userinput></screen>
 
     <para os="d">Another <command>sed</command> substitution comments out the
     <quote>MANPATH /usr/man</quote> line in the <filename>man.conf</filename>
@@ -66,19 +69,28 @@ sed 's@)) |@) |@' src/makewhatis.sh.orig &gt; src/makewhatis.sh</userinput></scr
       </varlistentry>
     </variablelist>
 
-    <para os="k">Build makemsg using the hosts gcc. It is executed during the build</para>
+    <para os="k">Configure was modified to look in <filename
+    class="directory">${CLFS}</filename> for the paths of helper
+    programs. Right now all of the programs have <filename
+    class="directory">${CLFS}</filename> as a prefix. Remove that prefix
+    with the following command:</para>
 
-<screen os="l"><userinput>gcc src/makemsg.c -o src/makemsg</userinput></screen>
+<screen os="l"><userinput>cp conf_script{,.orig}
+sed "s@${CLFS}@@" conf_script.orig &gt; conf_script</userinput></screen>
 
-    <para os="m">Compile the package:</para>
+    <para os="m">Build makemsg using the hosts gcc. It is executed during the build:</para>
 
-<screen os="n"><userinput>make</userinput></screen>
+<screen os="n"><userinput>gcc src/makemsg.c -o src/makemsg</userinput></screen>
 
-    <para os="o">Install the package:</para>
+    <para os="o">Compile the package:</para>
 
-<screen os="p"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
+<screen os="p"><userinput>make</userinput></screen>
 
-    <note os="q">
+    <para os="q">Install the package:</para>
+
+<screen os="r"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
+
+    <note os="s">
       <para>If you will be working on a terminal that does not support
       text attributes such as color and bold, you can disable Select
       Graphic Rendition (SGR) escape sequences by editing the
@@ -89,14 +101,14 @@ sed 's@)) |@) |@' src/makewhatis.sh.orig &gt; src/makewhatis.sh</userinput></scr
       that do not support SGR.</para>
     </note>
 
-    <para os="r">If the character set of the locale uses 8-bit characters, search
+    <para os="t">If the character set of the locale uses 8-bit characters, search
     for the line beginning with <quote>NROFF</quote> in
     <filename>/etc/man.conf</filename>, and verify that it matches the
     following:</para>
 
-<screen os="s">NROFF /usr/bin/nroff -Tlatin1 -mandoc</screen>
+<screen os="u">NROFF /usr/bin/nroff -Tlatin1 -mandoc</screen>
 
-    <para os="t">Note that <quote>latin1</quote> should be used even if it is not
+    <para os="v">Note that <quote>latin1</quote> should be used even if it is not
     the character set of the locale. The reason is that, according to the
     specification, <command>groff</command> has no means of typesetting
     characters outside International Organization for Standards (ISO) 8859-1
@@ -108,14 +120,14 @@ sed 's@)) |@) |@' src/makewhatis.sh.orig &gt; src/makewhatis.sh</userinput></scr
     ormatted result is really in the same encoding as input, and therefore
     it is usable as the input for a pager.</para>
 
-    <para os="u">This does not solve the problem of a non-working
+    <para os="w">This does not solve the problem of a non-working
     <command>man2dvi</command> program for localized man pages in
     non-ISO 8859-1 locales. Also, it does not work with multibyte
     character sets. The first problem does not currently have a solution.
     The second issue is not of concern because the CLFS installation does
     not support multibyte character sets.</para>
 
-    <para os="v">Additional information with regards to the compression of
+    <para os="x">Additional information with regards to the compression of
     man and info pages can be found in the BLFS book at
     <ulink url="&blfs-root;view/svn/postlfs/compressdoc.html"/>.</para>
 
