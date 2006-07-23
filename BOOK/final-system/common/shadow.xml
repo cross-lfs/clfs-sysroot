@@ -146,7 +146,7 @@ ln -svf ../../lib/libshadow.so.0 ${CLFS}/usr/lib/libshadow.so</userinput></scree
 
     <para>To enable shadowed passwords, run the following command:</para>
 
-<screen><userinput>pwconv</userinput></screen>
+<screen role="nodump"><userinput>pwconv</userinput></screen>
 
     <para>To enable shadowed group passwords, run:</para>
 
