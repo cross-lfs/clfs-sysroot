@@ -102,7 +102,7 @@
     href="../arm/kernel.xml"
     xpointer="xpointer(//*[@os='v'])"/>
 
-<screen><userinput>cp arch/i386/boot/bzImage /boot/clfskernel-&linux-version;</userinput></screen>
+<screen><userinput>cp arch/i386/boot/bzImage ${CLFS}/boot/clfskernel-&linux-version;</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../arm/kernel.xml"
