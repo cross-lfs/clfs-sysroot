@@ -45,26 +45,40 @@ sed -e "s/install -s/install/" src/Makefile.in.orig &gt; src/Makefile.in</userin
 
 <screen os="b"><userinput>./configure --datadir=/lib/kbd</userinput></screen>
 
+    <variablelist os="c">
+      <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--datadir</parameter></term>
+        <listitem>
+          <para>This option places the Kbd data and keymap files into /lib/kbd,
+          as they are used by some of the scripts in the CLFS-Bootscripts
+          package and must be on the root partition.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
     <para os="s5">Configure detects the architecture of the host system. The
     following sed changes this value to your target architecture.</para>
 
 <screen os="s6"><userinput>cp make_include{,.orig}
 sed "/^ARCH/s/=.*/=arm/" make_include.orig &gt; make_include</userinput></screen>
 
-    <para os="c">Compile the package:</para>
+    <para os="d">Compile the package:</para>
 
-<screen os="d"><userinput>make CC="${CC}"</userinput></screen>
+<screen os="e"><userinput>make CC="${CC}"</userinput></screen>
 
-    <para os="e">Install the package:</para>
+    <para os="f">Install the package:</para>
 
-<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
+<screen os="g"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
-    <para os="g">Some of the Programs from Kbd are used by some of the scripts
+    <para os="h">Some of the Programs from Kbd are used by some of the scripts
     in the CLFS-Bootscripts package. As <filename
     class="directory">/usr</filename> may not be available during the early
     stages of booting, those binaries need to be on the root partition:</para>
 
-<screen os="h"><userinput>mv -v ${CLFS}/usr/bin/{kbd_mode,openvt,setfont} ${CLFS}/bin</userinput></screen>
+<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/{kbd_mode,openvt,setfont} ${CLFS}/bin</userinput></screen>
 
   </sect2>
 

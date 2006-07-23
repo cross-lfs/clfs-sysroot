@@ -55,14 +55,14 @@
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../arm/kbd.xml"
+    xpointer="xpointer(//*[@os='c'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../arm/kbd.xml"
     xpointer="xpointer(//*[@os='s5'])"/>
 
 <screen os="s6"><userinput>cp make_include{,.orig}
 sed "/^ARCH/s/=.*/=i386/" make_include.orig &gt; make_include</userinput></screen>
-
-    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-    href="../arm/kbd.xml"
-    xpointer="xpointer(//*[@os='c'])"/>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../arm/kbd.xml"
@@ -83,6 +83,10 @@ sed "/^ARCH/s/=.*/=i386/" make_include.orig &gt; make_include</userinput></scree
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../arm/kbd.xml"
     xpointer="xpointer(//*[@os='h'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../arm/kbd.xml"
+    xpointer="xpointer(//*[@os='i'])"/>
 
   </sect2>
 
