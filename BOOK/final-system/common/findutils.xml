@@ -61,7 +61,7 @@
     stages of booting, the <command>find</command>  binary need to be on 
     the root partition:</para>
 
-<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/find ${CLFS}/bin/find</userinput></screen>
+<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/find ${CLFS}/bin</userinput></screen>
 
     <para os="j">The <command>updatedb</command> script needs to be modified
     to point to the new location for <command>find</command>:</para>

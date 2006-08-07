@@ -54,7 +54,7 @@
     extras/scsi_id extras/volume_id extras/ata_id extras/usb_id \
     extras/edd_id extras/dasd_id extras/path_id" udevdir=/dev install</userinput></screen>
 
-    <para os="e">Install necessary helpers.</para>
+    <para os="e">Install a necessary helper script.</para>
 
 <screen os="f"><userinput>install -v extras/eventrecorder.sh ${CLFS}/lib/udev</userinput></screen>
 
