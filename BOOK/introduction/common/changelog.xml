@@ -40,6 +40,10 @@
       <para>August 7, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Fixed a problem where when bash is cross-compiled
+          it cannot test for the presence of named pipes.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Fixed symlink issue in bootscripts. New package
           CLFS-bootscropts 0.3.</para>
         </listitem>
