@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>August 7, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Fixed symlink issue in bootscripts. New package
+          CLFS-bootscropts 0.3.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>July 22, 2006</para>
       <itemizedlist>
         <listitem>
