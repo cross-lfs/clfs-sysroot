@@ -14,6 +14,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/introduction.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/pkgmgt.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/variables.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/man-pages.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/binutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/gcc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/coreutils.xml"/>
@@ -47,7 +48,6 @@
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/less.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/make.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/man.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/man-pages.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/mktemp.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/module-init-tools.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/patch.xml"/>
