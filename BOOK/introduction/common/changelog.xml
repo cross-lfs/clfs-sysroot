@@ -40,6 +40,9 @@
       <para>August 30, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated to M4 1.4.6.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to Autoconf 2.60.</para>
         </listitem>
         <listitem>
