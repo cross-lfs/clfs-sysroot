@@ -30,7 +30,7 @@
 <screen os="b"><userinput>make CROSS_COMPILE="${CLFS_TARGET}-" CC="${CC}" LD="${CC}" \
     EXTRAS="extras/floppy extras/cdrom_id extras/firmware \
     extras/scsi_id extras/volume_id extras/ata_id extras/usb_id \
-    extras/edd_id extras/dasd_id extras/path_id" udevdir=/dev</userinput></screen>
+    extras/edd_id extras/dasd_id extras/path_id"</userinput></screen>
 
     <variablelist os="c">
       <title>The meaning of the make parameter:</title>
@@ -52,7 +52,7 @@
 <screen os="d"><userinput>make DESTDIR="${CLFS}" \
     EXTRAS="extras/floppy extras/cdrom_id extras/firmware \
     extras/scsi_id extras/volume_id extras/ata_id extras/usb_id \
-    extras/edd_id extras/dasd_id extras/path_id" udevdir=/dev install</userinput></screen>
+    extras/edd_id extras/dasd_id extras/path_id" install</userinput></screen>
 
     <para os="e">Install a necessary helper script.</para>
 
