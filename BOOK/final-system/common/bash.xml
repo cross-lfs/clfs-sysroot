@@ -86,7 +86,7 @@ echo "bash_cv_sys_named_pipes=yes" &gt;&gt; config.cache
 
     <para os="l">Create /bin/sh:</para>
 
-<screen os="m" role="nodump"><userinput>ln -sv bash ${CLFS}/bin/sh</userinput></screen>
+<screen os="m"><userinput>ln -sv bash ${CLFS}/bin/sh</userinput></screen>
 
   </sect2>
 
