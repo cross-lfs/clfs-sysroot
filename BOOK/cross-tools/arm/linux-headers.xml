@@ -36,11 +36,10 @@
 
     <para os="b">Install the header files that are common to all architectures:</para>
 
-<screen os="c"><userinput>install -dv ${CLFS}/usr/include/{asm,asm-generic,linux,net,mtd,scsi,sound}
+<screen os="c"><userinput>install -dv ${CLFS}/usr/include/{asm,asm-generic,linux,mtd,scsi,sound}
 cp -av include/asm-generic/* ${CLFS}/usr/include/asm-generic
 cp -av include/linux/* ${CLFS}/usr/include/linux
 cp -av include/mtd/* ${CLFS}/usr/include/mtd
-cp -av include/net/* ${CLFS}/usr/include/net
 cp -av include/scsi/* ${CLFS}/usr/include/scsi
 cp -av include/sound/* ${CLFS}/usr/include/sound</userinput></screen>
 
