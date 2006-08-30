@@ -40,6 +40,10 @@
       <para>August 30, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated to Linux-2.6.17.11 and Linux-Headers to
+          2.6.17.11-08232006.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added the Perl fPIC patch which makes perl build
           a shared DynaLoader.a.</para>
         </listitem>
