@@ -40,6 +40,10 @@
       <para>August 30, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated to Vim Patch -10, which contains upstream 
+          fixes.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to Udev 098 and udev-cross-lfs to
           1.1-08272006 rules.</para>
         </listitem>
