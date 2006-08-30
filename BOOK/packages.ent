@@ -239,7 +239,7 @@
 
 <!ENTITY linux-headers-version "&linux-version;-08232006">
 <!ENTITY linux-headers-size "1,576 KB">
-<!ENTITY linux-headers-url "http://ftp.jg555.com/headers/linux-headers-&linux-headers-version;.tar.bz2">
+<!ENTITY linux-headers-url "&packages-root;linux-headers-&linux-headers-version;.tar.bz2">
 <!ENTITY linux-headers-md5 "f922881d9c926766edd9be544ba6e38f">
 <!ENTITY linux-headers-home "http://headers.cross-lfs.org/">
 
