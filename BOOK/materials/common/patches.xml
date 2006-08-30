@@ -121,7 +121,7 @@
       <term>Glibc Timezone Patch- <token>&glibc-crosscompile_timezone_fix-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
-        url="&patches-root;&glibc-crosscompile_timezone_fix-patch;"/></para>
+        url="&patches-2.0-root;&glibc-crosscompile_timezone_fix-patch;"/></para>
         <para>MD5 sum: <literal>&glibc-crosscompile_timezone_fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -202,7 +202,7 @@
       <term>Perl Cross Compile Patch - <token>&perl-cross_compile-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
-        url="&patches-root;&perl-cross_compile-patch;"/></para>
+        url="&patches-2.0-root;&perl-cross_compile-patch;"/></para>
         <para>MD5 sum: <literal>&perl-cross_compile-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -298,7 +298,7 @@
       <term>Vim Cross-Compile Patch - <token>&vim-cross_compile-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
-        url="&patches-root;&vim-cross_compile-patch;"/></para>
+        url="&patches-2.0-root;&vim-cross_compile-patch;"/></para>
         <para>MD5 sum: <literal>&vim-cross_compile-patch-md5;</literal></para>
       </listitem>
     </varlistentry>

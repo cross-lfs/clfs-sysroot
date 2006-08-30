@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!ENTITY patches-root "&clfs-root;files/patches/&generic-version;/">
+<!ENTITY patches-root "&clfs-root;files/patches/svn/">
+<!ENTITY patches-2.0-root "&clfs-root;files/patches/svn/2.0/">
 
 <!-- Start of Common Patches -->
 
