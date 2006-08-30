@@ -41,12 +41,11 @@ sed "s|htmldir = @htmldir@|htmldir = /usr/share/doc/bash-&bash-version;|" \
     properly detected when cross compiling:</para>
 
 <screen os="d"><userinput>echo "ac_cv_func_setvbuf_reversed=no" &gt; config.cache
-echo "bash_cv_sys_named_pipes=yes" &gt;&gt; config.cache
-</userinput></screen>
+echo "bash_cv_sys_named_pipes=yes" &gt;&gt; config.cache</userinput></screen>
 
     <variablelist>
       <varlistentry>
-        <term><parameter>ac_cv_func_setvbuf_reversed=no</parameter></term>
+        <term><parameter>bash_cv_sys_named_pipes=yes</parameter></term>
         <listitem>
           <para>When bash is cross-compiled, it cannot test for the presence
           of named pipes. If you used <command>su</command> to become an
