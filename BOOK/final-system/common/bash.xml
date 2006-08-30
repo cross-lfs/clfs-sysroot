@@ -44,6 +44,18 @@ sed "s|htmldir = @htmldir@|htmldir = /usr/share/doc/bash-&bash-version;|" \
 echo "bash_cv_sys_named_pipes=yes" &gt;&gt; config.cache
 </userinput></screen>
 
+    <variablelist>
+      <varlistentry>
+        <term><parameter>ac_cv_func_setvbuf_reversed=no</parameter></term>
+        <listitem>
+          <para>When bash is cross-compiled, it cannot test for the presence
+          of named pipes. If you used <command>su</command> to become an
+          unprivileged user, this combination will cause Bash to build without
+          <emphasis>process substitution</emphasis></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
     <para os="e">Prepare Bash for compilation:</para>
 
 <screen os="f"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \

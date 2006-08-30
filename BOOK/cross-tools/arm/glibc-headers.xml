@@ -25,7 +25,7 @@
     <para os="s1">The following sed removes a dependency of gcc 3.4.x from
     the glibc we are using in cross-lfs. The reason we are changing it is
     because this only installs the headers, no compiling takes place. In the
-    next glibc chapter, we use the gcc that's built right after this chapter.</para>
+    next Glibc chapter, we use the GCC that's built right after this chapter.</para>
  	
 <screen os="s2"><userinput>cp configure{,.orig}
 sed -e 's/3.4/3.[0-9]/g' configure.orig > configure</userinput></screen>
@@ -76,7 +76,7 @@ echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
           <varlistentry os="dj1">
              <term><parameter>CC=gcc</parameter></term>
              <listitem>
-                <para>Tells GLIBC to use the hosts GCC compiler.</para>
+                <para>Tells Glibc to use the hosts GCC compiler.</para>
              </listitem>
           </varlistentry>
  	
@@ -96,8 +96,8 @@ echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
 
 <screen os="l"><userinput>make install-headers</userinput></screen>
 
-   <para os="m">Some files aren't installed by the above command, then
-    we will copy the header files we need:</para>
+   <para os="m">Some files aren't installed by the above command, so
+    we will copy the additional header files we need.</para>
 
    <para os="n">First we will copy a common file over to <filename 
    class="directory">${CLFS}/usr/include</filename>:</para>
@@ -109,7 +109,7 @@ cp -v bits/stdio_lim.h ${CLFS}/usr/include/bits</userinput></screen>
 
 <screen os="q"><userinput>touch ${CLFS}/usr/include/gnu/stubs.h</userinput></screen>
 
-   <para os="r">For NPTL we use the following command:</para>
+   <para os="r">Another header is needed for NPTL:</para>
    
 <screen os="s"><userinput>cp -v ../glibc-&glibc-version;/ports/sysdeps/unix/sysv/linux/arm/nptl/bits/pthreadtypes.h \
     ${CLFS}/usr/include/bits</userinput></screen>
