@@ -40,7 +40,8 @@
       <para>August 30, 2006</para>
       <itemizedlist>
         <listitem>
-          <para>[jciccone] - Updated to Udev 098 and udev-cross-lfs to 1.1-08272006 rules.</para>
+          <para>[jciccone] - Updated to Udev 098 and udev-cross-lfs to
+          1.1-08272006 rules.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Updated to Findutils 4.2.28.</para>
