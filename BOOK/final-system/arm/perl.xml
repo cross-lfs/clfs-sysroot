@@ -32,6 +32,12 @@
 
     <para os="a">The Cross directory contains a Makefile for cross-compiling.</para>
 
+    <para os="p3">The following patch causes <filename>DynaLoader.a</filename>
+    to be built with -fPIC so it can be linked into a shared library
+    later.</para>
+
+<screen os="p4"><userinput>patch -Np1 -i ../&perl-fpic-patch;</userinput></screen>
+
 <screen os="b"><userinput>cd Cross</userinput></screen>
 
     <para os="c">Compile the package:</para>
