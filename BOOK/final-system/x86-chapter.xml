@@ -17,7 +17,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/man-pages.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/binutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/gcc.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="x86/coreutils.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/coreutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/iana-etc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/m4.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/bison.xml"/>

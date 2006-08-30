@@ -27,6 +27,10 @@
 <!ENTITY coreutils-suppress-patch "coreutils-&coreutils-version;-suppress_uptime_kill_su-1.patch">
 <!ENTITY coreutils-suppress-patch-md5 "227d41a6d0f13c31375153eae91e913d">
 <!ENTITY coreutils-suppress-patch-size "13 KB">
+ 
+<!ENTITY coreutils-uname-patch "coreutils-&coreutils-version;-uname-2.patch">
+<!ENTITY coreutils-uname-patch-md5 "865d271bec9039f45a3be0ada21edae0">
+<!ENTITY coreutils-uname-patch-size "8 KB">
 
 <!ENTITY gawk-segfault-patch "gawk-&gawk-version;-segfault_fix-1.patch">
 <!ENTITY gawk-segfault-patch-md5 "7679530d88bf3eb56c42eb6aba342ddb">
@@ -135,9 +139,3 @@
 <!ENTITY zlib-fpic-patch "zlib-&zlib-version;-fPIC-1.patch">
 <!ENTITY zlib-fpic-patch-md5 "545d60b20bfde6f53023de44438cef59">
 <!ENTITY zlib-fpic-patch-size "3.2 KB">
-
-<!-- Start of x86/x86_64 patches -->
-
-<!ENTITY coreutils-x86_uname-patch "coreutils-&coreutils-version;-uname-1.patch">
-<!ENTITY coreutils-x86_uname-patch-md5 "c05b735710fbd62239588c07084852a0">
-<!ENTITY coreutils-x86_uname-patch-size "4.5 KB">
