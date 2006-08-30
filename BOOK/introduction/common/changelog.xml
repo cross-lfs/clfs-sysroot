@@ -40,6 +40,9 @@
       <para>August 30, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated to Procps 3.2.7.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to Coreutils 0.97.</para>
         </listitem>
         <listitem>
