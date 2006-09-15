@@ -89,10 +89,6 @@
 <!ENTITY perl-cross_compile-patch-md5 "bd9f94c8629e674f4472604b77cea42d">
 <!ENTITY perl-cross_compile-patch-size "76 KB">
 
-<!ENTITY perl-fpic-patch "perl-&perl-version;-fPIC-1.patch">
-<!ENTITY perl-fpic-patch-md5 "7d784d82b1366ab88b5fc265387d2a16">
-<!ENTITY perl-fpic-patch-size "4 KB">
-
 <!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-3.patch">
 <!ENTITY readline-fixes-patch-md5 "e30963cd5c6f6a11a23344af36cfa38c">
 <!ENTITY readline-fixes-patch-size "2.1 KB">

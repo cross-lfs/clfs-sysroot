@@ -31,11 +31,11 @@
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../arm/perl.xml"
-    xpointer="xpointer(//*[@os='p3'])"/>
+    xpointer="xpointer(//*[@os='s1'])"/>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../arm/perl.xml"
-    xpointer="xpointer(//*[@os='p4'])"/>
+    xpointer="xpointer(//*[@os='s2'])"/>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../arm/perl.xml"
