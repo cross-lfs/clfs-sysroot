@@ -40,6 +40,10 @@
       <para>August 31, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Removed the keymap settings from the kernel 
+          pages.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added Shadow patch to fix useradd.</para>
         </listitem>
       </itemizedlist>
