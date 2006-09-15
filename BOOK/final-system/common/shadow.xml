@@ -33,6 +33,11 @@
       command below.</para>
     </note>
 
+    <para os="p1">The following patch fixes when useradd will only accept
+    group names instead of group id numbers:</para>
+
+<screen os="p2"><userinput>patch -Np1 -i ../&shadow-useradd_fix-patch;</userinput></screen>
+
     <para os="b">Create a config.cache containing information about a test that
     cannot be run when cross-compiling:</para>
 
