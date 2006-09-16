@@ -37,7 +37,7 @@
     href="../arm/linux-headers.xml"
     xpointer="xpointer(//*[@os='d'])"/>
 
-<screen><userinput>cp -av include/asm-i386/* ${CLFS}/usr/include/asm</userinput></screen>
+<screen><userinput>cp -av include/asm-i386 ${CLFS}/usr/include/asm</userinput></screen>
 
   </sect2>
 
