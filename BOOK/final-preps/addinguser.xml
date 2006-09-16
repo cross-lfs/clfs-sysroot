@@ -78,10 +78,10 @@ useradd -s /bin/bash -g clfs -m -k /dev/null clfs</userinput></screen>
 <screen><userinput>passwd clfs</userinput></screen>
 
   <para>Grant <systemitem class="username">clfs</systemitem> full access to
-  <filename class="directory">$CLFS</filename> by making <systemitem
+  <filename class="directory">${CLFS}</filename> by making <systemitem
   class="username">clfs</systemitem> the directory's owner:</para>
 
-<screen><userinput>chown -Rv clfs $CLFS</userinput></screen>
+<screen><userinput>chown -Rv clfs ${CLFS}</userinput></screen>
 
   <para>Next, login as user <systemitem class="username">clfs</systemitem>.
   This can be done via a virtual console, through a display manager, or

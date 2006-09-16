@@ -18,9 +18,9 @@
 
     <para>The commands in the remainder of this book must be performed while
     logged in as <systemitem class="username">root</systemitem>. Check that
-    $CLFS is still set:</para>
+    ${CLFS} is still set:</para>
 
-    <screen><userinput>echo $CLFS</userinput></screen>
+    <screen><userinput>echo ${CLFS}</userinput></screen>
 
   </important>
 

@@ -16,7 +16,7 @@
   command to create a new <filename>.bash_profile</filename>:</para>
 
 <screen os="b"><userinput>cat &gt; ~/.bash_profile &lt;&lt; "EOF"
-<literal>exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash</literal>
+<literal>exec env -i HOME=${HOME} TERM=${TERM} PS1='\u:\w\$ ' /bin/bash</literal>
 EOF</userinput></screen>
 
   <para os="c">When logged on as user <systemitem class="username">clfs</systemitem>,

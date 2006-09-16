@@ -73,7 +73,7 @@
 <screen os="k" role="nodump"><userinput>cd ${CLFS}/usr/share/info
 rm dir
 for f in *
-do install-info $f dir 2&gt;/dev/null
+do install-info ${f} dir 2&gt;/dev/null
 done</userinput></screen>
 
   </sect2>
