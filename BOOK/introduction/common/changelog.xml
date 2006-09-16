@@ -40,6 +40,11 @@
       <para>August 31, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Add patch to fix gzexe. Used Matts change from LFS,
+          that utilizes Robert's fix. More details at
+          http://wiki.linuxfromscratch.org/lfs/ticket/1876.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Linux to 2.6.17.13 and Linux Headers to 2.6.17.13-09092006.</para>
         </listitem>
         <listitem>
