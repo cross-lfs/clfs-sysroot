@@ -40,6 +40,9 @@
       <para>August 31, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Linux to 2.6.17.13 and Linux Headers to 2.6.17.13-09092006.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Replaced the Perl -fPIC patch with a sed.</para>
         </listitem>
         <listitem>
