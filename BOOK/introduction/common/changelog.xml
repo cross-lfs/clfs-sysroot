@@ -40,6 +40,11 @@
       <para>August 31, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated to Vim Patch -12, which contains upstream
+          fixes. This patch will be upgraded weekly, no further changelog
+          entries needed.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Add patch to fix gzexe. Used Matts change from LFS,
           that utilizes Robert's fix. More details at
           http://wiki.linuxfromscratch.org/lfs/ticket/1876.</para>
