@@ -37,10 +37,20 @@
 -->
 
     <listitem>
+      <para>October 5, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[manuel] - Changed book license to the Open Publication
+          License v1.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>August 31, 2006</para>
       <itemizedlist>
         <listitem>
-          <para>[jciccone] - Added a Hst System Requirements page.</para>
+          <para>[jciccone] - Added a Host System Requirements page.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Updated to Vim Patch -12, which contains upstream
@@ -56,7 +66,7 @@
           <para>[jciccone] - Added a patch to fix Inetutils. Telnet on 64 bit
           systems will fail, it will attempt to connect to 255.255.255.255
           instead of the ip address entered. This was due to a change in glibc's
-          handling of inet_addr, was long now is u_int32_t. Bug found by 
+          handling of inet_addr, was long now is u_int32_t. Bug found by
           Vladimir Vainer.</para>
         </listitem>
         <listitem>
@@ -66,7 +76,7 @@
           <para>[jciccone] - Replaced the Perl -fPIC patch with a sed.</para>
         </listitem>
         <listitem>
-          <para>[jciccone] - Removed the keymap settings from the kernel 
+          <para>[jciccone] - Removed the keymap settings from the kernel
           pages.</para>
         </listitem>
         <listitem>
@@ -82,7 +92,7 @@
           <para>[jciccone] - Updated to Coreutils Uname Patch -2, which supports all architectures.</para>
         </listitem>
         <listitem>
-          <para>[jciccone] - Updated to Vim Patch -10, which contains upstream 
+          <para>[jciccone] - Updated to Vim Patch -10, which contains upstream
           fixes.</para>
         </listitem>
         <listitem>

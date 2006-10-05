@@ -26,7 +26,25 @@
   xpointer="xpointer(bookinfo/bibliosource)"/>
 
   <legalnotice>
-    <para>Copyright (c) 2005, Jim Gifford &amp; Ryan Oliver</para>
+    <para>Copyright &copy; 2005-2006, Jim Gifford &amp; Ryan Oliver</para>
+
+    <para>All rights reserved.</para>
+
+    <para>This material may be distributed only subject to the terms and
+    conditions set forth in the <xref linkend="license"/> v1.0 or later
+    (the latest version is presently available at <ulink
+    url="http://www.opencontent.org/openpub/"/>).</para>
+
+    <!-- Modifications and limitations to the OPL (see section VI)
+    can be place here, if needed. -->
+
+    <para><trademark class='registered'>Linux</trademark> is a registered
+    trademark of Linus Torvalds.</para>
+
+    <para>This book is based on the "Linux From Scratch" book, that was
+    released under the following license:</para>
+
+    <para>Copyright (c) 1999&ndash;2006, Gerard Beekmans</para>
 
     <para>All rights reserved.</para>
 
