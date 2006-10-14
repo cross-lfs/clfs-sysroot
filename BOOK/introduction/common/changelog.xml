@@ -40,6 +40,9 @@
       <para>October 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Readline to 5.2.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Bash to 3.2.</para>
         </listitem>
         <listitem>

@@ -89,10 +89,6 @@
 <!ENTITY perl-cross_compile-patch-md5 "bd9f94c8629e674f4472604b77cea42d">
 <!ENTITY perl-cross_compile-patch-size "76 KB">
 
-<!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-3.patch">
-<!ENTITY readline-fixes-patch-md5 "e30963cd5c6f6a11a23344af36cfa38c">
-<!ENTITY readline-fixes-patch-size "2.1 KB">
-
 <!ENTITY shadow-useradd_fix-patch "shadow-&shadow-version;-useradd_fix-1.patch">
 <!ENTITY shadow-useradd_fix-patch-md5 "272eb8ef4b9b7ad859292150526ea5fa">
 <!ENTITY shadow-useradd_fix-patch-size "4 KB">
