@@ -40,6 +40,10 @@
       <para>October 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Bootscripts to 1.1-pre1. Adding in the
+          boot logging feature.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Removed TeX installation commands from Texinfo
           instructions.</para>
         </listitem>

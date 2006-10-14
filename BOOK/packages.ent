@@ -4,18 +4,6 @@
 
 <!-- Note: For empty *-home entities use " " not "" -->
 
-<!ENTITY aboot-version "0.9b">
-<!ENTITY aboot-size "112 KB">
-<!ENTITY aboot-url "&sourceforge;aboot/aboot-&aboot-version;.tar.bz2?download">
-<!ENTITY aboot-md5 "5f16edbf4e9d52cd191adc4d4b6a5327">
-<!ENTITY aboot-home "http://sourceforge.net/projects/aboot">
-
-<!ENTITY arcload-version "0.5">
-<!ENTITY arcload-size "47 KB">
-<!ENTITY arcload-url "ftp://ftp.linux-mips.org/pub/linux/mips/people/skylark/arcload-&arcload-version;.tar.bz2">
-<!ENTITY arcload-md5 "b00e1c79074a13c2de97748f56f9bd1f">
-<!ENTITY arcload-home "http://www.linux-mips.org/wiki/ARCLoad">
-
 <!ENTITY autoconf-version "2.60">
 <!ENTITY autoconf-size "1,000 KB">
 <!ENTITY autoconf-url "&gnu;autoconf/autoconf-&autoconf-version;.tar.bz2">
@@ -42,12 +30,6 @@
 <!ENTITY bash-doc-md5 "a8c517c6a7b21b8b855190399c5935ae">
 <!ENTITY bash-doc-home " ">
 
-<!ENTITY bin86-version "0.16.17">
-<!ENTITY bin86-size "149 KB">
-<!ENTITY bin86-url "http://homepage.ntlworld.com/robert.debath/dev86/bin86-&bin86-version;.tar.gz">
-<!ENTITY bin86-md5 "c9e8d72dd2e7457b52d0e3164fc199a1">
-<!ENTITY bin86-home "http://freshmeat.net/projects/bin86/">
-
 <!ENTITY binutils-version "2.17">
 <!ENTITY binutils-size "13,496 KB">
 <!ENTITY binutils-url "&gnu;binutils/binutils-&binutils-version;.tar.bz2">
@@ -66,17 +48,11 @@
 <!ENTITY bzip2-md5 "8a716bebecb6e647d2e8a29ea5d8447f">
 <!ENTITY bzip2-home "http://www.bzip.org/">
 
-<!ENTITY clfs-bootscripts-version "0.4">
+<!ENTITY clfs-bootscripts-version "1.1-pre1">
 <!ENTITY clfs-bootscripts-size "28 KB">
-<!ENTITY clfs-bootscripts-url "http://ftp.jg555.com/bootscripts/bootscripts-cross-lfs-&clfs-bootscripts-version;.tar.bz2">
-<!ENTITY clfs-bootscripts-md5 "79bff3247411589d7de51fdaea9578bd">
+<!ENTITY clfs-bootscripts-url "&packages-root;bootscripts-cross-lfs-&clfs-bootscripts-version;.tar.bz2">
+<!ENTITY clfs-bootscripts-md5 "8b3f03ee50ce339c858406e52e649f74">
 <!ENTITY clfs-bootscripts-home " ">
-
-<!ENTITY colo-version "1.21">
-<!ENTITY colo-size "250 KB">
-<!ENTITY colo-url "http://www.colonel-panic.org/cobalt-mips/colo/colo-&colo-version;.tar.gz">
-<!ENTITY colo-md5 "9d8a37ad4984ec6660ff159e83f15404">
-<!ENTITY colo-home "http://www.linux-mips.org/wiki/CoLo">
 
 <!ENTITY coreutils-version "5.97">
 <!ENTITY coreutils-size "4,960 KB">
@@ -90,23 +66,11 @@
 <!ENTITY diffutils-md5 "18d6587cb915e7aa110a5d463d6ed156">
 <!ENTITY diffutils-home "&gnu-software;diffutils/">
 
-<!ENTITY dvhtool-version "1.0.1">
-<!ENTITY dvhtool-size "52 KB">
-<!ENTITY dvhtool-url "http://ftp.debian.org/debian/pool/main/d/dvhtool/dvhtool_&dvhtool-version;.orig.tar.gz">
-<!ENTITY dvhtool-md5 "4448c01e6a015685af90a79fbea8da4e">
-<!ENTITY dvhtool-home "http://packages.qa.debian.org/d/dvhtool.html">
-
 <!ENTITY e2fsprogs-version "1.39">
 <!ENTITY e2fsprogs-size "3,612 KB">
 <!ENTITY e2fsprogs-url "&sourceforge;e2fsprogs/e2fsprogs-&e2fsprogs-version;.tar.gz?download">
 <!ENTITY e2fsprogs-md5 "06f7806782e357797fad1d34b7ced0c6">
 <!ENTITY e2fsprogs-home "http://e2fsprogs.sourceforge.net/">
-
-<!ENTITY elftoaout-version "2.3">
-<!ENTITY elftoaout-size "13 KB">
-<!ENTITY elftoaout-url "http://gd.tuwien.ac.at/opsys/linux/Owl/pool/sources/elftoaout/elftoaout-&elftoaout-version;.tgz">
-<!ENTITY elftoaout-md5 "be3bd6f7ba8ae107cbdbaa820ba64f86">
-<!ENTITY elftoaout-home " ">
 
 <!ENTITY file-version "4.17">
 <!ENTITY file-size "544 KB">
@@ -169,23 +133,11 @@
 <!ENTITY groff-md5 "f7c9cf2e4b9967d3af167d7c9fadaae4">
 <!ENTITY groff-home "&gnu-software;groff/">
 
-<!ENTITY grub-version "0.97">
-<!ENTITY grub-size "950 KB">
-<!ENTITY grub-url "&alpha-gnu;grub/grub-&grub-version;.tar.gz">
-<!ENTITY grub-md5 "cd3f3eb54446be6003156158d51f4884">
-<!ENTITY grub-home "&gnu-software;grub/">
-
 <!ENTITY gzip-version "1.3.5">
 <!ENTITY gzip-size "324 KB">
 <!ENTITY gzip-url "&alpha-gnu;gzip/gzip-&gzip-version;.tar.gz">
 <!ENTITY gzip-md5 "3d6c191dfd2bf307014b421c12dc8469">
 <!ENTITY gzip-home "http://www.gzip.org/">
-
-<!ENTITY hfsutils-version "3.2.6">
-<!ENTITY hfsutils-size "203 KB">
-<!ENTITY hfsutils-url "ftp://ftp.mars.org/pub/hfs/hfsutils-&hfsutils-version;.tar.gz">
-<!ENTITY hfsutils-md5 "fa572afd6da969e25c1455f728750ec4">
-<!ENTITY hfsutils-home "http://www.mars.org/home/rob/proj/hfs/">
 
 <!ENTITY iana-etc-version "2.10">
 <!ENTITY iana-etc-size "184 KB">
@@ -222,12 +174,6 @@
 <!ENTITY libtool-url "&gnu;libtool/libtool-&libtool-version;.tar.gz">
 <!ENTITY libtool-md5 "8e0ac9797b62ba4dcc8a2fb7936412b0">
 <!ENTITY libtool-home "&gnu-software;libtool/">
-
-<!ENTITY lilo-version "22.7.1">
-<!ENTITY lilo-size "420 KB">
-<!ENTITY lilo-url "ftp://ftp.metalab.unc.edu/pub/Linux/system/boot/lilo/lilo-&lilo-version;.src.tar.gz">
-<!ENTITY lilo-md5 "1f3855c6f2c7b2beaa8a90bf9975a289">
-<!ENTITY lilo-home " ">
 
 <!ENTITY linux-dl-version "2.6">
 
@@ -291,12 +237,6 @@
 <!ENTITY patch-md5 "dacfb618082f8d3a2194601193cf8716">
 <!ENTITY patch-home "&gnu-software;patch/">
 
-<!ENTITY parted-version "1.6.25.1">
-<!ENTITY parted-size "1,533 KB">
-<!ENTITY parted-url "&gnu;/parted/parted-&parted-version;.tar.gz">
-<!ENTITY parted-md5 "8ad8b2c8aa865d9d6a43a4ecfe021782">
-<!ENTITY parted-home "&gnu-software;parted/">
-
 <!ENTITY perl-version "5.8.8">
 <!ENTITY perl-size "9,887 KB">
 <!ENTITY perl-url "http://ftp.funet.fi/pub/CPAN/src/perl-&perl-version;.tar.bz2">
@@ -339,12 +279,6 @@
 <!ENTITY shadow-md5 "e7751d46ecf219c07ae0b028ab3335c6">
 <!ENTITY shadow-home " ">
 
-<!ENTITY silo-version "1.4.11">
-<!ENTITY silo-size "142 KB">
-<!ENTITY silo-url "http://www.sparc-boot.org/pub/silo/silo-&silo-version;.tar.bz2">
-<!ENTITY silo-md5 "37eea1b33d80f6c35d53af9029e30a02">
-<!ENTITY silo-home "http://www.sparc-boot.org/">
-
 <!ENTITY sysklogd-version "1.4.1">
 <!ENTITY sysklogd-size "80 KB">
 <!ENTITY sysklogd-url "http://www.infodrom.org/projects/sysklogd/download/sysklogd-&sysklogd-version;.tar.gz">
@@ -369,12 +303,6 @@
 <!ENTITY texinfo-md5 "6ba369bbfe4afaa56122e65b3ee3a68c">
 <!ENTITY texinfo-home "&gnu-software;texinfo/">
 
-<!ENTITY tree-version "1.5.0">
-<!ENTITY tree-size "26 KB">
-<!ENTITY tree-url "ftp://mama.indstate.edu/linux/tree/tree-&tree-version;.tgz">
-<!ENTITY tree-md5 "e0d090c564e7ea5afa16bac80620c7e0">
-<!ENTITY tree-home " ">
-
 <!ENTITY udev-version "098">
 <!ENTITY udev-size "196 KB">
 <!ENTITY udev-url "&kernel;linux/utils/kernel/hotplug/udev-&udev-version;.tar.bz2">
@@ -392,12 +320,6 @@
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/util-linux-&util-linux-version;.tar.bz2">
 <!ENTITY util-linux-md5 "af9d9e03038481fbf79ea3ac33f116f9">
 <!ENTITY util-linux-home " ">
-
-<!ENTITY yaboot-version "1.3.13">
-<!ENTITY yaboot-size "269 KB">
-<!ENTITY yaboot-url "http://penguinppc.org/bootloaders/yaboot/yaboot-&yaboot-version;.tar.gz">
-<!ENTITY yaboot-md5 "f12798d1b2063f21d07e0ae7f602ccaf">
-<!ENTITY yaboot-home "http://yaboot.ozlabs.org/">
 
 <!ENTITY vim-version "7.0">
 <!ENTITY vim-version2 "70">
