@@ -40,6 +40,12 @@
       <para>October 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - New patch for util-linux, replaces GCC 4 fixes.
+          The new patch fixes the same issues, and removes the use of
+          syscalls. Syscalls were removed from unistd.h during sanitation.
+          </para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Texinfo to 4.8a.</para>
         </listitem>
         <listitem>
