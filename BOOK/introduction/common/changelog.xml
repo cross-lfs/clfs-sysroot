@@ -40,6 +40,10 @@
       <para>October 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated to Linux 2.6.18 and
+          Linux-Headers-2.6.18-09302006.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Bootscripts to 1.1-pre1. Adding in the
           boot logging feature.</para>
         </listitem>
