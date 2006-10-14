@@ -40,6 +40,10 @@
       <para>October 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added a patch to Util-Linux to fix build issues
+          due to changes in the kernel.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated M4 to 1.4.7</para>
         </listitem>
         <listitem>
