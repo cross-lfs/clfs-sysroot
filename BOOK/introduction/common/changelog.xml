@@ -40,6 +40,9 @@
       <para>October 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated M4 to 1.4.7</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to Linux 2.6.18 and
           Linux-Headers-2.6.18-09302006.</para>
         </listitem>
