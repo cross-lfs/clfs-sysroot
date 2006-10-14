@@ -40,6 +40,10 @@
       <para>October 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added patch to fix build issues with
+          Bash 3.2.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Udev to 102.</para>
         </listitem>
         <listitem>
