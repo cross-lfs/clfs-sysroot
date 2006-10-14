@@ -40,6 +40,9 @@
       <para>October 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Bash to 3.2.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - New patch for util-linux, replaces GCC 4 fixes.
           The new patch fixes the same issues, and removes the use of
           syscalls. Syscalls were removed from unistd.h during sanitation.

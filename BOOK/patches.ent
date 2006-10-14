@@ -5,10 +5,6 @@
 
 <!-- Start of Common Patches -->
 
-<!ENTITY bash-fixes-patch "bash-&bash-version;-fixes-8.patch">
-<!ENTITY bash-fixes-patch-md5 "bc337045fa4c5839babf0306cc9df6d0">
-<!ENTITY bash-fixes-patch-size "23 KB">
-
 <!ENTITY binutils-posix-patch "binutils-&binutils-version;-posix-1.patch">
 <!ENTITY binutils-posix-patch-md5 "7e42a8edc0c59246bbc58c428256113c">
 <!ENTITY binutils-posix-patch-size "4.9 KB">

@@ -27,15 +27,7 @@
     <para os="a">If you downloaded the Bash documentation tarball and wish to
     install HTML documentation, issue the following commands:</para>
 
-<screen os="b"><userinput>tar -xvf ../bash-doc-&bash-doc-version;.tar.gz
-cp Makefile.in{,.orig}
-sed "s|htmldir = @htmldir@|htmldir = /usr/share/doc/bash-&bash-version;|" \
-    Makefile.in.orig &gt; Makefile.in</userinput></screen>
-
-    <para os="p1">The following patch contains updates from the maintainer. The
-    maintainer of Bash only releases these patches to fix serious issues.</para>
-
-<screen os="p2"><userinput>patch -Np1 -i ../&bash-fixes-patch;</userinput></screen>
+<screen os="b"><userinput>tar -xvf ../bash-doc-&bash-doc-version;.tar.gz</userinput></screen>
 
     <para os="c">Create a config.cache containing information that is not
     properly detected when cross compiling:</para>
@@ -81,7 +73,7 @@ echo "bash_cv_sys_named_pipes=yes" &gt;&gt; config.cache</userinput></screen>
 
     <para os="j">Install the package:</para>
 
-<screen os="k"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
+<screen os="k"><userinput>make DESTDIR=${CLFS} htmldir=/usr/share/doc/bash-&bash-version; install</userinput></screen>
 
     <para os="l">Create /bin/sh:</para>
 
