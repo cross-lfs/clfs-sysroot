@@ -40,6 +40,9 @@
       <para>October 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Texinfo to 4.8a.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added a patch to Util-Linux to fix build issues
           due to changes in the kernel.</para>
         </listitem>
