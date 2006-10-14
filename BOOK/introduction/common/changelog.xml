@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>October 14, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Removed TeX installation commands from Texinfo
+          instructions.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>October 5, 2006</para>
       <itemizedlist>
         <listitem>
