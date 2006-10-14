@@ -40,6 +40,9 @@
       <para>October 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated the udev rules tarball to 1.1-09062006.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated the vim fixes patch to -14.</para>
         </listitem>
         <listitem>
