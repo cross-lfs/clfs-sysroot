@@ -40,6 +40,9 @@
       <para>November 5, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated to Inetutils 1.5.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added command to man instructions to comment out
           MANPATH /usr/local/man (in addition to /usr/man).</para>
         </listitem>
