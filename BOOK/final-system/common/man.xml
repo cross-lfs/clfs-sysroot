@@ -39,12 +39,14 @@ sed -e "/PREPATH=/s@=.*@=\"$(eval echo ${CLFS}/{,usr/}{sbin,bin})\"@g" \
     -e 's@-is@&amp;R@g' configure.orig &gt; configure</userinput></screen>
 
     <para os="d">Another <command>sed</command> substitution comments out the
-    <quote>MANPATH /usr/man</quote> line in the <filename>man.conf</filename>
-    file to prevent redundant results when using programs such as
-    <command>whatis</command>:</para>
+    <quote>MANPATH /usr/man</quote> and <quote>MANPATH /usr/local/man</quote>
+    lines in the <filename>man.conf</filename> file to prevent redundant
+    results when using programs such as <command>whatis</command>:</para>
 
 <screen os="e"><userinput>cp src/man.conf.in{,.orig}
-sed 's@MANPATH./usr/man@#&amp;@g' src/man.conf.in.orig &gt; src/man.conf.in</userinput></screen>
+sed -e 's@MANPATH./usr/man@#&amp;@g' \
+    -e 's@MANPATH./usr/local/man@#&amp;@g' \
+    src/man.conf.in.orig &gt; src/man.conf.in</userinput></screen>
 
     <para os="f">Finally, correct a syntax error in the
     <command>makewhatis</command> script:</para>
