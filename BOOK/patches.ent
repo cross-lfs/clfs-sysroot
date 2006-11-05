@@ -5,6 +5,10 @@
 
 <!-- Start of Common Patches -->
 
+<!ENTITY bash-fixes-patch "bash-&bash-version;-fixes-1.patch">
+<!ENTITY bash-fixes-patch-md5 "51dcdc97fa978199329f12d382056d91">
+<!ENTITY bash-fixes-patch-size "4 KB">
+
 <!ENTITY binutils-posix-patch "binutils-&binutils-version;-posix-1.patch">
 <!ENTITY binutils-posix-patch-md5 "7e42a8edc0c59246bbc58c428256113c">
 <!ENTITY binutils-posix-patch-size "4.9 KB">
@@ -84,10 +88,6 @@
 <!ENTITY mktemp-tempfile-patch "mktemp-&mktemp-version;-add_tempfile-3.patch">
 <!ENTITY mktemp-tempfile-patch-md5 "65d73faabe3f637ad79853b460d30a19">
 <!ENTITY mktemp-tempfile-patch-size "3.6 KB">
-
-<!ENTITY ncurses-bash-patch "ncurses-&ncurses-version;-bash32_update-1.patch">
-<!ENTITY ncurses-bash-patch-md5 "fca13124063dc74925bbdaec364f14dd">
-<!ENTITY ncurses-bash-patch-size "4 KB">
 
 <!ENTITY perl-cross_compile-patch "perl-&perl-version;-cross_compile-2.patch">
 <!ENTITY perl-cross_compile-patch-md5 "bd9f94c8629e674f4472604b77cea42d">
