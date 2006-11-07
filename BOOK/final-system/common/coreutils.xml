@@ -45,11 +45,12 @@
 
 <screen os="ab"><userinput>touch man/uname.1</userinput></screen>
 
-    <para os="a">Configure doesn't properly handle the following tests
-    when cross-compiling:</para>
+    <para os="a">Configure can not properly determine how to get free space
+    when cross-compiling, Without putting the following entry into
+    <filename>config.cache</filename> the <command>df</command> program will
+    not be built.</para>
 
-<screen os="b"><userinput>echo "ac_cv_func_setvbuf_reversed=yes" &gt; config.cache
-echo "fu_cv_sys_stat_statfs2_bsize=yes" &gt;&gt; config.cache</userinput></screen>
+<screen os="b"><userinput>echo "fu_cv_sys_stat_statfs2_bsize=yes" &gt; config.cache</userinput></screen>
 
     <para os="c">Now prepare Coreutils for compilation:</para>
 

@@ -49,7 +49,7 @@
     href="../arm/perl.xml"
     xpointer="xpointer(//*[@os='c'])"/>
 
-<screen os="d"><userinput>make ARCH=x86 CROSS_COMPILE="${CLFS_TARGET}-"</userinput></screen>
+<screen os="d"><userinput>make ARCH=x86 CROSS_COMPILE=${CLFS_TARGET}-</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../arm/perl.xml"

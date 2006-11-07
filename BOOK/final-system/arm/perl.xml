@@ -43,7 +43,7 @@
 
     <para os="c">Compile the package:</para>
 
-<screen os="d"><userinput>make ARCH=arm CROSS_COMPILE="${CLFS_TARGET}-"</userinput></screen>
+<screen os="d"><userinput>make ARCH=arm CROSS_COMPILE=${CLFS_TARGET}-</userinput></screen>
 
     <para os="e">Install the package:</para>
 
