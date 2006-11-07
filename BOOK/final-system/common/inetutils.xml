@@ -92,10 +92,10 @@ done</userinput></screen>
 
 <screen os="g"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
-    <para os="h">Move the <command>ping</command> program to its FHS-compliant
-    place:</para>
+    <para os="h">Move the <command>ping</command> and <command>ping6</command>
+    program to its FHS-compliant place:</para>
 
-<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/ping ${CLFS}/bin</userinput></screen>
+<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/ping{,6} ${CLFS}/bin</userinput></screen>
 
   </sect2>
 
@@ -106,7 +106,7 @@ done</userinput></screen>
       <segtitle>Installed programs</segtitle>
 
       <seglistitem>
-        <seg>ftp, ping, rcp, rlogin, rsh, talk, telnet, and tftp</seg>
+        <seg>ftp, ifconfig, ping, ping6, rcp, rlogin, rsh, talk, telnet, and tftp</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -125,6 +125,16 @@ done</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="ifconfig">
+        <term><command>ifconfig</command></term>
+        <listitem>
+          <para>Utility for configuring network interfaces</para>
+          <indexterm zone="ch-system-inetutils ifconfig">
+            <primary sortas="b-ifconfig">ifconfig</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="ping">
         <term><command>ping</command></term>
         <listitem>
@@ -132,6 +142,17 @@ done</userinput></screen>
           take</para>
           <indexterm zone="ch-system-inetutils ping">
             <primary sortas="b-ping">ping</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ping6">
+        <term><command>ping6</command></term>
+        <listitem>
+          <para>Sends echo-request packets and reports how long the replies
+          take this is the IPV6 version</para>
+          <indexterm zone="ch-system-inetutils ping6">
+            <primary sortas="b-ping6">ping6</primary>
           </indexterm>
         </listitem>
       </varlistentry>
