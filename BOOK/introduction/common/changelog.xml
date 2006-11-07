@@ -40,7 +40,10 @@
       <para>November 11, 2006</para>
       <itemizedlist>
         <listitem>
-          <para>[jciccone] Updated to Linux 2.6.18.1 and Linux-Headers 2.6.18.1-10222006.</para>
+          <para>[jciccone] -  Removed out of place udev text in bootscripts Networking.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated to Linux 2.6.18.1 and Linux-Headers 2.6.18.1-10222006.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Updated to Coreutils 6.4.</para>
