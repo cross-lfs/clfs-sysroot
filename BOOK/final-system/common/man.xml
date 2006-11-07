@@ -38,9 +38,10 @@
 sed -e "/PREPATH=/s@=.*@=\"$(eval echo ${CLFS}/{,usr/}{sbin,bin})\"@g" \
     -e 's@-is@&amp;R@g' configure.orig &gt; configure</userinput></screen>
 
-    <para os="d">Another <command>sed</command> substitution comments out the
-    <quote>MANPATH /usr/man</quote> and <quote>MANPATH /usr/local/man</quote>
-    lines in the <filename>man.conf</filename> file to prevent redundant
+    <para os="d">Another couple of <command>sed</command> substitutions
+    comment out the <quote>MANPATH /usr/man</quote> and
+    <quote>MANPATH /usr/local/man</quote> lines in the
+    <filename>man.conf</filename> file to prevent redundant
     results when using programs such as <command>whatis</command>:</para>
 
 <screen os="e"><userinput>cp src/man.conf.in{,.orig}

@@ -82,11 +82,11 @@ cd build</userinput></screen>
 
 <screen os="g"><userinput>make</userinput></screen>
 
-    <para os="h">Install the binaries and documentation:</para>
+    <para os="h">Install the binaries, documentation, and shared libraries:</para>
 
 <screen os="i"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
-    <para os="j">Install the shared libraries:</para>
+    <para os="j">Install the static libraries and headers:</para>
 
 <screen os="k"><userinput>make DESTDIR=${CLFS} install-libs</userinput></screen>
 
