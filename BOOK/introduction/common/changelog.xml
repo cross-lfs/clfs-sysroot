@@ -40,6 +40,9 @@
       <para>November 11, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated to Udev Rules 1.1-pre2.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to Gettext 0.16.</para>
         </listitem>
         <listitem>
