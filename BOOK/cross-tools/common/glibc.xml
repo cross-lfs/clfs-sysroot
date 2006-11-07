@@ -42,7 +42,7 @@
     <note os="pa">
       <para>If you need to recompile glibc after the GCC Final Cross-Compiler
       is installed do not apply the libgcc_eh patch. This patch is applied when
-      building glibc with a static GCC because when gcc is built static libgcc
+      building glibc with a static GCC because when gcc is built static, libgcc
       contains the symbols that would normaly exist in libgcc_eh.</para>
     </note>
 
@@ -61,9 +61,10 @@
 
 <screen os="p6"><userinput>patch -Np1 -i ../&glibc-crosscompile_timezone_fix-patch;</userinput></screen>
 
-    <para os="p7">The following patch fixes an issue with iconv:</para>
+    <para os="p7">The following corrects the Minor version, changing the value
+    from 4 to 5:</para>
 
-<screen os="p8"><userinput>patch -Np1 -i ../&glibc-iconv_fix-patch;</userinput></screen>
+<screen os="p8"><userinput>patch -Np1 -i ../&glibc-minor-patch;</userinput></screen>
 
     <para os="b">The Glibc documentation recommends building Glibc outside of the
     source directory in a dedicated build directory:</para>

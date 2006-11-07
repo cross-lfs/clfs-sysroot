@@ -125,13 +125,13 @@
         <para>MD5 sum: <literal>&glibc-crosscompile_timezone_fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
-     <varlistentry>
-      <term>Glibc iconv Fix - <token>&glibc-iconv_fix-patch-size;</token>:</term>
+ 
+    <varlistentry>
+      <term>Glibc Versioning Update - <token>&glibc-minor-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
-        url="&patches-root;&glibc-iconv_fix-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-iconv_fix-patch-md5;</literal></para>
+        url="&patches-root;&glibc-minor-patch;"/></para>
+        <para>MD5 sum: <literal>&glibc-minor-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
 
