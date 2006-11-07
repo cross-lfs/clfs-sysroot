@@ -29,9 +29,6 @@
 
 <screen os="b"><userinput>tar -xvf ../bash-doc-&bash-doc-version;.tar.gz</userinput></screen>
 
-    <para os="c">Create a config.cache containing information that is not
-    properly detected when cross compiling:</para>
-
    <para os="c">When bash is cross-compiled, it cannot test for the presence
     of named pipes. If you used <command>su</command> to become an unprivileged
     user, this combination will cause Bash to build without <emphasis>process
