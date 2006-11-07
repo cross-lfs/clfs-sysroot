@@ -40,6 +40,11 @@
       <para>November 11, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Moved e2fsprogs and sed before coreutils
+          for consistancy with clfs-svn. The testsuite dependency,
+          the reason for it moving, doesn't affect clfs2.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] -  Removed out of place udev text in bootscripts Networking.</para>
         </listitem>
         <listitem>
