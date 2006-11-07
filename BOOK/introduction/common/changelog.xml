@@ -478,7 +478,7 @@
           <para>[jciccone] - Fixed the module-init-tools install in the presence of existing files.</para>
         </listitem>
         <listitem>
-          <para>[jciccone] - Updated to Linux-Headers-2.6.16.20-06092006.</para>
+          <para>[jciccone] - Updated to Linux-Headers-2.6.16.20-10262006.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Updated to Shadow-4.0.16.</para>
