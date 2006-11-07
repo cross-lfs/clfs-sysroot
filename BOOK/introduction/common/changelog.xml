@@ -39,6 +39,11 @@
     <listitem>
       <para>November 11, 2006</para>
       <itemizedlist>
+       <listitem>
+          <para>[jciccone] - Modified the instructions for disabling the
+          installation of the groups program to account for changes in shadow's
+          Makefile.</para>
+        </listitem>
         <listitem>
           <para>[jciccone] - Updated to File 4.18.</para>
         </listitem>

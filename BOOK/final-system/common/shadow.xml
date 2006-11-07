@@ -86,7 +86,8 @@
 <screen os="i"><userinput>cp src/Makefile{,.orig}
 sed 's/groups$(EXEEXT) //' src/Makefile.orig &gt; src/Makefile
 cp man/Makefile{,.orig}
-sed '/groups/d' man/Makefile.orig &gt; man/Makefile</userinput></screen>
+sed -e '/groups1.xml/d' \
+    -e 's/groups.1//' man/Makefile.orig &gt; man/Makefile</userinput></screen>
 
     <para os="j">Compile the package:</para>
 
