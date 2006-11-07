@@ -109,7 +109,7 @@
         <term><parameter>--disable-multilib</parameter></term>
         <listitem>
           <para>This option disables the building of a multilib
-          capable binutils.</para>
+          capable Binutils.</para>
         </listitem>
       </varlistentry>
 
@@ -137,7 +137,7 @@ make</userinput></screen>
 
 <screen os="bi"><userinput>make install</userinput></screen>
 
-    <para os="bj">Copy the <filename class="headerfile">libiberty.h</filename> file to
+    <para os="bj">Copy <filename class="headerfile">libiberty.h</filename> file to
     <filename class="directory">${CLFS}/usr/include</filename> directory:</para>
 
 <screen os="bk"><userinput>cp -v ../binutils-&binutils-version;/include/libiberty.h ${CLFS}/usr/include</userinput></screen>
