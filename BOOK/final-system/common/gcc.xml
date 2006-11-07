@@ -54,6 +54,15 @@ sed 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in.orig > libiberty/Mak
 <screen os="e2"><userinput>cp gcc/gccbug.in{,.orig}
 sed 's/@have_mktemp_command@/yes/' gcc/gccbug.in.orig > gcc/gccbug.in</userinput></screen>
 
+    <para os="s1">The fixincludes attempts to "fix" the system headers
+    installed so far. Since gcc is cross-compiled expecting the system
+    headers to be in <filename class="directory">/usr/include</filename>
+    the script will be looking at host headers. The following sed prevents
+    the fixincludes script from running:</para>
+
+<screen os="s2"><userinput>cp gcc/Makefile.in{,.orig}
+sed 's@\./fixinc\.sh@-c true@' gcc/Makefile.in.orig > gcc/Makefile.in</userinput></screen>
+
     <para os="c">The GCC documentation recommends building GCC outside of the source
     directory in a dedicated build directory:</para>
 
