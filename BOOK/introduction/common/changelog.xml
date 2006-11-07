@@ -40,6 +40,9 @@
       <para>November 11, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Bash 3.2 patch updated with upstream fixes.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to Udev Rules 1.1-pre2.</para>
         </listitem>
         <listitem>
