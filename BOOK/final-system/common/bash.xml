@@ -34,7 +34,7 @@
     user, this combination will cause Bash to build without <emphasis>process
     substitution</emphasis>.</para>
 
-    <screen os="d"><userinput>echo "bash_cv_sys_named_pipes=yes" >> config.cache</userinput></screen>
+    <screen os="d"><userinput>echo "bash_cv_sys_named_pipes=yes" &gt; config.cache</userinput></screen>
 
 <para os="e">Prepare Bash for compilation:</para>
 
