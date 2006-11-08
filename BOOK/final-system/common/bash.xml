@@ -29,7 +29,11 @@
 
 <screen os="b"><userinput>tar -xvf ../bash-doc-&bash-doc-version;.tar.gz</userinput></screen>
 
-   <para os="c">When bash is cross-compiled, it cannot test for the presence
+    <para os="p1">The following patch contains updates from the maintainer. The maintainer of Bash only releases these patches to fix serious issues:</para>
+
+<screen os="p2"><userinput>patch -Np1 -i ../&bash-fixes-patch;</userinput></screen>
+
+    <para os="c">When bash is cross-compiled, it cannot test for the presence
     of named pipes. If you used <command>su</command> to become an unprivileged
     user, this combination will cause Bash to build without <emphasis>process
     substitution</emphasis>.</para>
