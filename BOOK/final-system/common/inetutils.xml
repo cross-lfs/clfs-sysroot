@@ -24,6 +24,13 @@
   <sect2 role="installation">
     <title>Installation of Inetutils</title>
 
+    <para os="p1">Not all programs that come with Inetutils will be installed.
+    However, the Inetutils build system will insist on installing all the
+    man pages anyway. The following patch will correct this
+    situation:</para>
+
+<screen os="p2"><userinput>patch -Np1 -i ../&inetutils-man_pages-patch;</userinput></screen>
+
     <para os="s1">The following set of seds prevent binaries from being installed as root</para>
 
 <screen os="s2"><userinput>for dir in ping rcp rlogin rsh; do
