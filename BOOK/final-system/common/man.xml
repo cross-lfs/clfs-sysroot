@@ -30,9 +30,9 @@
     <para os="b">First, a <command>sed</command> substitution is needed to
     modify <command>configure</command>'s default search path for executables.
     It cycles through the values in <envar>PREPATH</envar> until it finds the
-    program it is looking for. The <option>-R</option> switch is added to the
-    <envar>PAGER</envar> variable so that escape sequences are properly handled
-    by Less:</para>
+    program it is looking for. The <option>-R</option> switch is also added to
+    the <envar>PAGER</envar> variable so that escape sequences are properly
+    handled by Less:</para>
 
 <screen os="c"><userinput>cp configure{,.orig}
 sed -e "/PREPATH=/s@=.*@=\"$(eval echo ${CLFS}/{,usr/}{sbin,bin})\"@g" \
