@@ -27,12 +27,12 @@
   <para>Make <systemitem class="username">root</systemitem> the owner of the
   entire CLFS system.</para>
 
-<screen><userinput>chown -Rv root:root ${CLFS}</userinput></screen>
+<screen><userinput>chown -Rv 0:0 ${CLFS}</userinput></screen>
 
   <para>The following files are not the be owned by
   <systemitem class="username">root</systemitem>.</para>
 
-<screen><userinput>chgrp -v utmp ${CLFS}/var/run/utmp ${CLFS}/var/log/lastlog</userinput></screen>
+<screen><userinput>chgrp -v 13 ${CLFS}/var/run/utmp ${CLFS}/var/log/lastlog</userinput></screen>
 
   <para>The following device nodes need to be created for the system to
   boot.</para>
