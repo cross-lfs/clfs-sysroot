@@ -45,8 +45,8 @@
 <screen os="p6"><userinput>patch -Np1 -i ../&bzip2-remove_tempfile-patch;</userinput></screen>
 
     <para os="s1">Bzip2's default Makefile target automatically runs
-     the testsuite as well. Disable the tests since they won't work on a
-     multi-architecture build:</para>
+    the testsuite as well. Disable the tests since you can not run the
+    cross-compiled binaries causing all of the tests to fail:</para>
 
 <screen os="s2"><userinput>cp Makefile{,.orig}
 sed -e "/^all:/s/ test//" Makefile.orig &gt; Makefile</userinput></screen>
