@@ -117,9 +117,9 @@
 <!ENTITY vim-cross_compile-patch-md5 "05da89742f75fc39292fbf7c5ccc17ff">
 <!ENTITY vim-cross_compile-patch-size "28 KB">
 
-<!ENTITY vim-fixes-patch "vim-&vim-version;-fixes-17.patch">
-<!ENTITY vim-fixes-patch-md5 "debe68a47799d47f6866c6b2c628eb24">
-<!ENTITY vim-fixes-patch-size "300 KB">
+<!ENTITY vim-fixes-patch "vim-&vim-version;-fixes-18.patch">
+<!ENTITY vim-fixes-patch-md5 "d7d946ee4ca180b4d67d88850681d283">
+<!ENTITY vim-fixes-patch-size "308 KB">
 
 <!ENTITY zlib-fpic-patch "zlib-&zlib-version;-fPIC-1.patch">
 <!ENTITY zlib-fpic-patch-md5 "545d60b20bfde6f53023de44438cef59">
