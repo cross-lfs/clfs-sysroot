@@ -40,6 +40,9 @@
       <para>November 14, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Bash 3.2 patch updated with upstream fixes 001-005.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to Linux Headers 2.6.18.2-11122006.</para>
         </listitem>
       </itemizedlist>
