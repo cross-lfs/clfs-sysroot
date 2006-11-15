@@ -139,10 +139,10 @@
 <!ENTITY gzip-md5 "3d6c191dfd2bf307014b421c12dc8469">
 <!ENTITY gzip-home "http://www.gzip.org/">
 
-<!ENTITY iana-etc-version "2.10">
-<!ENTITY iana-etc-size "184 KB">
+<!ENTITY iana-etc-version "2.20">
+<!ENTITY iana-etc-size "1892KB">
 <!ENTITY iana-etc-url "http://www.sethwklein.net/projects/iana-etc/downloads/iana-etc-&iana-etc-version;.tar.bz2">
-<!ENTITY iana-etc-md5 "53dea53262b281322143c744ca60ffbb">
+<!ENTITY iana-etc-md5 "51d584b7b6115528c21e8ea32250f2b1">
 <!ENTITY iana-etc-home "http://www.sethwklein.net/projects/iana-etc/">
 
 <!ENTITY inetutils-version "1.5">
