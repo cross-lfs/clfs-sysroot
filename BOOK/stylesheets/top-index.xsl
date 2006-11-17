@@ -14,7 +14,7 @@
     <html>
       <head>
         <title>
-          Cross-Compiled Linux From Scratch
+          Cross-Compiled Linux From Scratch - Sysroot
         </title>
         <style type="text/css">
           <xsl:text>
