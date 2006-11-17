@@ -6,7 +6,7 @@
 ]>
 
 <bookinfo>
-  <title>Cross-Compiled Linux From Scratch</title>
+  <title>Cross-Compiled Linux From Scratch - Sysroot</title>
   <subtitle>Version &version;</subtitle>
 
   <authorgroup>
@@ -18,15 +18,15 @@
       <firstname>Ryan</firstname>
       <surname>Oliver</surname>
     </author>
+    <author>
+      <firstname>Joe</firstname>
+      <surname>Ciccone</surname>
+    </author>
   </authorgroup>
 
   <copyright id="copyright">
     <year>2005&ndash;2006</year>
-    <holder>Jim Gifford &amp; Ryan Oliver</holder>
+    <holder>Joe Ciccone, Jim Gifford, &amp; Ryan Oliver</holder>
   </copyright>
-
-  <bibliosource>
-    <emphasis>Based on LFS, Copyright &copy; 1999&ndash;2006 Gerard Beekmans</emphasis>
-  </bibliosource>
 
 </bookinfo>
