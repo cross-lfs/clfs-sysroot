@@ -41,9 +41,7 @@
     href="../arm/kernel.xml"
     xpointer="xpointer(//*[@os='h'])"/>
 
-    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-    href="../arm/kernel.xml"
-    xpointer="xpointer(//*[@os='i'])"/>
+<screen os="i"><userinput>make ARCH=i386 CROSS_COMPILE=${CLFS_TARGET}- menuconfig</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../arm/kernel.xml"
