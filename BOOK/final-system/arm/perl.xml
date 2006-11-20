@@ -25,6 +25,11 @@
   <sect2 role="installation">
     <title>Installation of Perl</title>
 
+    <warning os="w1">
+      <para>Building with <envar>CFLAGS</envar> or <envar>CXXFLAGS</envar> set
+      can cause the build to hang or fail.</para>
+    </warning>
+
     <para os="p1">The following patch fixes issues with perl and
     cross-compiling:</para>
 
