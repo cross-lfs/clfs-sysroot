@@ -40,6 +40,9 @@
       <para>November 23, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Man to 1.6e.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Coreutils to 6.6.</para>
         </listitem>
         <listitem>
