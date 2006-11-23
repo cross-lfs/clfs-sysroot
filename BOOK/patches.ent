@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!ENTITY patches-root "http://svn.cross-lfs.org/svn/repos/cross-lfs/trunk/patches/">
-<!ENTITY patches-2.0-root "http://svn.cross-lfs.org/svn/repos/cross-lfs/branches/clfs-sysroot/patches/">
+<!ENTITY patches-root "http://svn.cross-lfs.org/svn/repos/cross-lfs/branches/clfs-sysroot/patches/">
 
 <!-- Start of Common Patches -->
 
