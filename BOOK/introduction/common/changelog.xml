@@ -40,6 +40,11 @@
       <para>November 23, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Update the Glibc libgcc_eh patch to -2. The new
+          version checks to see if libgcc_eh exists and if it does Glibc will
+          link against it.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Man to 1.6e.</para>
         </listitem>
         <listitem>

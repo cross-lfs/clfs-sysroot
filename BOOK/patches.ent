@@ -56,9 +56,9 @@
 <!ENTITY glibc-minor-patch-md5 "b782dff6ec9531e062aa019cb4198aed">
 <!ENTITY glibc-minor-patch-size "4 KB">
 
-<!ENTITY glibc-libgcc_eh-patch "glibc-&glibc-version;-libgcc_eh-1.patch">
-<!ENTITY glibc-libgcc_eh-patch-md5 "e5122ea7b89a5f22615eaadf8e46b334">
-<!ENTITY glibc-libgcc_eh-patch-size "1 KB">
+<!ENTITY glibc-libgcc_eh-patch "glibc-&glibc-version;-libgcc_eh-2.patch">
+<!ENTITY glibc-libgcc_eh-patch-md5 "0b7a671fd5f3cd4ce434cf534866b06a">
+<!ENTITY glibc-libgcc_eh-patch-size "8 KB">
 
 <!ENTITY glibc-localedef_segfault-patch "glibc-&glibc-version;-localedef_segfault-1.patch">
 <!ENTITY glibc-localedef_segfault-patch-md5 "42452abc6196789e0a83afa1ca7e6e4e">

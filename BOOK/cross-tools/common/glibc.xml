@@ -39,14 +39,10 @@
       Unicode, therefore libiconv is not required on an CLFS system.</para>
     </note>
 
-    <note os="pa">
-      <para>If you need to recompile glibc after the GCC Final Cross-Compiler
-      is installed do not apply the libgcc_eh patch. This patch is applied when
-      building glibc with a static GCC because when gcc is built static, libgcc
-      contains the symbols that would normaly exist in libgcc_eh.</para>
-    </note>
-
-    <para os="p1">Disable linking to <filename>libgcc_eh</filename>:</para>
+    <para os="p1">The following patch will check for the existance of
+    <filename>libgcc_eh</filename>. When GCC is built static the contents of
+    <filename>libgcc_eh</filename> will be in <filename>libgcc</filename>
+    instead. If <filename>libgcc_eh</filename> exists the link to it:</para>
 
 <screen os="p2"><userinput>patch -Np1 -i ../&glibc-libgcc_eh-patch;</userinput></screen>
 
