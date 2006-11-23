@@ -40,6 +40,9 @@
       <para>November 23, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Coreutils to 6.6.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Linux to 2.6.18.3 and Linux Headers to
           2.6.18.3-11202006.</para>
         </listitem>
