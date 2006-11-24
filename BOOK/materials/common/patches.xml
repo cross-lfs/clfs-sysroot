@@ -118,11 +118,11 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Glibc Timezone Patch- <token>&glibc-crosscompile_timezone_fix-patch-size;</token>:</term>
+      <term>Glibc Cross-Compiling Hacks Patch- <token>&glibc-cross_hacks-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
-        url="&patches-root;&glibc-crosscompile_timezone_fix-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-crosscompile_timezone_fix-patch-md5;</literal></para>
+        url="&patches-root;&glibc-cross_hacks-patch;"/></para>
+        <para>MD5 sum: <literal>&glibc-cross_hacks-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
  

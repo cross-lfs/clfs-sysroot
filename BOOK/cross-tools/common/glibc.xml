@@ -51,11 +51,15 @@
 
 <screen os="p4"><userinput>patch -Np1 -i ../&glibc-localedef_segfault-patch;</userinput></screen>
 
-    <para os="p5">The following patch changes the way glibc generates it's
-    timezone information so that it can be generated when
-    cross-compiling:</para>
+    <para os="p5">The following patch builds <filename>zic-native</filename>,
+    <filename>localedef-native</filename>, and
+    <filename>rpcgen-native</filename>. <filename>zic-native</filename> is used
+    to generate the zoneinfo, <filename>localedef-native</filename> is used to
+    generate the locale archive, and <filename>rpcgen-native</filename> is used
+    to generate part of <filename>librpcsvc.a</filename>. All of which would
+    normally not be available when cross-compiling:</para>
 
-<screen os="p6"><userinput>patch -Np1 -i ../&glibc-crosscompile_timezone_fix-patch;</userinput></screen>
+<screen os="p6"><userinput>patch -Np1 -i ../&glibc-cross_hacks-patch;</userinput></screen>
 
     <para os="p7">The following corrects the Minor version, changing the value
     from 4 to 5:</para>
@@ -196,13 +200,13 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
   </sect2>
 
   <sect2 id="i18n-glibc" role="configuration">
-    <title>Internationalization (Current method is no good, REWRITE ME)</title>
+    <title>Internationalization</title>
 
     <para>The locales that can make the system respond in a different
     language were not installed by the above command. Install them
     with:</para>
 
-<screen role="nodump"><userinput>make localedata/install-locales</userinput></screen>
+<screen><userinput>make localedata/install-locales</userinput></screen>
 
     <para>To save time, an alternative to running the previous command (which
     generates and installs every locale listed in the
@@ -218,17 +222,21 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
     successfully:</para>
 
 <screen role="nodump"><userinput>mkdir -pv ${CLFS}/usr/lib/locale
-localedef -i de_DE -f ISO-8859-1 de_DE
-localedef -i de_DE@euro -f ISO-8859-15 de_DE@euro
-localedef -i en_HK -f ISO-8859-1 en_HK
-localedef -i en_PH -f ISO-8859-1 en_PH
-localedef -i en_US -f ISO-8859-1 en_US
-localedef -i es_MX -f ISO-8859-1 es_MX
-localedef -i fa_IR -f UTF-8 fa_IR
-localedef -i fr_FR -f ISO-8859-1 fr_FR
-localedef -i fr_FR@euro -f ISO-8859-15 fr_FR@euro
-localedef -i it_IT -f ISO-8859-1 it_IT
-localedef -i ja_JP -f EUC-JP ja_JP</userinput></screen>
+export I18NPATH=${PWD}/localedata
+export GCONV_PATH=${PWD}/iconvdata
+export LOCALEDEF="${PWD}/locale/localedef-native --alias-file=../intl/locale.alias"
+cd ../glibc-&glibc-version;/localedata
+${LOCALEDEF} -i locales/de_DE -f charmaps/ISO-8859-1 --prefix=${CLFS} de_DE
+${LOCALEDEF} -i locales/de_DE@euro -f charmaps/ISO-8859-15 --prefix=${CLFS} de_DE@euro
+${LOCALEDEF} -i locales/en_HK -f charmaps/ISO-8859-1 --prefix=${CLFS} en_HK
+${LOCALEDEF} -i locales/en_PH -f charmaps/ISO-8859-1 --prefix=${CLFS} en_PH
+${LOCALEDEF} -i locales/en_US -f charmaps/ISO-8859-1 --prefix=${CLFS} en_US
+${LOCALEDEF} -i locales/es_MX -f charmaps/ISO-8859-1 --prefix=${CLFS} es_MX
+${LOCALEDEF} -i locales/fa_IR -f charmaps/UTF-8 --prefix=${CLFS} fa_IR
+${LOCALEDEF} -i locales/fr_FR -f charmaps/ISO-8859-1 --prefix=${CLFS} fr_FR
+${LOCALEDEF} -i locales/fr_FR@euro -f charmaps/ISO-8859-15 --prefix=${CLFS} fr_FR@euro
+${LOCALEDEF} -i locales/it_IT -f charmaps/ISO-8859-1 --prefix=${CLFS} it_IT
+${LOCALEDEF} -i locales/ja_JP -f charmaps/EUC-JP --prefix=${CLFS} ja_JP</userinput></screen>
 
     <para>Some locales installed by the <command>make
     localedata/install-locales</command> command above are not properly
