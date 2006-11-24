@@ -84,6 +84,10 @@
 <!ENTITY perl-cross_compile-patch-md5 "bd9f94c8629e674f4472604b77cea42d">
 <!ENTITY perl-cross_compile-patch-size "76 KB">
 
+<!ENTITY shadow-sysroot_hacks-patch "shadow-&shadow-version;-sysroot_hacks-1.patch">
+<!ENTITY shadow-sysroot_hacks-patch-md5 "0d3f26660202e435e95c71dcea6e9613">
+<!ENTITY shadow-sysroot_hacks-patch-size "16 KB">
+
 <!ENTITY shadow-useradd_fix-patch "shadow-&shadow-version;-useradd_fix-1.patch">
 <!ENTITY shadow-useradd_fix-patch-md5 "272eb8ef4b9b7ad859292150526ea5fa">
 <!ENTITY shadow-useradd_fix-patch-size "4 KB">

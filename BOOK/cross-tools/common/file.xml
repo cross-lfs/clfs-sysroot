@@ -8,7 +8,7 @@
 <sect1 id="ch-cross-tools-file">
   <?dbhtml filename="file.html"?>
 
-  <title>File-&file-version;</title>
+  <title>File-&file-version; - Native</title>
 
   <sect2 role="installation">
     <title>Installation of File</title>

@@ -8,7 +8,7 @@
 <sect1 id="ch-cross-tools-groff">
   <?dbhtml filename="groff.html"?>
 
-  <title>Groff-&groff-version;</title>
+  <title>Groff-&groff-version; - Native</title>
 
   <sect2 role="installation">
     <title>Installation of Groff</title>

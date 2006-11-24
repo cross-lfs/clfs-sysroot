@@ -157,11 +157,11 @@ ln -svf ../../lib/libshadow.so.0 ${CLFS}/usr/lib/libshadow.so</userinput></scree
 
     <para>To enable shadowed passwords, run the following command:</para>
 
-<screen role="nodump"><userinput>pwconv</userinput></screen>
+<screen role="nodump"><userinput>${CLFS_TARGET}-pwconv</userinput></screen>
 
     <para>To enable shadowed group passwords, run:</para>
 
-<screen role="nodump"><userinput>grpconv</userinput></screen>
+<screen role="nodump"><userinput>${CLFS_TARGET}-grpconv</userinput></screen>
 
     <para>To view or change the default settings for new user accounts that
     you create, you can edit <filename>/etc/default/useradd</filename>. See
@@ -177,7 +177,7 @@ ln -svf ../../lib/libshadow.so.0 ${CLFS}/usr/lib/libshadow.so</userinput></scree
     <para>Choose a password for user <systemitem
     class="username">root</systemitem> and set it by running:</para>
 
-<screen role="nodump"><userinput>passwd root</userinput></screen>
+<screen role="nodump"><userinput>${CLFS_TARGET}-passwd root</userinput></screen>
 
   </sect2>
 

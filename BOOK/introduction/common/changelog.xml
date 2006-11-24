@@ -37,6 +37,18 @@
 -->
 
     <listitem>
+      <para>November 24, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Added a native compile of Shadow. The native
+          utilities are configured to work with the target system. The password
+          and group files can now be shadowed and the root password can be set
+          before booting into the system.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>November 23, 2006</para>
       <itemizedlist>
         <listitem>
