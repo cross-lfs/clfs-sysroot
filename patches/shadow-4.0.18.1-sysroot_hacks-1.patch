@@ -1,0 +1,409 @@
+Submitted By: Joe Ciccone <jciccone@linuxfromscratch.org>
+Date: 2006-11-24
+Initial Package Version: 4.0.18.1
+Origin: Joe Ciccone
+Upstream Status: None
+Description: Changes the hardcoded /etc to the value of the --sysconfdir 
+             parameter passed to configure. Allows the utilities to be run
+             as a user other then root and properly modify the passwd and group
+             files for the target system.
+
+diff -Naur shadow-4.0.18.1.orig/lib/Makefile.am shadow-4.0.18.1/lib/Makefile.am
+--- shadow-4.0.18.1.orig/lib/Makefile.am	2006-06-24 09:12:19.000000000 -0400
++++ shadow-4.0.18.1/lib/Makefile.am	2006-11-24 14:24:57.000000000 -0500
+@@ -2,6 +2,7 @@
+ AUTOMAKE_OPTIONS = 1.0 foreign
+ 
+ DEFS = 
++AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\"
+ 
+ lib_LTLIBRARIES = libshadow.la
+ 
+diff -Naur shadow-4.0.18.1.orig/lib/Makefile.in shadow-4.0.18.1/lib/Makefile.in
+--- shadow-4.0.18.1.orig/lib/Makefile.in	2006-08-03 06:25:10.000000000 -0400
++++ shadow-4.0.18.1/lib/Makefile.in	2006-11-24 14:24:57.000000000 -0500
+@@ -217,6 +217,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\"
+ AUTOMAKE_OPTIONS = 1.0 foreign
+ lib_LTLIBRARIES = libshadow.la
+ libshadow_la_LDFLAGS = -version-info 0:0:0
+diff -Naur shadow-4.0.18.1.orig/lib/commonio.c shadow-4.0.18.1/lib/commonio.c
+--- shadow-4.0.18.1.orig/lib/commonio.c	2006-06-08 09:36:11.000000000 -0400
++++ shadow-4.0.18.1/lib/commonio.c	2006-11-24 14:24:57.000000000 -0500
+@@ -153,14 +153,6 @@
+ 	if (!fp)
+ 		return NULL;
+ 
+-#ifdef HAVE_FCHOWN
+-	if (fchown (fileno (fp), sb->st_uid, sb->st_gid))
+-		goto fail;
+-#else
+-	if (chown (name, sb->st_mode))
+-		goto fail;
+-#endif
+-
+ #ifdef HAVE_FCHMOD
+ 	if (fchmod (fileno (fp), sb->st_mode & 0664))
+ 		goto fail;
+@@ -703,7 +695,7 @@
+ 		 * Default permissions for new [g]shadow files.
+ 		 * (passwd and group always exist...)
+ 		 */
+-		sb.st_mode = 0400;
++		sb.st_mode = 0600;
+ 		sb.st_uid = 0;
+ 		sb.st_gid = 0;
+ 	}
+diff -Naur shadow-4.0.18.1.orig/lib/defines.h shadow-4.0.18.1/lib/defines.h
+--- shadow-4.0.18.1.orig/lib/defines.h	2005-09-05 12:22:03.000000000 -0400
++++ shadow-4.0.18.1/lib/defines.h	2006-11-24 14:24:57.000000000 -0500
+@@ -284,20 +284,20 @@
+ #endif
+ 
+ #ifndef PASSWD_FILE
+-#define PASSWD_FILE "/etc/passwd"
++#define PASSWD_FILE SYSCONFDIR"/passwd"
+ #endif
+ 
+ #ifndef GROUP_FILE
+-#define GROUP_FILE "/etc/group"
++#define GROUP_FILE SYSCONFDIR"/group"
+ #endif
+ 
+ #ifndef SHADOW_FILE
+-#define SHADOW_FILE "/etc/shadow"
++#define SHADOW_FILE SYSCONFDIR"/shadow"
+ #endif
+ 
+ #ifdef SHADOWGRP
+ #ifndef SGROUP_FILE
+-#define SGROUP_FILE "/etc/gshadow"
++#define SGROUP_FILE SYSCONFDIR"/gshadow"
+ #endif
+ #endif
+ 
+diff -Naur shadow-4.0.18.1.orig/lib/getdef.c shadow-4.0.18.1/lib/getdef.c
+--- shadow-4.0.18.1.orig/lib/getdef.c	2006-06-24 09:17:18.000000000 -0400
++++ shadow-4.0.18.1/lib/getdef.c	2006-11-24 14:24:57.000000000 -0500
+@@ -114,7 +114,7 @@
+ };
+ 
+ #ifndef LOGINDEFS
+-#define LOGINDEFS "/etc/login.defs"
++#define LOGINDEFS SYSCONFDIR"/login.defs"
+ #endif
+ 
+ static char def_fname[] = LOGINDEFS;	/* login config defs file       */
+diff -Naur shadow-4.0.18.1.orig/lib/gshadow_.h shadow-4.0.18.1/lib/gshadow_.h
+--- shadow-4.0.18.1.orig/lib/gshadow_.h	2005-03-31 00:14:49.000000000 -0500
++++ shadow-4.0.18.1/lib/gshadow_.h	2006-11-24 14:24:57.000000000 -0500
+@@ -67,5 +67,5 @@
+ int putsgent ();
+ #endif
+ 
+-#define	GSHADOW	"/etc/gshadow"
++#define	GSHADOW	SYSCONFDIR"/gshadow"
+ #endif				/* ifndef _H_GSHADOW */
+diff -Naur shadow-4.0.18.1.orig/lib/port.h shadow-4.0.18.1/lib/port.h
+--- shadow-4.0.18.1.orig/lib/port.h	2005-03-31 00:14:49.000000000 -0500
++++ shadow-4.0.18.1/lib/port.h	2006-11-24 14:24:57.000000000 -0500
+@@ -50,7 +50,7 @@
+  * PORT_DAY - Day of the week to a bit value (0 = Sunday).
+  */
+ 
+-#define	PORTS	"/etc/porttime"
++#define	PORTS	SYSCONFDIR"/porttime"
+ #define	PORT_IDS	64
+ #define	PORT_TTY	64
+ #define	PORT_TIMES	24
+diff -Naur shadow-4.0.18.1.orig/libmisc/Makefile.am shadow-4.0.18.1/libmisc/Makefile.am
+--- shadow-4.0.18.1.orig/libmisc/Makefile.am	2005-09-05 12:21:37.000000000 -0400
++++ shadow-4.0.18.1/libmisc/Makefile.am	2006-11-24 14:24:57.000000000 -0500
+@@ -1,6 +1,8 @@
+ 
+ EXTRA_DOST = .indent.pro
+ 
++AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\"
++
+ INCLUDES = -I$(top_srcdir)/lib
+ 
+ noinst_LIBRARIES = libmisc.a
+diff -Naur shadow-4.0.18.1.orig/libmisc/Makefile.in shadow-4.0.18.1/libmisc/Makefile.in
+--- shadow-4.0.18.1.orig/libmisc/Makefile.in	2006-08-03 06:25:10.000000000 -0400
++++ shadow-4.0.18.1/libmisc/Makefile.in	2006-11-24 14:24:57.000000000 -0500
+@@ -224,6 +224,7 @@
+ target_alias = @target_alias@
+ EXTRA_DOST = .indent.pro
+ INCLUDES = -I$(top_srcdir)/lib
++AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\"
+ noinst_LIBRARIES = libmisc.a
+ libmisc_a_SOURCES = \
+ 	addgrps.c \
+diff -Naur shadow-4.0.18.1.orig/libmisc/limits.c shadow-4.0.18.1/libmisc/limits.c
+--- shadow-4.0.18.1.orig/libmisc/limits.c	2006-07-10 00:11:31.000000000 -0400
++++ shadow-4.0.18.1/libmisc/limits.c	2006-11-24 14:24:57.000000000 -0500
+@@ -51,7 +51,7 @@
+ #endif
+ #ifdef LIMITS
+ #ifndef LIMITS_FILE
+-#define LIMITS_FILE "/etc/limits"
++#define LIMITS_FILE SYSCONFDIR"/limits"
+ #endif
+ #define LOGIN_ERROR_RLIMIT	1
+ #define LOGIN_ERROR_LOGIN	2
+diff -Naur shadow-4.0.18.1.orig/src/Makefile.am shadow-4.0.18.1/src/Makefile.am
+--- shadow-4.0.18.1.orig/src/Makefile.am	2006-07-18 12:52:23.000000000 -0400
++++ shadow-4.0.18.1/src/Makefile.am	2006-11-24 14:27:07.000000000 -0500
+@@ -3,7 +3,7 @@
+ 	.indent.pro
+ 
+ ubindir = ${prefix}/bin
+-usbindir = ${prefix}/sbin
++usbindir = ${prefix}/bin
+ 
+ INCLUDES = \
+ 	-I${top_srcdir}/lib \
+@@ -51,7 +51,7 @@
+ 
+ LDADD 	       = $(top_builddir)/libmisc/libmisc.a \
+ 		 $(top_builddir)/lib/libshadow.la
+-AM_CPPFLAGS    = -DLOCALEDIR=\"$(datadir)/locale\"
++AM_CPPFLAGS    = -DSYSCONFDIR=\"$(sysconfdir)\" -DLOCALEDIR=\"$(datadir)/locale\" -DSG=\"`echo sg | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`\" -DVIGR=\"`echo vigr | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`\"
+ 
+ chage_LDADD    = $(LDADD) $(LIBPAM) $(LIBAUDIT) $(LIBSELINUX)
+ chfn_LDADD     = $(LDADD) $(LIBPAM) $(LIBSELINUX)
+@@ -88,11 +88,12 @@
+ 
+ install-am: all-am
+ 	$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+-	ln -sf newgrp	$(DESTDIR)$(ubindir)/sg
+-	ln -sf vipw	$(DESTDIR)$(usbindir)/vigr
++	ln -sf `echo newgrp | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'` $(DESTDIR)$(ubindir)/`echo sg | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`
++	ln -sf `echo vipw | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'` $(DESTDIR)$(usbindir)/`echo vigr | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`
+ 	for i in $(suidbins); do \
+-		chmod -f 4755 $(DESTDIR)$(bindir)/$$i; \
++		chmod -f 4755 $(DESTDIR)$(bindir)/`echo $$i | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+ 	done
+ 	for i in $(suidubins); do \
+-		chmod -f 4755 $(DESTDIR)$(ubindir)/$$i; \
++		chmod -f 4755 $(DESTDIR)$(ubindir)/`echo $$i | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+ 	done
++
+diff -Naur shadow-4.0.18.1.orig/src/Makefile.in shadow-4.0.18.1/src/Makefile.in
+--- shadow-4.0.18.1.orig/src/Makefile.in	2006-08-03 06:25:15.000000000 -0400
++++ shadow-4.0.18.1/src/Makefile.in	2006-11-24 14:27:22.000000000 -0500
+@@ -368,7 +368,7 @@
+ 	.indent.pro
+ 
+ ubindir = ${prefix}/bin
+-usbindir = ${prefix}/sbin
++usbindir = ${prefix}/bin
+ INCLUDES = \
+ 	-I${top_srcdir}/lib \
+ 	-I$(top_srcdir)/libmisc
+@@ -378,7 +378,7 @@
+ LDADD = $(top_builddir)/libmisc/libmisc.a \
+ 		 $(top_builddir)/lib/libshadow.la
+ 
+-AM_CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\"
++AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\" -DLOCALEDIR=\"$(datadir)/locale\" -DSG=\"`echo sg | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`\" -DVIGR=\"`echo vigr | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`\"
+ chage_LDADD = $(LDADD) $(LIBPAM) $(LIBAUDIT) $(LIBSELINUX)
+ chfn_LDADD = $(LDADD) $(LIBPAM) $(LIBSELINUX)
+ chgpasswd_LDADD = $(LDADD) $(LIBPAM) $(LIBSELINUX)
+@@ -914,14 +914,15 @@
+ 
+ install-am: all-am
+ 	$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+-	ln -sf newgrp	$(DESTDIR)$(ubindir)/sg
+-	ln -sf vipw	$(DESTDIR)$(usbindir)/vigr
++	ln -sf `echo newgrp | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'` $(DESTDIR)$(ubindir)/`echo sg | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`
++	ln -sf `echo vipw | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'` $(DESTDIR)$(usbindir)/`echo vigr | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`
+ 	for i in $(suidbins); do \
+-		chmod -f 4755 $(DESTDIR)$(bindir)/$$i; \
++		chmod -f 4755 $(DESTDIR)$(bindir)/`echo $$i | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+ 	done
+ 	for i in $(suidubins); do \
+-		chmod -f 4755 $(DESTDIR)$(ubindir)/$$i; \
++		chmod -f 4755 $(DESTDIR)$(ubindir)/`echo $$i | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+ 	done
++
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+diff -Naur shadow-4.0.18.1.orig/src/chage.c shadow-4.0.18.1/src/chage.c
+--- shadow-4.0.18.1.orig/src/chage.c	2006-07-19 12:38:57.000000000 -0400
++++ shadow-4.0.18.1/src/chage.c	2006-11-24 14:24:57.000000000 -0500
+@@ -361,7 +361,7 @@
+ 	textdomain (PACKAGE);
+ 
+ 	ruid = getuid ();
+-	amroot = (ruid == 0);
++	amroot = 1; //(ruid == 0);
+ #ifdef WITH_SELINUX
+ 	if (amroot && is_selinux_enabled () > 0)
+ 		amroot = (selinux_check_passwd_access (PASSWD__ROOTOK) == 0);
+diff -Naur shadow-4.0.18.1.orig/src/chsh.c shadow-4.0.18.1/src/chsh.c
+--- shadow-4.0.18.1.orig/src/chsh.c	2006-07-13 17:26:35.000000000 -0400
++++ shadow-4.0.18.1/src/chsh.c	2006-11-24 14:24:57.000000000 -0500
+@@ -55,7 +55,7 @@
+ #include "pam_defs.h"
+ #endif
+ #ifndef SHELLS_FILE
+-#define SHELLS_FILE "/etc/shells"
++#define SHELLS_FILE SYSCONFDIR"/shells"
+ #endif
+ /*
+  * Global variables
+@@ -195,7 +195,7 @@
+ 	/*
+ 	 * This command behaves different for root and non-root users.
+ 	 */
+-	amroot = getuid () == 0;
++	amroot = 1; //getuid () == 0;
+ 
+ 	/*
+ 	 * Get the program name. The program name is used as a prefix to
+diff -Naur shadow-4.0.18.1.orig/src/gpasswd.c shadow-4.0.18.1/src/gpasswd.c
+--- shadow-4.0.18.1.orig/src/gpasswd.c	2006-02-08 05:58:46.000000000 -0500
++++ shadow-4.0.18.1/src/gpasswd.c	2006-11-24 14:24:57.000000000 -0500
+@@ -202,7 +202,7 @@
+ 	 * prevent the invoker from issuing signals which would interfer
+ 	 * with this command.
+ 	 */
+-	amroot = getuid () == 0;
++	amroot = 1; //getuid () == 0;
+ 	bywho = getuid ();
+ 	Prog = Basename (argv[0]);
+ 
+@@ -628,16 +628,6 @@
+ 	 * output, etc.
+ 	 */
+       output:
+-	if (setuid (0)) {
+-		fprintf (stderr, _("Cannot change ID to root.\n"));
+-		SYSLOG ((LOG_ERR, "can't setuid(0)"));
+-#ifdef WITH_AUDIT
+-		audit_logger (AUDIT_USER_CHAUTHTOK, Prog, "changing id to root",
+-			      group, -1, 0);
+-#endif
+-		closelog ();
+-		exit (1);
+-	}
+ 	pwd_init ();
+ 
+ 	if (!gr_lock ()) {
+diff -Naur shadow-4.0.18.1.orig/src/login_nopam.c shadow-4.0.18.1/src/login_nopam.c
+--- shadow-4.0.18.1.orig/src/login_nopam.c	2005-09-07 11:00:45.000000000 -0400
++++ shadow-4.0.18.1/src/login_nopam.c	2006-11-24 14:24:57.000000000 -0500
+@@ -60,7 +60,7 @@
+  /* Path name of the access control file. */
+ 
+ #ifndef	TABLE
+-#define TABLE	"/etc/login.access"
++#define TABLE	SYSCONFDIR"/login.access"
+ #endif
+ 
+ /* Delimiters for fields and for lists of users, ttys or hosts. */
+diff -Naur shadow-4.0.18.1.orig/src/logoutd.c shadow-4.0.18.1/src/logoutd.c
+--- shadow-4.0.18.1.orig/src/logoutd.c	2006-07-10 00:11:32.000000000 -0400
++++ shadow-4.0.18.1/src/logoutd.c	2006-11-24 14:24:57.000000000 -0500
+@@ -48,7 +48,7 @@
+ #endif
+ 
+ #ifndef HUP_MESG_FILE
+-#define HUP_MESG_FILE "/etc/logoutd.mesg"
++#define HUP_MESG_FILE SYSCONFDIR"/logoutd.mesg"
+ #endif
+ 
+ #if HAVE_UTMPX_H
+diff -Naur shadow-4.0.18.1.orig/src/newgrp.c shadow-4.0.18.1/src/newgrp.c
+--- shadow-4.0.18.1.orig/src/newgrp.c	2006-01-18 14:55:15.000000000 -0500
++++ shadow-4.0.18.1/src/newgrp.c	2006-11-24 14:24:57.000000000 -0500
+@@ -153,7 +153,7 @@
+ 	 */
+ 	Prog = Basename (argv[0]);
+ 	is_newgrp = (strcmp (Prog, "newgrp") == 0);
+-	OPENLOG (is_newgrp ? "newgrp" : "sg");
++	OPENLOG (is_newgrp ? "newgrp" : SG);
+ 	gid = getgid ();
+ 	argc--;
+ 	argv++;
+@@ -466,7 +466,7 @@
+ 		if (child < 0) {
+ 			/* error in fork() */
+ 			fprintf (stderr, _("%s: failure forking: %s"),
+-				 is_newgrp ? "newgrp" : "sg", strerror (errno));
++				 is_newgrp ? "newgrp" : SG, strerror (errno));
+ #ifdef WITH_AUDIT
+ 			audit_logger (AUDIT_USER_START, Prog, "changing",
+ 				      NULL, getuid (), 0);
+diff -Naur shadow-4.0.18.1.orig/src/passwd.c shadow-4.0.18.1/src/passwd.c
+--- shadow-4.0.18.1.orig/src/passwd.c	2006-07-28 13:40:15.000000000 -0400
++++ shadow-4.0.18.1/src/passwd.c	2006-11-24 14:24:57.000000000 -0500
+@@ -614,7 +614,7 @@
+ 	 * The program behaves differently when executed by root than when
+ 	 * executed by a normal user.
+ 	 */
+-	amroot = (getuid () == 0);
++	amroot = 1; //(getuid () == 0);
+ 
+ 	/*
+ 	 * Get the program name. The program name is used as a prefix to
+@@ -878,12 +878,6 @@
+ 		exit (E_SUCCESS);
+ 	}
+ #endif				/* USE_PAM */
+-	if (setuid (0)) {
+-		fprintf (stderr, _("Cannot change ID to root.\n"));
+-		SYSLOG ((LOG_ERR, "can't setuid(0)"));
+-		closelog ();
+-		exit (E_NOPERM);
+-	}
+ 	if (spw_file_present ())
+ 		update_shadow ();
+ 	else
+diff -Naur shadow-4.0.18.1.orig/src/suauth.c shadow-4.0.18.1/src/suauth.c
+--- shadow-4.0.18.1.orig/src/suauth.c	2005-09-07 11:00:45.000000000 -0400
++++ shadow-4.0.18.1/src/suauth.c	2006-11-24 14:24:57.000000000 -0500
+@@ -8,7 +8,7 @@
+ #include "prototypes.h"
+ 
+ #ifndef SUAUTHFILE
+-#define SUAUTHFILE "/etc/suauth"
++#define SUAUTHFILE SYSCONFDIR"/suauth"
+ #endif
+ 
+ #define	NOACTION	0
+diff -Naur shadow-4.0.18.1.orig/src/useradd.c shadow-4.0.18.1/src/useradd.c
+--- shadow-4.0.18.1.orig/src/useradd.c	2006-11-24 10:49:30.000000000 -0500
++++ shadow-4.0.18.1/src/useradd.c	2006-11-24 14:25:12.000000000 -0500
+@@ -60,11 +60,11 @@
+ #include "shadowio.h"
+ 
+ #ifndef SKEL_DIR
+-#define SKEL_DIR "/etc/skel"
++#define SKEL_DIR SYSCONFDIR"/skel"
+ #endif
+ #ifndef USER_DEFAULTS_FILE
+-#define USER_DEFAULTS_FILE "/etc/default/useradd"
+-#define NEW_USER_FILE "/etc/default/nuaddXXXXXX"
++#define USER_DEFAULTS_FILE SYSCONFDIR"/default/useradd"
++#define NEW_USER_FILE SYSCONFDIR"/default/nuaddXXXXXX"
+ #endif
+ /*
+  * Needed for MkLinux DR1/2/2.1 - J.
+diff -Naur shadow-4.0.18.1.orig/src/vipw.c shadow-4.0.18.1/src/vipw.c
+--- shadow-4.0.18.1.orig/src/vipw.c	2006-06-20 16:00:04.000000000 -0400
++++ shadow-4.0.18.1/src/vipw.c	2006-11-24 14:24:57.000000000 -0500
+@@ -245,7 +245,7 @@
+ 	textdomain (PACKAGE);
+ 
+ 	progname = ((a = strrchr (*argv, '/')) ? a + 1 : *argv);
+-	do_vipw = (strcmp (progname, "vigr") != 0);
++	do_vipw = (strcmp (progname, VIGR) != 0);
+ 
+ 	{
+ 		/*
