@@ -30,7 +30,7 @@
       can cause the build to hang or fail.</para>
     </warning>
 
-    <para os="p1">The following patch fixes issues with perl and
+    <para os="p1">The following patch fixes issues with Perl and
     cross-compiling:</para>
 
 <screen os="p2"><userinput>patch -Np1 -i ../&perl-cross_compile-patch;</userinput></screen>
@@ -42,7 +42,7 @@
 <screen os="s2"><userinput>sed -i -e "s@pldlflags=''@pldlflags=\"\$cccdlflags\"@g" \
     -e "s@static_target='static'@static_target='static_pic'@g" Makefile.SH</userinput></screen>
 
-    <para os="a">The Cross directory contains a Makefile for cross-compiling.</para>
+    <para os="a">The Cross directory contains a Makefile for cross-compiling:</para>
 
 <screen os="b"><userinput>cd Cross</userinput></screen>
 

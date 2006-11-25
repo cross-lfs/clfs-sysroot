@@ -86,7 +86,7 @@ cp -av libbz2.so* ${CLFS}/lib
 ln -sv ../../lib/libbz2.so.1.0 ${CLFS}/usr/lib/libbz2.so
 rm -v ${CLFS}/usr/bin/{bunzip2,bzcat,bzip2}
 ln -sv bzip2 ${CLFS}/bin/bunzip2
-ln -sv bzip2 ${CLFS}/bin/bzcatt</userinput></screen>
+ln -sv bzip2 ${CLFS}/bin/bzcat</userinput></screen>
 
   </sect2>
 

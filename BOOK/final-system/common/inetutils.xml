@@ -31,7 +31,8 @@
 
 <screen os="p2"><userinput>patch -Np1 -i ../&inetutils-man_pages-patch;</userinput></screen>
 
-    <para os="s1">The following set of seds prevent binaries from being installed as root</para>
+    <para os="s1">The following set of seds prevent binaries from being
+    installed as setuid <systemitem class="username">root</systemitem>:</para>
 
 <screen os="s2"><userinput>for dir in ping rcp rlogin rsh; do
     cp ${dir}/Makefile.in{,.orig}
@@ -100,7 +101,7 @@ done</userinput></screen>
 <screen os="g"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="h">Move the <command>ping</command> and <command>ping6</command>
-    program to its FHS-compliant place:</para>
+    programs to their FHS-compliant place:</para>
 
 <screen os="i"><userinput>mv -v ${CLFS}/usr/bin/ping{,6} ${CLFS}/bin</userinput></screen>
 

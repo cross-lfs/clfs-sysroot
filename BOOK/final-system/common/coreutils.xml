@@ -73,7 +73,7 @@ mv -v ${CLFS}/usr/bin/{mv,pwd,rm,rmdir,stty,true,uname} ${CLFS}/bin
 mv -v ${CLFS}/usr/bin/chroot ${CLFS}/usr/sbin</userinput></screen>
 
     <para os="k">Other Coreutils programs are used by some of the scripts
-    in the CLFS-Bootscripts pacakge. As <filename
+    in the CLFS-Bootscripts package. As <filename
     class="directory">/usr</filename> may not be available during the early
     stages of booting, those binaries need to be on the root partition:</para>
 

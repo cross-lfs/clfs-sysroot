@@ -23,17 +23,17 @@
 
     <para>The following patch changes the hard-coded <filename>/etc</filename>
     in the sources to whatever was passed to configure. It also allows the
-    utilities to run as a user other then root.</para>
+    utilities to run as a user other then root:</para>
 
 <screen><userinput>patch -Np1 -i ../&shadow-sysroot_hacks-patch;</userinput></screen>
 
     <para>The following value is added to <filename>config.cache</filename> to
-    make sure that the <filename>passwd</filename> program is found.</para>
+    make sure that the <filename>passwd</filename> program is found:</para>
 
 <screen><userinput>echo "shadow_cv_passwd_dir=${CLFS}/bin" &gt; config.cache</userinput></screen>
 
-    <para>The following value causes Shadow to use it's internal lckpwdf
-    instead of the one provided by glibc. The one provided by glibc will
+    <para>The following value causes Shadow to use its internal lckpwdf
+    instead of the one provided by Glibc. The one provided by Glibc will
     attempt to modify the host system:</para>
 
 <screen><userinput>echo "ac_cv_func_lckpwdf=no" &gt;&gt; config.cache</userinput></screen>
@@ -44,7 +44,7 @@
     --sysconfdir=$CLFS/etc --disable-shared --without-libpam --without-audit \
     --without-selinux --program-prefix=${CLFS_TARGET}- --cache-file=config.cache</userinput></screen>
 
-    <para>Add the proper suffix to the <filename>passwd</filename> program.</para>
+    <para>Add the proper prefix to the <filename>passwd</filename> program:</para>
 
 <screen><userinput>cp config.h{,.orig}
 sed "/PASSWD_PROGRAM/s/passwd/${CLFS_TARGET}-&amp;/" config.h.orig > config.h</userinput></screen>
