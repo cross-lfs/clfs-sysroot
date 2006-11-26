@@ -25,7 +25,8 @@
   <sect2 role="installation">
     <title>Installation of IPRoute2</title>
 
-    <para os="s1">The following command prevents install from trying to strip the binaries</para>
+    <para os="s1">The following command prevents <command>install</command>
+    from trying to strip the binaries:</para>
 
 <screen os="s2"><userinput>for dir in ip misc tc; do
     cp ${dir}/Makefile{,.orig}

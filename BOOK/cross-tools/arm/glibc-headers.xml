@@ -23,8 +23,8 @@
     <title>Installation of Glibc Headers</title>
 
     <para os="s1">The following sed removes a dependency of gcc 3.4.x from
-    the glibc we are using in cross-lfs. The reason we are changing it is
-    because this only installs the headers, no compiling takes place. In the
+    the Glibc we are using in Cross-LFS. The reason we are changing it is
+    because this only installs the headers; no compiling takes place. In the
     next Glibc chapter, we use the GCC that's built right after this chapter.</para>
  	
 <screen os="s2"><userinput>cp configure{,.orig}

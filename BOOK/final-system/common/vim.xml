@@ -38,7 +38,7 @@
     archives into the same directory.</para>
 
     <para os="p1">The following patch fixes numerous issues with
-    cross-compiling vim</para>
+    cross-compiling Vim:</para>
 
 <screen os="p2"><userinput>patch -Np1 -i ../&vim-cross_compile-patch;</userinput></screen>
 

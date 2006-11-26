@@ -75,7 +75,8 @@ sed -e 's@MANPATH./usr/man@#&amp;@g' \
 <screen os="j"><userinput>cp conf_script{,.orig}
 sed "s@${CLFS}@@" conf_script.orig &gt; conf_script</userinput></screen>
 
-    <para os="k">Build makemsg using the hosts gcc. It is executed during the build:</para>
+    <para os="k">The <command>makemsg</command> program, in Man's source, is
+    executed during the build. Compile it using the host's <command>gcc</command>:</para>
 
 <screen os="l"><userinput>gcc src/makemsg.c -o src/makemsg</userinput></screen>
 

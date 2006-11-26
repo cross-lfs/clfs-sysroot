@@ -30,7 +30,9 @@
 
 <screen os="b"><userinput>patch -Np1 -i ../&sysklogd-fixes-patch;</userinput></screen>
 
-    <para os="s1">The following sed prevents chaning the owner of the installed man files and prevents install from trying to strip the installed binaries.</para>
+    <para os="s1">The following sed prevents changing the owner of the
+    installed man pages and prevents install from trying to strip the
+    installed binaries:</para>
 
 <screen os="s2"><userinput>cp Makefile{,.orig}
 sed -e 's/-o ${MAN_USER} -g ${MAN_GROUP}//' \
