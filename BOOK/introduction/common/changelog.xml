@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>November 25, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Chris] - Removed obsolete command from man instructions as
+          the problem it addresses was fixed in the latest man version).</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>November 24, 2006</para>
       <itemizedlist>
         <listitem>
