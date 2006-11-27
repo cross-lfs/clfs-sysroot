@@ -64,10 +64,6 @@
 <!ENTITY glibc-localedef_segfault-patch-md5 "42452abc6196789e0a83afa1ca7e6e4e">
 <!ENTITY glibc-localedef_segfault-patch-size "1.9 KB">
 
-<!ENTITY gzip-security_fix-patch "gzip-&gzip-version;-security_fixes-1.patch">
-<!ENTITY gzip-security_fix-patch-md5 "f107844f01fc49446654ae4a8f8a0728">
-<!ENTITY gzip-security_fix-patch-size "2 KB">
-
 <!ENTITY inetutils-man_pages-patch "inetutils-&inetutils-version;-no_server_man_pages-2.patch">
 <!ENTITY inetutils-man_pages-patch-md5 "b04f46e66c4b438f609565073590ffd5">
 <!ENTITY inetutils-man_pages-patch-size "8 KB">

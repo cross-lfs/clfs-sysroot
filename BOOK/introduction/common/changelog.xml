@@ -40,6 +40,9 @@
       <para>November 25, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Gzip to 1.3.6.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Man-Pages to 2.42.</para>
         </listitem>
         <listitem>
