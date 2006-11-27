@@ -40,6 +40,9 @@
       <para>November 25, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Man-Pages to 2.42.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Findutils to 4.2.29.</para>
         </listitem>
         <listitem>
