@@ -48,8 +48,8 @@
 <!ENTITY gcc-posix-patch-md5 "0d88068740a0e00780891f2cb905b808">
 <!ENTITY gcc-posix-patch-size "9 KB">
 
-<!ENTITY glibc-cross_hacks-patch "glibc-&glibc-version;-cross_hacks-1.patch">
-<!ENTITY glibc-cross_hacks-patch-md5 "c3ea44100f9f731b7ca52beab8f28f12">
+<!ENTITY glibc-cross_hacks-patch "glibc-&glibc-version;-cross_hacks-2.patch">
+<!ENTITY glibc-cross_hacks-patch-md5 "b932942fea39a9beb2ba8a0664344493">
 <!ENTITY glibc-cross_hacks-patch-size "20 KB">
 
 <!ENTITY glibc-minor-patch "glibc-&glibc-version;-MINOR-1.patch">

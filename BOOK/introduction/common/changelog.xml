@@ -40,6 +40,11 @@
       <para>November 25, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated the Glibc cross_hacks patch to -2. The new
+          version prevents <envar>CFLAGS</envar> from being used when compiling
+          a native tool.</para>
+        </listitem>
+        <listitem>
           <para>[Chris] - Removed obsolete command from man instructions as
           the problem it addresses was fixed in the latest man version).</para>
         </listitem>
