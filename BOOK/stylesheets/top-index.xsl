@@ -119,13 +119,15 @@ hr {
               </a>
             </h4>
           </li>
+          <li>
+            <h4>
+              <a href="hppa">
+                <xsl:text>PA-RISC</xsl:text>
+              </a>
+              <xsl:text> (Currently Broken)</xsl:text>
+            </h4>
+          </li>
         </ul>
-        <h3>
-          <xsl:text>64 Bit Builds</xsl:text>
-        </h3>
-        <h3>
-          <xsl:text>Multilib Builds</xsl:text>
-        </h3>
       </div>
     </div>
   </xsl:template>
@@ -154,6 +156,11 @@ hr {
         <xsl:value-of select="author[2]/firstname"/>
         <xsl:text> </xsl:text>
         <xsl:value-of select="author[2]/surname"/>
+      </h3>
+      <h3 class="author">
+        <xsl:value-of select="author[3]/firstname"/>
+        <xsl:text> </xsl:text>
+        <xsl:value-of select="author[3]/surname"/>
       </h3>
     </div>
   </xsl:template>

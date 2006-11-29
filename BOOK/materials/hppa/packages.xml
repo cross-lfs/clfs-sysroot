@@ -5,10 +5,10 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-materials-patches-x86">
-  <?dbhtml filename="patches-x86.html"?>
+<sect1 id="ch-materials-packages-hppa">
+  <?dbhtml filename="packages-hppa.html"?>
 
-  <title>Additional Patches for X86</title>
+  <title>Additional Packages for PA-RISC</title>
 
 <!--
   <variablelist role="materials">
@@ -17,7 +17,7 @@
 -->
 
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-  href="../common/patches.xml"
+  href="../common/packages.xml"
   xpointer="xpointer(//*[@os='a'])"/>
 
 </sect1>

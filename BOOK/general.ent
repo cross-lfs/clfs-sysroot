@@ -16,6 +16,7 @@
 
 <!ENTITY version-arm "&version;-ARM">
 <!ENTITY version-x86 "&version;-x86">
+<!ENTITY version-hppa "&version;-PA-RISC">
 
 <!ENTITY lfs-root "http://www.linuxfromscratch.org/">
 <!ENTITY clfs-root "http://cross-lfs.org/">

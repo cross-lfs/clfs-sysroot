@@ -6,7 +6,7 @@ XSLROOTDIR	:= /usr/share/xml/docbook/xsl-stylesheets-1.69.1
 
 S		:= -
 
-ARCHS		:= arm x86
+ARCHS		:= arm x86 hppa
 
 ARCHS_HTML	:= $(ARCHS:%=%$(S)html)
 ARCHS_NOCHUNKS	:= $(ARCHS:%=%$(S)nochunks)

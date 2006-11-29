@@ -67,8 +67,8 @@ echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
     xpointer="xpointer(//*[@os='h'])"/>
 
 <screen os="i"><userinput>CC=gcc ../glibc-&glibc-version;/configure --prefix=/usr \
-   --host=${CLFS_TARGET} --build=${CLFS_HOST} \
-   --with-headers=${CLFS}/usr/include --cache-file=config.cache</userinput></screen>
+    --host=${CLFS_TARGET} --build=${CLFS_HOST} \
+    --with-headers=${CLFS}/usr/include --cache-file=config.cache</userinput></screen>
 
     <variablelist os="dj">
        <title>The meaning of the configure options:</title>
