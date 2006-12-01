@@ -124,7 +124,6 @@ hr {
               <a href="hppa">
                 <xsl:text>PA-RISC</xsl:text>
               </a>
-              <xsl:text> (Currently Broken)</xsl:text>
             </h4>
           </li>
         </ul>
