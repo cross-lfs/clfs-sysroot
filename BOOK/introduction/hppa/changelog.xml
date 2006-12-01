@@ -36,6 +36,10 @@
       <para>November 30, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added the GCC PR29114 patch which fixes the
+          compilation of Glibc on a 64bit host.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added a Glibc NPTL patch that allows Glibc to
           compile with NPTL working support.</para>
         </listitem>

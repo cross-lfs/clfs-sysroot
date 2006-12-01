@@ -1,0 +1,21 @@
+Submitted By: Joe Ciccone <jciccone@linuxfromscratch.org>
+Date: 2006-11-30
+Initial Package Version: 2.5
+Upstream Status: In CVS
+Origin: http://gcc.gnu.org/bugzilla/show_bug.cgi?id=29114
+Description: Fixes cross-compiling glibc for hppa on a 64bit host.
+
+        * pa.c (emit_move_sequence): Don't split constants with PLUS for modes
+        larger than BITS_PER_WORD.
+
+diff -Naur gcc-4.1.1.orig/gcc/config/pa/pa.c gcc-4.1.1/gcc/config/pa/pa.c
+--- gcc-4.1.1.orig/gcc/config/pa/pa.c	2006-11-30 17:53:19.000000000 -0500
++++ gcc-4.1.1/gcc/config/pa/pa.c	2006-11-30 18:37:31.000000000 -0500
+@@ -1879,6 +1879,7 @@
+ 	     because PLUS uses an 11-bit immediate and the insn sequence
+ 	     generated is not as efficient as the one using HIGH/LO_SUM.  */
+ 	  if (GET_CODE (operand1) == CONST_INT
++	      && GET_MODE_BITSIZE (mode) <= BITS_PER_WORD
+ 	      && GET_MODE_BITSIZE (mode) <= HOST_BITS_PER_WIDE_INT
+ 	      && !insert)
+ 	    {
