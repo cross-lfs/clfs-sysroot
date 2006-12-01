@@ -237,7 +237,8 @@ ${LOCALEDEF} -i locales/fa_IR -f charmaps/UTF-8 --prefix=${CLFS} fa_IR
 ${LOCALEDEF} -i locales/fr_FR -f charmaps/ISO-8859-1 --prefix=${CLFS} fr_FR
 ${LOCALEDEF} -i locales/fr_FR@euro -f charmaps/ISO-8859-15 --prefix=${CLFS} fr_FR@euro
 ${LOCALEDEF} -i locales/it_IT -f charmaps/ISO-8859-1 --prefix=${CLFS} it_IT
-${LOCALEDEF} -i locales/ja_JP -f charmaps/EUC-JP --prefix=${CLFS} ja_JP</userinput></screen>
+${LOCALEDEF} -i locales/ja_JP -f charmaps/EUC-JP --prefix=${CLFS} ja_JP
+unset I18NPATH GCONV_PATH LOCALEDEF</userinput></screen>
 
     <para>Some locales installed by the <command>make
     localedata/install-locales</command> command above are not properly
