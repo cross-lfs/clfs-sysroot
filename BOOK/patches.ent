@@ -129,3 +129,7 @@
 <!ENTITY binutils-hppa_tls-patch "binutils-&binutils-version;-hppa_tls-1.patch">
 <!ENTITY binutils-hppa_tls-patch-md5 "969f4d2bcd67d8d258538fbedac58c2b">
 <!ENTITY binutils-hppa_tls-patch-size "268 KB">
+
+<!ENTITY glibc-hppa_nptl-patch "glibc-&glibc-version;-hppa_nptl-1.patch">
+<!ENTITY glibc-hppa_nptl-patch-md5 "25cfa673cbc940fde3638d1abf54fd79">
+<!ENTITY glibc-hppa_nptl-patch-size "4 KB">
