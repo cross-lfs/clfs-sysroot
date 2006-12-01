@@ -37,6 +37,15 @@
 -->
 
     <listitem>
+      <para>November 30, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated the Udev Rules to 1.1-pre3.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>November 29, 2006</para>
       <itemizedlist>
         <listitem>
