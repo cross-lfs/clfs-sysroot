@@ -40,6 +40,12 @@
       <para>December 2, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Linux-Headers to 2.6.19-11302006.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Linux to 2.6.19.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Man-Pages to 2.43.</para>
         </listitem>
       </itemizedlist>
