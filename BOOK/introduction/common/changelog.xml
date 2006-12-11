@@ -40,6 +40,9 @@
       <para>December 11, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added Binutils Branch Update Patch.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Gzip to 1.3.7.</para>
         </listitem>
         <listitem>

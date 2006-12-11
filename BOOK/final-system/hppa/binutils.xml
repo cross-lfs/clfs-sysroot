@@ -29,9 +29,17 @@
     href="../common/binutils.xml"
     xpointer="xpointer(//*[@os='p2'])"/>
 
-    <para os="p3">The following patch adds TLS support to Binutils:</para>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../common/binutils.xml"
+    xpointer="xpointer(//*[@os='p3'])"/>
 
-<screen os="p4"><userinput>patch -Np1 -i ../&binutils-hppa_tls-patch;</userinput></screen>
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../common/binutils.xml"
+    xpointer="xpointer(//*[@os='p4'])"/>
+
+    <para os="p5">The following patch adds TLS support to Binutils:</para>
+
+<screen os="p6"><userinput>patch -Np1 -i ../&binutils-hppa_tls-patch;</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/binutils.xml"
