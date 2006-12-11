@@ -40,6 +40,11 @@
       <para>December 11, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Removed MINOR patch and replaced it with a more
+          complete upstream patch will all current updates to the 2.5 branch
+          of Glibc.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Tar to 1.16.1.</para>
         </listitem>
         <listitem>
