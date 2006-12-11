@@ -30,28 +30,19 @@
 <screen os="b"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
     --prefix=/usr</userinput></screen>
 
-    <para os="c">The <command>gzexe</command> script has the location of the
-    <command>gzip</command> binary hard-wired into it. Because the
-    location of the binary is changed later, the following command ensures
-    that the new location gets placed into the script:</para>
+    <para os="c">Compile the package:</para>
 
-<screen os="d"><userinput>chmod +w gzexe.in
-cp gzexe.in{,.orig}
-sed 's@"BINDIR"@/bin@g' gzexe.in.orig &gt; gzexe.in</userinput></screen>
+<screen os="d"><userinput>make</userinput></screen>
 
-    <para os="e">Compile the package:</para>
+    <para os="e">Install the package:</para>
 
-<screen os="f"><userinput>make</userinput></screen>
+<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
-    <para os="g">Install the package:</para>
-
-<screen os="h"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
-
-    <para os="i">Move the <command>gzip</command> program to the <filename
+    <para os="g">Move the <command>gzip</command> program to the <filename
     class="directory">/bin</filename> directory and create some commonly
     used symlinks to it:</para>
 
-<screen os="j"><userinput>mv -v ${CLFS}/usr/bin/gzip ${CLFS}/bin
+<screen os="h"><userinput>mv -v ${CLFS}/usr/bin/gzip ${CLFS}/bin
 rm -v ${CLFS}/usr/bin/{gunzip,zcat}
 ln -sv gzip ${CLFS}/bin/gunzip
 ln -sv gzip ${CLFS}/bin/zcat

@@ -40,6 +40,9 @@
       <para>December 11, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Gzip to 1.3.7.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Linux Headers to 2.6.19-12042006.</para>
         </listitem>
         <listitem>

@@ -133,10 +133,10 @@
 <!ENTITY groff-md5 "f7c9cf2e4b9967d3af167d7c9fadaae4">
 <!ENTITY groff-home "&gnu-software;groff/">
 
-<!ENTITY gzip-version "1.3.6">
-<!ENTITY gzip-size "592 KB">
+<!ENTITY gzip-version "1.3.7">
+<!ENTITY gzip-size "535 KB">
 <!ENTITY gzip-url "&alpha-gnu;gzip/gzip-&gzip-version;.tar.gz">
-<!ENTITY gzip-md5 "495b42de5748cce30dc31aa9994c51b5">
+<!ENTITY gzip-md5 "d6c7f79bc445fbd12136662623de7edf">
 <!ENTITY gzip-home "http://www.gzip.org/">
 
 <!ENTITY iana-etc-version "2.20">
