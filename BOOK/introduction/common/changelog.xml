@@ -40,6 +40,9 @@
       <para>December 11, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Tar to 1.16.1.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added Binutils Branch Update Patch.</para>
         </listitem>
         <listitem>
