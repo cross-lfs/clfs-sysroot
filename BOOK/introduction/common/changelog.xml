@@ -37,6 +37,15 @@
 -->
 
     <listitem>
+      <para>December 11, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated Coreutils to 6.7.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>December 2, 2006</para>
       <itemizedlist>
         <listitem>
