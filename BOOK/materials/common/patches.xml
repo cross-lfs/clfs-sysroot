@@ -199,6 +199,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Readline Fixes - <token>&readline-fixes-patch-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink
+        url="&patches-root;&readline-fixes-patch;"/></para>
+        <para>MD5 sum: <literal>&readline-fixes-patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Shadow Sysroot Hacks Patch - <token>&shadow-sysroot_hacks-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink

@@ -40,6 +40,9 @@
       <para>December 16, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added Readline Patch from Upstream.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Linux to 2.6.19.1.</para>
         </listitem>
         <listitem>
