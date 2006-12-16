@@ -40,6 +40,9 @@
       <para>December 16, 2006</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated File to 4.19.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Update Bash Patch from Upstream.</para>
         </listitem>
         <listitem>
