@@ -37,6 +37,18 @@
 -->
 
     <listitem>
+      <para>December 16, 2006</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated Linux to 2.6.19.1.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Linux Headers to 2.6.19.1-12122006.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>December 11, 2006</para>
       <itemizedlist>
         <listitem>
