@@ -38,7 +38,7 @@
 
 <screen os="d"><userinput>make AR="${AR} rc"</userinput></screen>
 
-    <para os="e">Install the pacakge:</para>
+    <para os="e">Install the package:</para>
 
 <screen os="f"><userinput>make prefix=${CLFS}/usr install</userinput></screen>
 
