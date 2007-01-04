@@ -145,8 +145,8 @@ make</userinput></screen>
 
 <screen os="bi"><userinput>make install</userinput></screen>
 
-    <para os="bj">Copy <filename class="headerfile">libiberty.h</filename> file to
-    <filename class="directory">${CLFS}/usr/include</filename> directory:</para>
+    <para os="bj">Install the <filename class="headerfile">libiberty</filename> header
+    file that is needed by some packages:</para>
 
 <screen os="bk"><userinput>cp -v ../binutils-&binutils-version;/include/libiberty.h ${CLFS}/usr/include</userinput></screen>
 

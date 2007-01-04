@@ -82,11 +82,6 @@ can get `Flex' from any GNU archive site.</computeroutput></screen>
 
 <screen os="k"><userinput>make DESTDIR=${CLFS} tooldir=/usr install</userinput></screen>
 
-    <para os="l">Install the <filename class="headerfile">libiberty</filename> header
-    file that is needed by some packages:</para>
-
-<screen os="m"><userinput>cp -v ../binutils-&binutils-version;/include/libiberty.h ${CLFS}/usr/include</userinput></screen>
-
   </sect2>
 
   <sect2 id="contents-binutils" role="content">

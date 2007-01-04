@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>January 4, 2007</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Chris] - Removed redundant command to copy libiberty.h to
+          ${CLFS}/usr/include a second time.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>December 23, 2006</para>
       <itemizedlist>
         <listitem>
