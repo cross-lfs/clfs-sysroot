@@ -6,7 +6,7 @@
 ]>
 
 <sect1 id="ch-intro-changelog-arm">
-  <title>Changelog for X86</title>
+  <title>Changelog for x86</title>
   <?dbhtml filename="changelog-arm.html"?>
 
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
