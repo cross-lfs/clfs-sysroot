@@ -102,8 +102,7 @@ echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
    <para os="n">First we will copy a common file over to <filename 
    class="directory">${CLFS}/usr/include</filename>:</para>
 
-<screen os="o"><userinput>install -dv ${CLFS}/usr/include/bits
-cp -v bits/stdio_lim.h ${CLFS}/usr/include/bits</userinput></screen>
+<screen os="o"><userinput>cp -v bits/stdio_lim.h ${CLFS}/usr/include/bits</userinput></screen>
 
    <para os="p">Now we will create a blank stub file:</para>
 
