@@ -37,6 +37,18 @@
 -->
 
     <listitem>
+      <para>January 13, 2007</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated the Binutils Branch Update Patch.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated the Glibc Branch Update Patch.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>January 7, 2007</para>
       <itemizedlist>
         <listitem>
