@@ -68,9 +68,9 @@
 <!ENTITY mktemp-tempfile-patch-md5 "65d73faabe3f637ad79853b460d30a19">
 <!ENTITY mktemp-tempfile-patch-size "3.6 KB">
 
-<!ENTITY perl-cross_compile-patch "perl-&perl-version;-cross_compile-2.patch">
-<!ENTITY perl-cross_compile-patch-md5 "bd9f94c8629e674f4472604b77cea42d">
-<!ENTITY perl-cross_compile-patch-size "76 KB">
+<!ENTITY perl-cross_compile-patch "perl-&perl-version;-cross_compile-3.patch">
+<!ENTITY perl-cross_compile-patch-md5 "24ca80509982786534450313228efe7c">
+<!ENTITY perl-cross_compile-patch-size "112 KB">
 
 <!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-1.patch">
 <!ENTITY readline-fixes-patch-md5 "c3483d9d4e44614a740e190d25100cdf">
