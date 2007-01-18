@@ -41,6 +41,21 @@ sed -e "/^install  :=/s/--owner 0 --group 0//" \
 
 <screen os="d"><userinput>make DESTDIR=${CLFS} lib64=lib install</userinput></screen>
 
+    <variablelist os="e">
+      <title>The meaning of the make option:</title>
+
+      <varlistentry>
+        <term><parameter>lib64=lib</parameter></term>
+        <listitem>
+          <para>By default, procps will attempt to install into
+          <filename class="directory">/lib64</filename> if it
+          exists, even if the package is not built 64-bit. This option
+          forces procps to install its libraries into
+          <filename class="directory">/lib</filename> instead.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
   </sect2>
 
   <sect2 id="contents-procps" role="content">
