@@ -76,7 +76,7 @@ echo "libc_cv_arm_tls=yes" &gt;&gt; config.cache</userinput></screen>
           <varlistentry os="dj1">
              <term><parameter>CC=gcc</parameter></term>
              <listitem>
-                <para>Tells Glibc to use the hosts GCC compiler.</para>
+                <para>Tells Glibc to use the host's GCC compiler.</para>
              </listitem>
           </varlistentry>
  	

@@ -101,7 +101,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
       <varlistentry os="j1">
         <term><parameter>BUILD_CC="gcc"</parameter></term>
         <listitem>
-          <para>This sets Glibc to use the current compiler on our system. This is
+          <para>This tells Glibc to use the compiler on the host system. This is
           used to create the tools Glibc uses during its build.</para>
         </listitem>
       </varlistentry>
