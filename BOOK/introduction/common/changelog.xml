@@ -37,6 +37,30 @@
 -->
 
     <listitem>
+      <para>February 06, 2007</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated Automake to 1.10.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated the Glibc Branch Update patch to -3.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Linux to 2.6.19.2.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Linux Headers to 2.6.19.2-01232007.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Udev to 105.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Udev Rules to 1.1-pre4.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>January 13, 2007</para>
       <itemizedlist>
         <listitem>
