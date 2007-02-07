@@ -176,10 +176,10 @@
 
 <!ENTITY linux-dl-version "2.6">
 
-<!ENTITY linux-version "2.6.19.2">
-<!ENTITY linux-size "41,892 KB">
+<!ENTITY linux-version "2.6.20">
+<!ENTITY linux-size "42,527 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-dl-version;/linux-&linux-version;.tar.bz2">
-<!ENTITY linux-md5 "ca0ce8f288e8ae93ac243b568f906bf8">
+<!ENTITY linux-md5 "34b0f354819217e6a345f48ebbd8f13e">
 <!ENTITY linux-home "http://www.kernel.org">
 
 <!ENTITY linux-headers-version "&linux-version;-02042007">
