@@ -28,7 +28,7 @@
     <para os="p1">To make sure that a couple of tools use the proper syntax,
     apply the following patch:</para>
 
-<screen os="p2"><userinput>patch -Np1 -i ../gcc-4.1.1-posix-1.patch</userinput></screen>
+<screen os="p2"><userinput>patch -Np1 -i ../&gcc-posix-patch;</userinput></screen>
 
     <para os="a">Apply a <command>sed</command> substitution that will suppress the
     installation of <filename class="libraryfile">libiberty.a</filename>. The
