@@ -17,9 +17,9 @@
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="hppa/linux-headers.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="hppa/binutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="hppa/glibc-headers.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="hppa/gcc-static.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/gcc-static.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="hppa/glibc.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="hppa/gcc-final.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/gcc-final.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/file.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/groff.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/shadow.xml"/>

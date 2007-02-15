@@ -22,15 +22,6 @@
     </varlistentry>
 
     <varlistentry>
-      <term>GCC PR29114 Patch - <token>&gcc-PR29114-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&gcc-PR29114-patch;"/></para>
-        <para>MD5 sum: <literal>&gcc-PR29114-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>Glibc NPTL Patch - <token>&glibc-hppa_nptl-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
