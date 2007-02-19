@@ -40,6 +40,10 @@
       <para>February 19, 2007</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Fix the building of Ncurses when an unpatched
+          version of Bash 3.x is used.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Gzip to 1.3.11.</para>
         </listitem>
         <listitem>
