@@ -40,6 +40,10 @@
       <para>February 19, 2007</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Changed the wording in the "Build Variables" page
+          to make it clearer. Copied from Chris's change in clfs-svn.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Fix the building of Ncurses when an unpatched
           version of Bash 3.x is used.</para>
         </listitem>
