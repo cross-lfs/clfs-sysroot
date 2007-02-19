@@ -28,7 +28,7 @@
     <para os="a">Prepare Gzip for compilation:</para>
 
 <screen os="b"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
-    --prefix=/usr</userinput></screen>
+    --prefix=/usr --bindir=/bin</userinput></screen>
 
     <para os="c">Compile the package:</para>
 
@@ -38,16 +38,9 @@
 
 <screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
-    <para os="g">Move the <command>gzip</command> program to the <filename
-    class="directory">/bin</filename> directory and create some commonly
-    used symlinks to it:</para>
+    <para os="g">Now we will move some of utilities to /usr/bin to meet FHS compliance:</para>
 
-<screen os="h"><userinput>mv -v ${CLFS}/usr/bin/gzip ${CLFS}/bin
-rm -v ${CLFS}/usr/bin/{gunzip,zcat}
-ln -sv gzip ${CLFS}/bin/gunzip
-ln -sv gzip ${CLFS}/bin/zcat
-ln -sv gzip ${CLFS}/bin/compress
-ln -sv gunzip ${CLFS}/bin/uncompress</userinput></screen>
+<screen os="h"><userinput>mv /bin/z{egrep,cmp,diff,fgrep,force,grep,less,more,new} /usr/bin</userinput></screen>
 
   </sect2>
 

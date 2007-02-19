@@ -40,6 +40,9 @@
       <para>February 19, 2007</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Gzip to 1.3.11.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added a command to remove the rules that Udev
           installs by default.</para>
         </listitem>
