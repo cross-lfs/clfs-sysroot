@@ -62,8 +62,8 @@
 
 <screen os="p6"><userinput>patch -Np1 -i ../&glibc-cross_hacks-patch;</userinput></screen>
 
-    <para os="p7">The following patches merges all updates from the 2.5 Branch from
-    the Glibc developers:</para>
+    <para os="p7">The following patch merges all updates from the
+    &glibc-version; Branch from the Glibc developers:</para>
 
 <screen os="p8"><userinput>patch -Np1 -i ../&glibc-branch_update-patch;</userinput></screen>
 
