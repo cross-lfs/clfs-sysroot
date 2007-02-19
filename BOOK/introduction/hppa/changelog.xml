@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-intro-changelog-arm">
+<sect1 id="ch-intro-changelog-hppa">
   <title>Changelog for PA-RISC</title>
   <?dbhtml filename="changelog-hppa.html"?>
 

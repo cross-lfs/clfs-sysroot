@@ -2,7 +2,7 @@
 
 <!ENTITY month "02"> <!-- Use two digits -->
 <!ENTITY month_name "February">
-<!ENTITY day "15"> <!-- Use two digits -->
+<!ENTITY day "19"> <!-- Use two digits -->
 <!ENTITY year "2007"> <!-- Use four digits -->
 
 <!ENTITY releasedate "&month_name; &day;, &year;">
@@ -14,9 +14,10 @@
 
 <!ENTITY version "SVN-&major-version;.&minor-version;.&extra-version;-&year;&month;&day;">
 
+<!ENTITY version-alpha "&version;-Alpha">
 <!ENTITY version-arm "&version;-ARM">
-<!ENTITY version-x86 "&version;-x86">
 <!ENTITY version-hppa "&version;-PA-RISC">
+<!ENTITY version-x86 "&version;-x86">
 
 <!ENTITY lfs-root "http://www.linuxfromscratch.org/">
 <!ENTITY clfs-root "http://cross-lfs.org/">

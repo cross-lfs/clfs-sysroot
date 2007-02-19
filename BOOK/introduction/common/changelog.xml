@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>February 19, 2007</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated the Perl Cross-compile patch to
+          support Alpha.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>February 14, 2007</para>
       <itemizedlist>
         <listitem>

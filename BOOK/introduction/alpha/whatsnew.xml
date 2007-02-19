@@ -5,9 +5,9 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-intro-whatsnew-hppa">
-  <title>What's New for PA-RISC</title>
-  <?dbhtml filename="whatsnew-hppa.html"?>
+<sect1 id="ch-intro-whatsnew-alpha">
+  <title>What's New for Alpha</title>
+  <?dbhtml filename="whatsnew-alpha.html"?>
 
   <para>Below is a list of changes specifics for this architecture made
   since the previous release of the book. For general changes see

@@ -5,9 +5,9 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-intro-changelog-x86">
-  <title>Changelog for x86</title>
-  <?dbhtml filename="changelog-x86.html"?>
+<sect1 id="ch-intro-changelog-alpha">
+  <title>Changelog for Alpha</title>
+  <?dbhtml filename="changelog-alpha.html"?>
 
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
   href="../arm/changelog.xml"
@@ -33,10 +33,10 @@
 -->
 
     <listitem>
-      <para>June 22, 2006</para>
+      <para>February 19, 2007</para>
       <itemizedlist>
         <listitem>
-          <para>[jciccone] - Added x86 to the book.</para>
+          <para>[jciccone] - Added Alpha to the book.</para>
         </listitem>
       </itemizedlist>
     </listitem>

@@ -64,9 +64,9 @@
 <!ENTITY mktemp-tempfile-patch-md5 "65d73faabe3f637ad79853b460d30a19">
 <!ENTITY mktemp-tempfile-patch-size "3.6 KB">
 
-<!ENTITY perl-cross_compile-patch "perl-&perl-version;-cross_compile-3.patch">
-<!ENTITY perl-cross_compile-patch-md5 "24ca80509982786534450313228efe7c">
-<!ENTITY perl-cross_compile-patch-size "112 KB">
+<!ENTITY perl-cross_compile-patch "perl-&perl-version;-cross_compile-4.patch">
+<!ENTITY perl-cross_compile-patch-md5 "fbcae6d579057d28c6da155e40a2e448">
+<!ENTITY perl-cross_compile-patch-size "136 KB">
 
 <!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-1.patch">
 <!ENTITY readline-fixes-patch-md5 "c3483d9d4e44614a740e190d25100cdf">
@@ -115,6 +115,20 @@
 <!ENTITY zlib-fpic-patch "zlib-&zlib-version;-fPIC-1.patch">
 <!ENTITY zlib-fpic-patch-md5 "545d60b20bfde6f53023de44438cef59">
 <!ENTITY zlib-fpic-patch-size "3.2 KB">
+
+<!-- Alpha Specific Patches -->
+
+<!ENTITY glibc-ioperm_fix-patch "glibc-&glibc-version;-alpha_ioperm_fix-1.patch">
+<!ENTITY glibc-ioperm_fix-patch-md5 "3a50c4055d2f72248eb656eb2d15edec">
+<!ENTITY glibc-ioperm_fix-patch-size "4 KB">
+
+<!ENTITY glibc-alpha_sigsuspend-patch "glibc-&glibc-version;-alpha_sigsuspend-1.patch">
+<!ENTITY glibc-alpha_sigsuspend-patch-md5 "e35c13eb4371388b2ffa75418649ffe2">
+<!ENTITY glibc-alpha_sigsuspend-patch-size "4 KB">
+
+<!ENTITY linux-io_fix-patch "linux-&linux-version;-alpha_io_fix-1.patch">
+<!ENTITY linux-io_fix-patch-md5 "7a680d8c9978044955e6ef4f6a7358c1">
+<!ENTITY linux-io_fix-patch-size "4 KB">
 
 <!-- PA-RISC Specific Patches -->
 

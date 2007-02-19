@@ -6,7 +6,7 @@ XSLROOTDIR	:= /usr/share/xml/docbook/xsl-stylesheets-1.69.1
 
 S		:= -
 
-ARCHS		:= arm x86 hppa
+ARCHS		:= alpha arm hppa x86
 
 ARCHS_HTML	:= $(ARCHS:%=%$(S)html)
 ARCHS_NOCHUNKS	:= $(ARCHS:%=%$(S)nochunks)
@@ -38,6 +38,7 @@ endif
 render: $(ARCHS_HTML) titlepage
 
 titlepage:
+	@echo "Rendering Top Index"
 	@xsltproc --nonet --output $(BASEDIR)/index.html $(PWD)/stylesheets/top-index.xsl $(PWD)/index.xml
 
 $(ARCHS_HTML): override html_arch = $(@:%$(S)html=%)

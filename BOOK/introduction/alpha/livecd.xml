@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-intro-bootcd" arch="x86">
+<sect1 id="ch-intro-bootcd" arch="alpha">
   <?dbhtml filename="bootcd.html"?>
 
   <title>About the Included CD</title>
