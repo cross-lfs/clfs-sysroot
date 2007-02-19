@@ -69,6 +69,11 @@
 
 <screen os="j"><userinput>install -dv ${CLFS}/lib/firmware</userinput></screen>
 
+    <para os="k">Finally, remove the rules installed by Udev as we will be
+    installing custom Udev rules later:</para>
+
+<screen os="l"><userinput>rm -v ${CLFS}/etc/udev/rules.d/*</userinput></screen>
+
   </sect2>
 
   <sect2 id="contents-udev" role="content">

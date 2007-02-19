@@ -40,6 +40,10 @@
       <para>February 19, 2007</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added a command to remove the rules that Udev
+          installs by default.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated the Perl Cross-compile patch to
           support Alpha.</para>
         </listitem>
