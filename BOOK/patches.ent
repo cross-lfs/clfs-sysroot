@@ -36,6 +36,10 @@
 <!ENTITY gcc-posix-patch-md5 "9aa1cdcbaedb4e1ed3f65ae25cdc413b">
 <!ENTITY gcc-posix-patch-size "12 KB">
 
+<!ENTITY gcc-PR20425-patch "gcc-&gcc-version;-PR20425-1.patch">
+<!ENTITY gcc-PR20425-patch-md5 "95535bda8e4d37d30251db0b121b5374">
+<!ENTITY gcc-PR20425-patch-size "36 KB">
+
 <!ENTITY glibc-branch_update-patch "glibc-&glibc-version;-branch_update-3.patch">
 <!ENTITY glibc-branch_update-patch-md5 "0cb4331328ecfadc4fc81288fdbdb864">
 <!ENTITY glibc-branch_update-patch-size "1644 KB">
