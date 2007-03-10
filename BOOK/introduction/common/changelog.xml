@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>March 10, 2007</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Added a patch to the Perl build that fixes an
+          issue with recent snapshots of gcc-4.2.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>March 9, 2007</para>
       <itemizedlist>
         <listitem>
