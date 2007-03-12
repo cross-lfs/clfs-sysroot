@@ -70,7 +70,7 @@
 
     <para os="l">Create /bin/sh:</para>
 
-<screen os="m"><userinput>ln -sv bash ${CLFS}/bin/sh</userinput></screen>
+<screen os="m"><userinput>ln -sfv bash ${CLFS}/bin/sh</userinput></screen>
 
   </sect2>
 

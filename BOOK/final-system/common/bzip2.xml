@@ -60,10 +60,10 @@ make clean</userinput></screen>
 
 <screen os="j"><userinput>cp -v bzip2-shared ${CLFS}/bin/bzip2
 cp -av libbz2.so* ${CLFS}/lib
-ln -sv ../../lib/libbz2.so.1.0 ${CLFS}/usr/lib/libbz2.so
+ln -sfv ../../lib/libbz2.so.1.0 ${CLFS}/usr/lib/libbz2.so
 rm -v ${CLFS}/usr/bin/{bunzip2,bzcat,bzip2}
-ln -sv bzip2 ${CLFS}/bin/bunzip2
-ln -sv bzip2 ${CLFS}/bin/bzcat</userinput></screen>
+ln -sfv bzip2 ${CLFS}/bin/bunzip2
+ln -sfv bzip2 ${CLFS}/bin/bzcat</userinput></screen>
 
   </sect2>
 

@@ -90,12 +90,12 @@ cd ../gcc-build</userinput></screen>
     <filename class="directory">/lib</filename> directory.
     To support those packages, create this symlink:</para>
 
-<screen os="l"><userinput>ln -sv ../usr/bin/cpp ${CLFS}/lib</userinput></screen>
+<screen os="l"><userinput>ln -sfv ../usr/bin/cpp ${CLFS}/lib</userinput></screen>
 
     <para os="m">Many packages use the name <command>cc</command> to call the C
     compiler. To satisfy those packages, create a symlink:</para>
 
-<screen os="o"><userinput>ln -sv gcc ${CLFS}/usr/bin/cc</userinput></screen>
+<screen os="o"><userinput>ln -sfv gcc ${CLFS}/usr/bin/cc</userinput></screen>
 
   </sect2>
 

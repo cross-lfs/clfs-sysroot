@@ -48,7 +48,7 @@ sed "s/-I@includedir@//g" Makefile.in.orig &gt; Makefile.in</userinput></screen>
     class="directory">/usr/lib</filename>. Create a symlink to account for
     this:</para>
 
-<screen os="j"><userinput>ln -sv libfl.a ${CLFS}/usr/lib/libl.a</userinput></screen>
+<screen os="j"><userinput>ln -sfv libfl.a ${CLFS}/usr/lib/libl.a</userinput></screen>
 
     <para os="k">A few programs do not know about <command>flex</command> yet and
     try to run its predecessor, <command>lex</command>. To support those
