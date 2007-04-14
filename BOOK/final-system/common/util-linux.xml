@@ -63,8 +63,9 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
 
 <screen os="p8"><userinput>patch -Np1 -i ../&util-linux-lseek-patch;</userinput></screen>
 
-    <para os="s1">The following sed prevents the installed files from being
-    owned by root</para>
+    <para os="s1">The Util-linux installation uses <option>-o root</option>.
+    As we are currently using an unprivileged user, this will not work. The
+    following <command>sed</command> removes it:</para>
 
 <screen os="s2"><userinput>cp MCONFIG{,.orig}
 sed -e "s/-o root//" MCONFIG.orig > MCONFIG</userinput></screen>
