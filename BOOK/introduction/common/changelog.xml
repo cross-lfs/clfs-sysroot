@@ -37,6 +37,27 @@
 -->
 
     <listitem>
+      <para>April 30, 2007</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated to Man Pages 2.46.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated to Psmisc 22.5.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated to Gzip 1.3.12.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated to M4 1.4.9.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated to Coreutile 6.9.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 4, 2007</para>
       <itemizedlist>
         <listitem>

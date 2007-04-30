@@ -53,10 +53,10 @@
 <!ENTITY clfs-bootscripts-md5 "7afd4502d3b587e3fd447bb9db8a6156">
 <!ENTITY clfs-bootscripts-home " ">
 
-<!ENTITY coreutils-version "6.7">
-<!ENTITY coreutils-size "5,213 KB">
+<!ENTITY coreutils-version "6.9">
+<!ENTITY coreutils-size "5,272 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.bz2">
-<!ENTITY coreutils-md5 "a16465d0856cd011a1acc1c21040b7f4">
+<!ENTITY coreutils-md5 "c9607d8495f16e98906e7ed2d9751a06">
 <!ENTITY coreutils-home "&gnu-software;coreutils">
 
 <!ENTITY diffutils-version "2.8.7">
@@ -132,10 +132,10 @@
 <!ENTITY groff-md5 "f7c9cf2e4b9967d3af167d7c9fadaae4">
 <!ENTITY groff-home "&gnu-software;groff">
 
-<!ENTITY gzip-version "1.3.11">
-<!ENTITY gzip-size "425 KB">
-<!ENTITY gzip-url "&alpha-gnu;gzip/gzip-&gzip-version;.tar.gz">
-<!ENTITY gzip-md5 "a41a6a4b11f941cb7fc13df320f3af5f">
+<!ENTITY gzip-version "1.3.12">
+<!ENTITY gzip-size "456 KB">
+<!ENTITY gzip-url "&gnu;gzip/gzip-&gzip-version;.tar.gz">
+<!ENTITY gzip-md5 "b5bac2d21840ae077e0217bc5e4845b1">
 <!ENTITY gzip-home "http://www.gzip.org">
 
 <!ENTITY iana-etc-version "2.20">
@@ -188,10 +188,10 @@
 <!ENTITY linux-headers-md5 "91871367451dfe36926f860887657db9">
 <!ENTITY linux-headers-home "http://headers.cross-lfs.org">
 
-<!ENTITY m4-version "1.4.8">
-<!ENTITY m4-size "571 KB">
+<!ENTITY m4-version "1.4.9">
+<!ENTITY m4-size "600 KB">
 <!ENTITY m4-url "&gnu;m4/m4-&m4-version;.tar.bz2">
-<!ENTITY m4-md5 "6bbf917e5d8fab20b38d43868c3944d3">
+<!ENTITY m4-md5 "bcfaf47194491a7a8b8d3c2811570b93">
 <!ENTITY m4-home "&gnu-software;m4">
 
 <!ENTITY make-version "3.81">
@@ -206,10 +206,10 @@
 <!ENTITY man-md5 "d8187cd756398baefc48ba7d60ff6a8a">
 <!ENTITY man-home "http://primates.ximian.com/~flucifredi/man">
 
-<!ENTITY man-pages-version "2.43">
-<!ENTITY man-pages-size "1,784 KB">
+<!ENTITY man-pages-version "2.46">
+<!ENTITY man-pages-size "1,792 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/manpages/man-pages-&man-pages-version;.tar.bz2">
-<!ENTITY man-pages-md5 "15105479df4f65dd208eaaded48a1f54">
+<!ENTITY man-pages-md5 "318a948119a593b5042b7eb52a2ab79e">
 <!ENTITY man-pages-home "http://www.win.tue.nl/~aeb/linux/man">
 
 <!ENTITY mktemp-version "1.5">
@@ -249,10 +249,10 @@
 <!ENTITY procps-md5 "f490bca772b16472962c7b9f23b1e97d">
 <!ENTITY procps-home "http://procps.sourceforge.net">
 
-<!ENTITY psmisc-version "22.3">
-<!ENTITY psmisc-size "251 KB">
+<!ENTITY psmisc-version "22.5">
+<!ENTITY psmisc-size "276 KB">
 <!ENTITY psmisc-url "&sourceforge;psmisc/psmisc-&psmisc-version;.tar.gz">
-<!ENTITY psmisc-md5 "0c44b995d068a221daf35d23e13db419">
+<!ENTITY psmisc-md5 "09c20fd899c2c1bd2dce02a510f99fab">
 <!ENTITY psmisc-home "http://psmisc.sourceforge.net">
 
 <!ENTITY readline-version "5.2">
