@@ -71,16 +71,16 @@
 <!ENTITY e2fsprogs-md5 "06f7806782e357797fad1d34b7ced0c6">
 <!ENTITY e2fsprogs-home "http://e2fsprogs.sourceforge.net">
 
-<!ENTITY file-version "4.19">
-<!ENTITY file-size "538 KB">
+<!ENTITY file-version "4.21">
+<!ENTITY file-size "544 KB">
 <!ENTITY file-url "ftp://ftp.gw.com/mirrors/pub/unix/file/file-&file-version;.tar.gz">
-<!ENTITY file-md5 "a61ef3aa8339d5987148089afde25f60">
+<!ENTITY file-md5 "9e3503116f4269a1be70220ee2234b0e">
 <!ENTITY file-home "http://www.darwinsys.com/file">
 
-<!ENTITY findutils-version "4.2.29">
-<!ENTITY findutils-size "1,076 KB">
+<!ENTITY findutils-version "4.2.31">
+<!ENTITY findutils-size "1,300 KB">
 <!ENTITY findutils-url "&gnu;findutils/findutils-&findutils-version;.tar.gz">
-<!ENTITY findutils-md5 "24e76434ca74ba3c2c6ad621eb64e1ff">
+<!ENTITY findutils-md5 "a0e31a0f18a49709bf5a449867c8049a">
 <!ENTITY findutils-home "&gnu-software;findutils">
 
 <!ENTITY flex-version "2.5.33">
@@ -162,10 +162,10 @@
 <!ENTITY kbd-md5 "069d1175b4891343b107a8ac2b4a39f6">
 <!ENTITY kbd-home " ">
 
-<!ENTITY less-version "394">
-<!ENTITY less-size "286 KB">
+<!ENTITY less-version "403">
+<!ENTITY less-size "292 KB">
 <!ENTITY less-url "http://www.greenwoodsoftware.com/less/less-&less-version;.tar.gz">
-<!ENTITY less-md5 "a9f072ccefa0d315b325f3e9cdbd4b97">
+<!ENTITY less-md5 "46d8d2008f7b6f6c63fb497e5c3a204a">
 <!ENTITY less-home "http://www.greenwoodsoftware.com/less">
 
 <!ENTITY libtool-version "1.5.22">
@@ -206,10 +206,10 @@
 <!ENTITY man-md5 "d8187cd756398baefc48ba7d60ff6a8a">
 <!ENTITY man-home "http://primates.ximian.com/~flucifredi/man">
 
-<!ENTITY man-pages-version "2.46">
-<!ENTITY man-pages-size "1,792 KB">
+<!ENTITY man-pages-version "2.57">
+<!ENTITY man-pages-size "1,764 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/manpages/man-pages-&man-pages-version;.tar.bz2">
-<!ENTITY man-pages-md5 "318a948119a593b5042b7eb52a2ab79e">
+<!ENTITY man-pages-md5 "82b67ea3e9bd5204617d041435b98ce5">
 <!ENTITY man-pages-home "http://www.win.tue.nl/~aeb/linux/man">
 
 <!ENTITY mktemp-version "1.5">
@@ -285,10 +285,10 @@
 <!ENTITY sysvinit-md5 "7d5d61c026122ab791ac04c8a84db967">
 <!ENTITY sysvinit-home " ">
 
-<!ENTITY tar-version "1.16.1">
-<!ENTITY tar-size "1,760 KB">
+<!ENTITY tar-version "1.17">
+<!ENTITY tar-size "1,844 KB">
 <!ENTITY tar-url "&gnu;tar/tar-&tar-version;.tar.bz2">
-<!ENTITY tar-md5 "d51593461c5ef1f7e37134f22338bb9e">
+<!ENTITY tar-md5 "c6c4f1c075dbf0f75c29737faa58f290">
 <!ENTITY tar-home "&gnu-software;tar">
 
 <!ENTITY texinfo-version "4.8a">
@@ -315,15 +315,15 @@
 <!ENTITY util-linux-md5 "af9d9e03038481fbf79ea3ac33f116f9">
 <!ENTITY util-linux-home " ">
 
-<!ENTITY vim-version "7.0">
-<!ENTITY vim-version2 "70">
-<!ENTITY vim-size "6,422 KB">
+<!ENTITY vim-version "7.1">
+<!ENTITY vim-version2 "71">
+<!ENTITY vim-size "6,728 KB">
 <!ENTITY vim-url "ftp://ftp.vim.org/pub/vim/unix/vim-&vim-version;.tar.bz2">
-<!ENTITY vim-md5 "4ca69757678272f718b1041c810d82d8">
+<!ENTITY vim-md5 "44c6b4914f38d6f9aa959640b89da329">
 <!ENTITY vim-home "http://www.vim.org">
-<!ENTITY vim-language-size "1,153 KB">
+<!ENTITY vim-language-size "1,168 KB">
 <!ENTITY vim-language-url "ftp://ftp.vim.org/pub/vim/extra/vim-&vim-version;-lang.tar.gz">
-<!ENTITY vim-language-md5 "6d43efaff570b5c86e76b833ea0c6a04">
+<!ENTITY vim-language-md5 "144aa049ba70621acf4247f0459f3ee7">
 <!ENTITY vim-language-home " ">
 
 <!ENTITY zlib-version "1.2.3">
