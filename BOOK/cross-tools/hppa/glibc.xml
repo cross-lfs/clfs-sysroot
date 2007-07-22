@@ -65,10 +65,10 @@
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='p8'])"/>
 
-    <para os="p9">This patch adds the TLS reloc numbers so Glibc can compile
+    <para os="hp1">This patch adds the TLS reloc numbers so Glibc can compile
     with working NPTL support.</para>
 
-<screen os="p10"><userinput>patch -Np1 -i ../&glibc-hppa_nptl-patch;</userinput></screen>
+<screen os="hp2"><userinput>patch -Np1 -i ../&glibc-hppa_nptl-patch;</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/glibc.xml"
@@ -98,9 +98,13 @@
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='h'])"/>
 
-    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-    href="../common/glibc.xml"
-    xpointer="xpointer(//*[@os='i'])"/>
+<screen os="i"><userinput>BUILD_CC="gcc" CC="${CLFS_TARGET}-gcc" \
+    AR="${CLFS_TARGET}-ar" RANLIB="${CLFS_TARGET}-ranlib" \
+    ../glibc-&glibc-version;/configure --prefix=/usr \
+    --libexecdir=/usr/lib/glibc --host=${CLFS_TARGET} --build=${CLFS_HOST} \
+    --disable-profile --enable-add-ons --with-tls --enable-kernel=2.6.9 \
+    --with-__thread --with-binutils=${CLFS}/cross-tools/bin \
+    --with-headers=${CLFS}/usr/include --cache-file=config.cache</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/glibc.xml"

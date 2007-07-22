@@ -26,6 +26,14 @@
     xpointer="xpointer(//*[@os='a'])"/>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../arm/glibc.xml"
+    xpointer="xpointer(//*[@os='u1'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../arm/glibc.xml"
+    xpointer="xpointer(//*[@os='u2'])"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='p1'])"/>
 
@@ -57,10 +65,6 @@
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='p8'])"/>
 
-    <para os="a1">The following patch makes sysdep-cancel use one region instead of two:</para>
-
-<screen os="a2"><userinput>patch -Np1 -i ../&glibc-sysdep_cancel-patch;</userinput></screen>
-
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='b'])"/>
@@ -89,9 +93,14 @@
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='h'])"/>
 
-    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-    href="../common/glibc.xml"
-    xpointer="xpointer(//*[@os='i'])"/>
+<screen os="i"><userinput>BUILD_CC="gcc" CC="${CLFS_TARGET}-gcc" \
+    AR="${CLFS_TARGET}-ar" RANLIB="${CLFS_TARGET}-ranlib" \
+    CFLAGS="-march=$(cut -d- -f1 &lt;&lt;&lt; ${CLFS_TARGET}) -mtune=generic -g -O2" \
+    ../glibc-&glibc-version;/configure --prefix=/usr \
+    --libexecdir=/usr/lib/glibc --host=${CLFS_TARGET} --build=${CLFS_HOST} \
+    --disable-profile --enable-add-ons --with-tls --enable-kernel=2.6.0 \
+    --with-__thread --with-binutils=${CLFS}/cross-tools/bin \
+    --with-headers=${CLFS}/usr/include --cache-file=config.cache</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/glibc.xml"

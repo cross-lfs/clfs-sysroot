@@ -37,13 +37,21 @@
 
 <screen os="p4"><userinput>patch -Np1 -i ../&coreutils-uname-patch;</userinput></screen>
 
-    <para os="aa">When the uname patch was applied. A change was made to
-    <filename>uname.c</filename>. This change is causing the man Makefile to
-    try and regenerate the man page for uname. Since the compiled uname can
-    not be executed the build will fail. The following command gives the uname
-    man page a newer timestamp then <filename>uname.c</filename>.</para>
+    <para os="s1">The following command renames the internal implementation of
+    futimens to gl_futimens as newer versions of Glibc provide an incompatible
+    version:</para>
 
-<screen os="ab"><userinput>touch man/uname.1</userinput></screen>
+<screen os="s2"><userinput>sed -i "s/futimens/gl_&amp;/" $(grep -lr futimens *)</userinput></screen>
+
+    <para os="aa">When the uname patch and the sed above were applied. The
+    source files for uname and touch were updated. Because they have a newer
+    timestamp then the man pages the <filename>Makefile</filename> is going to
+    try to regenerate the man pages. If executables for the target architecture
+    can not be executed by the host system, the build will fail. The following
+    command gives the two man pages a newer timestamp then their cooresponding
+    source files:</para>
+
+<screen os="ab"><userinput>touch man/uname.1 man/touch.1</userinput></screen>
 
     <para os="a">Configure can not properly determine how to get free space
     when cross-compiling, Without putting the following entry into

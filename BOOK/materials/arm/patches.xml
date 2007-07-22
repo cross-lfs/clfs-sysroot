@@ -9,20 +9,19 @@
   <?dbhtml filename="patches-arm.html"?>
 
   <title>Additional Patches for ARM</title>
-<!--
+
   <variablelist role="materials">
 
-    <varlistentry os="coreutils-x86_uname-patch">
-      <term>Coreutils Uname Patch - <token>&coreutils-x86_uname-patch-size;</token>:</term>
+    <varlistentry>
+      <term>Glibc RTLD_SINGLE_THREAD_P Patch - <token>&glibc-RTLD_SINGLE_THREAD_P-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
-        url="&patches-root;coreutils/&coreutils-x86_uname-patch;"/></para>
-        <para>MD5 sum: <literal>&coreutils-x86_uname-patch-md5;</literal></para>
+        url="&patches-root;&glibc-RTLD_SINGLE_THREAD_P-patch;"/></para>
+        <para>MD5 sum: <literal>&glibc-RTLD_SINGLE_THREAD_P-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
 
   </variablelist>
--->
 
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
   href="../common/patches.xml"

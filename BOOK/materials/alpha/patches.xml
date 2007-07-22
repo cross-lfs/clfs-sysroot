@@ -13,20 +13,11 @@
   <variablelist role="materials">
 
     <varlistentry>
-      <term>Glibc ioperm Fix Patch - <token>&glibc-ioperm_fix-patch-size;</token>:</term>
+      <term>Glibc sysdep_cancel Patch - <token>&glibc-sysdep_cancel-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
-        url="&patches-root;&glibc-ioperm_fix-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-ioperm_fix-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term>Glibc Alpha sigsuspend Patch - <token>&glibc-alpha_sigsuspend-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&glibc-alpha_sigsuspend-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-alpha_sigsuspend-patch-md5;</literal></para>
+        url="&patches-root;&glibc-sysdep_cancel-patch;"/></para>
+        <para>MD5 sum: <literal>&glibc-sysdep_cancel-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
 
