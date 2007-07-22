@@ -57,7 +57,7 @@
       <term><parameter>--sysconfdir=/etc</parameter></term>
       <listitem><para>Tells Shadow to install its configuration files into
       /etc, rather than /usr/etc.</para></listitem>
-    </varlistentry> 
+    </varlistentry>
     <varlistentry>
       <term><parameter>--without-libpam</parameter></term>
       <listitem><para>Support for Linux-PAM is enabled by default in Shadow,
@@ -122,7 +122,8 @@ sed -e's@#MD5_CRYPT_ENAB.no@MD5_CRYPT_ENAB yes@' \
       dictionary:</para>
 
 <screen role="nodump"><userinput>cp ${CLFS}/etc/login.defs login.defs.orig
-sed 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' login.defs.orig &gt; ${CLFS}/etc/login.defs</userinput></screen>
+sed 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' login.defs.orig \
+    &gt; ${CLFS}/etc/login.defs</userinput></screen>
     </note>
 
     <para os="v">Move a misplaced program to its proper location:</para>

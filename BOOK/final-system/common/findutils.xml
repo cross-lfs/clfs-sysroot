@@ -58,7 +58,7 @@
     <para os="h">The <command>find</command> program is used by some of the
     scripts in the CLFS-Bootscripts package. As <filename
     class="directory">/usr</filename> may not be available during the early
-    stages of booting, the <command>find</command>  binary need to be on 
+    stages of booting, the <command>find</command>  binary need to be on
     the root partition:</para>
 
 <screen os="i"><userinput>mv -v ${CLFS}/usr/bin/find ${CLFS}/bin</userinput></screen>
@@ -67,7 +67,8 @@
     to point to the new location for <command>find</command>:</para>
 
 <screen os="k"><userinput>cp ${CLFS}/usr/bin/updatedb{,.orig}
-sed 's@find:=${BINDIR}@find:=/bin@' ${CLFS}/usr/bin/updatedb.orig &gt; ${CLFS}/usr/bin/updatedb
+sed 's@find:=${BINDIR}@find:=/bin@' ${CLFS}/usr/bin/updatedb.orig &gt; \
+    ${CLFS}/usr/bin/updatedb
 rm ${CLFS}/usr/bin/updatedb.orig</userinput></screen>
 
   </sect2>

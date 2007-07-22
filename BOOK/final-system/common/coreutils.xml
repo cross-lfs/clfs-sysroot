@@ -68,8 +68,8 @@
     <para os="i">Move programs to the locations specified by the FHS:</para>
 
 <screen os="j"><userinput>mv -v ${CLFS}/usr/bin/{cat,chgrp,chmod,chown,cp,date} ${CLFS}/bin
-mv -v ${CLFS}/usr/bin/{dd,df,echo,false,hostname,ln,ls,mkdir,mknod} ${CLFS}/bin
-mv -v ${CLFS}/usr/bin/{mv,pwd,rm,rmdir,stty,true,uname} ${CLFS}/bin
+mv -v ${CLFS}/usr/bin/{dd,df,echo,false,hostname,ln,ls,mkdir} ${CLFS}/bin
+mv -v ${CLFS}/usr/bin/{mknod,mv,pwd,rm,rmdir,stty,true,uname} ${CLFS}/bin
 mv -v ${CLFS}/usr/bin/chroot ${CLFS}/usr/sbin</userinput></screen>
 
     <para os="k">Other Coreutils programs are used by some of the scripts

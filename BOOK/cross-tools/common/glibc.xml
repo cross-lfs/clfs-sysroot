@@ -88,12 +88,11 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
 
 <screen os="i"><userinput>BUILD_CC="gcc" CC="${CLFS_TARGET}-gcc" \
     AR="${CLFS_TARGET}-ar" RANLIB="${CLFS_TARGET}-ranlib" \
-    ../glibc-&glibc-version;/configure --prefix=/usr --libexecdir=/usr/lib/glibc \
-    --host=${CLFS_TARGET} --build=${CLFS_HOST} \
-    --disable-profile --enable-add-ons \
-    --with-tls --enable-kernel=2.6.0 --with-__thread \
-    --with-binutils=${CLFS}/cross-tools/bin --with-headers=${CLFS}/usr/include \
-    --cache-file=config.cache</userinput></screen>
+    ../glibc-&glibc-version;/configure --prefix=/usr \
+    --libexecdir=/usr/lib/glibc --host=${CLFS_TARGET} --build=${CLFS_HOST} \
+    --disable-profile --enable-add-ons --with-tls --enable-kernel=2.6.0 \
+    --with-__thread --with-binutils=${CLFS}/cross-tools/bin \
+    --with-headers=${CLFS}/usr/include --cache-file=config.cache</userinput></screen>
 
     <variablelist os="j">
       <title>The meaning of the new configure options:</title>
@@ -133,7 +132,7 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
       <varlistentry os="j5">
         <term><parameter>--disable-profile</parameter></term>
         <listitem>
-          <para>This builds the libraries without profiling information. 
+          <para>This builds the libraries without profiling information.
 	  Omit this option if profiling on the temporary tools is necessary.</para>
         </listitem>
       </varlistentry>
@@ -225,17 +224,20 @@ echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
 <screen role="nodump"><userinput>mkdir -pv ${CLFS}/usr/lib/locale
 export I18NPATH=${PWD}/localedata
 export GCONV_PATH=${PWD}/iconvdata
-export LOCALEDEF="${PWD}/locale/localedef-native --alias-file=../intl/locale.alias"
+export LOCALEDEF="${PWD}/locale/localedef-native
+    --alias-file=../intl/locale.alias"
 cd ../glibc-&glibc-version;/localedata
 ${LOCALEDEF} -i locales/de_DE -f charmaps/ISO-8859-1 --prefix=${CLFS} de_DE
-${LOCALEDEF} -i locales/de_DE@euro -f charmaps/ISO-8859-15 --prefix=${CLFS} de_DE@euro
+${LOCALEDEF} -i locales/de_DE@euro -f charmaps/ISO-8859-15 \
+    --prefix=${CLFS} de_DE@euro
 ${LOCALEDEF} -i locales/en_HK -f charmaps/ISO-8859-1 --prefix=${CLFS} en_HK
 ${LOCALEDEF} -i locales/en_PH -f charmaps/ISO-8859-1 --prefix=${CLFS} en_PH
 ${LOCALEDEF} -i locales/en_US -f charmaps/ISO-8859-1 --prefix=${CLFS} en_US
 ${LOCALEDEF} -i locales/es_MX -f charmaps/ISO-8859-1 --prefix=${CLFS} es_MX
 ${LOCALEDEF} -i locales/fa_IR -f charmaps/UTF-8 --prefix=${CLFS} fa_IR
 ${LOCALEDEF} -i locales/fr_FR -f charmaps/ISO-8859-1 --prefix=${CLFS} fr_FR
-${LOCALEDEF} -i locales/fr_FR@euro -f charmaps/ISO-8859-15 --prefix=${CLFS} fr_FR@euro
+${LOCALEDEF} -i locales/fr_FR@euro -f charmaps/ISO-8859-15 \
+    --prefix=${CLFS} fr_FR@euro
 ${LOCALEDEF} -i locales/it_IT -f charmaps/ISO-8859-1 --prefix=${CLFS} it_IT
 ${LOCALEDEF} -i locales/ja_JP -f charmaps/EUC-JP --prefix=${CLFS} ja_JP
 unset I18NPATH GCONV_PATH LOCALEDEF</userinput></screen>

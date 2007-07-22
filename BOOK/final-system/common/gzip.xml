@@ -40,7 +40,8 @@
 
     <para os="g">Now we will move some of utilities to /usr/bin to meet FHS compliance:</para>
 
-<screen os="h"><userinput>mv ${CLFS}/bin/z{egrep,cmp,diff,fgrep,force,grep,less,more,new} ${CLFS}/usr/bin</userinput></screen>
+<screen os="h"><userinput>mv ${CLFS}/bin/z{egrep,cmp,diff,fgrep,force,grep,less,more,new} \
+    ${CLFS}/usr/bin</userinput></screen>
 
   </sect2>
 

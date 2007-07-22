@@ -36,7 +36,8 @@
     Binutils will be used instead:</para>
 
 <screen os="b"><userinput>cp libiberty/Makefile.in{,.orig}
-sed 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in.orig > libiberty/Makefile.in</userinput></screen>
+sed 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in.orig &gt; \
+    libiberty/Makefile.in</userinput></screen>
 
     <para os="e1">GCC provides a <command>gccbug</command> script which detects at
     compile time whether mktemp is present, and hardcodes the result in a test.
@@ -100,7 +101,7 @@ cd ../gcc-build</userinput></screen>
 
       <seglistitem>
         <seg>c++, cc (link to gcc), cpp, g++, gcc, gccbug, and gcov</seg>
-        <seg>libgcc.a, libgcc_eh.a, libgcc_s.so, libmudflap.[a,so], 
+        <seg>libgcc.a, libgcc_eh.a, libgcc_s.so, libmudflap.[a,so],
         libmudflapth.[a,so], libstdc++.[a,so], and
         libsupc++.a</seg>
       </seglistitem>

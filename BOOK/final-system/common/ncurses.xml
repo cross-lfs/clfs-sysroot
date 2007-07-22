@@ -45,7 +45,8 @@
 
     <para os="g">Move the Ncurses static libraries to the proper location:</para>
 
-<screen os="h"><userinput>mv -v ${CLFS}/lib/lib{panel,menu,form,ncurses,ncurses++,curses}.a ${CLFS}/usr/lib</userinput></screen>
+<screen os="h"><userinput>mv -v ${CLFS}/lib/lib{panel,menu,form,ncurses,ncurses++,curses}.a \
+    ${CLFS}/usr/lib</userinput></screen>
 
     <para os="i">Create symlinks in <filename class="directory">/usr/lib:</filename></para>
 
