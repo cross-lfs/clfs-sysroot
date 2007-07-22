@@ -33,7 +33,7 @@
 <!ENTITY gcc-cross_search-patch-size "4 KB">
 
 <!ENTITY gcc-posix-patch "gcc-&gcc-version;-posix-1.patch">
-<!ENTITY gcc-posix-patch-md5 "8ed72d052f9eead0c1498d7d57302a5f">
+<!ENTITY gcc-posix-patch-md5 "04c70ab253e9a1bfe242e1e5f37a51dd">
 <!ENTITY gcc-posix-patch-size "16 KB">
 
 <!ENTITY glibc-branch_update-patch "glibc-&glibc-version;-branch_update-1.patch">
