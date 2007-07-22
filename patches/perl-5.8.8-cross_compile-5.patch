@@ -1,10 +1,13 @@
 Submitted By: Joe Ciccone <jciccone@linuxfromscratch.org>
 Date: 2007-02-19
-Upstream Status: Not Submitted
+Initial Package Version: 5.8.8
+Upstream Status: Not Submitted, CLFS Specific
 Origin: Joe Ciccone
+        Regenerated configs for gcc 4.2.x and glibc 2.6 on 2007-07-22.
 Description: Adds a Makefile to assit with the cross-compilation of perl.
 
-             Archs supported: alpha arm hppa x86
+             Archs supported: (32bit) arm hppa x86
+                              (64bit) alpha
 
              Usage:
                cd Cross
@@ -12,7 +15,7 @@ Description: Adds a Makefile to assit with the cross-compilation of perl.
                make DESTDIR=[optional:fakeroot] install
 
 diff -Naur perl-5.8.8.orig/Cross/config perl-5.8.8/Cross/config
---- perl-5.8.8.orig/Cross/config	2007-02-19 16:50:53.000000000 -0500
+--- perl-5.8.8.orig/Cross/config	2007-07-22 16:15:21.000000000 -0400
 +++ perl-5.8.8/Cross/config	1969-12-31 19:00:00.000000000 -0500
 @@ -1,23 +0,0 @@
 -##############################################################################
@@ -40,7 +43,7 @@ diff -Naur perl-5.8.8.orig/Cross/config perl-5.8.8/Cross/config
 -
 diff -Naur perl-5.8.8.orig/Cross/config.sh-alpha-linux perl-5.8.8/Cross/config.sh-alpha-linux
 --- perl-5.8.8.orig/Cross/config.sh-alpha-linux	1969-12-31 19:00:00.000000000 -0500
-+++ perl-5.8.8/Cross/config.sh-alpha-linux	2007-02-19 16:51:21.000000000 -0500
++++ perl-5.8.8/Cross/config.sh-alpha-linux	2007-07-22 16:16:01.000000000 -0400
 @@ -0,0 +1,1048 @@
 +#!/bin/sh
 +#
@@ -52,9 +55,9 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-alpha-linux perl-5.8.8/Cross/config.s
 +
 +# Package name      : perl5
 +# Source directory  : .
-+# Configuration time: Mon Feb 19 04:23:47 EST 2007
++# Configuration time: Wed Jul  4 06:22:22 EDT 2007
 +# Configured by     : root
-+# Target system     : linux bob 2.6.15.6 #2 smp fri apr 28 07:14:40 edt 2006 alpha ev56 rawhide gnulinux 
++# Target system     : linux bob 2.6.20 #1 smp wed feb 21 06:00:30 est 2007 alpha ev56 rawhide gnulinux 
 +
 +Author=''
 +Date='$Date'
@@ -107,7 +110,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-alpha-linux perl-5.8.8/Cross/config.s
 +ccversion=''
 +cf_by='root'
 +cf_email='root@bob.ciccone'
-+cf_time='Mon Feb 19 04:23:47 EST 2007'
++cf_time='Wed Jul  4 06:22:22 EDT 2007'
 +charsize='1'
 +chgrp=''
 +chmod='chmod'
@@ -126,7 +129,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-alpha-linux perl-5.8.8/Cross/config.s
 +cppminus='-'
 +cpprun='cc -E'
 +cppstdin='cc -E'
-+cppsymbols='__ELF__=1 _FILE_OFFSET_BITS=64 __GLIBC__=2 __GLIBC_MINOR__=5 __GNUC__=4 __GNUC_MINOR__=1 __GNU_LIBRARY__=6 _GNU_SOURCE=1 LANGUAGE_C=1 __LANGUAGE_C=1 __LANGUAGE_C__=1 _LARGEFILE64_SOURCE=1 _LARGEFILE_SOURCE=1 _LONGLONG=1 _LP64=1 __LP64__=1 _POSIX_C_SOURCE=200112L _POSIX_SOURCE=1 _REENTRANT=1 __STDC__=1 __USE_BSD=1 __USE_FILE_OFFSET64=1 __USE_GNU=1 __USE_LARGEFILE=1 __USE_LARGEFILE64=1 __USE_MISC=1 __USE_POSIX=1 __USE_POSIX199309=1 __USE_POSIX199506=1 __USE_POSIX2=1 __USE_REENTRANT=1 __USE_SVID=1 __USE_UNIX98=1 __USE_XOPEN=1 __USE_XOPEN_EXTENDED=1 _XOPEN_SOURCE=600 _XOPEN_SOURCE_EXTENDED=1 __alpha=1 __alpha__=1 linux=1 __linux=1 __linux__=1 unix=1 __unix=1 __unix__=1'
++cppsymbols='__ELF__=1 _FILE_OFFSET_BITS=64 __GLIBC__=2 __GLIBC_MINOR__=6 __GNUC__=4 __GNUC_MINOR__=2 __GNU_LIBRARY__=6 _GNU_SOURCE=1 LANGUAGE_C=1 __LANGUAGE_C=1 __LANGUAGE_C__=1 _LARGEFILE64_SOURCE=1 _LARGEFILE_SOURCE=1 _LONGLONG=1 _LP64=1 __LP64__=1 _POSIX_C_SOURCE=200112L _POSIX_SOURCE=1 _REENTRANT=1 __STDC__=1 __USE_BSD=1 __USE_FILE_OFFSET64=1 __USE_GNU=1 __USE_LARGEFILE=1 __USE_LARGEFILE64=1 __USE_MISC=1 __USE_POSIX=1 __USE_POSIX199309=1 __USE_POSIX199506=1 __USE_POSIX2=1 __USE_REENTRANT=1 __USE_SVID=1 __USE_UNIX98=1 __USE_XOPEN=1 __USE_XOPEN_EXTENDED=1 _XOPEN_SOURCE=600 _XOPEN_SOURCE_EXTENDED=1 __alpha=1 __alpha__=1 linux=1 __linux=1 __linux__=1 unix=1 __unix=1 __unix__=1'
 +crypt_r_proto='REENTRANT_PROTO_B_CCS'
 +cryptlib=''
 +csh='csh'
@@ -592,7 +595,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-alpha-linux perl-5.8.8/Cross/config.s
 +full_sed='/bin/sed'
 +gccansipedantic=''
 +gccosandvers=''
-+gccversion='4.1.2'
++gccversion='4.2.0'
 +getgrent_r_proto='REENTRANT_PROTO_I_SBWR'
 +getgrgid_r_proto='REENTRANT_PROTO_I_TSBWR'
 +getgrnam_r_proto='REENTRANT_PROTO_I_CSBWR'
@@ -620,7 +623,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-alpha-linux perl-5.8.8/Cross/config.s
 +glibpth='/usr/shlib  /lib /usr/lib /usr/lib/386 /lib/386 /usr/ccs/lib /usr/ucblib /usr/local/lib '
 +gmake='gmake'
 +gmtime_r_proto='REENTRANT_PROTO_S_TS'
-+gnulibc_version='2.5'
++gnulibc_version='2.6'
 +grep='grep'
 +groupcat='cat /etc/group'
 +groupstype='gid_t'
@@ -820,7 +823,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-alpha-linux perl-5.8.8/Cross/config.s
 +myarchname='alpha-linux'
 +mydomain='.ciccone'
 +myhostname='bob'
-+myuname='linux bob 2.6.15.6 #2 smp fri apr 28 07:14:40 edt 2006 alpha ev56 rawhide gnulinux '
++myuname='linux bob 2.6.20 #1 smp wed feb 21 06:00:30 est 2007 alpha ev56 rawhide gnulinux '
 +n='-n'
 +need_va_copy='undef'
 +netdb_hlen_type='size_t'
@@ -847,7 +850,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-alpha-linux perl-5.8.8/Cross/config.s
 +optimize='-O2'
 +orderlib='false'
 +osname='linux'
-+osvers='2.6.15.6'
++osvers='2.6.20'
 +otherlibdirs=' '
 +package='perl5'
 +pager='/bin/less -isR'
@@ -1091,8 +1094,8 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-alpha-linux perl-5.8.8/Cross/config.s
 +PERL_PATCHLEVEL=
 +PERL_CONFIG_SH=true
 diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-arm-linux
---- perl-5.8.8.orig/Cross/config.sh-arm-linux	2007-02-19 16:50:53.000000000 -0500
-+++ perl-5.8.8/Cross/config.sh-arm-linux	2007-02-19 16:50:59.000000000 -0500
+--- perl-5.8.8.orig/Cross/config.sh-arm-linux	2007-07-22 16:15:21.000000000 -0400
++++ perl-5.8.8/Cross/config.sh-arm-linux	2007-07-22 16:16:01.000000000 -0400
 @@ -8,9 +8,9 @@
  
  # Package name      : perl5
@@ -1100,9 +1103,9 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
 -# Configuration time: Wed Sep  3 22:24:58 EDT 2003
 -# Configured by     : red
 -# Target system     : linux openzaurus.criticalintegration.com 2.4.6-rmk1-np2-embedix #15 Wed Aug 6 07:49:44 UTC 2003 armv4l unknown 
-+# Configuration time: Wed Dec 13 15:51:01 EST 2006
++# Configuration time: Fri Aug  3 15:53:00 EDT 2007
 +# Configured by     : root
-+# Target system     : linux spitz 2.6.16 #1 preempt wed jul 5 18:20:17 cest 2006 armv5tel gnulinux 
++# Target system     : linux spitz 2.6.20.6 #1 preempt tue jun 5 14:17:11 cest 2007 armv5tel xscale-pxa270 rev 4 (v5l) sharp spitz gnulinux 
  
  Author=''
  Date='$Date'
@@ -1141,7 +1144,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
 -cf_time='Wed Sep  3 22:24:58 EDT 2003'
 +cf_by='root'
 +cf_email='root@spitz.ciccone'
-+cf_time='Wed Dec 13 15:51:01 EST 2006'
++cf_time='Fri Aug  3 15:53:00 EDT 2007'
  charsize='1'
  chgrp=''
  chmod='chmod'
@@ -1159,7 +1162,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
  cppstdin='cc -E'
 -cppsymbols='_FILE_OFFSET_BITS=64 __GLIBC__=2 __GLIBC_MINOR__=2 __GNUC_MINOR__=95 __GNU_LIBRARY__=6 _LARGEFILE_SOURCE=1 _POSIX_C_SOURCE=199506 _POSIX_SOURCE=1 __STDC__=1 __USE_BSD=1 __USE_FILE_OFFSET64=1 __USE_LARGEFILE=1 __USE_MISC=1 __USE_POSIX=1 __USE_POSIX199309=1 __USE_POSIX199506=1 __USE_POSIX2=1 __USE_SVID=1 __linux=1 __linux__=1 __unix=1 __unix__=1'
 -crypt_r_proto='0'
-+cppsymbols='__ELF__=1 _FILE_OFFSET_BITS=64 __GLIBC__=2 __GLIBC_MINOR__=5 __GNUC__=4 __GNUC_MINOR__=1 __GNU_LIBRARY__=6 _GNU_SOURCE=1 _LARGEFILE64_SOURCE=1 _LARGEFILE_SOURCE=1 _POSIX_C_SOURCE=200112L _POSIX_SOURCE=1 _REENTRANT=1 __STDC__=1 __USE_BSD=1 __USE_FILE_OFFSET64=1 __USE_GNU=1 __USE_LARGEFILE=1 __USE_LARGEFILE64=1 __USE_MISC=1 __USE_POSIX=1 __USE_POSIX199309=1 __USE_POSIX199506=1 __USE_POSIX2=1 __USE_REENTRANT=1 __USE_SVID=1 __USE_UNIX98=1 __USE_XOPEN=1 __USE_XOPEN_EXTENDED=1 _XOPEN_SOURCE=600 _XOPEN_SOURCE_EXTENDED=1 linux=1 __linux=1 __linux__=1 unix=1 __unix=1 __unix__=1'
++cppsymbols='__ELF__=1 _FILE_OFFSET_BITS=64 __GLIBC__=2 __GLIBC_MINOR__=6 __GNUC__=4 __GNUC_MINOR__=2 __GNU_LIBRARY__=6 _GNU_SOURCE=1 _LARGEFILE64_SOURCE=1 _LARGEFILE_SOURCE=1 _POSIX_C_SOURCE=200112L _POSIX_SOURCE=1 _REENTRANT=1 __STDC__=1 __USE_BSD=1 __USE_FILE_OFFSET64=1 __USE_GNU=1 __USE_LARGEFILE=1 __USE_LARGEFILE64=1 __USE_MISC=1 __USE_POSIX=1 __USE_POSIX199309=1 __USE_POSIX199506=1 __USE_POSIX2=1 __USE_REENTRANT=1 __USE_SVID=1 __USE_UNIX98=1 __USE_XOPEN=1 __USE_XOPEN_EXTENDED=1 _XOPEN_SOURCE=600 _XOPEN_SOURCE_EXTENDED=1 linux=1 __linux=1 __linux__=1 unix=1 __unix=1 __unix__=1'
 +crypt_r_proto='REENTRANT_PROTO_B_CCS'
  cryptlib=''
  csh='csh'
@@ -1249,7 +1252,13 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
  d_fgetpos='define'
  d_finite='define'
  d_finitel='define'
-@@ -205,29 +205,29 @@
+@@ -200,34 +200,34 @@
+ d_fsync='define'
+ d_ftello='define'
+ d_ftime='undef'
+-d_futimes='undef'
++d_futimes='define'
+ d_getcwd='define'
  d_getespwnam='undef'
  d_getfsstat='undef'
  d_getgrent='define'
@@ -1349,13 +1358,11 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
  d_old_pthread_create_joinable='undef'
  d_oldpthreads='undef'
  d_oldsock='undef'
-@@ -334,10 +335,10 @@
- d_pipe='define'
+@@ -335,9 +336,9 @@
  d_poll='define'
  d_portable='define'
--d_procselfexe='define'
+ d_procselfexe='define'
 -d_pthread_atfork='undef'
-+d_procselfexe='undef'
 +d_pthread_atfork='define'
  d_pthread_attr_setscope='define'
 -d_pthread_yield='undef'
@@ -1493,7 +1500,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
 -getservbyport_r_proto='0'
 -getservent_r_proto='0'
 -getspnam_r_proto='0'
-+gccversion='4.1.1'
++gccversion='4.2.0'
 +getgrent_r_proto='REENTRANT_PROTO_I_SBWR'
 +getgrgid_r_proto='REENTRANT_PROTO_I_TSBWR'
 +getgrnam_r_proto='REENTRANT_PROTO_I_CSBWR'
@@ -1523,7 +1530,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
 -gmtime_r_proto='0'
 -gnulibc_version='2.2.2'
 +gmtime_r_proto='REENTRANT_PROTO_S_TS'
-+gnulibc_version='2.5'
++gnulibc_version='2.6'
  grep='grep'
  groupcat='cat /etc/group'
  groupstype='gid_t'
@@ -1583,7 +1590,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
  lib_ext='.a'
 -libc='/lib/libc-2.2.2.so'
 -libperl='libperl.so'
-+libc='/lib/libc-2.5.so'
++libc='/lib/libc-2.6.so'
 +libperl='libperl.a'
  libpth='/usr/local/lib /lib /usr/lib'
 -libs='-lnsl -ldl -lm -lcrypt -lutil -lc'
@@ -1618,7 +1625,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
 +myarchname='armv5tel-linux'
 +mydomain='.ciccone'
 +myhostname='spitz'
-+myuname='linux spitz 2.6.16 #1 preempt wed jul 5 18:20:17 cest 2006 armv5tel gnulinux '
++myuname='linux spitz 2.6.20.6 #1 preempt tue jun 5 14:17:11 cest 2007 armv5tel xscale-pxa270 rev 4 (v5l) sharp spitz gnulinux '
  n='-n'
  need_va_copy='undef'
  netdb_hlen_type='size_t'
@@ -1627,7 +1634,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
  orderlib='false'
  osname='linux'
 -osvers='2.4.6-rmk1-np2-embedix'
-+osvers='2.6.16'
++osvers='2.6.20.6'
  otherlibdirs=' '
  package='perl5'
 -pager='/usr/bin/less'
@@ -1771,7 +1778,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-arm-linux perl-5.8.8/Cross/config.sh-
  PERL_SUBVERSION=8
 diff -Naur perl-5.8.8.orig/Cross/config.sh-hppa-linux perl-5.8.8/Cross/config.sh-hppa-linux
 --- perl-5.8.8.orig/Cross/config.sh-hppa-linux	1969-12-31 19:00:00.000000000 -0500
-+++ perl-5.8.8/Cross/config.sh-hppa-linux	2007-02-19 16:50:59.000000000 -0500
++++ perl-5.8.8/Cross/config.sh-hppa-linux	2007-07-22 16:16:01.000000000 -0400
 @@ -0,0 +1,1048 @@
 +#!/bin/sh
 +#
@@ -1857,7 +1864,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-hppa-linux perl-5.8.8/Cross/config.sh
 +cppminus='-'
 +cpprun='cc -E'
 +cppstdin='cc -E'
-+cppsymbols='__ELF__=1 _FILE_OFFSET_BITS=64 __GLIBC__=2 __GLIBC_MINOR__=5 __GNUC__=4 __GNUC_MINOR__=1 __GNU_LIBRARY__=6 _GNU_SOURCE=1 _LARGEFILE64_SOURCE=1 _LARGEFILE_SOURCE=1 _PA_RISC1_1=1 _POSIX_C_SOURCE=200112L _POSIX_SOURCE=1 _REENTRANT=1 __STDC__=1 __USE_BSD=1 __USE_FILE_OFFSET64=1 __USE_GNU=1 __USE_LARGEFILE=1 __USE_LARGEFILE64=1 __USE_MISC=1 __USE_POSIX=1 __USE_POSIX199309=1 __USE_POSIX199506=1 __USE_POSIX2=1 __USE_REENTRANT=1 __USE_SVID=1 __USE_UNIX98=1 __USE_XOPEN=1 __USE_XOPEN_EXTENDED=1 _XOPEN_SOURCE=600 _XOPEN_SOURCE_EXTENDED=1 __hppa=1 __hppa__=1 linux=1 __linux=1 __linux__=1 unix=1 __unix=1 __unix__=1'
++cppsymbols='__ELF__=1 _FILE_OFFSET_BITS=64 __GLIBC__=2 __GLIBC_MINOR__=6 __GNUC__=4 __GNUC_MINOR__=2 __GNU_LIBRARY__=6 _GNU_SOURCE=1 _LARGEFILE64_SOURCE=1 _LARGEFILE_SOURCE=1 _PA_RISC1_1=1 _POSIX_C_SOURCE=200112L _POSIX_SOURCE=1 _REENTRANT=1 __STDC__=1 __USE_BSD=1 __USE_FILE_OFFSET64=1 __USE_GNU=1 __USE_LARGEFILE=1 __USE_LARGEFILE64=1 __USE_MISC=1 __USE_POSIX=1 __USE_POSIX199309=1 __USE_POSIX199506=1 __USE_POSIX2=1 __USE_REENTRANT=1 __USE_SVID=1 __USE_UNIX98=1 __USE_XOPEN=1 __USE_XOPEN_EXTENDED=1 _XOPEN_SOURCE=600 _XOPEN_SOURCE_EXTENDED=1 __hppa=1 __hppa__=1 linux=1 __linux=1 __linux__=1 unix=1 __unix=1 __unix__=1'
 +crypt_r_proto='REENTRANT_PROTO_B_CCS'
 +cryptlib=''
 +csh='csh'
@@ -2323,7 +2330,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-hppa-linux perl-5.8.8/Cross/config.sh
 +full_sed='/bin/sed'
 +gccansipedantic=''
 +gccosandvers=''
-+gccversion='4.1.1'
++gccversion='4.2.0'
 +getgrent_r_proto='REENTRANT_PROTO_I_SBWR'
 +getgrgid_r_proto='REENTRANT_PROTO_I_TSBWR'
 +getgrnam_r_proto='REENTRANT_PROTO_I_CSBWR'
@@ -2351,7 +2358,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-hppa-linux perl-5.8.8/Cross/config.sh
 +glibpth='/usr/shlib  /lib /usr/lib /usr/lib/386 /lib/386 /usr/ccs/lib /usr/ucblib /usr/local/lib '
 +gmake='gmake'
 +gmtime_r_proto='REENTRANT_PROTO_S_TS'
-+gnulibc_version='2.5'
++gnulibc_version='2.6'
 +grep='grep'
 +groupcat='cat /etc/group'
 +groupstype='gid_t'
@@ -2823,7 +2830,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-hppa-linux perl-5.8.8/Cross/config.sh
 +PERL_CONFIG_SH=true
 diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-x86-linux
 --- perl-5.8.8.orig/Cross/config.sh-x86-linux	1969-12-31 19:00:00.000000000 -0500
-+++ perl-5.8.8/Cross/config.sh-x86-linux	2007-02-19 16:50:59.000000000 -0500
++++ perl-5.8.8/Cross/config.sh-x86-linux	2007-07-22 16:16:01.000000000 -0400
 @@ -0,0 +1,1048 @@
 +#!/bin/sh
 +#
@@ -2835,9 +2842,9 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-
 +
 +# Package name      : perl5
 +# Source directory  : .
-+# Configuration time: Mon Dec 11 21:24:56 EST 2006
++# Configuration time: Wed Jul  4 19:15:52 EDT 2007
 +# Configured by     : root
-+# Target system     : linux sasquach 2.6.18 #1 smp wed oct 11 14:24:53 edt 2006 i686 amd athlon(tm) 64 x2 dual core processor 4400+ authenticamd gnulinux 
++# Target system     : linux joeshp 2.6.20.1 #3 mon apr 30 19:28:34 edt 2007 i686 mobile intel(r) pentium(r) 4 cpu 2.30ghz genuineintel gnulinux 
 +
 +Author=''
 +Date='$Date'
@@ -2889,8 +2896,8 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-
 +ccsymbols=''
 +ccversion=''
 +cf_by='root'
-+cf_email='root@sasquach.cicone'
-+cf_time='Mon Dec 11 21:24:56 EST 2006'
++cf_email='root@joeshp.ciccone'
++cf_time='Wed Jul  4 19:15:52 EDT 2007'
 +charsize='1'
 +chgrp=''
 +chmod='chmod'
@@ -2909,7 +2916,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-
 +cppminus='-'
 +cpprun='cc -E'
 +cppstdin='cc -E'
-+cppsymbols='__ELF__=1 _FILE_OFFSET_BITS=64 __GLIBC__=2 __GLIBC_MINOR__=5 __GNUC__=4 __GNUC_MINOR__=1 __GNU_LIBRARY__=6 _GNU_SOURCE=1 _LARGEFILE64_SOURCE=1 _LARGEFILE_SOURCE=1 _POSIX_C_SOURCE=200112L _POSIX_SOURCE=1 _REENTRANT=1 __STDC__=1 __USE_BSD=1 __USE_FILE_OFFSET64=1 __USE_GNU=1 __USE_LARGEFILE=1 __USE_LARGEFILE64=1 __USE_MISC=1 __USE_POSIX=1 __USE_POSIX199309=1 __USE_POSIX199506=1 __USE_POSIX2=1 __USE_REENTRANT=1 __USE_SVID=1 __USE_UNIX98=1 __USE_XOPEN=1 __USE_XOPEN_EXTENDED=1 _XOPEN_SOURCE=600 _XOPEN_SOURCE_EXTENDED=1 i386=1 __i386=1 __i386__=1 linux=1 __linux=1 __linux__=1 unix=1 __unix=1 __unix__=1'
++cppsymbols='__ELF__=1 _FILE_OFFSET_BITS=64 __GLIBC__=2 __GLIBC_MINOR__=6 __GNUC__=4 __GNUC_MINOR__=2 __GNU_LIBRARY__=6 _GNU_SOURCE=1 _LARGEFILE64_SOURCE=1 _LARGEFILE_SOURCE=1 _POSIX_C_SOURCE=200112L _POSIX_SOURCE=1 _REENTRANT=1 __STDC__=1 __USE_BSD=1 __USE_FILE_OFFSET64=1 __USE_GNU=1 __USE_LARGEFILE=1 __USE_LARGEFILE64=1 __USE_MISC=1 __USE_POSIX=1 __USE_POSIX199309=1 __USE_POSIX199506=1 __USE_POSIX2=1 __USE_REENTRANT=1 __USE_SVID=1 __USE_UNIX98=1 __USE_XOPEN=1 __USE_XOPEN_EXTENDED=1 _XOPEN_SOURCE=600 _XOPEN_SOURCE_EXTENDED=1 i386=1 __i386=1 __i386__=1 linux=1 __linux=1 __linux__=1 unix=1 __unix=1 __unix__=1'
 +crypt_r_proto='REENTRANT_PROTO_B_CCS'
 +cryptlib=''
 +csh='csh'
@@ -3001,7 +3008,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-
 +d_fchmod='define'
 +d_fchown='define'
 +d_fcntl='define'
-+d_fcntl_can_lock='define'
++d_fcntl_can_lock='undef'
 +d_fd_macros='define'
 +d_fd_set='define'
 +d_fds_bits='define'
@@ -3375,7 +3382,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-
 +full_sed='/bin/sed'
 +gccansipedantic=''
 +gccosandvers=''
-+gccversion='4.1.1'
++gccversion='4.2.0'
 +getgrent_r_proto='REENTRANT_PROTO_I_SBWR'
 +getgrgid_r_proto='REENTRANT_PROTO_I_TSBWR'
 +getgrnam_r_proto='REENTRANT_PROTO_I_CSBWR'
@@ -3403,7 +3410,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-
 +glibpth='/usr/shlib  /lib /usr/lib /usr/lib/386 /lib/386 /usr/ccs/lib /usr/ucblib /usr/local/lib '
 +gmake='gmake'
 +gmtime_r_proto='REENTRANT_PROTO_S_TS'
-+gnulibc_version='2.5'
++gnulibc_version='2.6'
 +grep='grep'
 +groupcat='cat /etc/group'
 +groupstype='gid_t'
@@ -3553,7 +3560,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-
 +ldlibpthname='LD_LIBRARY_PATH'
 +less='less'
 +lib_ext='.a'
-+libc='/lib/libc-2.5.so'
++libc='/lib/libc-2.6.so'
 +libperl='libperl.a'
 +libpth='/usr/local/lib /lib /usr/lib'
 +libs='-lnsl -ldl -lm -lcrypt -lutil -lpthread -lc'
@@ -3601,9 +3608,9 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-
 +multiarch='undef'
 +mv=''
 +myarchname='i686-linux'
-+mydomain='.cicone'
-+myhostname='sasquach'
-+myuname='linux sasquach 2.6.18 #1 smp wed oct 11 14:24:53 edt 2006 i686 amd athlon(tm) 64 x2 dual core processor 4400+ authenticamd gnulinux '
++mydomain='.ciccone'
++myhostname='joeshp'
++myuname='linux joeshp 2.6.20.1 #3 mon apr 30 19:28:34 edt 2007 i686 mobile intel(r) pentium(r) 4 cpu 2.30ghz genuineintel gnulinux '
 +n='-n'
 +need_va_copy='undef'
 +netdb_hlen_type='size_t'
@@ -3630,17 +3637,17 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-
 +optimize='-O2'
 +orderlib='false'
 +osname='linux'
-+osvers='2.6.18'
++osvers='2.6.20.1'
 +otherlibdirs=' '
 +package='perl5'
 +pager='/bin/less -isR'
 +passcat='cat /etc/passwd'
 +patchlevel='8'
 +path_sep=':'
-+perl5='/usr/bin/perl'
++perl5=''
 +perl=''
 +perl_patchlevel=''
-+perladmin='root@sasquach.cicone'
++perladmin='root@joeshp.ciccone'
 +perllibs='-lnsl -ldl -lm -lcrypt -lutil -lpthread -lc'
 +perlpath='/usr/bin/perl'
 +pg='pg'
@@ -3874,7 +3881,7 @@ diff -Naur perl-5.8.8.orig/Cross/config.sh-x86-linux perl-5.8.8/Cross/config.sh-
 +PERL_PATCHLEVEL=
 +PERL_CONFIG_SH=true
 diff -Naur perl-5.8.8.orig/Cross/generate_config_sh perl-5.8.8/Cross/generate_config_sh
---- perl-5.8.8.orig/Cross/generate_config_sh	2007-02-19 16:50:53.000000000 -0500
+--- perl-5.8.8.orig/Cross/generate_config_sh	2007-07-22 16:15:21.000000000 -0400
 +++ perl-5.8.8/Cross/generate_config_sh	1969-12-31 19:00:00.000000000 -0500
 @@ -1,132 +0,0 @@
 -#!/usr/bin/perl
@@ -4010,7 +4017,7 @@ diff -Naur perl-5.8.8.orig/Cross/generate_config_sh perl-5.8.8/Cross/generate_co
 -
 -
 diff -Naur perl-5.8.8.orig/Cross/installperl.patch perl-5.8.8/Cross/installperl.patch
---- perl-5.8.8.orig/Cross/installperl.patch	2007-02-19 16:50:53.000000000 -0500
+--- perl-5.8.8.orig/Cross/installperl.patch	2007-07-22 16:15:21.000000000 -0400
 +++ perl-5.8.8/Cross/installperl.patch	1969-12-31 19:00:00.000000000 -0500
 @@ -1,22 +0,0 @@
 ---- ../installperl	2003-08-31 11:58:48.000000000 -0500
@@ -4036,8 +4043,8 @@ diff -Naur perl-5.8.8.orig/Cross/installperl.patch perl-5.8.8/Cross/installperl.
 - 	    print "# file '$file' skipped\n" if $verbose;
 - 	}
 diff -Naur perl-5.8.8.orig/Cross/Makefile perl-5.8.8/Cross/Makefile
---- perl-5.8.8.orig/Cross/Makefile	2007-02-19 16:50:53.000000000 -0500
-+++ perl-5.8.8/Cross/Makefile	2007-02-19 16:50:59.000000000 -0500
+--- perl-5.8.8.orig/Cross/Makefile	2007-07-22 16:15:21.000000000 -0400
++++ perl-5.8.8/Cross/Makefile	2007-07-22 16:15:30.000000000 -0400
 @@ -1,68 +1,62 @@
 -## Toplevel Makefile for cross-compilation of perl
 -#
@@ -4165,7 +4172,7 @@ diff -Naur perl-5.8.8.orig/Cross/Makefile perl-5.8.8/Cross/Makefile
 +	    -e "/^sitearchexp/s@$(VERSION).*@$(VERSION)/$(SYS)'@" \
 +	    $(PWD)/config.sh-$(SYS) > $(TOP)/config.sh
 diff -Naur perl-5.8.8.orig/Cross/Makefile.SH.patch perl-5.8.8/Cross/Makefile.SH.patch
---- perl-5.8.8.orig/Cross/Makefile.SH.patch	2007-02-19 16:50:53.000000000 -0500
+--- perl-5.8.8.orig/Cross/Makefile.SH.patch	2007-07-22 16:15:21.000000000 -0400
 +++ perl-5.8.8/Cross/Makefile.SH.patch	1969-12-31 19:00:00.000000000 -0500
 @@ -1,189 +0,0 @@
 ---- ../Makefile.SH
@@ -4358,7 +4365,7 @@ diff -Naur perl-5.8.8.orig/Cross/Makefile.SH.patch perl-5.8.8/Cross/Makefile.SH.
 - 		&& $(LDLIBPTH) ./perl TEST -minitest base/*.t comp/*.t cmd/*.t run/*.t io/*.t op/*.t uni/*.t </dev/tty
 - 
 diff -Naur perl-5.8.8.orig/Cross/README perl-5.8.8/Cross/README
---- perl-5.8.8.orig/Cross/README	2007-02-19 16:50:53.000000000 -0500
+--- perl-5.8.8.orig/Cross/README	2007-07-22 16:15:21.000000000 -0400
 +++ perl-5.8.8/Cross/README	1969-12-31 19:00:00.000000000 -0500
 @@ -1,90 +0,0 @@
 -Building for arm-linux
@@ -4452,12 +4459,12 @@ diff -Naur perl-5.8.8.orig/Cross/README perl-5.8.8/Cross/README
 -Open Zaurus http://www.openzaurus.org/
 -Perl OZ Packages http://www.criticalintegration.com/perl-oz/
 diff -Naur perl-5.8.8.orig/Cross/TODO perl-5.8.8/Cross/TODO
---- perl-5.8.8.orig/Cross/TODO	2007-02-19 16:50:53.000000000 -0500
+--- perl-5.8.8.orig/Cross/TODO	2007-07-22 16:15:21.000000000 -0400
 +++ perl-5.8.8/Cross/TODO	1969-12-31 19:00:00.000000000 -0500
 @@ -1 +0,0 @@
 -Provide a better sandbox for building additional XS libraries.
 diff -Naur perl-5.8.8.orig/Cross/warp perl-5.8.8/Cross/warp
---- perl-5.8.8.orig/Cross/warp	2007-02-19 16:50:53.000000000 -0500
+--- perl-5.8.8.orig/Cross/warp	2007-07-22 16:15:21.000000000 -0400
 +++ perl-5.8.8/Cross/warp	1969-12-31 19:00:00.000000000 -0500
 @@ -1,14 +0,0 @@
 -#!/bin/sh -x
@@ -4475,8 +4482,8 @@ diff -Naur perl-5.8.8.orig/Cross/warp perl-5.8.8/Cross/warp
 -rm -rf $f
 -done
 diff -Naur perl-5.8.8.orig/ext/util/make_ext perl-5.8.8/ext/util/make_ext
---- perl-5.8.8.orig/ext/util/make_ext	2007-02-19 16:50:53.000000000 -0500
-+++ perl-5.8.8/ext/util/make_ext	2007-02-19 16:50:59.000000000 -0500
+--- perl-5.8.8.orig/ext/util/make_ext	2007-07-22 16:15:21.000000000 -0400
++++ perl-5.8.8/ext/util/make_ext	2007-07-22 16:15:30.000000000 -0400
 @@ -119,7 +119,7 @@
  esac
  
@@ -4487,8 +4494,8 @@ diff -Naur perl-5.8.8.orig/ext/util/make_ext perl-5.8.8/ext/util/make_ext
  if test ! -f $makefile ; then
  	if test -f Makefile.SH; then
 diff -Naur perl-5.8.8.orig/installman perl-5.8.8/installman
---- perl-5.8.8.orig/installman	2007-02-19 16:50:53.000000000 -0500
-+++ perl-5.8.8/installman	2007-02-19 16:50:59.000000000 -0500
+--- perl-5.8.8.orig/installman	2007-07-22 16:15:21.000000000 -0400
++++ perl-5.8.8/installman	2007-07-22 16:15:30.000000000 -0400
 @@ -1,5 +1,4 @@
  #!./perl -w
 -BEGIN { @INC = qw(lib) }
@@ -4496,8 +4503,8 @@ diff -Naur perl-5.8.8.orig/installman perl-5.8.8/installman
  use Config;
  use Getopt::Long;
 diff -Naur perl-5.8.8.orig/installperl perl-5.8.8/installperl
---- perl-5.8.8.orig/installperl	2007-02-19 16:50:53.000000000 -0500
-+++ perl-5.8.8/installperl	2007-02-19 16:50:59.000000000 -0500
+--- perl-5.8.8.orig/installperl	2007-07-22 16:15:21.000000000 -0400
++++ perl-5.8.8/installperl	2007-07-22 16:15:30.000000000 -0400
 @@ -3,8 +3,6 @@
  BEGIN {
      require 5.004;
@@ -4508,8 +4515,8 @@ diff -Naur perl-5.8.8.orig/installperl perl-5.8.8/installperl
  
  use strict;
 diff -Naur perl-5.8.8.orig/lib/unicore/Makefile perl-5.8.8/lib/unicore/Makefile
---- perl-5.8.8.orig/lib/unicore/Makefile	2007-02-19 16:50:53.000000000 -0500
-+++ perl-5.8.8/lib/unicore/Makefile	2007-02-19 16:50:59.000000000 -0500
+--- perl-5.8.8.orig/lib/unicore/Makefile	2007-07-22 16:15:22.000000000 -0400
++++ perl-5.8.8/lib/unicore/Makefile	2007-07-22 16:15:30.000000000 -0400
 @@ -1,11 +1,11 @@
  all:
 -	../../miniperl -I../../lib ./mktables
@@ -4526,8 +4533,8 @@ diff -Naur perl-5.8.8.orig/lib/unicore/Makefile perl-5.8.8/lib/unicore/Makefile
  clean:
  	rm -f *.pl */*.pl
 diff -Naur perl-5.8.8.orig/Makefile.SH perl-5.8.8/Makefile.SH
---- perl-5.8.8.orig/Makefile.SH	2007-02-19 16:50:54.000000000 -0500
-+++ perl-5.8.8/Makefile.SH	2007-02-19 16:50:59.000000000 -0500
+--- perl-5.8.8.orig/Makefile.SH	2007-07-22 16:15:22.000000000 -0400
++++ perl-5.8.8/Makefile.SH	2007-07-22 16:15:30.000000000 -0400
 @@ -591,7 +591,7 @@
  	$(CC) -o miniperl $(CLDFLAGS) \
  	    `echo $(obj) | sed 's/ op$(OBJ_EXT) / /'` \
@@ -4659,8 +4666,8 @@ diff -Naur perl-5.8.8.orig/Makefile.SH perl-5.8.8/Makefile.SH
  
  # Test via harness
 diff -Naur perl-5.8.8.orig/MANIFEST perl-5.8.8/MANIFEST
---- perl-5.8.8.orig/MANIFEST	2007-02-19 16:50:54.000000000 -0500
-+++ perl-5.8.8/MANIFEST	2007-02-19 16:52:01.000000000 -0500
+--- perl-5.8.8.orig/MANIFEST	2007-07-22 16:15:22.000000000 -0400
++++ perl-5.8.8/MANIFEST	2007-07-22 16:15:30.000000000 -0400
 @@ -33,15 +33,11 @@
  configure.gnu		Crude emulation of GNU configure
  cop.h			Control operator header
@@ -4681,8 +4688,8 @@ diff -Naur perl-5.8.8.orig/MANIFEST perl-5.8.8/MANIFEST
  cygwin/cygwin.c		Additional code for Cygwin port
  cygwin/ld2.in		ld wrapper template for Cygwin port
 diff -Naur perl-5.8.8.orig/pod/Makefile.SH perl-5.8.8/pod/Makefile.SH
---- perl-5.8.8.orig/pod/Makefile.SH	2007-02-19 16:50:54.000000000 -0500
-+++ perl-5.8.8/pod/Makefile.SH	2007-02-19 16:50:59.000000000 -0500
+--- perl-5.8.8.orig/pod/Makefile.SH	2007-07-22 16:15:22.000000000 -0400
++++ perl-5.8.8/pod/Makefile.SH	2007-07-22 16:15:30.000000000 -0400
 @@ -63,7 +63,7 @@
  	    --podroot=.. --podpath=pod:lib:ext:vms \
  	    --libpods=perlfunc:perlguts:perlvar:perlrun:perlop
@@ -4693,8 +4700,8 @@ diff -Naur perl-5.8.8.orig/pod/Makefile.SH perl-5.8.8/pod/Makefile.SH
  REALPERL = ../perl
  
 diff -Naur perl-5.8.8.orig/utils/Makefile perl-5.8.8/utils/Makefile
---- perl-5.8.8.orig/utils/Makefile	2007-02-19 16:50:54.000000000 -0500
-+++ perl-5.8.8/utils/Makefile	2007-02-19 16:50:59.000000000 -0500
+--- perl-5.8.8.orig/utils/Makefile	2007-07-22 16:15:22.000000000 -0400
++++ perl-5.8.8/utils/Makefile	2007-07-22 16:15:30.000000000 -0400
 @@ -1,5 +1,5 @@
  
 -PERL = ../miniperl
@@ -4703,8 +4710,8 @@ diff -Naur perl-5.8.8.orig/utils/Makefile perl-5.8.8/utils/Makefile
  
  # Files to be built with variable substitution after miniperl is
 diff -Naur perl-5.8.8.orig/x2p/Makefile.SH perl-5.8.8/x2p/Makefile.SH
---- perl-5.8.8.orig/x2p/Makefile.SH	2007-02-19 16:50:54.000000000 -0500
-+++ perl-5.8.8/x2p/Makefile.SH	2007-02-19 16:50:59.000000000 -0500
+--- perl-5.8.8.orig/x2p/Makefile.SH	2007-07-22 16:15:22.000000000 -0400
++++ perl-5.8.8/x2p/Makefile.SH	2007-07-22 16:15:30.000000000 -0400
 @@ -172,7 +172,7 @@
  # These should be automatically generated
  

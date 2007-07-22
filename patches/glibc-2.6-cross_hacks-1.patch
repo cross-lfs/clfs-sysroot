@@ -1,6 +1,7 @@
 Submitted By: Joe Ciccone <jciccone@linuxfromscratch.org>
 Date: 2006-11-26
 Initial Package Version: 2.5
+	Rediffed against 2.6 by Joe Ciccone
 Origin: Joe Ciccone
 Upstream Status: Unknown
 Description: Adds native compile support to the build system then uses that
@@ -8,12 +9,9 @@ Description: Adds native compile support to the build system then uses that
              rpcgen-native, for building librpcsvc.a, and localedef-native,
              for creating the locale-archive.
 
-             -2 takes into account the possibility of CFLAGS being set for
-             the target.
-
-diff -Naur glibc-2.5.orig/iconv/Makefile glibc-2.5/iconv/Makefile
---- glibc-2.5.orig/iconv/Makefile	2004-12-19 18:43:41.000000000 -0500
-+++ glibc-2.5/iconv/Makefile	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/iconv/Makefile glibc-2.6/iconv/Makefile
+--- glibc-2.6.orig/iconv/Makefile	2007-07-02 15:20:36.000000000 -0400
++++ glibc-2.6/iconv/Makefile	2007-07-02 15:28:24.000000000 -0400
 @@ -56,6 +56,9 @@
  		  iconvconfig.h
  
@@ -32,10 +30,10 @@ diff -Naur glibc-2.5.orig/iconv/Makefile glibc-2.5/iconv/Makefile
  
  ifneq ($(cross-compiling),yes)
  xtests: test-iconvconfig
-diff -Naur glibc-2.5.orig/iconvdata/Makefile glibc-2.5/iconvdata/Makefile
---- glibc-2.5.orig/iconvdata/Makefile	2006-05-01 10:18:49.000000000 -0400
-+++ glibc-2.5/iconvdata/Makefile	2006-11-26 17:26:05.000000000 -0500
-@@ -311,23 +311,25 @@
+diff -Naur glibc-2.6.orig/iconvdata/Makefile glibc-2.6/iconvdata/Makefile
+--- glibc-2.6.orig/iconvdata/Makefile	2007-07-02 15:20:35.000000000 -0400
++++ glibc-2.6/iconvdata/Makefile	2007-07-02 15:28:24.000000000 -0400
+@@ -312,23 +312,25 @@
  
  headers: $(addprefix $(objpfx), $(generated-modules:=.h))
  
@@ -69,34 +67,34 @@ diff -Naur glibc-2.5.orig/iconvdata/Makefile glibc-2.5/iconvdata/Makefile
  
  endif # build-shared = yes
  
-diff -Naur glibc-2.5.orig/include-native/bits/libc-tsd.h glibc-2.5/include-native/bits/libc-tsd.h
---- glibc-2.5.orig/include-native/bits/libc-tsd.h	1969-12-31 19:00:00.000000000 -0500
-+++ glibc-2.5/include-native/bits/libc-tsd.h	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/include-native/bits/libc-tsd.h glibc-2.6/include-native/bits/libc-tsd.h
+--- glibc-2.6.orig/include-native/bits/libc-tsd.h	1969-12-31 19:00:00.000000000 -0500
++++ glibc-2.6/include-native/bits/libc-tsd.h	2007-07-02 15:28:24.000000000 -0400
 @@ -0,0 +1,3 @@
 +#ifndef __libc_tsd_define
 +#define __libc_tsd_define(A,B)
 +#endif
-diff -Naur glibc-2.5.orig/include-native/config.h glibc-2.5/include-native/config.h
---- glibc-2.5.orig/include-native/config.h	1969-12-31 19:00:00.000000000 -0500
-+++ glibc-2.5/include-native/config.h	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/include-native/config.h glibc-2.6/include-native/config.h
+--- glibc-2.6.orig/include-native/config.h	1969-12-31 19:00:00.000000000 -0500
++++ glibc-2.6/include-native/config.h	2007-07-02 15:28:24.000000000 -0400
 @@ -0,0 +1 @@
 +/* Empty */
-diff -Naur glibc-2.5.orig/include-native/gnu/stubs.h glibc-2.5/include-native/gnu/stubs.h
---- glibc-2.5.orig/include-native/gnu/stubs.h	1969-12-31 19:00:00.000000000 -0500
-+++ glibc-2.5/include-native/gnu/stubs.h	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/include-native/gnu/stubs.h glibc-2.6/include-native/gnu/stubs.h
+--- glibc-2.6.orig/include-native/gnu/stubs.h	1969-12-31 19:00:00.000000000 -0500
++++ glibc-2.6/include-native/gnu/stubs.h	2007-07-02 15:28:24.000000000 -0400
 @@ -0,0 +1 @@
 +/* Empty */
-diff -Naur glibc-2.5.orig/include-native/intl/loadinfo.h glibc-2.5/include-native/intl/loadinfo.h
---- glibc-2.5.orig/include-native/intl/loadinfo.h	1969-12-31 19:00:00.000000000 -0500
-+++ glibc-2.5/include-native/intl/loadinfo.h	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/include-native/intl/loadinfo.h glibc-2.6/include-native/intl/loadinfo.h
+--- glibc-2.6.orig/include-native/intl/loadinfo.h	1969-12-31 19:00:00.000000000 -0500
++++ glibc-2.6/include-native/intl/loadinfo.h	2007-07-02 15:28:24.000000000 -0400
 @@ -0,0 +1,4 @@
 +#ifndef LOADINFO_H
 +#define LOADINFO_H
 +struct loaded_l10nfile;
 +#endif
-diff -Naur glibc-2.5.orig/include-native/libintl.h glibc-2.5/include-native/libintl.h
---- glibc-2.5.orig/include-native/libintl.h	1969-12-31 19:00:00.000000000 -0500
-+++ glibc-2.5/include-native/libintl.h	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/include-native/libintl.h glibc-2.6/include-native/libintl.h
+--- glibc-2.6.orig/include-native/libintl.h	1969-12-31 19:00:00.000000000 -0500
++++ glibc-2.6/include-native/libintl.h	2007-07-02 15:28:24.000000000 -0400
 @@ -0,0 +1,13 @@
 +#include_next <libintl.h>
 +
@@ -111,14 +109,14 @@ diff -Naur glibc-2.5.orig/include-native/libintl.h glibc-2.5/include-native/libi
 +#ifndef _libc_intl_domainname
 +#define _libc_intl_domainname "libc"
 +#endif
-diff -Naur glibc-2.5.orig/include-native/symbol-hacks.h glibc-2.5/include-native/symbol-hacks.h
---- glibc-2.5.orig/include-native/symbol-hacks.h	1969-12-31 19:00:00.000000000 -0500
-+++ glibc-2.5/include-native/symbol-hacks.h	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/include-native/symbol-hacks.h glibc-2.6/include-native/symbol-hacks.h
+--- glibc-2.6.orig/include-native/symbol-hacks.h	1969-12-31 19:00:00.000000000 -0500
++++ glibc-2.6/include-native/symbol-hacks.h	2007-07-02 15:28:24.000000000 -0400
 @@ -0,0 +1 @@
 +/* Empty */
-diff -Naur glibc-2.5.orig/include-native/tls.h glibc-2.5/include-native/tls.h
---- glibc-2.5.orig/include-native/tls.h	1969-12-31 19:00:00.000000000 -0500
-+++ glibc-2.5/include-native/tls.h	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/include-native/tls.h glibc-2.6/include-native/tls.h
+--- glibc-2.6.orig/include-native/tls.h	1969-12-31 19:00:00.000000000 -0500
++++ glibc-2.6/include-native/tls.h	2007-07-02 15:28:24.000000000 -0400
 @@ -0,0 +1,11 @@
 +#ifndef _include_tls_h
 +#define _include_tls_h 1
@@ -131,9 +129,9 @@ diff -Naur glibc-2.5.orig/include-native/tls.h glibc-2.5/include-native/tls.h
 +#endif
 +
 +#endif
-diff -Naur glibc-2.5.orig/locale/Makefile glibc-2.5/locale/Makefile
---- glibc-2.5.orig/locale/Makefile	2005-12-20 01:58:41.000000000 -0500
-+++ glibc-2.5/locale/Makefile	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/locale/Makefile glibc-2.6/locale/Makefile
+--- glibc-2.6.orig/locale/Makefile	2007-07-02 15:20:37.000000000 -0400
++++ glibc-2.6/locale/Makefile	2007-07-02 15:28:24.000000000 -0400
 @@ -44,6 +44,9 @@
  aux		= $(categories:%=lc-%) $(categories:%=C-%) SYS_libc C_name \
  		  xlocale localename global-locale coll-lookup
@@ -157,9 +155,9 @@ diff -Naur glibc-2.5.orig/locale/Makefile glibc-2.5/locale/Makefile
  C-translit.h: C-translit.h.in gen-translit.pl
  	$(PERL) gen-translit.pl < $< > $@.tmp
  	mv -f $@.tmp $@
-diff -Naur glibc-2.5.orig/localedata/Makefile glibc-2.5/localedata/Makefile
---- glibc-2.5.orig/localedata/Makefile	2006-04-26 01:14:03.000000000 -0400
-+++ glibc-2.5/localedata/Makefile	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/localedata/Makefile glibc-2.6/localedata/Makefile
+--- glibc-2.6.orig/localedata/Makefile	2007-07-02 15:20:34.000000000 -0400
++++ glibc-2.6/localedata/Makefile	2007-07-02 15:28:24.000000000 -0400
 @@ -206,8 +206,13 @@
  INSTALL-SUPPORTED-LOCALES=$(addprefix install-, $(SUPPORTED-LOCALES))
  
@@ -174,10 +172,10 @@ diff -Naur glibc-2.5.orig/localedata/Makefile glibc-2.5/localedata/Makefile
  install-locales: $(INSTALL-SUPPORTED-LOCALES)
  
  install-locales-dir:
-diff -Naur glibc-2.5.orig/Makeconfig glibc-2.5/Makeconfig
---- glibc-2.5.orig/Makeconfig	2006-07-10 17:42:27.000000000 -0400
-+++ glibc-2.5/Makeconfig	2006-11-26 18:24:54.000000000 -0500
-@@ -447,6 +447,13 @@
+diff -Naur glibc-2.6.orig/Makeconfig glibc-2.6/Makeconfig
+--- glibc-2.6.orig/Makeconfig	2007-07-02 15:20:36.000000000 -0400
++++ glibc-2.6/Makeconfig	2007-07-02 15:32:37.000000000 -0400
+@@ -445,6 +445,13 @@
  			   $(common-objpfx)libc% $(+postinit),$^) \
  	      $(link-extra-libs-static) $(link-libc-static) $(+postctor) $(+postinit)
  endif
@@ -191,7 +189,7 @@ diff -Naur glibc-2.5.orig/Makeconfig glibc-2.5/Makeconfig
  # Command for statically linking bounded-pointer programs with the C library.
  ifndef +link-bounded
  +link-bounded = $(CC) -nostdlib -nostartfiles -static -fbounded-pointers -o $@ \
-@@ -660,6 +667,8 @@
+@@ -658,6 +665,8 @@
  	    $(+sysdep-includes) $(includes) \
  	    $(patsubst %/,-I%,$(..)) $(libio-include) -I. $(sysincludes)
  
@@ -200,25 +198,25 @@ diff -Naur glibc-2.5.orig/Makeconfig glibc-2.5/Makeconfig
  # Since libio has several internal header files, we use a -I instead
  # of many little headers in the include directory.
  libio-include = -I$(..)libio
-@@ -674,10 +683,15 @@
+@@ -672,10 +681,15 @@
  	   $(foreach lib,$(libof-$(basename $(@F))) \
  		         $(libof-$(<F)) $(libof-$(@F)),$(CPPFLAGS-$(lib))) \
  	   $(CPPFLAGS-$(<F)) $(CPPFLAGS-$(@F)) $(CPPFLAGS-$(basename $(@F)))
 +CPPFLAGS-native = -D_GNU_SOURCE $($(subdir)-CPPFLAGS) $(+includes-native) $(defines) \
-+           $(CPPFLAGS-$(suffix $@)) -include $(..)include/libc-symbols.h \
-+           $(CPPFLAGS-$(<F)) $(CPPFLAGS-$(@F)) $(CPPFLAGS-$(basename $(@F)))
- override CFLAGS	= -std=gnu99 \
++		  $(CPPFLAGS-$(suffix $@)) -include $(..)include/libc-symbols.h \
++		  $(CPPFLAGS-$(<F)) $(CPPFLAGS-$(@F)) $(CPPFLAGS-$(basename $(@F)))
+ override CFLAGS	= -std=gnu99 $(gnu89-inline-CFLAGS) \
  		  $(filter-out %frame-pointer,$(+cflags)) $(+gccwarn-c) \
  		  $(sysdep-CFLAGS) $(CFLAGS-$(suffix $@)) $(CFLAGS-$(<F)) \
  		  $(CFLAGS-$(@F))
 +override CFLAGS-native = -std=gnu99 $(default_cflags) $(+gccwarn-c) \
-+                  $(CFLAGS-$(suffix $@)) $(CFLAGS-$(<F)) $(CFLAGS-$(@F))
++			 $(CFLAGS-$(suffix $@)) $(CFLAGS-$(<F)) $(CFLAGS-$(@F))
  override CXXFLAGS = $(c++-sysincludes) \
  		    $(filter-out %frame-pointer,$(+cflags)) $(sysdep-CFLAGS) \
  		    $(CFLAGS-$(suffix $@)) $(CFLAGS-$(<F)) $(CFLAGS-$(@F))
-diff -Naur glibc-2.5.orig/Makerules glibc-2.5/Makerules
---- glibc-2.5.orig/Makerules	2006-09-04 22:02:13.000000000 -0400
-+++ glibc-2.5/Makerules	2006-11-26 18:15:25.000000000 -0500
+diff -Naur glibc-2.6.orig/Makerules glibc-2.6/Makerules
+--- glibc-2.6.orig/Makerules	2007-07-02 15:20:36.000000000 -0400
++++ glibc-2.6/Makerules	2007-07-02 15:28:24.000000000 -0400
 @@ -292,6 +292,9 @@
  object-suffixes-left := $(all-object-suffixes)
  include $(o-iterator)
@@ -256,9 +254,9 @@ diff -Naur glibc-2.5.orig/Makerules glibc-2.5/Makerules
  endef
  
  # Command to compile $< in $(common-objdir) using the native libraries.
-diff -Naur glibc-2.5.orig/malloc/Makefile glibc-2.5/malloc/Makefile
---- glibc-2.5.orig/malloc/Makefile	2006-05-19 12:42:00.000000000 -0400
-+++ glibc-2.5/malloc/Makefile	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/malloc/Makefile glibc-2.6/malloc/Makefile
+--- glibc-2.6.orig/malloc/Makefile	2007-07-02 15:20:36.000000000 -0400
++++ glibc-2.6/malloc/Makefile	2007-07-02 15:28:24.000000000 -0400
 @@ -73,10 +73,6 @@
  endif
  endif
@@ -278,9 +276,9 @@ diff -Naur glibc-2.5.orig/malloc/Makefile glibc-2.5/malloc/Makefile
  
  # Another goal which can be used to override the configure decision.
  .PHONY: do-memusagestat
-diff -Naur glibc-2.5.orig/Rules glibc-2.5/Rules
---- glibc-2.5.orig/Rules	2006-02-28 02:05:48.000000000 -0500
-+++ glibc-2.5/Rules	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/Rules glibc-2.6/Rules
+--- glibc-2.6.orig/Rules	2007-07-02 15:20:35.000000000 -0400
++++ glibc-2.6/Rules	2007-07-02 15:28:24.000000000 -0400
 @@ -87,7 +87,7 @@
  
  .PHONY: others tests
@@ -314,9 +312,9 @@ diff -Naur glibc-2.5.orig/Rules glibc-2.5/Rules
  ifeq ($(build-bounded),yes)
  binaries-bounded = $(addsuffix -bp,$(tests) $(xtests) $(test-srcs))
  $(addprefix $(objpfx),$(binaries-bounded)): %-bp: %.ob \
-diff -Naur glibc-2.5.orig/sunrpc/Makefile glibc-2.5/sunrpc/Makefile
---- glibc-2.5.orig/sunrpc/Makefile	2005-06-26 14:24:19.000000000 -0400
-+++ glibc-2.5/sunrpc/Makefile	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/sunrpc/Makefile glibc-2.6/sunrpc/Makefile
+--- glibc-2.6.orig/sunrpc/Makefile	2007-07-02 15:20:36.000000000 -0400
++++ glibc-2.6/sunrpc/Makefile	2007-07-02 15:28:24.000000000 -0400
 @@ -70,6 +70,9 @@
  	    clnt_unix svc_unix create_xid xdr_intXX_t
  
@@ -388,9 +386,9 @@ diff -Naur glibc-2.5.orig/sunrpc/Makefile glibc-2.5/sunrpc/Makefile
  	-@rm -f ${@:stmp=T} $@
  	$(rpcgen-cmd) -c $< -o ${@:stmp=T}
  	$(move-if-change) $(@:stmp=T) $(@:stmp=c)
-diff -Naur glibc-2.5.orig/timezone/Makefile glibc-2.5/timezone/Makefile
---- glibc-2.5.orig/timezone/Makefile	2005-04-15 16:09:08.000000000 -0400
-+++ glibc-2.5/timezone/Makefile	2006-11-26 17:26:05.000000000 -0500
+diff -Naur glibc-2.6.orig/timezone/Makefile glibc-2.6/timezone/Makefile
+--- glibc-2.6.orig/timezone/Makefile	2007-07-02 15:20:36.000000000 -0400
++++ glibc-2.6/timezone/Makefile	2007-07-02 15:28:24.000000000 -0400
 @@ -28,6 +28,9 @@
  extra-objs := scheck.o ialloc.o
  

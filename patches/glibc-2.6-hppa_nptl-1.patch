@@ -1,16 +1,17 @@
 Submitted By: Joe Ciccone <jciccone@linuxfromscratch.org>
 Date: 2006-11-30
 Initial Package Version: 2.5
+	Rediffed against 2.6 by Joe Ciccone
 Upstream Status: In CVS
 Origin: http://lists.parisc-linux.org/pipermail/parisc-linux/2006-July/029549.html
 Description: Adds the TLS reloc numbers to elf.h
              Works around a bug in the data initialization.
              Adds a missing macro.
 
-diff -Naur glibc-2.5.orig/elf/elf.h glibc-2.5/elf/elf.h
---- glibc-2.5.orig/elf/elf.h	2006-11-30 16:26:56.000000000 -0500
-+++ glibc-2.5/elf/elf.h	2006-11-30 16:27:05.000000000 -0500
-@@ -1708,6 +1708,8 @@
+diff -Naur glibc-2.6.orig/elf/elf.h glibc-2.6/elf/elf.h
+--- glibc-2.6.orig/elf/elf.h	2007-07-04 21:13:57.000000000 -0400
++++ glibc-2.6/elf/elf.h	2007-07-04 21:14:25.000000000 -0400
+@@ -1710,6 +1710,8 @@
  #define R_PARISC_LTOFF_FPTR14R	62	/* LT-rel. fct ptr, right 14 bits. */
  #define R_PARISC_FPTR64		64	/* 64 bits function address.  */
  #define R_PARISC_PLABEL32	65	/* 32 bits function address.  */
@@ -19,7 +20,7 @@ diff -Naur glibc-2.5.orig/elf/elf.h glibc-2.5/elf/elf.h
  #define R_PARISC_PCREL64	72	/* 64 bits PC-rel. address.  */
  #define R_PARISC_PCREL22F	74	/* 22 bits PC-rel. address.  */
  #define R_PARISC_PCREL14WR	75	/* PC-rel. address, right 14 bits.  */
-@@ -1768,6 +1770,29 @@
+@@ -1770,6 +1772,29 @@
  #define R_PARISC_LTOFF_TP16F	229	/* 16 bits LT-TP-rel. address.  */
  #define R_PARISC_LTOFF_TP16WF	230	/* 16 bits LT-TP-rel. address.  */
  #define R_PARISC_LTOFF_TP16DF	231	/* 16 bits LT-TP-rel. address.  */
@@ -49,9 +50,9 @@ diff -Naur glibc-2.5.orig/elf/elf.h glibc-2.5/elf/elf.h
  #define R_PARISC_HIRESERVE	255
  
  /* Legal values for p_type field of Elf32_Phdr/Elf64_Phdr.  */
-diff -Naur glibc-2.5.orig/elf/rtld.c glibc-2.5/elf/rtld.c
---- glibc-2.5.orig/elf/rtld.c	2006-11-30 16:26:56.000000000 -0500
-+++ glibc-2.5/elf/rtld.c	2006-11-30 16:27:05.000000000 -0500
+diff -Naur glibc-2.6.orig/elf/rtld.c glibc-2.6/elf/rtld.c
+--- glibc-2.6.orig/elf/rtld.c	2007-07-04 21:13:57.000000000 -0400
++++ glibc-2.6/elf/rtld.c	2007-07-04 21:14:25.000000000 -0400
 @@ -379,14 +379,14 @@
       know it is available.  We do not have to clear the memory if we
       do not have to use the temporary bootstrap_map.  Global variables
@@ -72,9 +73,9 @@ diff -Naur glibc-2.5.orig/elf/rtld.c glibc-2.5/elf/rtld.c
  # endif
  # if USE___THREAD
    bootstrap_map.l_tls_modid = 0;
-diff -Naur glibc-2.5.orig/sysdeps/unix/sysv/linux/getcwd.c glibc-2.5/sysdeps/unix/sysv/linux/getcwd.c
---- glibc-2.5.orig/sysdeps/unix/sysv/linux/getcwd.c	2006-11-30 16:26:57.000000000 -0500
-+++ glibc-2.5/sysdeps/unix/sysv/linux/getcwd.c	2006-11-30 16:27:05.000000000 -0500
+diff -Naur glibc-2.6.orig/sysdeps/unix/sysv/linux/getcwd.c glibc-2.6/sysdeps/unix/sysv/linux/getcwd.c
+--- glibc-2.6.orig/sysdeps/unix/sysv/linux/getcwd.c	2007-07-04 21:13:56.000000000 -0400
++++ glibc-2.6/sysdeps/unix/sysv/linux/getcwd.c	2007-07-04 21:14:25.000000000 -0400
 @@ -31,6 +31,9 @@
  
  #include <kernel-features.h>
