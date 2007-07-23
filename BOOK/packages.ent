@@ -291,10 +291,10 @@
 <!ENTITY tar-md5 "70170208d7c1bb9ab40120579434b6a3">
 <!ENTITY tar-home "&gnu-software;tar">
 
-<!ENTITY texinfo-version "4.8a">
-<!ENTITY texinfo-size "1,488 KB">
+<!ENTITY texinfo-version "4.9">
+<!ENTITY texinfo-size "1,496 KB">
 <!ENTITY texinfo-url "&gnu;texinfo/texinfo-&texinfo-version;.tar.bz2">
-<!ENTITY texinfo-md5 "0f429f87de9f20d6c0d952e63bf8e3fa">
+<!ENTITY texinfo-md5 "f4458e4b81e5469fa0815c35654141ab">
 <!ENTITY texinfo-home "&gnu-software;texinfo">
 
 <!ENTITY udev-version "105">
