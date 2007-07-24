@@ -135,7 +135,7 @@ sed 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' login.defs.orig \
 
 <screen os="y"><userinput>mv -v ${CLFS}/lib/libshadow.*a ${CLFS}/usr/lib
 rm -v ${CLFS}/lib/libshadow.so
-ln -svf ../../lib/libshadow.so.0 ${CLFS}/usr/lib/libshadow.so</userinput></screen>
+ln -sfv ../../lib/libshadow.so.0 ${CLFS}/usr/lib/libshadow.so</userinput></screen>
 
   </sect2>
 

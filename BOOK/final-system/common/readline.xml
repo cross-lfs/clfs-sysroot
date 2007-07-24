@@ -70,8 +70,8 @@
     <filename class="directory">/usr/lib</filename>.</para>
 
 <screen os="m"><userinput>rm -v ${CLFS}/lib/lib{readline,history}.so
-ln -svf ../../lib/libreadline.so.5 ${CLFS}/usr/lib/libreadline.so
-ln -svf ../../lib/libhistory.so.5 ${CLFS}/usr/lib/libhistory.so</userinput></screen>
+ln -sfv ../../lib/libreadline.so.5 ${CLFS}/usr/lib/libreadline.so
+ln -sfv ../../lib/libhistory.so.5 ${CLFS}/usr/lib/libhistory.so</userinput></screen>
 
   </sect2>
 

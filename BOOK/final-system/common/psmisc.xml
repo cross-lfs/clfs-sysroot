@@ -74,7 +74,7 @@ echo "ac_cv_func_realloc_0_nonnull=yes" >> config.cache</userinput></screen>
     Sysvinit will not be used for a particular system, complete the installation
     of Psmisc by creating the following symlink:</para>
 
-<screen os="k" role="nodump"><userinput>ln -sv killall ${CLFS}/bin/pidof</userinput></screen>
+<screen os="k" role="nodump"><userinput>ln -sfv killall ${CLFS}/bin/pidof</userinput></screen>
 
   </sect2>
 

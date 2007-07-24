@@ -51,11 +51,11 @@
     <para os="i">Create symlinks in <filename class="directory">/usr/lib:</filename></para>
 
 <screen os="j"><userinput>rm -v ${CLFS}/lib/lib{ncurses,menu,panel,form,curses}.so
-ln -svf ../../lib/libncurses.so.&ncurses-version2; ${CLFS}/usr/lib/libcurses.so
-ln -svf ../../lib/libncurses.so.&ncurses-version2; ${CLFS}/usr/lib/libncurses.so
-ln -svf ../../lib/libmenu.so.&ncurses-version2; ${CLFS}/usr/lib/libmenu.so
-ln -svf ../../lib/libpanel.so.&ncurses-version2; ${CLFS}/usr/lib/libpanel.so
-ln -svf ../../lib/libform.so.&ncurses-version2; ${CLFS}/usr/lib/libform.so</userinput></screen>
+ln -sfv ../../lib/libncurses.so.&ncurses-version2; ${CLFS}/usr/lib/libcurses.so
+ln -sfv ../../lib/libncurses.so.&ncurses-version2; ${CLFS}/usr/lib/libncurses.so
+ln -sfv ../../lib/libmenu.so.&ncurses-version2; ${CLFS}/usr/lib/libmenu.so
+ln -sfv ../../lib/libpanel.so.&ncurses-version2; ${CLFS}/usr/lib/libpanel.so
+ln -sfv ../../lib/libform.so.&ncurses-version2; ${CLFS}/usr/lib/libform.so</userinput></screen>
 
     <para os="k">Give the Ncurses libraries execute permissions:</para>
 

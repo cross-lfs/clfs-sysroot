@@ -87,7 +87,7 @@ mv -v ${CLFS}/usr/bin/chroot ${CLFS}/usr/sbin</userinput></screen>
 
 <screen os="l"><userinput>mv -v ${CLFS}/usr/bin/{[,basename,head,install,nice} ${CLFS}/bin
 mv -v ${CLFS}/usr/bin/{readlink,sleep,sync,test,touch} ${CLFS}/bin
-ln -svf ../../bin/install ${CLFS}/usr/bin</userinput></screen>
+ln -sfv ../../bin/install ${CLFS}/usr/bin</userinput></screen>
 
   </sect2>
 

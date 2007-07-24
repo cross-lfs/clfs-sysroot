@@ -93,7 +93,7 @@
     <command>vim</command> when users habitually enter <command>vi</command>
     and allow programs that use <command>vi</command> to work:</para>
 
-<screen os="l"><userinput>ln -sv vim ${CLFS}/usr/bin/vi</userinput></screen>
+<screen os="l"><userinput>ln -sfv vim ${CLFS}/usr/bin/vi</userinput></screen>
 
 <para os="m">By default, Vim's documentation is installed in
 <filename class="directory">/usr/share/vim</filename>.  The following symlink
@@ -101,7 +101,7 @@ allows the documentation to be accessed via
 <filename class="directory">/usr/share/doc/vim-&vim-version;</filename>, making
 it consistent with the location of documentation for other packages:</para>
 
-<screen os="n"><userinput>ln -sv ../vim/vim&vim-version2;/doc ${CLFS}/usr/share/doc/vim-&vim-version;</userinput></screen>
+<screen os="n"><userinput>ln -sfnv ../vim/vim&vim-version2;/doc ${CLFS}/usr/share/doc/vim-&vim-version;</userinput></screen>
 
     <para os="o">If an X Window System is going to be installed on the CLFS
     system, you may want to recompile Vim after installing X. Vim

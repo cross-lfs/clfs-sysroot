@@ -46,9 +46,9 @@
     <para os="h">Some documentation programs, such as <command>xman</command>,
     will not work properly without the following symlinks:</para>
 
-<screen os="i"><userinput>ln -sv soelim ${CLFS}/usr/bin/zsoelim
-ln -sv eqn ${CLFS}/usr/bin/geqn
-ln -sv tbl ${CLFS}/usr/bin/gtbl</userinput></screen>
+<screen os="i"><userinput>ln -sfv soelim ${CLFS}/usr/bin/zsoelim
+ln -sfv eqn ${CLFS}/usr/bin/geqn
+ln -sfv tbl ${CLFS}/usr/bin/gtbl</userinput></screen>
 
   </sect2>
 
