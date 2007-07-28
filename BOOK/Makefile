@@ -99,15 +99,15 @@ $(ARCHS_NOCHUNKS):
 	@echo "Rendering Single File HTML of $(nochunk_arch)..."
 	$(Q)mkdir -p $(BASEDIR)
 	$(Q)xsltproc --nonet -stringparam rootid "$(ROOT_ID)" \
-	  --output $(BASEDIR)/CLFS-EMBEDDED-$(nochunk_arch).html \
+	  --output $(BASEDIR)/CLFS-SYSROOT-$(nochunk_arch).html \
 	  $(PWD)/stylesheets/clfs-nochunks.xsl $(RENDERTMP)/$(nochunk_arch)-html.xml
 
 	@echo "Running Tidy..."
-	$(Q)tidy -config $(PWD)/tidy.conf $(BASEDIR)/CLFS-EMBEDDED-$(nochunk_arch).html || true
+	$(Q)tidy -config $(PWD)/tidy.conf $(BASEDIR)/CLFS-SYSROOT-$(nochunk_arch).html || true
 	@echo "Running obfuscate.sh..."
-	$(Q)sh $(PWD)/obfuscate.sh $(BASEDIR)/CLFS-EMBEDDED-$(nochunk_arch).html
+	$(Q)sh $(PWD)/obfuscate.sh $(BASEDIR)/CLFS-SYSROOT-$(nochunk_arch).html
 	$(Q)sed -i -e "s@text/html@application/xhtml+xml@g"  \
-	  $(BASEDIR)/CLFS-EMBEDDED-$(nochunk_arch).html
+	  $(BASEDIR)/CLFS-SYSROOT-$(nochunk_arch).html
 
 pdf: tmpdir $(ARCHS_PDF)
 
@@ -131,7 +131,7 @@ $(ARCHS_PDF):
 
 	@echo "Rendering PDF of $(pdf_arch)..."
 	$(Q)mkdir -p $(BASEDIR)
-	$(Q)fop $(RENDERTMP)/$(pdf_arch).fo $(BASEDIR)/CLFS-EMBEDDED-$(pdf_arch).pdf
+	$(Q)fop $(RENDERTMP)/$(pdf_arch).fo $(BASEDIR)/CLFS-SYSROOT-$(pdf_arch).pdf
 
 validate: $(ARCHS_VALIDATE)
 
