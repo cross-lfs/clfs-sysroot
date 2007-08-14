@@ -36,6 +36,7 @@
 <screen os="b"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
     --prefix=/usr --libexecdir=/usr/sbin --sysconfdir=/etc \
     --localstatedir=/var --disable-logger --disable-syslogd \
+    --with-ncurses-include-dir="${CLFS}/usr/include" \
     --disable-whois --disable-servers</userinput></screen>
 
     <variablelist os="c">
@@ -66,6 +67,14 @@
           <command>whois</command> client, which is out of date.
           Instructions for a better <command>whois</command> client are
           in the BLFS book.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--with-ncurses-include-dir="${CLFS}/usr/include"</parameter></term>
+        <listitem>
+          <para>This option instructs configure to look in
+          <filename>${CLFS}/usr/include</filename> for ncurses headers.</para>
         </listitem>
       </varlistentry>
 

@@ -36,6 +36,15 @@
     </listitem>
 -->
 
+    <listitem>
+      <para>August 14, 2007</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Pointed Inetutils to the Ncurses headers in $CLFS.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
    <listitem>
       <para>July 23, 2007</para>
       <itemizedlist>
