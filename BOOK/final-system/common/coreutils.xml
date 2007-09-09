@@ -48,8 +48,8 @@
     timestamp then the man pages the <filename>Makefile</filename> is going to
     try to regenerate the man pages. If executables for the target architecture
     can not be executed by the host system, the build will fail. The following
-    command gives the two man pages a newer timestamp then their cooresponding
-    source files:</para>
+    command fixes this by giving the two man pages a newer timestamp then their
+    cooresponding source files:</para>
 
 <screen os="ab"><userinput>touch man/uname.1 man/touch.1</userinput></screen>
 
