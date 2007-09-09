@@ -28,17 +28,17 @@
     <para os="a">Compile the package:</para>
 
 <screen os="b"><userinput>make CROSS_COMPILE="${CLFS_TARGET}-" CC="${CC}" LD="${CC}" \
-    EXTRAS="extras/floppy extras/cdrom_id extras/firmware \
-    extras/scsi_id extras/volume_id extras/ata_id extras/usb_id \
-    extras/edd_id extras/dasd_id extras/path_id"</userinput></screen>
+    EXTRAS="extras/ata_id extras/cdrom_id extras/collect \
+    extras/edd_id extras/firmware extras/floppy extras/path_id extras/rule_generator \
+    extras/scsi_id extras/usb_id extras/volume_id" udevdir=/dev</userinput></screen>
 
     <variablelist os="c">
       <title>The meaning of the make parameter:</title>
 
       <varlistentry>
-      <term><parameter>EXTRAS="extras/floppy extras/cdrom_id extras/firmware
-      extras/scsi_id extras/volume_id extras/ata_id extras/usb_id extras/edd_id
-      extras/dasd_id extras/path_id"</parameter></term>
+      <term><parameter>EXTRAS="extras/ata_id extras/cdrom_id extras/collect
+      extras/edd_id extras/firmware extras/floppy extras/path_id extras/rule_generator
+      extras/scsi_id extras/usb_id extras/volume_id"</parameter></term>
         <listitem>
           <para>This builds the helper applications that are used with
           udev. The helper programs assist in correct handling of devices.</para>
@@ -50,16 +50,11 @@
     <para os="c">Install the package:</para>
 
 <screen os="d"><userinput>make DESTDIR="${CLFS}" \
-    EXTRAS="extras/floppy extras/cdrom_id extras/firmware \
-    extras/scsi_id extras/volume_id extras/ata_id extras/usb_id \
-    extras/edd_id extras/dasd_id extras/path_id" install</userinput></screen>
+    EXTRAS="extras/ata_id extras/cdrom_id extras/collect \
+    extras/edd_id extras/firmware extras/floppy extras/path_id extras/rule_generator \
+    extras/scsi_id extras/usb_id extras/volume_id" udevdir=/dev install</userinput></screen>
 
-    <para os="e">Install a necessary helper script.</para>
-
-<screen os="f"><userinput>install -v extras/eventrecorder.sh ${CLFS}/lib/udev</userinput></screen>
-
-    <para os="g">Install the documentation that explains how to create
-    Udev rules:</para>
+    <para os="g">Install the documentation:</para>
 
 <screen os="h"><userinput>install -v -m644 -D docs/writing_udev_rules/index.html \
     ${CLFS}/usr/share/doc/udev-&udev-version;/index.html</userinput></screen>
@@ -68,11 +63,6 @@
     loaded by <command>udev</command>:</para>
 
 <screen os="j"><userinput>install -dv ${CLFS}/lib/firmware</userinput></screen>
-
-    <para os="k">Finally, remove the rules installed by Udev as we will be
-    installing custom Udev rules later:</para>
-
-<screen os="l"><userinput>rm -v ${CLFS}/etc/udev/rules.d/*</userinput></screen>
 
   </sect2>
 
