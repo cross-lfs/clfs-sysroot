@@ -57,14 +57,6 @@ mv -v glibc-ports-&glibc-version; ports</userinput></screen>
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='p6'])"/>
 
-    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-    href="../common/glibc.xml"
-    xpointer="xpointer(//*[@os='p7'])"/>
-
-    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-    href="../common/glibc.xml"
-    xpointer="xpointer(//*[@os='p8'])"/>
-
     <para os="ar1">The following patch defines RTLD_SINGLE_THREAD_P for arm.</para>
 
 <screen os="ar2"><userinput>patch -Np1 -i ../&glibc-RTLD_SINGLE_THREAD_P-patch;</userinput></screen>

@@ -49,14 +49,6 @@
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='p6'])"/>
 
-    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-    href="../common/glibc.xml"
-    xpointer="xpointer(//*[@os='p7'])"/>
-
-    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-    href="../common/glibc.xml"
-    xpointer="xpointer(//*[@os='p8'])"/>
-
     <para os="a1">The following patch makes sysdep-cancel use one region instead of two:</para>
 
 <screen os="a2"><userinput>patch -Np1 -i ../&glibc-sysdep_cancel-patch;</userinput></screen>
