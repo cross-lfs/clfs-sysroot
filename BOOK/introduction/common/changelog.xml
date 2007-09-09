@@ -40,6 +40,9 @@
       <para>September 9, 2007</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Less to 406.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Linux to 2.6.22.6 and Linux Headers to
           2.6.22.6-09032007.</para>
         </listitem>
