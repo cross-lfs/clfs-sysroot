@@ -40,6 +40,9 @@
       <para>September 9, 2007</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated to Util-Linux-ng 2.13.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Udev to 115.
                              This change also removed the udev-cross-lfs package
                              since our rules are the same as the ones installed.

@@ -303,11 +303,11 @@
 <!ENTITY udev-md5 "39bbe5ddcd62d35cd56b184d6862c540">
 <!ENTITY udev-home "http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html">
 
-<!ENTITY util-linux-version "2.12r">
-<!ENTITY util-linux-size "1,339 KB">
-<!ENTITY util-linux-url "&kernel;linux/utils/util-linux/util-linux-&util-linux-version;.tar.bz2">
-<!ENTITY util-linux-md5 "af9d9e03038481fbf79ea3ac33f116f9">
-<!ENTITY util-linux-home " ">
+<!ENTITY util-linux-ng-version "2.13">
+<!ENTITY util-linux-ng-size "2,652 KB">
+<!ENTITY util-linux-ng-url "&kernel;linux/utils/util-linux-ng/v&util-linux-ng-version;/util-linux-ng-&util-linux-ng-version;.tar.bz2">
+<!ENTITY util-linux-ng-md5 "2175a6e64ba0cf8ff05402eaee33e4b0">
+<!ENTITY util-linux-ng-home " ">
 
 <!ENTITY vim-version "7.1">
 <!ENTITY vim-version2 "71">
