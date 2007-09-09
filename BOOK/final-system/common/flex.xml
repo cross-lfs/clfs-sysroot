@@ -37,7 +37,8 @@ sed "s/-I@includedir@//g" Makefile.in.orig &gt; Makefile.in</userinput></screen>
 
     <para os="e">Compile the package:</para>
 
-<screen os="f"><userinput>make</userinput></screen>
+<screen os="f"><userinput>make CC="${CC} -fPIC" libfl.a
+make</userinput></screen>
 
     <para os="g">Install the package:</para>
 

@@ -40,6 +40,9 @@
       <para>September 9, 2007</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Build a PIC libfl.a with flex.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to Util-Linux-ng 2.13.</para>
         </listitem>
         <listitem>
