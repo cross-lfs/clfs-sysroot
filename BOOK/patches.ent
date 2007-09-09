@@ -37,7 +37,7 @@
 <!ENTITY gcc-posix-patch-size "16 KB">
 
 <!ENTITY glibc-cross_hacks-patch "glibc-&glibc-version;-cross_hacks-1.patch">
-<!ENTITY glibc-cross_hacks-patch-md5 "1d07240424e85f802315ed193cc2c5bf">
+<!ENTITY glibc-cross_hacks-patch-md5 "3cb265835d19613137896a8e841c4a98">
 <!ENTITY glibc-cross_hacks-patch-size "20 KB">
 
 <!ENTITY glibc-libgcc_eh-patch "glibc-&glibc-version;-libgcc_eh-1.patch">
