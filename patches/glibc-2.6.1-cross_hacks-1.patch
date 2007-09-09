@@ -183,7 +183,7 @@ diff -Naur glibc-2.6.orig/Makeconfig glibc-2.6/Makeconfig
 +ifndef +link-native
 ++link-native = $(BUILD_CC) -static -g -o $@ $^ \
 +              $(LDFLAGS) $(LDFLAGS-$(@F)) \
-+              $(combreloc-LDFLAGS) $(relro-LDFLAGS) $(hashstyle-LDFLAGS) \
++              $(combreloc-LDFLAGS) $(relro-LDFLAGS) \
 +              $(link-extra-libs)
 +endif
  # Command for statically linking bounded-pointer programs with the C library.
