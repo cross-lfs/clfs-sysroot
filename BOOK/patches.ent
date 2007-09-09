@@ -118,10 +118,6 @@
 <!ENTITY glibc-sysdep_cancel-patch-md5 "6b3f61df100c88e616b1e8aea81f98ce">
 <!ENTITY glibc-sysdep_cancel-patch-size "4 KB">
 
-<!ENTITY linux-io_fix-patch "linux-&linux-version;-alpha_io_fix-1.patch">
-<!ENTITY linux-io_fix-patch-md5 "7a680d8c9978044955e6ef4f6a7358c1">
-<!ENTITY linux-io_fix-patch-size "4 KB">
-
 <!-- ARM Specific Patches -->
 
 <!ENTITY glibc-RTLD_SINGLE_THREAD_P-patch "glibc-&glibc-version;-RTLD_SINGLE_THREAD_P-1.patch">
