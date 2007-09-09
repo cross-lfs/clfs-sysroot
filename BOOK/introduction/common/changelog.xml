@@ -40,6 +40,11 @@
       <para>September 9, 2007</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Shadow Patch for more fixes. Man Page Typos
+          , buffer overflows, useradd -G fixes, better name support, and
+          the previous useradd fix.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Grep to 2.5.3.</para>
         </listitem>
         <listitem>

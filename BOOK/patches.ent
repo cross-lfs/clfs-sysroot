@@ -76,9 +76,9 @@
 <!ENTITY shadow-sysroot_hacks-patch-md5 "0d3f26660202e435e95c71dcea6e9613">
 <!ENTITY shadow-sysroot_hacks-patch-size "16 KB">
 
-<!ENTITY shadow-useradd_fix-patch "shadow-&shadow-version;-useradd_fix-1.patch">
-<!ENTITY shadow-useradd_fix-patch-md5 "272eb8ef4b9b7ad859292150526ea5fa">
-<!ENTITY shadow-useradd_fix-patch-size "4 KB">
+<!ENTITY shadow-fixes-patch "shadow-&shadow-version;-fixes-1.patch">
+<!ENTITY shadow-fixes-patch-md5 "76eb87cfbf566e2676403811bde10d7b">
+<!ENTITY shadow-fixes-patch-size "32 KB">
 
 <!ENTITY sysklogd-fixes-patch "sysklogd-&sysklogd-version;-fixes-1.patch">
 <!ENTITY sysklogd-fixes-patch-md5 "508104f058d1aef26b3bc8059821935f">
