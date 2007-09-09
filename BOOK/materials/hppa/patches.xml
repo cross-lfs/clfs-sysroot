@@ -13,15 +13,6 @@
   <variablelist role="materials">
 
     <varlistentry>
-      <term>Binutils TLS Patch - <token>&binutils-hppa_tls-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&binutils-hppa_tls-patch;"/></para>
-        <para>MD5 sum: <literal>&binutils-hppa_tls-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>Glibc NPTL Patch - <token>&glibc-hppa_nptl-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
