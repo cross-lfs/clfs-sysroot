@@ -56,11 +56,9 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
 
 <screen os="d"><userinput>make</userinput></screen>
 
-    <para os="e">This package does not come with a test suite.</para>
+    <para os="e">Install the package:</para>
 
-    <para os="g">Install the package:</para>
-
-<screen os="h"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
+<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
   </sect2>
 
