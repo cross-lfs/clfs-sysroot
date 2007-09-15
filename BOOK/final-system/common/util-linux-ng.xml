@@ -46,19 +46,49 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
     <para os="a">Prepare Util-linux-ng for compilation:</para>
 
 <screen os="b"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
-    --with-fsprobe=blkid --enable-agetty \
-    --enable-cramfs --disable-init --disable-kill --disable-last \
-    --disable-mesg --enable-partx --enable-rename --disable-reset \
-    --disable-login-utils --enable-schedutils --disable-wall --enable-write \
-    --without-pam</userinput></screen>
+    --enable-partx --disable-wall --enable-write</userinput></screen>
 
-    <para os="c">Compile the package:</para>
+    <variablelist os="c">
+      <title>The meaning of the configure options:</title>
 
-<screen os="d"><userinput>make</userinput></screen>
+      <varlistentry>
+        <term><parameter>--enable-partx</parameter></term>
+        <listitem>
+          <para>Enable partx stuff (need more description).</para>
+        </listitem>
+      </varlistentry>
 
-    <para os="e">Install the package:</para>
+      <varlistentry>
+        <term><parameter>--disable-wall</parameter></term>
+        <listitem>
+          <para>Disables building the <command>wall</command> program,
+          as the Sysvinit package installs its own version.</para>
+        </listitem>
+      </varlistentry>
 
-<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
+      <varlistentry>
+        <term><parameter>--enable-write</parameter></term>
+        <listitem>
+          <para>This option allows the <command>write</command> program to be
+          installed.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para os="d">Compile the package:</para>
+
+<screen os="e"><userinput>make</userinput></screen>
+
+    <para os="f">Install the package:</para>
+
+<screen os="g"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
+
+    <para os="h">Move the <command>logger</command> binary to
+    <filename class="directory">/bin</filename> as it is needed by the
+    CLFS-Bootscripts package:</para>
+
+<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/logger ${CLFS}/bin</userinput></screen>
 
   </sect2>
 
@@ -69,15 +99,14 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
       <segtitle>Installed programs</segtitle>
 
       <seglistitem>
-        <seg>agetty, arch, blockdev, cal, cfdisk, chkdupexe, col, colcrt,
-        colrm, column, ctrlaltdel, cytune, ddate, dmesg, elvtune, fdformat,
-        fdisk, flock, fsck.cramfs, fsck.minix, getopt, hexdump, hwclock, ipcrm,
-        ipcs, isosize, line, logger, look, losetup, mcookie, mkfs, mkfs.bfs,
-        mkfs.cramfs, mkfs.minix, mkswap, more, mount, namei, pg, pivot_root,
-        ramsize (link to rdev), raw, rdev, readprofile, rename, renice, rev,
-        rootflags (link to rdev), script, setfdprm, setsid, setterm, sfdisk,
-        swapoff (link to swapon), swapon, tailf, tunelp, ul, umount, vidmode
-        (link to rdev), whereis, and write</seg>
+        <seg>addpart, agetty, blockdev, cal, cfdisk, chkdupexe, col, colcrt,
+        colrm, column, ctrlaltdel, cytune, ddate, delpart, dmesg, fdformat,
+        fdisk, flock, fsck.cramfs, fsck.minix, getopt, hexdump, hwclock, ionice,
+        ipcrm, ipcs, isosize, line, logger, look, losetup, mcookie, mkfs,
+        mkfs.bfs, mkfs.cramfs, mkfs.minix, mkswap, more, mount, namei, partx,
+        pg, pivot_root, readprofile, rename, renice, rev, rtcwake, script,
+        scriptreplay, setarch, setsid, setterm, sfdisk, swapoff (link to swapon),
+        swapon, tailf, taskset, tunelp, ul, umount, whereis, and write</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -86,6 +115,16 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
+      <varlistentry id="addpart">
+        <term><command>addpart</command></term>
+        <listitem>
+          <para>Informs the kernel of a new partition</para>
+          <indexterm zone="ch-system-util-linux-ng addpart">
+            <primary sortas="b-addpart">addpart</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="agetty">
         <term><command>agetty</command></term>
         <listitem>
@@ -93,16 +132,6 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
           and then invokes the <command>login</command> program</para>
           <indexterm zone="ch-system-util-linux-ng agetty">
             <primary sortas="b-agetty">agetty</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="arch">
-        <term><command>arch</command></term>
-        <listitem>
-          <para>Reports the machine's architecture</para>
-          <indexterm zone="ch-system-util-linux-ng arch">
-            <primary sortas="b-arch">arch</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -222,23 +251,22 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="delpart">
+        <term><command>delpart</command></term>
+        <listitem>
+          <para>Asks the kernel to remove a partition</para>
+          <indexterm zone="ch-system-util-linux-ng delpart">
+            <primary sortas="b-delpart">delpart</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="dmesg">
         <term><command>dmesg</command></term>
         <listitem>
           <para>Dumps the kernel boot messages</para>
           <indexterm zone="ch-system-util-linux-ng dmesg">
             <primary sortas="b-dmesg">dmesg</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="elvtune">
-        <term><command>elvtune</command></term>
-        <listitem>
-          <para>Tunes the performance and interactivity of a block
-          device</para>
-          <indexterm zone="ch-system-util-linux-ng elvtune">
-            <primary sortas="b-elvtune">elvtune</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -325,6 +353,16 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
           clock</para>
           <indexterm zone="ch-system-util-linux-ng hwclock">
             <primary sortas="b-hwclock">hwclock</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ionice">
+        <term><command>ionice</command></term>
+        <listitem>
+          <para>Gives and sets program I/O scheduling class and priority</para>
+          <indexterm zone="ch-system-util-linux-ng ionice">
+            <primary sortas="b-ionice">ionice</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -493,6 +531,17 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="partx">
+        <term><command>partx</command></term>
+        <listitem>
+          <para>Tells the kernel about the presence and numbering of on-disk
+          partitions</para>
+          <indexterm zone="ch-system-util-linux-ng partx">
+            <primary sortas="b-partx">partx</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="pg">
         <term><command>pg</command></term>
         <listitem>
@@ -510,38 +559,6 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
           current process</para>
           <indexterm zone="ch-system-util-linux-ng pivot_root">
             <primary sortas="b-pivot_root">pivot_root</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="ramsize">
-        <term><command>ramsize</command></term>
-        <listitem>
-          <para>Sets the size of the RAM disk in a bootable image</para>
-          <indexterm zone="ch-system-util-linux-ng ramsize">
-            <primary sortas="b-ramsize">ramsize</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="raw">
-        <term><command>raw</command></term>
-        <listitem>
-          <para>Used to bind a Linux-ng raw character device to a block
-          device</para>
-          <indexterm zone="ch-system-util-linux-ng raw">
-            <primary sortas="b-raw">raw</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="rdev">
-        <term><command>rdev</command></term>
-        <listitem>
-          <para>Queries and sets the root device, among other things, in a
-          bootable image</para>
-          <indexterm zone="ch-system-util-linux-ng rdev">
-            <primary sortas="b-rdev">rdev</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -587,12 +604,12 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="rootflags">
-        <term><command>rootflags</command></term>
+      <varlistentry id="rtcwake">
+        <term><command>rtcwake</command></term>
         <listitem>
-          <para>Sets the rootflags in a bootable image</para>
-          <indexterm zone="ch-system-util-linux-ng rootflags">
-            <primary sortas="b-rootflags">rootflags</primary>
+          <para>Enters a system sleep state until a specified wakeup time</para>
+          <indexterm zone="ch-system-util-linux-ng rtcwake">
+            <primary sortas="b-rtcwake">rtcwake</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -607,12 +624,23 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="setfdprm">
-        <term><command>setfdprm</command></term>
+      <varlistentry id="scriptreplay">
+        <term><command>scriptreplay</command></term>
         <listitem>
-          <para>Sets user-provided floppy disk parameters</para>
-          <indexterm zone="ch-system-util-linux-ng setfdprm">
-            <primary sortas="b-setfdprm">setfdprm</primary>
+          <para>Plays back typescripts created by <command>script</command></para>
+          <indexterm zone="ch-system-util-linux-ng scriptreplay">
+            <primary sortas="b-scriptreplay">scriptreplay</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="setarch">
+        <term><command>setarch</command></term>
+        <listitem>
+          <para>Changes reported architecture in new program environment and
+          sets personality flags</para>
+          <indexterm zone="ch-system-util-linux-ng setarch">
+            <primary sortas="b-setarch">setarch</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -680,6 +708,16 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="taskset">
+        <term><command>taskset</command></term>
+        <listitem>
+          <para>Retrieves or sets a process's CPU affinity</para>
+          <indexterm zone="ch-system-util-linux-ng taskset">
+            <primary sortas="b-taskset">taskset</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="tunelp">
         <term><command>tunelp</command></term>
         <listitem>
@@ -707,16 +745,6 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
           <para>Disconnects a file system from the system's file tree</para>
           <indexterm zone="ch-system-util-linux-ng umount">
             <primary sortas="b-umount">umount</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="vidmode">
-        <term><command>vidmode</command></term>
-        <listitem>
-          <para>Sets the video mode in a bootable image</para>
-          <indexterm zone="ch-system-util-linux-ng vidmode">
-            <primary sortas="b-vidmode">vidmode</primary>
           </indexterm>
         </listitem>
       </varlistentry>
