@@ -37,8 +37,13 @@
 -->
 
     <listitem>
-      <para>September 9, 2007</para>
+      <para>September 15, 2007</para>
       <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Create entities for each UID and GID and reference
+          those entities throught the book instead of using user names and
+          group names.</para>
+        </listitem>
         <listitem>
           <para>[jciccone] - Updated Vim 7.1 fixes Patch to -3.</para>
         </listitem>

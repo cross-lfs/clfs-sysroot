@@ -27,12 +27,20 @@
   <para>Make <systemitem class="username">root</systemitem> the owner of the
   entire CLFS system.</para>
 
-<screen><userinput>chown -Rv 0:0 ${CLFS}</userinput></screen>
+<screen><userinput>chown -Rv &uid-root;:&gid-root; ${CLFS}</userinput></screen>
 
-  <para>The following files are not the be owned by
+  <para>The following files are to be owned by the group
+  <systemitem class="username">utmp</systemitem> not by
   <systemitem class="username">root</systemitem>.</para>
 
-<screen><userinput>chgrp -v 13 ${CLFS}/var/run/utmp ${CLFS}/var/log/lastlog</userinput></screen>
+<screen><userinput>chgrp -v &gid-utmp; ${CLFS}/var/run/utmp ${CLFS}/var/log/lastlog</userinput></screen>
+
+  <para>During the installation of Util-Linux-ng configure was instructed not
+  change the ownership of certain programs. Correct that ownership now that we
+  have sufficent privileges.</para>
+
+<screen><userinput>chgrp -v &gid-tty; ${CLFS}/usr/bin/write
+chmod g+s ${CLFS}/usr/bin/write</userinput></screen>
 
   <para>The following device nodes need to be created for the system to
   boot.</para>
