@@ -15,7 +15,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/pkgmgt.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/variables.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/man-pages.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="hppa/binutils.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/binutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/gcc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/sed.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="common/e2fsprogs.xml"/>

@@ -47,7 +47,7 @@
     href="../../final-system/common/binutils.xml"
     xpointer="xpointer(//*[@os='c'])"/>
 
-<screen os="bc"><userinput>../binutils-&binutils-version;/configure --prefix=${CLFS}/cross-tools \
+<screen os="bc"><userinput>AR=ar AS=as ../binutils-&binutils-version;/configure --prefix=${CLFS}/cross-tools \
    --host=${CLFS_HOST} --target=${CLFS_TARGET} --with-sysroot=${CLFS} \
    --disable-nls --enable-shared --disable-multilib</userinput></screen>
 
