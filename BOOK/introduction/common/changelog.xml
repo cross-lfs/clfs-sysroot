@@ -40,6 +40,15 @@
       <para>September 9, 2007</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated CLFS Bootscripts to 1.1-pre4.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>September 9, 2007</para>
+      <itemizedlist>
+        <listitem>
           <para>[jciccone] - Build a PIC libfl.a with flex.</para>
         </listitem>
         <listitem>
