@@ -40,6 +40,15 @@
       <para>September 9, 2007</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Vim 7.1 fixes Patch to -3.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Readline 5.2 fixes Patch to -3.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Bash 3.2 fixes Patch to -6.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated CLFS Bootscripts to 1.1-pre4.</para>
         </listitem>
       </itemizedlist>

@@ -4,9 +4,9 @@
 
 <!-- Start of Common Patches -->
 
-<!ENTITY bash-fixes-patch "bash-&bash-version;-fixes-5.patch">
-<!ENTITY bash-fixes-patch-md5 "e6dacf6efb8ae0b119d9b03dafb94760">
-<!ENTITY bash-fixes-patch-size "32 KB">
+<!ENTITY bash-fixes-patch "bash-&bash-version;-fixes-6.patch">
+<!ENTITY bash-fixes-patch-md5 "ea529c1d125a1cfe13b20784821a0bc0">
+<!ENTITY bash-fixes-patch-size "56 KB">
 
 <!ENTITY binutils-posix-patch "binutils-&binutils-version;-posix-1.patch">
 <!ENTITY binutils-posix-patch-md5 "f2020cb369c2facbfd8987fa2263f31f">
@@ -64,9 +64,9 @@
 <!ENTITY perl-gcc42_fix-patch-md5 "cd84d28231ea7f23d7e619d9304cc741">
 <!ENTITY perl-gcc42_fix-patch-size "4 KB">
 
-<!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-2.patch">
-<!ENTITY readline-fixes-patch-md5 "0255d82297983150e0473bd81aeb8346">
-<!ENTITY readline-fixes-patch-size "4 KB">
+<!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-3.patch">
+<!ENTITY readline-fixes-patch-md5 "b57d689d7a06156e4341c2432d7d5456">
+<!ENTITY readline-fixes-patch-size "16 KB">
 
 <!ENTITY shadow-sysroot_hacks-patch "shadow-&shadow-version;-sysroot_hacks-1.patch">
 <!ENTITY shadow-sysroot_hacks-patch-md5 "0d3f26660202e435e95c71dcea6e9613">
@@ -84,9 +84,9 @@
 <!ENTITY vim-cross_compile-patch-md5 "f8af7a628b58959914390783932c23bc">
 <!ENTITY vim-cross_compile-patch-size "28 KB">
 
-<!ENTITY vim-fixes-patch "vim-&vim-version;-fixes-2.patch">
-<!ENTITY vim-fixes-patch-md5 "8d7f79e42efb8fa6de7db80967461a57">
-<!ENTITY vim-fixes-patch-size "36 KB">
+<!ENTITY vim-fixes-patch "vim-&vim-version;-fixes-3.patch">
+<!ENTITY vim-fixes-patch-md5 "7d09a01fa76010bf7b33ea7f7772b5f4">
+<!ENTITY vim-fixes-patch-size "180 KB">
 
 <!ENTITY zlib-fpic-patch "zlib-&zlib-version;-fPIC-1.patch">
 <!ENTITY zlib-fpic-patch-md5 "545d60b20bfde6f53023de44438cef59">
