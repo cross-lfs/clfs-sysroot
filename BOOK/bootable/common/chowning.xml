@@ -11,7 +11,7 @@
   <title>Changing the Ownership Of The CLFS System</title>
 
   <para>Throughout the book, every package has been compiled and installed as
-  the <systemitem class="username">lfs</systemitem> user. The final system
+  the <systemitem class="username">clfs</systemitem> user. The final system
   should be owned by <systemitem class="username">root</systemitem>.</para>
 
   <important>
