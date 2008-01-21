@@ -37,6 +37,15 @@
 -->
 
     <listitem>
+      <para>Janurary 21, 20008</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Updated the Bash fixes patch to -7.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>September 15, 2007</para>
       <itemizedlist>
         <listitem>
