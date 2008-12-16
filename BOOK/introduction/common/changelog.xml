@@ -35,9 +35,20 @@
       </itemizedlist>
     </listitem>
 -->
+    <listitem>
+      <para>December 16, 2008</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Jonathan] - Updated readline patch to version 4.</para>
+        </listitem>
+        <listitem>
+          <para>[Jonathan] - Corrected a typo in the changelog.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
-      <para>December 16, 20008</para>
+      <para>December 16, 2008</para>
       <itemizedlist>
         <listitem>
           <para>[Chris] - Corrected man-pages installation. Closes ticket
@@ -47,7 +58,7 @@
     </listitem>
 
     <listitem>
-      <para>January 21, 20008</para>
+      <para>January 21, 2008</para>
       <itemizedlist>
         <listitem>
           <para>[jciccone] - Updated the Bash fixes patch to -7.</para>

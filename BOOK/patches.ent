@@ -64,9 +64,9 @@
 <!ENTITY perl-gcc42_fix-patch-md5 "cd84d28231ea7f23d7e619d9304cc741">
 <!ENTITY perl-gcc42_fix-patch-size "4 KB">
 
-<!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-3.patch">
-<!ENTITY readline-fixes-patch-md5 "b57d689d7a06156e4341c2432d7d5456">
-<!ENTITY readline-fixes-patch-size "16 KB">
+<!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-4.patch">
+<!ENTITY readline-fixes-patch-md5 "14ae1c3f3ff7223656f874bcf36e6f19">
+<!ENTITY readline-fixes-patch-size "20 KB">
 
 <!ENTITY shadow-sysroot_hacks-patch "shadow-&shadow-version;-sysroot_hacks-1.patch">
 <!ENTITY shadow-sysroot_hacks-patch-md5 "0d3f26660202e435e95c71dcea6e9613">
