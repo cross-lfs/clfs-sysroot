@@ -37,7 +37,17 @@
 -->
 
     <listitem>
-      <para>Janurary 21, 20008</para>
+      <para>December 16, 20008</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Chris] - Corrected man-pages installation. Closes ticket
+          #187.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>January 21, 20008</para>
       <itemizedlist>
         <listitem>
           <para>[jciccone] - Updated the Bash fixes patch to -7.</para>
