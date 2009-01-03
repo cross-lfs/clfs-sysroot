@@ -64,15 +64,6 @@
     </varlistentry>
 
     <varlistentry>
-      <term>GCC Cross Search Paths Patch - <token>&gcc-cross_search-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&gcc-cross_search-patch;"/></para>
-        <para>MD5 sum: <literal>&gcc-cross_search-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>GCC Posix Patch - <token>&gcc-posix-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink

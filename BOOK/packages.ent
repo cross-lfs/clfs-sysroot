@@ -47,16 +47,16 @@
 <!ENTITY bzip2-md5 "3c15a0c8d1d3ee1c46a1634d00617b1a">
 <!ENTITY bzip2-home "http://www.bzip.org">
 
-<!ENTITY clfs-bootscripts-version "1.1-pre4">
-<!ENTITY clfs-bootscripts-size "24 KB">
+<!ENTITY clfs-bootscripts-version "1.2-pre2">
+<!ENTITY clfs-bootscripts-size "40 KB">
 <!ENTITY clfs-bootscripts-url "&packages-root;bootscripts-cross-lfs-&clfs-bootscripts-version;.tar.bz2">
-<!ENTITY clfs-bootscripts-md5 "e95be0a75dbfbd6d3659e029e41ff151">
+<!ENTITY clfs-bootscripts-md5 "1a6285179bf9ee1e1b20a30c0c871b7e">
 <!ENTITY clfs-bootscripts-home " ">
 
-<!ENTITY coreutils-version "6.9">
-<!ENTITY coreutils-size "5,272 KB">
-<!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.bz2">
-<!ENTITY coreutils-md5 "c9607d8495f16e98906e7ed2d9751a06">
+<!ENTITY coreutils-version "6.12">
+<!ENTITY coreutils-size "8,808 KB">
+<!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.gz">
+<!ENTITY coreutils-md5 "2ca9ac69823dbd567b905a9e9f53c4f6">
 <!ENTITY coreutils-home "&gnu-software;coreutils">
 
 <!ENTITY diffutils-version "2.8.7">
@@ -65,46 +65,47 @@
 <!ENTITY diffutils-md5 "18d6587cb915e7aa110a5d463d6ed156">
 <!ENTITY diffutils-home "&gnu-software;diffutils">
 
-<!ENTITY e2fsprogs-version "1.40.2">
-<!ENTITY e2fsprogs-size "3,880 KB">
+<!ENTITY e2fsprogs-version "1.41.3">
+<!ENTITY e2fsprogs-size "4,276 KB">
 <!ENTITY e2fsprogs-url "&sourceforge;e2fsprogs/e2fsprogs-&e2fsprogs-version;.tar.gz">
-<!ENTITY e2fsprogs-md5 "130ce559a0f311ea2bc04a47b4982d0a">
+<!ENTITY e2fsprogs-md5 "b21d26fc46c584021dc9c444933ee1c2">
 <!ENTITY e2fsprogs-home "http://e2fsprogs.sourceforge.net">
 
-<!ENTITY file-version "4.21">
-<!ENTITY file-size "544 KB">
-<!ENTITY file-url "ftp://ftp.gw.com/mirrors/pub/unix/file/file-&file-version;.tar.gz">
-<!ENTITY file-md5 "9e3503116f4269a1be70220ee2234b0e">
+<!ENTITY file-version "4.26">
+<!ENTITY file-size "571 KB">
+<!-- <!ENTITY file-url "ftp://ftp.astron.com/pub/file/file-&file-version;.tar.gz"> -->
+<!ENTITY file-url "&packages-root;file-&file-version;.tar.gz">
+<!ENTITY file-md5 "74cd5466416136da30a4e69f74dbc7a0">
 <!ENTITY file-home "http://www.darwinsys.com/file">
 
-<!ENTITY findutils-version "4.2.31">
-<!ENTITY findutils-size "1,300 KB">
+<!ENTITY findutils-version "4.4.0">
+<!ENTITY findutils-size "1,988 KB">
 <!ENTITY findutils-url "&gnu;findutils/findutils-&findutils-version;.tar.gz">
-<!ENTITY findutils-md5 "a0e31a0f18a49709bf5a449867c8049a">
+<!ENTITY findutils-md5 "49e769ac4382fae6f104f99d54d0a112">
 <!ENTITY findutils-home "&gnu-software;findutils">
 
-<!ENTITY flex-version "2.5.33">
-<!ENTITY flex-size "680 KB">
+<!ENTITY flex-version "2.5.35">
+<!ENTITY flex-size "1,232 KB">
 <!ENTITY flex-url "&sourceforge;flex/flex-&flex-version;.tar.bz2">
-<!ENTITY flex-md5 "343374a00b38d9e39d1158b71af37150">
+<!ENTITY flex-md5 "10714e50cea54dc7a227e3eddcd44d57">
 <!ENTITY flex-home "http://flex.sourceforge.net">
 
-<!ENTITY gawk-version "3.1.5">
-<!ENTITY gawk-size "1,716 KB">
+<!ENTITY gawk-version "3.1.6">
+<!ENTITY gawk-size "1,824 KB">
 <!ENTITY gawk-url "&gnu;gawk/gawk-&gawk-version;.tar.bz2">
-<!ENTITY gawk-md5 "5703f72d0eea1d463f735aad8222655f">
+<!ENTITY gawk-md5 "c9926c0bc8c177cb9579708ce67f0d75">
 <!ENTITY gawk-home "&gnu-software;gawk">
 
-<!ENTITY gcc-version "4.2.1">
-<!ENTITY gcc-size "43,080 KB">
+<!ENTITY gcc-version "4.3.2">
+<!ENTITY gcc-size "57,648 KB">
 <!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;/gcc-&gcc-version;.tar.bz2">
-<!ENTITY gcc-md5 "cba410e6ff70f7d7f4be7a0267707fd0">
+<!ENTITY gcc-md5 "5dfac5da961ecd5f227c3175859a486d">
 <!ENTITY gcc-home "http://gcc.gnu.org">
 
-<!ENTITY gettext-version "0.16.1">
-<!ENTITY gettext-size "8,356 KB">
+<!ENTITY gettext-version "0.17">
+<!ENTITY gettext-size "11,388 KB">
 <!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.gz">
-<!ENTITY gettext-md5 "3d9ad24301c6d6b17ec30704a13fe127">
+<!ENTITY gettext-md5 "58a2bc6d39c0ba57823034d55d65d606">
 <!ENTITY gettext-home "&gnu-software;gettext">
 
 <!ENTITY glibc-version "2.6.1">
@@ -138,16 +139,16 @@
 <!ENTITY gzip-md5 "b5bac2d21840ae077e0217bc5e4845b1">
 <!ENTITY gzip-home "http://www.gzip.org">
 
-<!ENTITY iana-etc-version "2.20">
-<!ENTITY iana-etc-size "1892KB">
+<!ENTITY iana-etc-version "2.30">
+<!ENTITY iana-etc-size "208 KB">
 <!ENTITY iana-etc-url "http://www.sethwklein.net/projects/iana-etc/downloads/iana-etc-&iana-etc-version;.tar.bz2">
-<!ENTITY iana-etc-md5 "51d584b7b6115528c21e8ea32250f2b1">
+<!ENTITY iana-etc-md5 "3ba3afb1d1b261383d247f46cb135ee8">
 <!ENTITY iana-etc-home "http://www.sethwklein.net/projects/iana-etc">
 
-<!ENTITY inetutils-version "1.5">
-<!ENTITY inetutils-size "1364 KB">
+<!ENTITY inetutils-version "1.6">
+<!ENTITY inetutils-size "1,644 KB">
 <!ENTITY inetutils-url "&gnu;inetutils/inetutils-&inetutils-version;.tar.gz">
-<!ENTITY inetutils-md5 "9e0f1ac040de3168ea785f44e42d585e">
+<!ENTITY inetutils-md5 "23cc24bc77751bf77d50a07a7395f9b3">
 <!ENTITY inetutils-home "&gnu-software;inetutils">
 
 <!ENTITY iproute2-version "2.6.19-061214">
@@ -156,16 +157,16 @@
 <!ENTITY iproute2-md5 "a8fbe5f37e2db79b34f817d43d4cbf8d">
 <!ENTITY iproute2-home "http://linux-net.osdl.org/index.php/Iproute2">
 
-<!ENTITY kbd-version "1.13">
-<!ENTITY kbd-size "625 KB">
-<!ENTITY kbd-url "http://ftp.altlinux.com/pub/people/legion/kbd/kbd-&kbd-version;.tar.bz2">
-<!ENTITY kbd-md5 "2639fdfe2412b29cbf6936d7db91cee3">
+<!ENTITY kbd-version "1.15">
+<!ENTITY kbd-size "1,296 KB">
+<!ENTITY kbd-url "http://ftp.altlinux.com/pub/people/legion/kbd/kbd-&kbd-version;.tar.gz">
+<!ENTITY kbd-md5 "ba3fd20e6c79e58422c3cc6b28718939">
 <!ENTITY kbd-home " ">
 
-<!ENTITY less-version "406">
-<!ENTITY less-size "288 KB">
+<!ENTITY less-version "418">
+<!ENTITY less-size "300 KB">
 <!ENTITY less-url "http://www.greenwoodsoftware.com/less/less-&less-version;.tar.gz">
-<!ENTITY less-md5 "c6062663b5be92dfcdfd6300ba0811e4">
+<!ENTITY less-md5 "b5864d76c54ddf4627fd57ab333c88b4">
 <!ENTITY less-home "http://www.greenwoodsoftware.com/less">
 
 <!ENTITY libtool-version "1.5.24">
