@@ -40,6 +40,63 @@
       <para>Janurary 03, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Binutils to 2.19.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Glibc to 2.8.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated IPRoute2 to 2.6.26.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Libtool to 2.2.6a.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated the Kernel to 2.6.28.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated M4 to 1.4.12.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Man to 1.6f.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Man-Pages to 3.15.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Removed Mktemp.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Module-Init-Tools to 3.5.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated NCurses to 5.7.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Perl to 5.10.0.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated PSMisc to 22.6.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Shadow to 4.1.2.2.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Tar to 1.21.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Texinfo to 4.13a.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Udev to 135.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Util-Linux-NG to 2.14.1.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Vim to 7.2.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Less to 418.</para>
         </listitem>
         <listitem>
