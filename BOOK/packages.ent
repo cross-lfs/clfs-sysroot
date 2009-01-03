@@ -266,7 +266,7 @@
 
 <!ENTITY shadow-version "4.1.2.2">
 <!ENTITY shadow-size "1,664 KB">
-<!ENTITY shadow-url "ftp://ftp.pld.org.pl/software/shadow/shadow-&shadow-version;.tar.bz2">
+<!ENTITY shadow-url "ftp://pkg-shadow.alioth.debian.org/pub/pkg-shadow/shadow-&shadow-version;.tar.bz2">
 <!ENTITY shadow-md5 "3d26d990d4c3add1b7f8387eec1d1fde">
 <!ENTITY shadow-home "http://pkg-shadow.alioth.debian.org">
 
