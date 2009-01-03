@@ -13,10 +13,6 @@
   <sect2 role="installation">
     <title>Installation of Groff</title>
 
-    <note><para>You only need to install <package>groff</package> if your host
-    has a version of <package>groff</package> older then
-    <package>groff-&groff-version;</package> installed.</para></note>
-
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../../final-system/common/groff.xml"
     xpointer="xpointer(//*[@os='a'])"/>
