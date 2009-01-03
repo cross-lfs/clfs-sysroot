@@ -1,0 +1,676 @@
+Submitted By: Joe Ciccone <jciccone@gmail.com>
+Date: 2006-11-24
+Initial Package Version: 4.0.18.1
+	Rediffed Against 4.1.2.2 by Joe Ciccone on 2009-01-03
+Origin: Joe Ciccone
+Upstream Status: None
+Description: Changes the hardcoded /etc to the value of the --sysconfdir
+             parameter passed to configure. Allows the utilities to be run
+             as a user other then root and properly modify the passwd and group
+             files for the target system.
+
+diff -Naur shadow-4.1.2.2.orig/contrib/Makefile.in shadow-4.1.2.2/contrib/Makefile.in
+--- shadow-4.1.2.2.orig/contrib/Makefile.in	2008-11-22 19:10:51.000000000 -0500
++++ shadow-4.1.2.2/contrib/Makefile.in	2009-01-03 16:35:58.976432977 -0500
+@@ -184,6 +184,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ EXTRA_DIST = README adduser.c adduser-old.c adduser.sh adduser2.sh \
+diff -Naur shadow-4.1.2.2.orig/doc/Makefile.in shadow-4.1.2.2/doc/Makefile.in
+--- shadow-4.1.2.2.orig/doc/Makefile.in	2008-11-22 19:10:51.000000000 -0500
++++ shadow-4.1.2.2/doc/Makefile.in	2009-01-03 16:35:59.023099983 -0500
+@@ -184,6 +184,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ EXTRA_DIST = HOWTO README.limits \
+diff -Naur shadow-4.1.2.2.orig/etc/Makefile.in shadow-4.1.2.2/etc/Makefile.in
+--- shadow-4.1.2.2.orig/etc/Makefile.in	2008-11-22 19:10:51.000000000 -0500
++++ shadow-4.1.2.2/etc/Makefile.in	2009-01-03 16:35:59.069766134 -0500
+@@ -209,6 +209,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ sysconf_DATA = login.defs
+diff -Naur shadow-4.1.2.2.orig/etc/pam.d/Makefile.in shadow-4.1.2.2/etc/pam.d/Makefile.in
+--- shadow-4.1.2.2.orig/etc/pam.d/Makefile.in	2008-11-22 19:10:51.000000000 -0500
++++ shadow-4.1.2.2/etc/pam.d/Makefile.in	2009-01-03 16:35:59.109766243 -0500
+@@ -194,6 +194,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ pamd_files = \
+diff -Naur shadow-4.1.2.2.orig/lib/commonio.c shadow-4.1.2.2/lib/commonio.c
+--- shadow-4.1.2.2.orig/lib/commonio.c	2008-11-22 18:11:15.000000000 -0500
++++ shadow-4.1.2.2/lib/commonio.c	2009-01-03 16:24:11.160122816 -0500
+@@ -183,14 +183,6 @@
+ 	if (!fp)
+ 		return NULL;
+ 
+-#ifdef HAVE_FCHOWN
+-	if (fchown (fileno (fp), sb->st_uid, sb->st_gid))
+-		goto fail;
+-#else
+-	if (chown (name, sb->st_mode))
+-		goto fail;
+-#endif
+-
+ #ifdef HAVE_FCHMOD
+ 	if (fchmod (fileno (fp), sb->st_mode & 0664))
+ 		goto fail;
+@@ -749,7 +741,7 @@
+ 		 * Default permissions for new [g]shadow files.
+ 		 * (passwd and group always exist...)
+ 		 */
+-		sb.st_mode = 0400;
++		sb.st_mode = 0600;
+ 		sb.st_uid = 0;
+ 		sb.st_gid = 0;
+ 	}
+diff -Naur shadow-4.1.2.2.orig/lib/defines.h shadow-4.1.2.2/lib/defines.h
+--- shadow-4.1.2.2.orig/lib/defines.h	2008-11-22 18:11:15.000000000 -0500
++++ shadow-4.1.2.2/lib/defines.h	2009-01-03 16:24:48.968136556 -0500
+@@ -265,20 +265,20 @@
+ 	(strncpy((A), (B), sizeof(A) - 1), (A)[sizeof(A) - 1] = '\0')
+ 
+ #ifndef PASSWD_FILE
+-#define PASSWD_FILE "/etc/passwd"
++#define PASSWD_FILE SYSCONFDIR"/passwd"
+ #endif
+ 
+ #ifndef GROUP_FILE
+-#define GROUP_FILE "/etc/group"
++#define GROUP_FILE SYSCONFDIR"/group"
+ #endif
+ 
+ #ifndef SHADOW_FILE
+-#define SHADOW_FILE "/etc/shadow"
++#define SHADOW_FILE SYSCONFDIR"/shadow"
+ #endif
+ 
+ #ifdef SHADOWGRP
+ #ifndef SGROUP_FILE
+-#define SGROUP_FILE "/etc/gshadow"
++#define SGROUP_FILE SYSCONFDIR"/gshadow"
+ #endif
+ #endif
+ 
+diff -Naur shadow-4.1.2.2.orig/lib/getdef.c shadow-4.1.2.2/lib/getdef.c
+--- shadow-4.1.2.2.orig/lib/getdef.c	2008-11-22 18:11:15.000000000 -0500
++++ shadow-4.1.2.2/lib/getdef.c	2009-01-03 16:25:10.736499890 -0500
+@@ -127,7 +127,7 @@
+ };
+ 
+ #ifndef LOGINDEFS
+-#define LOGINDEFS "/etc/login.defs"
++#define LOGINDEFS SYSCONFDIR"/login.defs"
+ #endif
+ 
+ static char def_fname[] = LOGINDEFS;	/* login config defs file       */
+diff -Naur shadow-4.1.2.2.orig/lib/gshadow_.h shadow-4.1.2.2/lib/gshadow_.h
+--- shadow-4.1.2.2.orig/lib/gshadow_.h	2008-11-22 18:11:15.000000000 -0500
++++ shadow-4.1.2.2/lib/gshadow_.h	2009-01-03 16:25:26.133167409 -0500
+@@ -71,5 +71,5 @@
+ int putsgent ();
+ #endif
+ 
+-#define	GSHADOW	"/etc/gshadow"
++#define	GSHADOW	SYSCONFDIR"/gshadow"
+ #endif				/* ifndef _H_GSHADOW */
+diff -Naur shadow-4.1.2.2.orig/lib/Makefile.am shadow-4.1.2.2/lib/Makefile.am
+--- shadow-4.1.2.2.orig/lib/Makefile.am	2008-11-22 18:11:15.000000000 -0500
++++ shadow-4.1.2.2/lib/Makefile.am	2009-01-03 16:21:23.733191690 -0500
+@@ -2,6 +2,7 @@
+ AUTOMAKE_OPTIONS = 1.0 foreign
+ 
+ DEFS = 
++AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\"
+ 
+ noinst_LTLIBRARIES = libshadow.la
+ 
+diff -Naur shadow-4.1.2.2.orig/lib/Makefile.in shadow-4.1.2.2/lib/Makefile.in
+--- shadow-4.1.2.2.orig/lib/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/lib/Makefile.in	2009-01-03 16:35:59.163099536 -0500
+@@ -206,9 +206,11 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = 1.0 foreign
++AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\"
+ noinst_LTLIBRARIES = libshadow.la
+ libshadow_la_LDFLAGS = -version-info 0:0:0
+ libshadow_la_SOURCES = \
+diff -Naur shadow-4.1.2.2.orig/lib/port.h shadow-4.1.2.2/lib/port.h
+--- shadow-4.1.2.2.orig/lib/port.h	2008-11-22 18:11:15.000000000 -0500
++++ shadow-4.1.2.2/lib/port.h	2009-01-03 16:25:44.029827945 -0500
+@@ -52,7 +52,7 @@
+  * PORT_DAY - Day of the week to a bit value (0 = Sunday).
+  */
+ 
+-#define	PORTS	"/etc/porttime"
++#define	PORTS	SYSCONFDIR"/porttime"
+ #define	PORT_IDS	64
+ #define	PORT_TTY	64
+ #define	PORT_TIMES	24
+diff -Naur shadow-4.1.2.2.orig/libmisc/limits.c shadow-4.1.2.2/libmisc/limits.c
+--- shadow-4.1.2.2.orig/libmisc/limits.c	2008-11-22 18:11:08.000000000 -0500
++++ shadow-4.1.2.2/libmisc/limits.c	2009-01-03 16:26:45.504180328 -0500
+@@ -54,7 +54,7 @@
+ #endif
+ #ifdef LIMITS
+ #ifndef LIMITS_FILE
+-#define LIMITS_FILE "/etc/limits"
++#define LIMITS_FILE SYSCONFDIR"/limits"
+ #endif
+ #define LOGIN_ERROR_RLIMIT	1
+ #define LOGIN_ERROR_LOGIN	2
+diff -Naur shadow-4.1.2.2.orig/libmisc/Makefile.am shadow-4.1.2.2/libmisc/Makefile.am
+--- shadow-4.1.2.2.orig/libmisc/Makefile.am	2008-11-22 18:11:08.000000000 -0500
++++ shadow-4.1.2.2/libmisc/Makefile.am	2009-01-03 16:26:26.072172852 -0500
+@@ -1,6 +1,8 @@
+ 
+ EXTRA_DIST = .indent.pro xgetXXbyYY.c
+ 
++AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\"
++
+ INCLUDES = -I$(top_srcdir)/lib
+ 
+ noinst_LIBRARIES = libmisc.a
+diff -Naur shadow-4.1.2.2.orig/libmisc/Makefile.in shadow-4.1.2.2/libmisc/Makefile.in
+--- shadow-4.1.2.2.orig/libmisc/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/libmisc/Makefile.in	2009-01-03 16:35:59.229766152 -0500
+@@ -223,9 +223,11 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ EXTRA_DIST = .indent.pro xgetXXbyYY.c
++AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\"
+ INCLUDES = -I$(top_srcdir)/lib
+ noinst_LIBRARIES = libmisc.a
+ libmisc_a_SOURCES = \
+diff -Naur shadow-4.1.2.2.orig/Makefile.in shadow-4.1.2.2/Makefile.in
+--- shadow-4.1.2.2.orig/Makefile.in	2008-11-22 19:10:53.000000000 -0500
++++ shadow-4.1.2.2/Makefile.in	2009-01-03 16:36:00.209975513 -0500
+@@ -209,6 +209,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ EXTRA_DIST = NEWS README TODO shadow.spec.in
+diff -Naur shadow-4.1.2.2.orig/man/cs/Makefile.in shadow-4.1.2.2/man/cs/Makefile.in
+--- shadow-4.1.2.2.orig/man/cs/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/cs/Makefile.in	2009-01-03 16:35:59.329766138 -0500
+@@ -188,6 +188,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/man/de/Makefile.in shadow-4.1.2.2/man/de/Makefile.in
+--- shadow-4.1.2.2.orig/man/de/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/de/Makefile.in	2009-01-03 16:35:59.376642280 -0500
+@@ -190,6 +190,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/man/es/Makefile.in shadow-4.1.2.2/man/es/Makefile.in
+--- shadow-4.1.2.2.orig/man/es/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/es/Makefile.in	2009-01-03 16:35:59.416642409 -0500
+@@ -188,6 +188,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/man/fi/Makefile.in shadow-4.1.2.2/man/fi/Makefile.in
+--- shadow-4.1.2.2.orig/man/fi/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/fi/Makefile.in	2009-01-03 16:35:59.456642085 -0500
+@@ -185,6 +185,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/man/fr/Makefile.in shadow-4.1.2.2/man/fr/Makefile.in
+--- shadow-4.1.2.2.orig/man/fr/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/fr/Makefile.in	2009-01-03 16:35:59.503309047 -0500
+@@ -192,6 +192,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = chage.1 chfn.1 chpasswd.8 chsh.1 expiry.1 faillog.5 \
+diff -Naur shadow-4.1.2.2.orig/man/hu/Makefile.in shadow-4.1.2.2/man/hu/Makefile.in
+--- shadow-4.1.2.2.orig/man/hu/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/hu/Makefile.in	2009-01-03 16:35:59.546642165 -0500
+@@ -188,6 +188,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/man/id/Makefile.in shadow-4.1.2.2/man/id/Makefile.in
+--- shadow-4.1.2.2.orig/man/id/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/id/Makefile.in	2009-01-03 16:35:59.586642269 -0500
+@@ -186,6 +186,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/man/it/Makefile.in shadow-4.1.2.2/man/it/Makefile.in
+--- shadow-4.1.2.2.orig/man/it/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/it/Makefile.in	2009-01-03 16:35:59.636642408 -0500
+@@ -192,6 +192,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = chage.1 chfn.1 chpasswd.8 chsh.1 expiry.1 faillog.5 \
+diff -Naur shadow-4.1.2.2.orig/man/ja/Makefile.in shadow-4.1.2.2/man/ja/Makefile.in
+--- shadow-4.1.2.2.orig/man/ja/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/ja/Makefile.in	2009-01-03 16:35:59.679975526 -0500
+@@ -189,6 +189,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = chage.1 chfn.1 chpasswd.8 chsh.1 expiry.1 faillog.5 \
+diff -Naur shadow-4.1.2.2.orig/man/ko/Makefile.in shadow-4.1.2.2/man/ko/Makefile.in
+--- shadow-4.1.2.2.orig/man/ko/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/ko/Makefile.in	2009-01-03 16:35:59.719975591 -0500
+@@ -188,6 +188,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/man/Makefile.in shadow-4.1.2.2/man/Makefile.in
+--- shadow-4.1.2.2.orig/man/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/Makefile.in	2009-01-03 16:35:59.286433011 -0500
+@@ -204,6 +204,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ @USE_NLS_FALSE@SUBDIRS = 
+diff -Naur shadow-4.1.2.2.orig/man/pl/Makefile.in shadow-4.1.2.2/man/pl/Makefile.in
+--- shadow-4.1.2.2.orig/man/pl/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/pl/Makefile.in	2009-01-03 16:35:59.766642065 -0500
+@@ -191,6 +191,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = chage.1 chfn.1 chgpasswd.8 chpasswd.8 chsh.1 expiry.1 \
+diff -Naur shadow-4.1.2.2.orig/man/pt_BR/Makefile.in shadow-4.1.2.2/man/pt_BR/Makefile.in
+--- shadow-4.1.2.2.orig/man/pt_BR/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/pt_BR/Makefile.in	2009-01-03 16:35:59.809975610 -0500
+@@ -188,6 +188,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/man/ru/Makefile.in shadow-4.1.2.2/man/ru/Makefile.in
+--- shadow-4.1.2.2.orig/man/ru/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/ru/Makefile.in	2009-01-03 16:35:59.856642153 -0500
+@@ -192,6 +192,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = $(man_nopam) chage.1 chfn.1 chgpasswd.8 chpasswd.8 chsh.1 \
+diff -Naur shadow-4.1.2.2.orig/man/sv/Makefile.in shadow-4.1.2.2/man/sv/Makefile.in
+--- shadow-4.1.2.2.orig/man/sv/Makefile.in	2008-11-22 19:10:52.000000000 -0500
++++ shadow-4.1.2.2/man/sv/Makefile.in	2009-01-03 16:35:59.906642194 -0500
+@@ -192,6 +192,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = chage.1 chfn.1 chgpasswd.8 chpasswd.8 chsh.1 expiry.1 \
+diff -Naur shadow-4.1.2.2.orig/man/tr/Makefile.in shadow-4.1.2.2/man/tr/Makefile.in
+--- shadow-4.1.2.2.orig/man/tr/Makefile.in	2008-11-22 19:10:53.000000000 -0500
++++ shadow-4.1.2.2/man/tr/Makefile.in	2009-01-03 16:35:59.949975473 -0500
+@@ -188,6 +188,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/man/zh_CN/Makefile.in shadow-4.1.2.2/man/zh_CN/Makefile.in
+--- shadow-4.1.2.2.orig/man/zh_CN/Makefile.in	2008-11-22 19:10:53.000000000 -0500
++++ shadow-4.1.2.2/man/zh_CN/Makefile.in	2009-01-03 16:35:59.989975456 -0500
+@@ -190,6 +190,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/man/zh_TW/Makefile.in shadow-4.1.2.2/man/zh_TW/Makefile.in
+--- shadow-4.1.2.2.orig/man/zh_TW/Makefile.in	2008-11-22 19:10:53.000000000 -0500
++++ shadow-4.1.2.2/man/zh_TW/Makefile.in	2009-01-03 16:36:00.033308778 -0500
+@@ -190,6 +190,7 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+diff -Naur shadow-4.1.2.2.orig/src/chage.c shadow-4.1.2.2/src/chage.c
+--- shadow-4.1.2.2.orig/src/chage.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/chage.c	2009-01-03 16:29:00.446477258 -0500
+@@ -759,7 +759,7 @@
+ 
+ 	ruid = getuid ();
+ 	rgid = getgid ();
+-	amroot = (ruid == 0);
++	amroot = 1; /* (ruid == 0); */
+ #ifdef WITH_SELINUX
+ 	if (amroot && (is_selinux_enabled () > 0)) {
+ 		amroot = (selinux_check_passwd_access (PASSWD__ROOTOK) == 0);
+diff -Naur shadow-4.1.2.2.orig/src/chsh.c shadow-4.1.2.2/src/chsh.c
+--- shadow-4.1.2.2.orig/src/chsh.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/chsh.c	2009-01-03 16:29:34.126477989 -0500
+@@ -55,7 +55,7 @@
+ #include "pam_defs.h"
+ #endif
+ #ifndef SHELLS_FILE
+-#define SHELLS_FILE "/etc/shells"
++#define SHELLS_FILE SYSCONFDIR"/shells"
+ #endif
+ /*
+  * Global variables
+@@ -440,7 +440,7 @@
+ 	/*
+ 	 * This command behaves different for root and non-root users.
+ 	 */
+-	amroot = getuid () == 0;
++	amroot = 1; /* getuid () == 0; */
+ 
+ 	/*
+ 	 * Get the program name. The program name is used as a prefix to
+diff -Naur shadow-4.1.2.2.orig/src/gpasswd.c shadow-4.1.2.2/src/gpasswd.c
+--- shadow-4.1.2.2.orig/src/gpasswd.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/gpasswd.c	2009-01-03 16:30:45.080269910 -0500
+@@ -81,7 +81,7 @@
+ /* The UID of the caller */
+ static unsigned long bywho = -1;
+ /* Indicate if gpasswd was called by root */
+-#define amroot	(0 == bywho)
++#define amroot	1 /* (0 == bywho) */
+ 
+ /* The number of retries for th user to provide and repeat a new password */
+ #ifndef	RETRIES
+@@ -966,6 +966,7 @@
+ 	 * output, etc.
+ 	 */
+       output:
++/*
+ 	if (setuid (0) != 0) {
+ 		fputs (_("Cannot change ID to root.\n"), stderr);
+ 		SYSLOG ((LOG_ERR, "can't setuid(0)"));
+@@ -976,6 +977,7 @@
+ 		closelog ();
+ 		fail_exit (1);
+ 	}
++*/
+ 	pwd_init ();
+ 
+ 	open_files ();
+diff -Naur shadow-4.1.2.2.orig/src/login_nopam.c shadow-4.1.2.2/src/login_nopam.c
+--- shadow-4.1.2.2.orig/src/login_nopam.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/login_nopam.c	2009-01-03 16:31:03.632276734 -0500
+@@ -59,7 +59,7 @@
+ 
+  /* Path name of the access control file. */
+ #ifndef	TABLE
+-#define TABLE	"/etc/login.access"
++#define TABLE	SYSCONFDIR"/login.access"
+ #endif
+ 
+ /* Delimiters for fields and for lists of users, ttys or hosts. */
+diff -Naur shadow-4.1.2.2.orig/src/logoutd.c shadow-4.1.2.2/src/logoutd.c
+--- shadow-4.1.2.2.orig/src/logoutd.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/logoutd.c	2009-01-03 16:31:27.006497488 -0500
+@@ -50,7 +50,7 @@
+ #endif
+ 
+ #ifndef HUP_MESG_FILE
+-#define HUP_MESG_FILE "/etc/logoutd.mesg"
++#define HUP_MESG_FILE SYSCONFDIR"/logoutd.mesg"
+ #endif
+ 
+ #if HAVE_UTMPX_H
+diff -Naur shadow-4.1.2.2.orig/src/Makefile.am shadow-4.1.2.2/src/Makefile.am
+--- shadow-4.1.2.2.orig/src/Makefile.am	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/Makefile.am	2009-01-03 16:28:27.703358175 -0500
+@@ -3,7 +3,7 @@
+ 	.indent.pro
+ 
+ ubindir = ${prefix}/bin
+-usbindir = ${prefix}/sbin
++usbindir = ${prefix}/bin
+ suidperms = 4755
+ 
+ INCLUDES = \
+@@ -53,7 +53,7 @@
+ LDADD          = $(INTLLIBS) \
+ 		 $(top_builddir)/libmisc/libmisc.a \
+ 		 $(top_builddir)/lib/libshadow.la
+-AM_CPPFLAGS    = -DLOCALEDIR=\"$(datadir)/locale\"
++AM_CPPFLAGS    = -DSYSCONFDIR=\"$(sysconfdir)\" -DLOCALEDIR=\"$(datadir)/locale\" -DSG=\"`echo sg | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`\" -DVIGR=\"`echo vigr | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`\"
+ 
+ chage_LDADD    = $(LDADD) $(LIBPAM) $(LIBAUDIT) $(LIBSELINUX)
+ chfn_LDADD     = $(LDADD) $(LIBPAM) $(LIBSELINUX) $(LIBCRYPT) $(LIBSKEY) $(LIBMD)
+@@ -91,11 +91,11 @@
+ 
+ install-am: all-am
+ 	$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+-	ln -sf newgrp	$(DESTDIR)$(ubindir)/sg
+-	ln -sf vipw	$(DESTDIR)$(usbindir)/vigr
++	ln -sf `echo newgrp | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'` $(DESTDIR)$(ubindir)/`echo sg | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`
++	ln -sf `echo vipw | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'` $(DESTDIR)$(usbindir)/`echo vigr | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`
+ 	for i in $(suidbins); do \
+-		chmod -f $(suidperms) $(DESTDIR)$(bindir)/$$i; \
++		chmod -f 4755 $(DESTDIR)$(bindir)/`echo $$i | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+ 	done
+ 	for i in $(suidubins); do \
+-		chmod -f $(suidperms) $(DESTDIR)$(ubindir)/$$i; \
++		chmod -f 4755 $(DESTDIR)$(ubindir)/`echo $$i | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+ 	done
+diff -Naur shadow-4.1.2.2.orig/src/Makefile.in shadow-4.1.2.2/src/Makefile.in
+--- shadow-4.1.2.2.orig/src/Makefile.in	2008-11-22 19:10:53.000000000 -0500
++++ shadow-4.1.2.2/src/Makefile.in	2009-01-03 16:36:00.163099745 -0500
+@@ -371,13 +371,14 @@
+ srcdir = @srcdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ EXTRA_DIST = \
+ 	.indent.pro
+ 
+ ubindir = ${prefix}/bin
+-usbindir = ${prefix}/sbin
++usbindir = ${prefix}/bin
+ suidperms = 4755
+ INCLUDES = \
+ 	-I${top_srcdir}/lib \
+@@ -389,7 +390,7 @@
+ 		 $(top_builddir)/libmisc/libmisc.a \
+ 		 $(top_builddir)/lib/libshadow.la
+ 
+-AM_CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\"
++AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\" -DLOCALEDIR=\"$(datadir)/locale\" -DSG=\"`echo sg | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`\" -DVIGR=\"`echo vigr | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`\"
+ chage_LDADD = $(LDADD) $(LIBPAM) $(LIBAUDIT) $(LIBSELINUX)
+ chfn_LDADD = $(LDADD) $(LIBPAM) $(LIBSELINUX) $(LIBCRYPT) $(LIBSKEY) $(LIBMD)
+ chgpasswd_LDADD = $(LDADD) $(LIBPAM) $(LIBSELINUX) $(LIBCRYPT)
+@@ -931,13 +932,13 @@
+ 
+ install-am: all-am
+ 	$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+-	ln -sf newgrp	$(DESTDIR)$(ubindir)/sg
+-	ln -sf vipw	$(DESTDIR)$(usbindir)/vigr
++	ln -sf `echo newgrp | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'` $(DESTDIR)$(ubindir)/`echo sg | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`
++	ln -sf `echo vipw | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'` $(DESTDIR)$(usbindir)/`echo vigr | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`
+ 	for i in $(suidbins); do \
+-		chmod -f $(suidperms) $(DESTDIR)$(bindir)/$$i; \
++		chmod -f 4755 $(DESTDIR)$(bindir)/`echo $$i | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+ 	done
+ 	for i in $(suidubins); do \
+-		chmod -f $(suidperms) $(DESTDIR)$(ubindir)/$$i; \
++		chmod -f 4755 $(DESTDIR)$(ubindir)/`echo $$i | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+ 	done
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -Naur shadow-4.1.2.2.orig/src/newgrp.c shadow-4.1.2.2/src/newgrp.c
+--- shadow-4.1.2.2.orig/src/newgrp.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/newgrp.c	2009-01-03 16:31:58.550641551 -0500
+@@ -270,7 +270,7 @@
+ 		if (child < 0) {
+ 			/* error in fork() */
+ 			fprintf (stderr, _("%s: failure forking: %s\n"),
+-				 is_newgrp ? "newgrp" : "sg", strerror (errno));
++				 is_newgrp ? "newgrp" : SG, strerror (errno));
+ #ifdef WITH_AUDIT
+ 			if (group) {
+ 				snprintf (audit_buf, sizeof(audit_buf),
+@@ -387,7 +387,7 @@
+ 	 */
+ 	Prog = Basename (argv[0]);
+ 	is_newgrp = (strcmp (Prog, "newgrp") == 0);
+-	OPENLOG (is_newgrp ? "newgrp" : "sg");
++	OPENLOG (is_newgrp ? "newgrp" : SG);
+ 	gid = getgid ();
+ 	argc--;
+ 	argv++;
+diff -Naur shadow-4.1.2.2.orig/src/passwd.c shadow-4.1.2.2/src/passwd.c
+--- shadow-4.1.2.2.orig/src/passwd.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/passwd.c	2009-01-03 16:32:39.916453154 -0500
+@@ -717,7 +717,7 @@
+ 	 * The program behaves differently when executed by root than when
+ 	 * executed by a normal user.
+ 	 */
+-	amroot = (getuid () == 0);
++	amroot = 1; /* (getuid () == 0); */
+ 
+ 	/*
+ 	 * Get the program name. The program name is used as a prefix to
+@@ -998,12 +998,14 @@
+ 		exit (E_SUCCESS);
+ 	}
+ #endif				/* USE_PAM */
++/*
+ 	if (setuid (0)) {
+ 		fputs (_("Cannot change ID to root.\n"), stderr);
+ 		SYSLOG ((LOG_ERR, "can't setuid(0)"));
+ 		closelog ();
+ 		exit (E_NOPERM);
+ 	}
++*/
+ 	if (spw_file_present ())
+ 		update_shadow ();
+ 	else
+diff -Naur shadow-4.1.2.2.orig/src/suauth.c shadow-4.1.2.2/src/suauth.c
+--- shadow-4.1.2.2.orig/src/suauth.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/suauth.c	2009-01-03 16:32:55.693118219 -0500
+@@ -40,7 +40,7 @@
+ #include "prototypes.h"
+ 
+ #ifndef SUAUTHFILE
+-#define SUAUTHFILE "/etc/suauth"
++#define SUAUTHFILE SYSCONFDIR"/suauth"
+ #endif
+ 
+ #define	NOACTION	0
+diff -Naur shadow-4.1.2.2.orig/src/useradd.c shadow-4.1.2.2/src/useradd.c
+--- shadow-4.1.2.2.orig/src/useradd.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/useradd.c	2009-01-03 16:33:52.903758217 -0500
+@@ -64,11 +64,11 @@
+ #include "shadowio.h"
+ 
+ #ifndef SKEL_DIR
+-#define SKEL_DIR "/etc/skel"
++#define SKEL_DIR SYSCONFDIR"/skel"
+ #endif
+ #ifndef USER_DEFAULTS_FILE
+-#define USER_DEFAULTS_FILE "/etc/default/useradd"
+-#define NEW_USER_FILE "/etc/default/nuaddXXXXXX"
++#define USER_DEFAULTS_FILE SYSCONFDIR"/default/useradd"
++#define NEW_USER_FILE SYSCONFDIR"/default/nuaddXXXXXX"
+ #endif
+ /*
+  * Needed for MkLinux DR1/2/2.1 - J.
+diff -Naur shadow-4.1.2.2.orig/src/vipw.c shadow-4.1.2.2/src/vipw.c
+--- shadow-4.1.2.2.orig/src/vipw.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/vipw.c	2009-01-03 16:35:01.086439030 -0500
+@@ -257,7 +257,7 @@
+ 	textdomain (PACKAGE);
+ 
+ 	progname = ((a = strrchr (*argv, '/')) ? a + 1 : *argv);
+-	do_vipw = (strcmp (progname, "vigr") != 0);
++	do_vipw = (strcmp (progname, VIGR) != 0);
+ 
+ 	{
+ 		/*
