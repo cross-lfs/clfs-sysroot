@@ -144,7 +144,7 @@ EOF</userinput></screen>
     <title>Additional groups you may want to add</title>
 
     <varlistentry>
-      <term><literal>adm:x:&gid-adm;16:root,adm,daemon</literal></term>
+      <term><literal>adm:x:&gid-adm;:root,adm,daemon</literal></term>
       <listitem>
         <para>All users in this group are allowed to do administrative tasks</para>
       </listitem>
