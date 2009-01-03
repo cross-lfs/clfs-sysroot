@@ -4,17 +4,17 @@
 
 <!-- Note: For empty *-home entities use " " not "" -->
 
-<!ENTITY autoconf-version "2.61">
-<!ENTITY autoconf-size "1,024 KB">
+<!ENTITY autoconf-version "2.63">
+<!ENTITY autoconf-size "1,172 KB">
 <!ENTITY autoconf-url "&gnu;autoconf/autoconf-&autoconf-version;.tar.bz2">
-<!ENTITY autoconf-md5 "36d3fe706ad0950f1be10c46a429efe0">
+<!ENTITY autoconf-md5 "7565809ed801bb5726da0631ceab3699">
 <!ENTITY autoconf-home "&gnu-software;autoconf">
 
-<!ENTITY automake-version "1.10">
+<!ENTITY automake-version "1.10.2">
 <!ENTITY automake-version2 "1.10">
-<!ENTITY automake-size "878 KB">
+<!ENTITY automake-size "914 KB">
 <!ENTITY automake-url "&gnu;automake/automake-&automake-version;.tar.bz2">
-<!ENTITY automake-md5 "0e2e0f757f9e1e89b66033905860fded">
+<!ENTITY automake-md5 "1498208ab1c8393dcbd9afb7d06df6d5">
 <!ENTITY automake-home "&gnu-software;automake">
 
 <!ENTITY bash-version "3.2">
