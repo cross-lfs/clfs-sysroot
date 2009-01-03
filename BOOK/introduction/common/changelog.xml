@@ -40,6 +40,12 @@
       <para>Janurary 03, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Bison to 2.4.1.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated BZip2 to 1.0.5.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Autoconf to 2.63.</para>
         <listitem>
         <listitem>
