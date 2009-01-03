@@ -4,49 +4,38 @@
 
 <!-- Start of Common Patches -->
 
-<!ENTITY bash-fixes-patch "bash-&bash-version;-fixes-7.patch">
-<!ENTITY bash-fixes-patch-md5 "41646ab52a642e50b45ff2d50209fcdc">
-<!ENTITY bash-fixes-patch-size "136 KB">
+<!ENTITY bash-fixes-patch "bash-&bash-version;-fixes-9.patch">
+<!ENTITY bash-fixes-patch-md5 "f95ef1f0cce20d865f05a48f31b152ad">
+<!ENTITY bash-fixes-patch-size "420 KB">
 
 <!ENTITY binutils-posix-patch "binutils-&binutils-version;-posix-1.patch">
 <!ENTITY binutils-posix-patch-md5 "f2020cb369c2facbfd8987fa2263f31f">
 <!ENTITY binutils-posix-patch-size "4 KB">
 
-<!ENTITY coreutils-suppress-patch "coreutils-&coreutils-version;-suppress_uptime_kill_su-1.patch">
-<!ENTITY coreutils-suppress-patch-md5 "8bc938ec7210fff3885b37b1339dca45">
-<!ENTITY coreutils-suppress-patch-size "12 KB">
- 
 <!ENTITY coreutils-uname-patch "coreutils-&coreutils-version;-uname-1.patch">
-<!ENTITY coreutils-uname-patch-md5 "865d271bec9039f45a3be0ada21edae0">
+<!ENTITY coreutils-uname-patch-md5 "d299f910668ab8650e8ecbb6cdc2d5b1">
 <!ENTITY coreutils-uname-patch-size "8 KB">
-
-<!ENTITY gawk-segfault-patch "gawk-&gawk-version;-segfault_fix-1.patch">
-<!ENTITY gawk-segfault-patch-md5 "7679530d88bf3eb56c42eb6aba342ddb">
-<!ENTITY gawk-segfault-patch-size "1.3 KB">
 
 <!ENTITY gcc-posix-patch "gcc-&gcc-version;-posix-1.patch">
 <!ENTITY gcc-posix-patch-md5 "04c70ab253e9a1bfe242e1e5f37a51dd">
 <!ENTITY gcc-posix-patch-size "16 KB">
 
 <!ENTITY glibc-cross_hacks-patch "glibc-&glibc-version;-cross_hacks-1.patch">
-<!ENTITY glibc-cross_hacks-patch-md5 "3cb265835d19613137896a8e841c4a98">
+<!ENTITY glibc-cross_hacks-patch-md5 "fe8f5cadeae466f9762f911a5521f702">
 <!ENTITY glibc-cross_hacks-patch-size "20 KB">
 
 <!ENTITY glibc-libgcc_eh-patch "glibc-&glibc-version;-libgcc_eh-1.patch">
-<!ENTITY glibc-libgcc_eh-patch-md5 "06b164f0b144064a6aa0d6eed0d04fab">
+<!ENTITY glibc-libgcc_eh-patch-md5 "02bbf6bc29e34c4fc92fb478fddd43dd">
 <!ENTITY glibc-libgcc_eh-patch-size "8 KB">
 
 <!ENTITY glibc-localedef_segfault-patch "glibc-&glibc-version;-localedef_segfault-1.patch">
-<!ENTITY glibc-localedef_segfault-patch-md5 "3ce6946b16e90a73d90ac701a5940709">
-<!ENTITY glibc-localedef_segfault-patch-size "1.9 KB">
+<!ENTITY glibc-localedef_segfault-patch-md5 "7f8d1687d78f18cc46db1531fb17f7fe">
+<!ENTITY glibc-localedef_segfault-patch-size "4 KB">
 
-<!ENTITY inetutils-man_pages-patch "inetutils-&inetutils-version;-no_server_man_pages-2.patch">
-<!ENTITY inetutils-man_pages-patch-md5 "b04f46e66c4b438f609565073590ffd5">
-<!ENTITY inetutils-man_pages-patch-size "8 KB">
 
-<!ENTITY mktemp-tempfile-patch "mktemp-&mktemp-version;-add_tempfile-3.patch">
-<!ENTITY mktemp-tempfile-patch-md5 "65d73faabe3f637ad79853b460d30a19">
-<!ENTITY mktemp-tempfile-patch-size "3.6 KB">
+<!ENTITY inetutils-man_pages-patch "inetutils-&inetutils-version;-no_server_man_pages-1.patch">
+<!ENTITY inetutils-man_pages-patch-md5 "ceddba1a8db7f18568a3832c11a69dff">
+<!ENTITY inetutils-man_pages-patch-size "4 KB">
 
 <!ENTITY ncurses-bashfix-patch "ncurses-&ncurses-version;-bash_fix-1.patch">
 <!ENTITY ncurses-bashfix-patch-md5 "c6f7f2ab0ebaf7721ebeb266641352db">
@@ -56,33 +45,17 @@
 <!ENTITY perl-cross_compile-patch-md5 "7bbb78618e2dd95987ad04c6c54a81c6">
 <!ENTITY perl-cross_compile-patch-size "140 KB">
 
-<!ENTITY perl-gcc42_fix-patch "perl-&perl-version;-gcc42_fix-1.patch">
-<!ENTITY perl-gcc42_fix-patch-md5 "cd84d28231ea7f23d7e619d9304cc741">
-<!ENTITY perl-gcc42_fix-patch-size "4 KB">
-
-<!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-4.patch">
-<!ENTITY readline-fixes-patch-md5 "14ae1c3f3ff7223656f874bcf36e6f19">
-<!ENTITY readline-fixes-patch-size "20 KB">
+<!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-5.patch">
+<!ENTITY readline-fixes-patch-md5 "353320fac0a48339f4eccec72591ae3b">
+<!ENTITY readline-fixes-patch-size "24 KB">
 
 <!ENTITY shadow-sysroot_hacks-patch "shadow-&shadow-version;-sysroot_hacks-1.patch">
 <!ENTITY shadow-sysroot_hacks-patch-md5 "0d3f26660202e435e95c71dcea6e9613">
 <!ENTITY shadow-sysroot_hacks-patch-size "16 KB">
 
-<!ENTITY shadow-fixes-patch "shadow-&shadow-version;-fixes-1.patch">
-<!ENTITY shadow-fixes-patch-md5 "76eb87cfbf566e2676403811bde10d7b">
-<!ENTITY shadow-fixes-patch-size "32 KB">
-
-<!ENTITY texinfo-tempfile_fix-patch "texinfo-&texinfo-version;-tempfile_fix-1.patch">
-<!ENTITY texinfo-tempfile_fix-patch-md5 "1c610a8132437653f705677321b0615b">
-<!ENTITY texinfo-tempfile_fix-patch-size "2.2 KB">
-
 <!ENTITY vim-cross_compile-patch "vim-&vim-version;-cross_compile-1.patch">
 <!ENTITY vim-cross_compile-patch-md5 "f8af7a628b58959914390783932c23bc">
 <!ENTITY vim-cross_compile-patch-size "28 KB">
-
-<!ENTITY vim-fixes-patch "vim-&vim-version;-fixes-3.patch">
-<!ENTITY vim-fixes-patch-md5 "7d09a01fa76010bf7b33ea7f7772b5f4">
-<!ENTITY vim-fixes-patch-size "180 KB">
 
 <!ENTITY zlib-fpic-patch "zlib-&zlib-version;-fPIC-1.patch">
 <!ENTITY zlib-fpic-patch-md5 "545d60b20bfde6f53023de44438cef59">
@@ -90,18 +63,24 @@
 
 <!-- Alpha Specific Patches -->
 
+<!--
 <!ENTITY glibc-sysdep_cancel-patch "glibc-&glibc-version;-sysdep_cancel-1.patch">
 <!ENTITY glibc-sysdep_cancel-patch-md5 "6b3f61df100c88e616b1e8aea81f98ce">
 <!ENTITY glibc-sysdep_cancel-patch-size "4 KB">
+-->
 
 <!-- ARM Specific Patches -->
 
+<!--
 <!ENTITY glibc-RTLD_SINGLE_THREAD_P-patch "glibc-&glibc-version;-RTLD_SINGLE_THREAD_P-1.patch">
 <!ENTITY glibc-RTLD_SINGLE_THREAD_P-patch-md5 "3bb0167752997d3ccf5e2b41595bd7b3">
 <!ENTITY glibc-RTLD_SINGLE_THREAD_P-patch-size "4 KB">
+-->
 
 <!-- PA-RISC Specific Patches -->
 
+<!--
 <!ENTITY glibc-hppa_nptl-patch "glibc-&glibc-version;-hppa_nptl-1.patch">
 <!ENTITY glibc-hppa_nptl-patch-md5 "fd059ea12d885bc3bfa18a39d9a4949f">
 <!ENTITY glibc-hppa_nptl-patch-size "4 KB">
+-->

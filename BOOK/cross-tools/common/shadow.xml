@@ -13,14 +13,6 @@
   <sect2 role="installation">
     <title>Installation of Shadow</title>
 
-    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-    href="../../final-system/common/shadow.xml"
-    xpointer="xpointer(//*[@os='p1'])"/>
-
-    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
-    href="../../final-system/common/shadow.xml"
-    xpointer="xpointer(//*[@os='p2'])"/>
-
     <para>The following patch changes the hard-coded <filename>/etc</filename>
     in the sources to whatever was passed to configure. It also allows the
     utilities to run as a user other then root:</para>

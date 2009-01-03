@@ -25,17 +25,12 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
-    <para os="p1">Prevent Coreutils from installing binaries that will be
-    installed by other packages:</para>
-
-<screen os="p2"><userinput>patch -Np1 -i ../&coreutils-suppress-patch;</userinput></screen>
-
-    <para os="p3">A known issue with the <command>uname</command> program from
+    <para os="p1">A known issue with the <command>uname</command> program from
     this package is that the <option>-p</option> switch always
     returns <computeroutput>unknown</computeroutput>. The following patch
     fixes this behavior for all architectures:</para>
 
-<screen os="p4"><userinput>patch -Np1 -i ../&coreutils-uname-patch;</userinput></screen>
+<screen os="p2"><userinput>patch -Np1 -i ../&coreutils-uname-patch;</userinput></screen>
 
     <para os="s1">The following command renames the internal implementation of
     futimens to gl_futimens as newer versions of Glibc provide an incompatible
