@@ -40,6 +40,10 @@
       <para>Janurary 03, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Convert from the old depreciated kernel headers
+          tarball to the headers included with the kernel.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Update Patches.</para>
         </listitem>
         <listitem>
