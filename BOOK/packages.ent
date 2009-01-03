@@ -236,7 +236,7 @@
 
 <!ENTITY perl-version "5.10.0">
 <!ENTITY perl-size "15,252 KB">
-<!ENTITY perl-url "http://ftp.funet.fi/pub/CPAN/src/perl-&perl-version;.tar.bz2">
+<!ENTITY perl-url "http://ftp.funet.fi/pub/CPAN/src/perl-&perl-version;.tar.gz">
 <!ENTITY perl-md5 "d2c39b002ebfd2c3c5dba589365c5a71">
 <!ENTITY perl-home "http://www.perl.com">
 
