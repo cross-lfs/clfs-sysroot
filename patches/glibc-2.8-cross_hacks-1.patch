@@ -210,7 +210,7 @@ diff -Naur glibc-2.8.orig/Makeconfig glibc-2.8/Makeconfig
  		  $(filter-out %frame-pointer,$(+cflags)) $(+gccwarn-c) \
  		  $(sysdep-CFLAGS) $(CFLAGS-$(suffix $@)) $(CFLAGS-$(<F)) \
  		  $(CFLAGS-$(@F))
-+override CFLAGS-native = -std=gnu99 $(default_cflags) $(+gccwarn-c) \
++override CFLAGS-native = -std=gnu99 $(gnu89-inline-CFLAGS) $(default_cflags) $(+gccwarn-c) \
 +			 $(CFLAGS-$(suffix $@)) $(CFLAGS-$(<F)) $(CFLAGS-$(@F))
  override CXXFLAGS = $(c++-sysincludes) \
  		    $(filter-out %frame-pointer,$(+cflags)) $(sysdep-CFLAGS) \
