@@ -25,21 +25,18 @@
   <sect2 role="installation">
     <title>Installation of Kbd</title>
 
-    <para os="s1">The following sed disables running the built conftests while
-    running configure:</para>
+    <para os="cc1">When Cross Compiling the configure script does not
+    run a select few tests, Set the values manually:</para>
 
-<screen os="s2"><userinput>cp configure{,.orig}
-sed -e "s@&amp;&amp; ./conftest@@" configure.orig &gt; configure</userinput></screen>
-
-    <para os="s3">The following sed removes -s from the install command which
-    will try to strip the installed files:</para>
-
-<screen os="s4"><userinput>cp src/Makefile.in{,.orig}
-sed -e "s/install -s/install/" src/Makefile.in.orig &gt; src/Makefile.in</userinput></screen>
+<screen os="cc1"><userinput>echo "ac_cv_func_setpgrp_void=yes" &gt; config.cache
+echo "ac_cv_func_malloc_0_nonnull=yes" &gt;&gt; config.cache
+echo "ac_cv_func_realloc_0_nonnull=yes" &gt;&gt; config.cache</userinput></screen>
 
     <para os="a">Prepare Kbd for compilation:</para>
 
-<screen os="b"><userinput>./configure --datadir=/lib/kbd</userinput></screen>
+<screen os="b"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
+    --prefix=/usr --datadir=/lib/kbd \
+    --cache-file=config.cache</userinput></screen>
 
     <variablelist os="c">
       <title>The meaning of the configure options:</title>
@@ -55,15 +52,9 @@ sed -e "s/install -s/install/" src/Makefile.in.orig &gt; src/Makefile.in</userin
 
     </variablelist>
 
-    <para os="s5">Configure detects the architecture of the host system. The
-    following sed changes this value to your target architecture.</para>
-
-<screen os="s6"><userinput>cp make_include{,.orig}
-sed "/^ARCH/s/=.*/=arm/" make_include.orig &gt; make_include</userinput></screen>
-
     <para os="d">Compile the package:</para>
 
-<screen os="e"><userinput>make CC="${CC}"</userinput></screen>
+<screen os="e"><userinput>make</userinput></screen>
 
     <para os="f">Install the package:</para>
 
@@ -74,7 +65,7 @@ sed "/^ARCH/s/=.*/=arm/" make_include.orig &gt; make_include</userinput></screen
     class="directory">/usr</filename> may not be available during the early
     stages of booting, those binaries need to be on the root partition:</para>
 
-<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/{kbd_mode,openvt,setfont} ${CLFS}/bin</userinput></screen>
+<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/{kbd_mode,loadkeys,openvt,setfont} ${CLFS}/bin</userinput></screen>
 
   </sect2>
 
