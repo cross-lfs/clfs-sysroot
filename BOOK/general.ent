@@ -22,7 +22,7 @@
 <!ENTITY lfs-root "http://www.linuxfromscratch.org/">
 <!ENTITY clfs-root "http://cross-lfs.org/">
 <!ENTITY clfs-wiki "http://trac.cross-lfs.org/">
-<!ENTITY blfs-root "&lfs-root;blfs/">
+<!ENTITY cblfs-root "http://cblfs.cross-lfs.org/">
 <!ENTITY faq-root "&clfs-wiki;wiki/faq">
 <!ENTITY hints-root "&lfs-root;hints/downloads/files/">
 <!ENTITY hints-index "&lfs-root;hints/list.html">

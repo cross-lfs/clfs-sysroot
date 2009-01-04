@@ -30,14 +30,6 @@
 <screen os="d"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
     --prefix=/usr --libexecdir=/usr/lib</userinput></screen>
 
-    <para os="e">The <command>configure</command> script does not detect the
-    following properly:</para>
-
-<screen os="f"><userinput>cat &gt;&gt; config.h &lt;&lt; "EOF"
-#define HAVE_LANGINFO_CODESET 1
-#define HAVE_LC_MESSAGES 1
-EOF</userinput></screen>
-
     <para os="g">Compile the package:</para>
 
 <screen os="h"><userinput>make</userinput></screen>

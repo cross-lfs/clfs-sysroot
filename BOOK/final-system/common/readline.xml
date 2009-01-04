@@ -56,20 +56,15 @@
 
 <screen os="g"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
-    <para os="h">Give Readline's dynamic libraries more appropriate
-    permissions:</para>
+    <para os="h">Now move the static libraries to a more appropriate location:</para>
 
-<screen os="i"><userinput>chmod -v 755 ${CLFS}/lib/lib{readline,history}.so*</userinput></screen>
+<screen os="i"><userinput>mv -v ${CLFS}/lib/lib{readline,history}.a ${CLFS}/usr/lib</userinput></screen>
 
-    <para os="j">Now move the static libraries to a more appropriate location:</para>
-
-<screen os="k"><userinput>mv -v ${CLFS}/lib/lib{readline,history}.a ${CLFS}/usr/lib</userinput></screen>
-
-    <para os="l">Next, remove the <filename class="extension">.so</filename>
+    <para os="j">Next, remove the <filename class="extension">.so</filename>
     files in <filename class="directory">/lib</filename> and relink them into
     <filename class="directory">/usr/lib</filename>.</para>
 
-<screen os="m"><userinput>rm -v ${CLFS}/lib/lib{readline,history}.so
+<screen os="k"><userinput>rm -v ${CLFS}/lib/lib{readline,history}.so
 ln -sfv ../../lib/libreadline.so.5 ${CLFS}/usr/lib/libreadline.so
 ln -sfv ../../lib/libhistory.so.5 ${CLFS}/usr/lib/libhistory.so</userinput></screen>
 

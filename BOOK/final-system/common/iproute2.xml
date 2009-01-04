@@ -33,40 +33,53 @@
     sed 's/0755 -s/0755/' ${dir}/Makefile.orig &gt; ${dir}/Makefile
 done</userinput></screen>
 
-    <para os="s3">The <command>arpd</command> binary included in this package is
+    <para os="cb1">The <command>arpd</command> binary included in this package is
     dependent on Berkeley DB.  Because <command>arpd</command> is not a
     very common requirement on a base Linux system, remove the dependency
     on Berkeley DB by applying the <command>sed</command> command below.
     If the <command>arpd</command> binary is needed, instructions for
-    compiling Berkeley DB can be found in the BLFS Book at <ulink
-    url="&blfs-root;view/svn/server/databases.html#db"/>.</para>
+    compiling Berkeley DB can be found in CBLFS at <ulink
+    url="&cblfs-root;index.php/Berkeley_DB"/>.</para>
 
 <screen os="s4"><userinput>cp misc/Makefile{,.orig}
 sed '/^TARGETS/s@arpd@@g' misc/Makefile.orig &gt; misc/Makefile</userinput></screen>
 
     <para os="a">Compile the package:</para>
 
-<screen os="b"><userinput>make CC="${CC}" SBINDIR=/sbin</userinput></screen>
+<screen os="b"><userinput>make DESTDIR=${CLFS} CC="${CC}" \
+    DOCDIR=/usr/share/doc/iproute2 \
+    MANDIR=/usr/share/man
+</userinput></screen>
 
     <variablelist os="c">
       <title>The meaning of the make option:</title>
 
       <varlistentry>
-        <term><parameter>SBINDIR=/sbin</parameter></term>
+        <term><parameter>DESTDIR=/</parameter></term>
         <listitem>
-          <para>This ensures that the IPRoute2 binaries will install into
+          <para>This option overrides the default DESTDIR of /usr, so that
+          that the IPRoute2 binaries will be installed into
           <filename class="directory">/sbin</filename>. This is the correct
           location according to the FHS, because some of the IPRoute2 binaries
           are used by the CLFS-Bootscripts package.</para>
         </listitem>
       </varlistentry>
+
+      <varlistentry>
+        <term><parameter>DOCDIR=/usr/share/doc/iproute2 MANDIR=/usr/share/man</parameter></term>
+        <listitem>
+          <para>The DESTDIR=/ parameter would cause documentation to be
+          installed into /share/doc and /share/man. These options ensure
+          the docs are installed to the correct locations.</para>
+        </listitem>
+      </varlistentry>
     </variablelist>
+          
+    <para os="d">Install the package:</para>
 
-    <para os="d">This package does not come with a test suite.</para>
-
-    <para os="e">Install the package:</para>
-
-<screen os="f"><userinput>make DESTDIR=${CLFS} SBINDIR=/sbin install</userinput></screen>
+<screen os="e"><userinput>make DESTDIR=${CLFS}  \
+    DOCDIR=/usr/share/doc/iproute2 \
+    MANDIR=/usr/share/man install</userinput></screen>
 
   </sect2>
 
