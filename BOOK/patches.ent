@@ -16,6 +16,10 @@
 <!ENTITY coreutils-uname-patch-md5 "d299f910668ab8650e8ecbb6cdc2d5b1">
 <!ENTITY coreutils-uname-patch-size "8 KB">
 
+<!ENTITY gcc-branch_update-patch "gcc-&gcc-version;-branch_update-1.patch">
+<!ENTITY gcc-branch_update-patch-md5 "e9e4236fa439ece67f02ab8377ee5811">
+<!ENTITY gcc-branch_update-patch-size "812 KB">
+
 <!ENTITY gcc-posix-patch "gcc-&gcc-version;-posix-1.patch">
 <!ENTITY gcc-posix-patch-md5 "04c70ab253e9a1bfe242e1e5f37a51dd">
 <!ENTITY gcc-posix-patch-size "16 KB">
