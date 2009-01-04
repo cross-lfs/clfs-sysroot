@@ -43,9 +43,9 @@
     xpointer="xpointer(//*[@os='e'])"/>
 
 <screen os="ae"><userinput>../gcc-&gcc-version;/configure --prefix=${CLFS}/cross-tools \
-    --host=${CLFS_HOST} --target=${CLFS_TARGET} --disable-multilib \
-    --with-sysroot=${CLFS} --disable-nls --enable-shared \
-    --enable-languages=c,c++ --enable-__cxa_atexit \
+    --build=${CLFS_HOST} --host=${CLFS_HOST} --target=${CLFS_TARGET} \
+    --disable-multilib --with-sysroot=${CLFS} --disable-nls \
+    --enable-shared --enable-languages=c,c++ --enable-__cxa_atexit \
     --enable-c99 --enable-long-long --enable-threads=posix</userinput></screen>
 
     <variablelist os="af">
@@ -96,7 +96,8 @@
     href="gcc-static.xml"
     xpointer="xpointer(//*[@os='ag'])"/>
 
-<screen os="ah"><userinput>make</userinput></screen>
+<screen os="ah"><userinput>make AS_FOR_TARGET="${CLFS_TARGET}-as" \
+    LD_FOR_TARGET="${CLFS_TARGET}-ld"</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="gcc-static.xml"

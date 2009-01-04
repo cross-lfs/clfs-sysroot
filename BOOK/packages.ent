@@ -123,6 +123,12 @@
 <!ENTITY glibc-ports-md5 "1ba63c16e405a1b4de3dc23f2f93ec49">
 <!ENTITY glibc-ports-home " ">
 
+<!ENTITY gmp-version "4.2.4">
+<!ENTITY gmp-size "1,676 KB">
+<!ENTITY gmp-url "&gnu;gmp/gmp-&gmp-version;.tar.bz2">
+<!ENTITY gmp-md5 "fc1e3b3a2a5038d4d74138d0b9cf8dbe">
+<!ENTITY gmp-home "http://gmplib.org/">
+
 <!ENTITY grep-version "2.5.3">
 <!ENTITY grep-size "608 KB">
 <!ENTITY grep-url "&gnu;grep/grep-&grep-version;.tar.bz2">
@@ -214,6 +220,12 @@
 <!ENTITY man-pages-url "&kernel;linux/docs/manpages/Archive/man-pages-&man-pages-version;.tar.bz2">
 <!ENTITY man-pages-md5 "334f3ba3d903ff3dd12e33595b114961">
 <!ENTITY man-pages-home "http://www.win.tue.nl/~aeb/linux/man">
+
+<!ENTITY mpfr-version "2.3.2">
+<!ENTITY mpfr-size "968 KB">
+<!ENTITY mpfr-url "http://www.mpfr.org/mpfr-current/mpfr-&mpfr-version;.tar.bz2">
+<!ENTITY mpfr-md5 "527147c097874340cb9cee0579dacf3b">
+<!ENTITY mpfr-home "http://www.mpfr.org/">
 
 <!ENTITY module-init-tools-version "3.5">
 <!ENTITY module-init-tools-size "212 KB">
