@@ -42,10 +42,12 @@
     href="gcc-static.xml"
     xpointer="xpointer(//*[@os='e'])"/>
 
-<screen os="ae"><userinput>../gcc-&gcc-version;/configure --prefix=${CLFS}/cross-tools \
+<screen os="ae"><userinput>AR=ar LDFLAGS="-Wl,-rpath,${CLFS}/cross-tools/lib" \
+    ../gcc-&gcc-version;/configure --prefix=${CLFS}/cross-tools \
     --build=${CLFS_HOST} --host=${CLFS_HOST} --target=${CLFS_TARGET} \
     --disable-multilib --with-sysroot=${CLFS} --disable-nls \
     --enable-shared --enable-languages=c,c++ --enable-__cxa_atexit \
+    --with-mpfr=${CLFS}/cross-tools --with-gmp=${CLFS}/cross-tools \
     --enable-c99 --enable-long-long --enable-threads=posix</userinput></screen>
 
     <variablelist os="af">
