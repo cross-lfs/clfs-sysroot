@@ -32,7 +32,9 @@
 
     <para os="c">Compile the package:</para>
 
-<screen os="d"><userinput>make</userinput></screen>
+<screen os="d"><userinput>make -C tools/gnulib/lib
+make -C tools
+make</userinput></screen>
 
     <para os="e">Install the package:</para>
 
