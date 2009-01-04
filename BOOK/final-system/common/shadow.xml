@@ -41,8 +41,8 @@
     <para os="d">Prepare Shadow for compilation:</para>
 
 <screen os="e"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
-    --libdir=/lib --sysconfdir=/etc --enable-shared \
-    --without-libpam --without-audit --without-selinux \
+    --sysconfdir=/etc --without-libpam \
+    --without-audit --without-selinux \
     --cache-file=config.cache</userinput></screen>
 
 <para os="f">The meaning of the configure options:</para>
@@ -80,9 +80,11 @@
 
 <screen os="i"><userinput>cp src/Makefile{,.orig}
 sed 's/groups$(EXEEXT) //' src/Makefile.orig &gt; src/Makefile
-cp man/Makefile{,.orig}
-sed -e '/groups1.xml/d' \
-    -e 's/groups.1//' man/Makefile.orig &gt; man/Makefile</userinput></screen>
+for mkf in $(find man -name Makefile)
+do
+  cp ${mkf}{,.orig}
+  sed -e '/groups.1.xml/d' -e 's/groups.1 //' ${mkf}.orig &gt; ${mkf}
+done</userinput></screen>
 
     <para os="j">Compile the package:</para>
 
