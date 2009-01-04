@@ -27,11 +27,11 @@
 
     <para os="a">Compile the package:</para>
 
-<screen os="b"><userinput>make CPPFLAGS=</userinput></screen>
+<screen os="b"><userinput>make CPPFLAGS= lib64=lib m64=</userinput></screen>
 
     <para os="c">Install the package:</para>
 
-<screen os="d"><userinput>make DESTDIR=${CLFS} lib64=lib ldconfig= \
+<screen os="d"><userinput>make DESTDIR=${CLFS} lib64=lib m64= ldconfig= \
     install="install -D" install</userinput></screen>
 
     <variablelist os="e">
