@@ -25,44 +25,30 @@
   <sect2 role="installation">
     <title>Installation of Udev</title>
 
-    <para os="a">Compile the package:</para>
+    <para os="a">Prepare Udev for compilation:</para>
 
-<screen os="b"><userinput>make CROSS_COMPILE="${CLFS_TARGET}-" CC="${CC}" LD="${CC}" \
-    EXTRAS="extras/ata_id extras/cdrom_id extras/collect \
-    extras/edd_id extras/firmware extras/floppy extras/path_id extras/rule_generator \
-    extras/scsi_id extras/usb_id extras/volume_id" udevdir=/dev</userinput></screen>
+<screen os="b"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
+    --prefix=/usr --exec-prefix= \
+    --sysconfdir=/etc</userinput></screen>
 
-    <variablelist os="c">
-      <title>The meaning of the make parameter:</title>
+    <para os="c">Compile the package:</para>
 
-      <varlistentry>
-      <term><parameter>EXTRAS="extras/ata_id extras/cdrom_id extras/collect
-      extras/edd_id extras/firmware extras/floppy extras/path_id extras/rule_generator
-      extras/scsi_id extras/usb_id extras/volume_id"</parameter></term>
-        <listitem>
-          <para>This builds the helper applications that are used with
-          udev. The helper programs assist in correct handling of devices.</para>
-        </listitem>
-      </varlistentry>
+<screen os="d"><userinput>make</userinput></screen>
 
-    </variablelist>
+    <para os="e">Install the package:</para>
 
-    <para os="c">Install the package:</para>
+<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
-<screen os="d"><userinput>make DESTDIR="${CLFS}" \
-    EXTRAS="extras/ata_id extras/cdrom_id extras/collect \
-    extras/edd_id extras/firmware extras/floppy extras/path_id extras/rule_generator \
-    extras/scsi_id extras/usb_id extras/volume_id" udevdir=/dev install</userinput></screen>
-
-    <para os="g">Install the documentation:</para>
+    <para os="g">Install documentation:</para>
 
 <screen os="h"><userinput>install -v -m644 -D docs/writing_udev_rules/index.html \
     ${CLFS}/usr/share/doc/udev-&udev-version;/index.html</userinput></screen>
 
-    <para os="i">Create a directory for storing firmware that can be
-    loaded by <command>udev</command>:</para>
+    <para os="i">Create a directory for storing firmware that can be loaded by
+    <command>udev</command>:</para>
 
 <screen os="j"><userinput>install -dv ${CLFS}/lib/firmware</userinput></screen>
+
 
   </sect2>
 
