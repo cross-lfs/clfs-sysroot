@@ -32,7 +32,6 @@
 <!ENTITY glibc-localedef_segfault-patch-md5 "7f8d1687d78f18cc46db1531fb17f7fe">
 <!ENTITY glibc-localedef_segfault-patch-size "4 KB">
 
-
 <!ENTITY inetutils-man_pages-patch "inetutils-&inetutils-version;-no_server_man_pages-1.patch">
 <!ENTITY inetutils-man_pages-patch-md5 "ceddba1a8db7f18568a3832c11a69dff">
 <!ENTITY inetutils-man_pages-patch-size "4 KB">
@@ -71,11 +70,9 @@
 
 <!-- ARM Specific Patches -->
 
-<!--
-<!ENTITY glibc-RTLD_SINGLE_THREAD_P-patch "glibc-&glibc-version;-RTLD_SINGLE_THREAD_P-1.patch">
-<!ENTITY glibc-RTLD_SINGLE_THREAD_P-patch-md5 "3bb0167752997d3ccf5e2b41595bd7b3">
-<!ENTITY glibc-RTLD_SINGLE_THREAD_P-patch-size "4 KB">
--->
+<!ENTITY glibc-nptl_lowlevellock-patch "glibc-&glibc-version;-nptl_lowlevellock-1.patch">
+<!ENTITY glibc-nptl_lowlevellock-patch-md5 "0a428774cf459cf5fd23ff219390c141">
+<!ENTITY glibc-nptl-lowlevellock-patch-size "4 KB">
 
 <!-- PA-RISC Specific Patches -->
 

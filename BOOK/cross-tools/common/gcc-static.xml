@@ -43,10 +43,12 @@
     href="../../final-system/common/gcc.xml"
     xpointer="xpointer(//*[@os='e'])"/>
 
-<screen os="ae"><userinput>../gcc-&gcc-version;/configure --prefix=${CLFS}/cross-tools \
-    --host=${CLFS_HOST} --target=${CLFS_TARGET} --disable-multilib \
-    --with-sysroot=${CLFS} --disable-nls --disable-shared \
-    --enable-languages=c</userinput></screen>
+<screen os="ae"><userinput>AR=ar ../gcc-&gcc-version;/configure --prefix=${CLFS}/cross-tools \
+    --build=${CLFS_HOST} --host=${CLFS_HOST} --target=${CLFS_TARGET} \
+    --disable-multilib --with-sysroot=${CLFS} --disable-nls \
+    --without-headers --with-newlib --disable-decimal-float \
+    --disable-libgomp --disable-libmudflap --disable-libssp \
+    --disable-shared --disable-threads --enable-languages=c</userinput></screen>
 
     <variablelist os="af">
       <title>The meaning of the configure options:</title>
@@ -79,11 +81,11 @@
 
     <para os="ag">Continue with compiling the package:</para>
 
-<screen os="ah"><userinput>make all-gcc</userinput></screen>
+<screen os="ah"><userinput>make</userinput></screen>
 
     <para os="ai">Install the package:</para>
 
-<screen os="aj"><userinput>make install-gcc</userinput></screen>
+<screen os="aj"><userinput>make install</userinput></screen>
 
   </sect2>
 
