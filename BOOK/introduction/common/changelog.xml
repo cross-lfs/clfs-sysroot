@@ -40,6 +40,12 @@
       <para>Janurary 04, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Add NCurses Widec build.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Add GCC Branch Update Patch.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Add GMP and MPFR.</para>
         </listitem>
       </itemizedlist>
