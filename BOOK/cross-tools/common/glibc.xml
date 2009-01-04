@@ -72,7 +72,8 @@ cd ../glibc-build</userinput></screen>
     <filename>config.cache</filename> for Glibc to support NPTL:</para>
 
 <screen os="e"><userinput>echo "libc_cv_forced_unwind=yes" &gt; config.cache
-echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache</userinput></screen>
+echo "libc_cv_c_cleanup=yes" &gt;&gt; config.cache
+echo "libc_cv_gnu89_inline=yes" &gt;&gt; config.cache</userinput></screen>
 
     <para os="f">The following line needs to be added to
     <filename>configparms</filename> to adjust installation paths:</para>
