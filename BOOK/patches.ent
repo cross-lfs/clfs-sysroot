@@ -56,9 +56,9 @@
 <!ENTITY readline-fixes-patch-md5 "353320fac0a48339f4eccec72591ae3b">
 <!ENTITY readline-fixes-patch-size "24 KB">
 
-<!ENTITY shadow-sysroot_hacks-patch "shadow-&shadow-version;-sysroot_hacks-1.patch">
-<!ENTITY shadow-sysroot_hacks-patch-md5 "0d3f26660202e435e95c71dcea6e9613">
-<!ENTITY shadow-sysroot_hacks-patch-size "16 KB">
+<!ENTITY shadow-sysroot_hacks-patch "shadow-&shadow-version;-sysroot_hacks-2.patch">
+<!ENTITY shadow-sysroot_hacks-patch-md5 "cf5095a86c666728650e77f1cdc64874">
+<!ENTITY shadow-sysroot_hacks-patch-size "36 KB">
 
 <!ENTITY vim-cross_compile-patch "vim-&vim-version;-cross_compile-1.patch">
 <!ENTITY vim-cross_compile-patch-md5 "f8af7a628b58959914390783932c23bc">

@@ -1,17 +1,19 @@
 Submitted By: Joe Ciccone <jciccone@gmail.com>
 Date: 2006-11-24
 Initial Package Version: 4.0.18.1
-	Rediffed Against 4.1.2.2 by Joe Ciccone on 2009-01-03
+        Rediffed Against 4.1.2.2 by Joe Ciccone on 2009-01-03
 Origin: Joe Ciccone
 Upstream Status: None
 Description: Changes the hardcoded /etc to the value of the --sysconfdir
              parameter passed to configure. Allows the utilities to be run
              as a user other then root and properly modify the passwd and group
-             files for the target system.
+             files for the target system. This patch also disables the
+             calls that flushes the nscd cache. There is no point in flushing
+             the hosts cache db when it wasn't modified.
 
 diff -Naur shadow-4.1.2.2.orig/contrib/Makefile.in shadow-4.1.2.2/contrib/Makefile.in
 --- shadow-4.1.2.2.orig/contrib/Makefile.in	2008-11-22 19:10:51.000000000 -0500
-+++ shadow-4.1.2.2/contrib/Makefile.in	2009-01-03 16:35:58.976432977 -0500
++++ shadow-4.1.2.2/contrib/Makefile.in	2009-01-04 17:35:46.184121662 -0500
 @@ -184,6 +184,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -22,7 +24,7 @@ diff -Naur shadow-4.1.2.2.orig/contrib/Makefile.in shadow-4.1.2.2/contrib/Makefi
  EXTRA_DIST = README adduser.c adduser-old.c adduser.sh adduser2.sh \
 diff -Naur shadow-4.1.2.2.orig/doc/Makefile.in shadow-4.1.2.2/doc/Makefile.in
 --- shadow-4.1.2.2.orig/doc/Makefile.in	2008-11-22 19:10:51.000000000 -0500
-+++ shadow-4.1.2.2/doc/Makefile.in	2009-01-03 16:35:59.023099983 -0500
++++ shadow-4.1.2.2/doc/Makefile.in	2009-01-04 17:35:46.184121662 -0500
 @@ -184,6 +184,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -33,7 +35,7 @@ diff -Naur shadow-4.1.2.2.orig/doc/Makefile.in shadow-4.1.2.2/doc/Makefile.in
  EXTRA_DIST = HOWTO README.limits \
 diff -Naur shadow-4.1.2.2.orig/etc/Makefile.in shadow-4.1.2.2/etc/Makefile.in
 --- shadow-4.1.2.2.orig/etc/Makefile.in	2008-11-22 19:10:51.000000000 -0500
-+++ shadow-4.1.2.2/etc/Makefile.in	2009-01-03 16:35:59.069766134 -0500
++++ shadow-4.1.2.2/etc/Makefile.in	2009-01-04 17:35:46.187460880 -0500
 @@ -209,6 +209,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -44,7 +46,7 @@ diff -Naur shadow-4.1.2.2.orig/etc/Makefile.in shadow-4.1.2.2/etc/Makefile.in
  sysconf_DATA = login.defs
 diff -Naur shadow-4.1.2.2.orig/etc/pam.d/Makefile.in shadow-4.1.2.2/etc/pam.d/Makefile.in
 --- shadow-4.1.2.2.orig/etc/pam.d/Makefile.in	2008-11-22 19:10:51.000000000 -0500
-+++ shadow-4.1.2.2/etc/pam.d/Makefile.in	2009-01-03 16:35:59.109766243 -0500
++++ shadow-4.1.2.2/etc/pam.d/Makefile.in	2009-01-04 17:35:46.187460880 -0500
 @@ -194,6 +194,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -55,7 +57,7 @@ diff -Naur shadow-4.1.2.2.orig/etc/pam.d/Makefile.in shadow-4.1.2.2/etc/pam.d/Ma
  pamd_files = \
 diff -Naur shadow-4.1.2.2.orig/lib/commonio.c shadow-4.1.2.2/lib/commonio.c
 --- shadow-4.1.2.2.orig/lib/commonio.c	2008-11-22 18:11:15.000000000 -0500
-+++ shadow-4.1.2.2/lib/commonio.c	2009-01-03 16:24:11.160122816 -0500
++++ shadow-4.1.2.2/lib/commonio.c	2009-01-04 17:49:44.478189054 -0500
 @@ -183,14 +183,6 @@
  	if (!fp)
  		return NULL;
@@ -71,7 +73,20 @@ diff -Naur shadow-4.1.2.2.orig/lib/commonio.c shadow-4.1.2.2/lib/commonio.c
  #ifdef HAVE_FCHMOD
  	if (fchmod (fileno (fp), sb->st_mode & 0664))
  		goto fail;
-@@ -749,7 +741,7 @@
+@@ -353,9 +345,10 @@
+ 		if (lock_count == 0) {
+ 			/* Tell nscd when lock count goes to zero,
+ 			   if any of the files were changed.  */
++
+ 			if (nscd_need_reload) {
+-				nscd_flush_cache ("passwd");
+-				nscd_flush_cache ("group");
++//				nscd_flush_cache ("passwd");
++//				nscd_flush_cache ("group");
+ 				nscd_need_reload = 0;
+ 			}
+ #ifdef HAVE_LCKPWDF
+@@ -749,7 +742,7 @@
  		 * Default permissions for new [g]shadow files.
  		 * (passwd and group always exist...)
  		 */
@@ -82,7 +97,7 @@ diff -Naur shadow-4.1.2.2.orig/lib/commonio.c shadow-4.1.2.2/lib/commonio.c
  	}
 diff -Naur shadow-4.1.2.2.orig/lib/defines.h shadow-4.1.2.2/lib/defines.h
 --- shadow-4.1.2.2.orig/lib/defines.h	2008-11-22 18:11:15.000000000 -0500
-+++ shadow-4.1.2.2/lib/defines.h	2009-01-03 16:24:48.968136556 -0500
++++ shadow-4.1.2.2/lib/defines.h	2009-01-04 17:35:46.187460880 -0500
 @@ -265,20 +265,20 @@
  	(strncpy((A), (B), sizeof(A) - 1), (A)[sizeof(A) - 1] = '\0')
  
@@ -110,7 +125,7 @@ diff -Naur shadow-4.1.2.2.orig/lib/defines.h shadow-4.1.2.2/lib/defines.h
  
 diff -Naur shadow-4.1.2.2.orig/lib/getdef.c shadow-4.1.2.2/lib/getdef.c
 --- shadow-4.1.2.2.orig/lib/getdef.c	2008-11-22 18:11:15.000000000 -0500
-+++ shadow-4.1.2.2/lib/getdef.c	2009-01-03 16:25:10.736499890 -0500
++++ shadow-4.1.2.2/lib/getdef.c	2009-01-04 17:35:46.187460880 -0500
 @@ -127,7 +127,7 @@
  };
  
@@ -122,7 +137,7 @@ diff -Naur shadow-4.1.2.2.orig/lib/getdef.c shadow-4.1.2.2/lib/getdef.c
  static char def_fname[] = LOGINDEFS;	/* login config defs file       */
 diff -Naur shadow-4.1.2.2.orig/lib/gshadow_.h shadow-4.1.2.2/lib/gshadow_.h
 --- shadow-4.1.2.2.orig/lib/gshadow_.h	2008-11-22 18:11:15.000000000 -0500
-+++ shadow-4.1.2.2/lib/gshadow_.h	2009-01-03 16:25:26.133167409 -0500
++++ shadow-4.1.2.2/lib/gshadow_.h	2009-01-04 17:35:46.187460880 -0500
 @@ -71,5 +71,5 @@
  int putsgent ();
  #endif
@@ -132,7 +147,7 @@ diff -Naur shadow-4.1.2.2.orig/lib/gshadow_.h shadow-4.1.2.2/lib/gshadow_.h
  #endif				/* ifndef _H_GSHADOW */
 diff -Naur shadow-4.1.2.2.orig/lib/Makefile.am shadow-4.1.2.2/lib/Makefile.am
 --- shadow-4.1.2.2.orig/lib/Makefile.am	2008-11-22 18:11:15.000000000 -0500
-+++ shadow-4.1.2.2/lib/Makefile.am	2009-01-03 16:21:23.733191690 -0500
++++ shadow-4.1.2.2/lib/Makefile.am	2009-01-04 17:35:46.187460880 -0500
 @@ -2,6 +2,7 @@
  AUTOMAKE_OPTIONS = 1.0 foreign
  
@@ -143,7 +158,7 @@ diff -Naur shadow-4.1.2.2.orig/lib/Makefile.am shadow-4.1.2.2/lib/Makefile.am
  
 diff -Naur shadow-4.1.2.2.orig/lib/Makefile.in shadow-4.1.2.2/lib/Makefile.in
 --- shadow-4.1.2.2.orig/lib/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/lib/Makefile.in	2009-01-03 16:35:59.163099536 -0500
++++ shadow-4.1.2.2/lib/Makefile.in	2009-01-04 17:35:46.187460880 -0500
 @@ -206,9 +206,11 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -158,7 +173,7 @@ diff -Naur shadow-4.1.2.2.orig/lib/Makefile.in shadow-4.1.2.2/lib/Makefile.in
  libshadow_la_SOURCES = \
 diff -Naur shadow-4.1.2.2.orig/lib/port.h shadow-4.1.2.2/lib/port.h
 --- shadow-4.1.2.2.orig/lib/port.h	2008-11-22 18:11:15.000000000 -0500
-+++ shadow-4.1.2.2/lib/port.h	2009-01-03 16:25:44.029827945 -0500
++++ shadow-4.1.2.2/lib/port.h	2009-01-04 17:35:46.187460880 -0500
 @@ -52,7 +52,7 @@
   * PORT_DAY - Day of the week to a bit value (0 = Sunday).
   */
@@ -170,7 +185,7 @@ diff -Naur shadow-4.1.2.2.orig/lib/port.h shadow-4.1.2.2/lib/port.h
  #define	PORT_TIMES	24
 diff -Naur shadow-4.1.2.2.orig/libmisc/limits.c shadow-4.1.2.2/libmisc/limits.c
 --- shadow-4.1.2.2.orig/libmisc/limits.c	2008-11-22 18:11:08.000000000 -0500
-+++ shadow-4.1.2.2/libmisc/limits.c	2009-01-03 16:26:45.504180328 -0500
++++ shadow-4.1.2.2/libmisc/limits.c	2009-01-04 17:35:46.187460880 -0500
 @@ -54,7 +54,7 @@
  #endif
  #ifdef LIMITS
@@ -182,7 +197,7 @@ diff -Naur shadow-4.1.2.2.orig/libmisc/limits.c shadow-4.1.2.2/libmisc/limits.c
  #define LOGIN_ERROR_LOGIN	2
 diff -Naur shadow-4.1.2.2.orig/libmisc/Makefile.am shadow-4.1.2.2/libmisc/Makefile.am
 --- shadow-4.1.2.2.orig/libmisc/Makefile.am	2008-11-22 18:11:08.000000000 -0500
-+++ shadow-4.1.2.2/libmisc/Makefile.am	2009-01-03 16:26:26.072172852 -0500
++++ shadow-4.1.2.2/libmisc/Makefile.am	2009-01-04 17:35:46.187460880 -0500
 @@ -1,6 +1,8 @@
  
  EXTRA_DIST = .indent.pro xgetXXbyYY.c
@@ -194,7 +209,7 @@ diff -Naur shadow-4.1.2.2.orig/libmisc/Makefile.am shadow-4.1.2.2/libmisc/Makefi
  noinst_LIBRARIES = libmisc.a
 diff -Naur shadow-4.1.2.2.orig/libmisc/Makefile.in shadow-4.1.2.2/libmisc/Makefile.in
 --- shadow-4.1.2.2.orig/libmisc/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/libmisc/Makefile.in	2009-01-03 16:35:59.229766152 -0500
++++ shadow-4.1.2.2/libmisc/Makefile.in	2009-01-04 17:35:46.187460880 -0500
 @@ -223,9 +223,11 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -209,7 +224,7 @@ diff -Naur shadow-4.1.2.2.orig/libmisc/Makefile.in shadow-4.1.2.2/libmisc/Makefi
  libmisc_a_SOURCES = \
 diff -Naur shadow-4.1.2.2.orig/Makefile.in shadow-4.1.2.2/Makefile.in
 --- shadow-4.1.2.2.orig/Makefile.in	2008-11-22 19:10:53.000000000 -0500
-+++ shadow-4.1.2.2/Makefile.in	2009-01-03 16:36:00.209975513 -0500
++++ shadow-4.1.2.2/Makefile.in	2009-01-04 17:35:46.187460880 -0500
 @@ -209,6 +209,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -220,7 +235,7 @@ diff -Naur shadow-4.1.2.2.orig/Makefile.in shadow-4.1.2.2/Makefile.in
  EXTRA_DIST = NEWS README TODO shadow.spec.in
 diff -Naur shadow-4.1.2.2.orig/man/cs/Makefile.in shadow-4.1.2.2/man/cs/Makefile.in
 --- shadow-4.1.2.2.orig/man/cs/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/cs/Makefile.in	2009-01-03 16:35:59.329766138 -0500
++++ shadow-4.1.2.2/man/cs/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -188,6 +188,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -231,7 +246,7 @@ diff -Naur shadow-4.1.2.2.orig/man/cs/Makefile.in shadow-4.1.2.2/man/cs/Makefile
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/man/de/Makefile.in shadow-4.1.2.2/man/de/Makefile.in
 --- shadow-4.1.2.2.orig/man/de/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/de/Makefile.in	2009-01-03 16:35:59.376642280 -0500
++++ shadow-4.1.2.2/man/de/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -190,6 +190,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -242,7 +257,7 @@ diff -Naur shadow-4.1.2.2.orig/man/de/Makefile.in shadow-4.1.2.2/man/de/Makefile
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/man/es/Makefile.in shadow-4.1.2.2/man/es/Makefile.in
 --- shadow-4.1.2.2.orig/man/es/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/es/Makefile.in	2009-01-03 16:35:59.416642409 -0500
++++ shadow-4.1.2.2/man/es/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -188,6 +188,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -253,7 +268,7 @@ diff -Naur shadow-4.1.2.2.orig/man/es/Makefile.in shadow-4.1.2.2/man/es/Makefile
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/man/fi/Makefile.in shadow-4.1.2.2/man/fi/Makefile.in
 --- shadow-4.1.2.2.orig/man/fi/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/fi/Makefile.in	2009-01-03 16:35:59.456642085 -0500
++++ shadow-4.1.2.2/man/fi/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -185,6 +185,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -264,7 +279,7 @@ diff -Naur shadow-4.1.2.2.orig/man/fi/Makefile.in shadow-4.1.2.2/man/fi/Makefile
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/man/fr/Makefile.in shadow-4.1.2.2/man/fr/Makefile.in
 --- shadow-4.1.2.2.orig/man/fr/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/fr/Makefile.in	2009-01-03 16:35:59.503309047 -0500
++++ shadow-4.1.2.2/man/fr/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -192,6 +192,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -275,7 +290,7 @@ diff -Naur shadow-4.1.2.2.orig/man/fr/Makefile.in shadow-4.1.2.2/man/fr/Makefile
  man_MANS = chage.1 chfn.1 chpasswd.8 chsh.1 expiry.1 faillog.5 \
 diff -Naur shadow-4.1.2.2.orig/man/hu/Makefile.in shadow-4.1.2.2/man/hu/Makefile.in
 --- shadow-4.1.2.2.orig/man/hu/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/hu/Makefile.in	2009-01-03 16:35:59.546642165 -0500
++++ shadow-4.1.2.2/man/hu/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -188,6 +188,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -286,7 +301,7 @@ diff -Naur shadow-4.1.2.2.orig/man/hu/Makefile.in shadow-4.1.2.2/man/hu/Makefile
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/man/id/Makefile.in shadow-4.1.2.2/man/id/Makefile.in
 --- shadow-4.1.2.2.orig/man/id/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/id/Makefile.in	2009-01-03 16:35:59.586642269 -0500
++++ shadow-4.1.2.2/man/id/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -186,6 +186,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -297,7 +312,7 @@ diff -Naur shadow-4.1.2.2.orig/man/id/Makefile.in shadow-4.1.2.2/man/id/Makefile
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/man/it/Makefile.in shadow-4.1.2.2/man/it/Makefile.in
 --- shadow-4.1.2.2.orig/man/it/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/it/Makefile.in	2009-01-03 16:35:59.636642408 -0500
++++ shadow-4.1.2.2/man/it/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -192,6 +192,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -308,7 +323,7 @@ diff -Naur shadow-4.1.2.2.orig/man/it/Makefile.in shadow-4.1.2.2/man/it/Makefile
  man_MANS = chage.1 chfn.1 chpasswd.8 chsh.1 expiry.1 faillog.5 \
 diff -Naur shadow-4.1.2.2.orig/man/ja/Makefile.in shadow-4.1.2.2/man/ja/Makefile.in
 --- shadow-4.1.2.2.orig/man/ja/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/ja/Makefile.in	2009-01-03 16:35:59.679975526 -0500
++++ shadow-4.1.2.2/man/ja/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -189,6 +189,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -319,7 +334,7 @@ diff -Naur shadow-4.1.2.2.orig/man/ja/Makefile.in shadow-4.1.2.2/man/ja/Makefile
  man_MANS = chage.1 chfn.1 chpasswd.8 chsh.1 expiry.1 faillog.5 \
 diff -Naur shadow-4.1.2.2.orig/man/ko/Makefile.in shadow-4.1.2.2/man/ko/Makefile.in
 --- shadow-4.1.2.2.orig/man/ko/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/ko/Makefile.in	2009-01-03 16:35:59.719975591 -0500
++++ shadow-4.1.2.2/man/ko/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -188,6 +188,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -330,7 +345,7 @@ diff -Naur shadow-4.1.2.2.orig/man/ko/Makefile.in shadow-4.1.2.2/man/ko/Makefile
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/man/Makefile.in shadow-4.1.2.2/man/Makefile.in
 --- shadow-4.1.2.2.orig/man/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/Makefile.in	2009-01-03 16:35:59.286433011 -0500
++++ shadow-4.1.2.2/man/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -204,6 +204,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -341,7 +356,7 @@ diff -Naur shadow-4.1.2.2.orig/man/Makefile.in shadow-4.1.2.2/man/Makefile.in
  @USE_NLS_FALSE@SUBDIRS = 
 diff -Naur shadow-4.1.2.2.orig/man/pl/Makefile.in shadow-4.1.2.2/man/pl/Makefile.in
 --- shadow-4.1.2.2.orig/man/pl/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/pl/Makefile.in	2009-01-03 16:35:59.766642065 -0500
++++ shadow-4.1.2.2/man/pl/Makefile.in	2009-01-04 17:35:46.190976966 -0500
 @@ -191,6 +191,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -352,7 +367,7 @@ diff -Naur shadow-4.1.2.2.orig/man/pl/Makefile.in shadow-4.1.2.2/man/pl/Makefile
  man_MANS = chage.1 chfn.1 chgpasswd.8 chpasswd.8 chsh.1 expiry.1 \
 diff -Naur shadow-4.1.2.2.orig/man/pt_BR/Makefile.in shadow-4.1.2.2/man/pt_BR/Makefile.in
 --- shadow-4.1.2.2.orig/man/pt_BR/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/pt_BR/Makefile.in	2009-01-03 16:35:59.809975610 -0500
++++ shadow-4.1.2.2/man/pt_BR/Makefile.in	2009-01-04 17:35:46.194310377 -0500
 @@ -188,6 +188,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -363,7 +378,7 @@ diff -Naur shadow-4.1.2.2.orig/man/pt_BR/Makefile.in shadow-4.1.2.2/man/pt_BR/Ma
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/man/ru/Makefile.in shadow-4.1.2.2/man/ru/Makefile.in
 --- shadow-4.1.2.2.orig/man/ru/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/ru/Makefile.in	2009-01-03 16:35:59.856642153 -0500
++++ shadow-4.1.2.2/man/ru/Makefile.in	2009-01-04 17:35:46.194310377 -0500
 @@ -192,6 +192,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -374,7 +389,7 @@ diff -Naur shadow-4.1.2.2.orig/man/ru/Makefile.in shadow-4.1.2.2/man/ru/Makefile
  man_MANS = $(man_nopam) chage.1 chfn.1 chgpasswd.8 chpasswd.8 chsh.1 \
 diff -Naur shadow-4.1.2.2.orig/man/sv/Makefile.in shadow-4.1.2.2/man/sv/Makefile.in
 --- shadow-4.1.2.2.orig/man/sv/Makefile.in	2008-11-22 19:10:52.000000000 -0500
-+++ shadow-4.1.2.2/man/sv/Makefile.in	2009-01-03 16:35:59.906642194 -0500
++++ shadow-4.1.2.2/man/sv/Makefile.in	2009-01-04 17:35:46.197643570 -0500
 @@ -192,6 +192,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -385,7 +400,7 @@ diff -Naur shadow-4.1.2.2.orig/man/sv/Makefile.in shadow-4.1.2.2/man/sv/Makefile
  man_MANS = chage.1 chfn.1 chgpasswd.8 chpasswd.8 chsh.1 expiry.1 \
 diff -Naur shadow-4.1.2.2.orig/man/tr/Makefile.in shadow-4.1.2.2/man/tr/Makefile.in
 --- shadow-4.1.2.2.orig/man/tr/Makefile.in	2008-11-22 19:10:53.000000000 -0500
-+++ shadow-4.1.2.2/man/tr/Makefile.in	2009-01-03 16:35:59.949975473 -0500
++++ shadow-4.1.2.2/man/tr/Makefile.in	2009-01-04 17:35:46.197643570 -0500
 @@ -188,6 +188,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -396,7 +411,7 @@ diff -Naur shadow-4.1.2.2.orig/man/tr/Makefile.in shadow-4.1.2.2/man/tr/Makefile
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/man/zh_CN/Makefile.in shadow-4.1.2.2/man/zh_CN/Makefile.in
 --- shadow-4.1.2.2.orig/man/zh_CN/Makefile.in	2008-11-22 19:10:53.000000000 -0500
-+++ shadow-4.1.2.2/man/zh_CN/Makefile.in	2009-01-03 16:35:59.989975456 -0500
++++ shadow-4.1.2.2/man/zh_CN/Makefile.in	2009-01-04 17:35:46.197643570 -0500
 @@ -190,6 +190,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -407,7 +422,7 @@ diff -Naur shadow-4.1.2.2.orig/man/zh_CN/Makefile.in shadow-4.1.2.2/man/zh_CN/Ma
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/man/zh_TW/Makefile.in shadow-4.1.2.2/man/zh_TW/Makefile.in
 --- shadow-4.1.2.2.orig/man/zh_TW/Makefile.in	2008-11-22 19:10:53.000000000 -0500
-+++ shadow-4.1.2.2/man/zh_TW/Makefile.in	2009-01-03 16:36:00.033308778 -0500
++++ shadow-4.1.2.2/man/zh_TW/Makefile.in	2009-01-04 17:35:46.197643570 -0500
 @@ -190,6 +190,7 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -418,7 +433,7 @@ diff -Naur shadow-4.1.2.2.orig/man/zh_TW/Makefile.in shadow-4.1.2.2/man/zh_TW/Ma
  man_MANS = \
 diff -Naur shadow-4.1.2.2.orig/src/chage.c shadow-4.1.2.2/src/chage.c
 --- shadow-4.1.2.2.orig/src/chage.c	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/chage.c	2009-01-03 16:29:00.446477258 -0500
++++ shadow-4.1.2.2/src/chage.c	2009-01-04 17:35:46.197643570 -0500
 @@ -759,7 +759,7 @@
  
  	ruid = getuid ();
@@ -428,9 +443,45 @@ diff -Naur shadow-4.1.2.2.orig/src/chage.c shadow-4.1.2.2/src/chage.c
  #ifdef WITH_SELINUX
  	if (amroot && (is_selinux_enabled () > 0)) {
  		amroot = (selinux_check_passwd_access (PASSWD__ROOTOK) == 0);
+diff -Naur shadow-4.1.2.2.orig/src/chfn.c shadow-4.1.2.2/src/chfn.c
+--- shadow-4.1.2.2.orig/src/chfn.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/chfn.c	2009-01-04 17:36:38.497642038 -0500
+@@ -712,7 +712,7 @@
+ 
+ 	SYSLOG ((LOG_INFO, "changed user `%s' information", user));
+ 
+-	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("passwd");
+ 
+ #ifdef USE_PAM
+ 	pam_end (pamh, PAM_SUCCESS);
+diff -Naur shadow-4.1.2.2.orig/src/chgpasswd.c shadow-4.1.2.2/src/chgpasswd.c
+--- shadow-4.1.2.2.orig/src/chgpasswd.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/chgpasswd.c	2009-01-04 17:36:51.777440247 -0500
+@@ -487,7 +487,7 @@
+ 
+ 	close_files ();
+ 
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("group");
+ 
+ #ifdef USE_PAM
+ 	pam_end (pamh, PAM_SUCCESS);
+diff -Naur shadow-4.1.2.2.orig/src/chpasswd.c shadow-4.1.2.2/src/chpasswd.c
+--- shadow-4.1.2.2.orig/src/chpasswd.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/chpasswd.c	2009-01-04 17:37:03.177974182 -0500
+@@ -472,7 +472,7 @@
+ 
+ 	close_files ();
+ 
+-	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("passwd");
+ 
+ #ifdef USE_PAM
+ 	pam_end (pamh, PAM_SUCCESS);
 diff -Naur shadow-4.1.2.2.orig/src/chsh.c shadow-4.1.2.2/src/chsh.c
 --- shadow-4.1.2.2.orig/src/chsh.c	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/chsh.c	2009-01-03 16:29:34.126477989 -0500
++++ shadow-4.1.2.2/src/chsh.c	2009-01-04 17:37:20.960781498 -0500
 @@ -55,7 +55,7 @@
  #include "pam_defs.h"
  #endif
@@ -449,9 +500,18 @@ diff -Naur shadow-4.1.2.2.orig/src/chsh.c shadow-4.1.2.2/src/chsh.c
  
  	/*
  	 * Get the program name. The program name is used as a prefix to
+@@ -540,7 +540,7 @@
+ 
+ 	SYSLOG ((LOG_INFO, "changed user `%s' shell to `%s'", user, loginsh));
+ 
+-	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("passwd");
+ 
+ #ifdef USE_PAM
+ 	pam_end (pamh, PAM_SUCCESS);
 diff -Naur shadow-4.1.2.2.orig/src/gpasswd.c shadow-4.1.2.2/src/gpasswd.c
 --- shadow-4.1.2.2.orig/src/gpasswd.c	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/gpasswd.c	2009-01-03 16:30:45.080269910 -0500
++++ shadow-4.1.2.2/src/gpasswd.c	2009-01-04 17:37:35.680767524 -0500
 @@ -81,7 +81,7 @@
  /* The UID of the caller */
  static unsigned long bywho = -1;
@@ -477,9 +537,90 @@ diff -Naur shadow-4.1.2.2.orig/src/gpasswd.c shadow-4.1.2.2/src/gpasswd.c
  	pwd_init ();
  
  	open_files ();
+@@ -988,7 +990,7 @@
+ 
+ 	close_files ();
+ 
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("group");
+ 
+ 	exit (E_SUCCESS);
+ }
+diff -Naur shadow-4.1.2.2.orig/src/groupadd.c shadow-4.1.2.2/src/groupadd.c
+--- shadow-4.1.2.2.orig/src/groupadd.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/groupadd.c	2009-01-04 17:37:45.808677407 -0500
+@@ -575,7 +575,7 @@
+ 	grp_update ();
+ 	close_files ();
+ 
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("group");
+ 
+ #ifdef USE_PAM
+ 	pam_end (pamh, PAM_SUCCESS);
+diff -Naur shadow-4.1.2.2.orig/src/groupdel.c shadow-4.1.2.2/src/groupdel.c
+--- shadow-4.1.2.2.orig/src/groupdel.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/groupdel.c	2009-01-04 17:37:59.640771523 -0500
+@@ -366,7 +366,7 @@
+ 
+ 	close_files ();
+ 
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("group");
+ 
+ #ifdef USE_PAM
+ 	if (retval == PAM_SUCCESS)
+diff -Naur shadow-4.1.2.2.orig/src/groupmod.c shadow-4.1.2.2/src/groupmod.c
+--- shadow-4.1.2.2.orig/src/groupmod.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/groupmod.c	2009-01-04 17:38:10.984091461 -0500
+@@ -694,7 +694,7 @@
+ 
+ 	close_files ();
+ 
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("group");
+ 
+ #ifdef USE_PAM
+ 	if (retval == PAM_SUCCESS)
+diff -Naur shadow-4.1.2.2.orig/src/grpck.c shadow-4.1.2.2/src/grpck.c
+--- shadow-4.1.2.2.orig/src/grpck.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/grpck.c	2009-01-04 17:38:25.327423087 -0500
+@@ -777,7 +777,7 @@
+ 	/* Commit the change in the database if needed */
+ 	close_files (changed);
+ 
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("group");
+ 
+ 	/*
+ 	 * Tell the user what we did and exit.
+diff -Naur shadow-4.1.2.2.orig/src/grpconv.c shadow-4.1.2.2/src/grpconv.c
+--- shadow-4.1.2.2.orig/src/grpconv.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/grpconv.c	2009-01-04 17:38:32.594090975 -0500
+@@ -179,7 +179,7 @@
+ 	sgr_unlock ();
+ 	gr_unlock ();
+ 
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("group");
+ 
+ 	return 0;
+ }
+diff -Naur shadow-4.1.2.2.orig/src/grpunconv.c shadow-4.1.2.2/src/grpunconv.c
+--- shadow-4.1.2.2.orig/src/grpunconv.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/grpunconv.c	2009-01-04 17:38:45.274092355 -0500
+@@ -142,7 +142,7 @@
+ 	sgr_unlock ();
+ 	gr_unlock ();
+ 
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("group");
+ 
+ 	return 0;
+ }
 diff -Naur shadow-4.1.2.2.orig/src/login_nopam.c shadow-4.1.2.2/src/login_nopam.c
 --- shadow-4.1.2.2.orig/src/login_nopam.c	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/login_nopam.c	2009-01-03 16:31:03.632276734 -0500
++++ shadow-4.1.2.2/src/login_nopam.c	2009-01-04 17:35:46.197643570 -0500
 @@ -59,7 +59,7 @@
  
   /* Path name of the access control file. */
@@ -491,7 +632,7 @@ diff -Naur shadow-4.1.2.2.orig/src/login_nopam.c shadow-4.1.2.2/src/login_nopam.
  /* Delimiters for fields and for lists of users, ttys or hosts. */
 diff -Naur shadow-4.1.2.2.orig/src/logoutd.c shadow-4.1.2.2/src/logoutd.c
 --- shadow-4.1.2.2.orig/src/logoutd.c	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/logoutd.c	2009-01-03 16:31:27.006497488 -0500
++++ shadow-4.1.2.2/src/logoutd.c	2009-01-04 17:35:46.197643570 -0500
 @@ -50,7 +50,7 @@
  #endif
  
@@ -503,7 +644,7 @@ diff -Naur shadow-4.1.2.2.orig/src/logoutd.c shadow-4.1.2.2/src/logoutd.c
  #if HAVE_UTMPX_H
 diff -Naur shadow-4.1.2.2.orig/src/Makefile.am shadow-4.1.2.2/src/Makefile.am
 --- shadow-4.1.2.2.orig/src/Makefile.am	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/Makefile.am	2009-01-03 16:28:27.703358175 -0500
++++ shadow-4.1.2.2/src/Makefile.am	2009-01-04 17:35:46.197643570 -0500
 @@ -3,7 +3,7 @@
  	.indent.pro
  
@@ -540,7 +681,7 @@ diff -Naur shadow-4.1.2.2.orig/src/Makefile.am shadow-4.1.2.2/src/Makefile.am
  	done
 diff -Naur shadow-4.1.2.2.orig/src/Makefile.in shadow-4.1.2.2/src/Makefile.in
 --- shadow-4.1.2.2.orig/src/Makefile.in	2008-11-22 19:10:53.000000000 -0500
-+++ shadow-4.1.2.2/src/Makefile.in	2009-01-03 16:36:00.163099745 -0500
++++ shadow-4.1.2.2/src/Makefile.in	2009-01-04 17:35:46.200767525 -0500
 @@ -371,13 +371,14 @@
  srcdir = @srcdir@
  sysconfdir = @sysconfdir@
@@ -586,7 +727,7 @@ diff -Naur shadow-4.1.2.2.orig/src/Makefile.in shadow-4.1.2.2/src/Makefile.in
  # Otherwise a system limit (for SysV at least) may be exceeded.
 diff -Naur shadow-4.1.2.2.orig/src/newgrp.c shadow-4.1.2.2/src/newgrp.c
 --- shadow-4.1.2.2.orig/src/newgrp.c	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/newgrp.c	2009-01-03 16:31:58.550641551 -0500
++++ shadow-4.1.2.2/src/newgrp.c	2009-01-04 17:35:46.200767525 -0500
 @@ -270,7 +270,7 @@
  		if (child < 0) {
  			/* error in fork() */
@@ -605,9 +746,23 @@ diff -Naur shadow-4.1.2.2.orig/src/newgrp.c shadow-4.1.2.2/src/newgrp.c
  	gid = getgid ();
  	argc--;
  	argv++;
+diff -Naur shadow-4.1.2.2.orig/src/newusers.c shadow-4.1.2.2/src/newusers.c
+--- shadow-4.1.2.2.orig/src/newusers.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/newusers.c	2009-01-04 17:39:02.984711408 -0500
+@@ -865,8 +865,8 @@
+ 
+ 	close_files ();
+ 
+-	nscd_flush_cache ("passwd");
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("group");
+ 
+ #ifdef USE_PAM
+ 	pam_end (pamh, PAM_SUCCESS);
 diff -Naur shadow-4.1.2.2.orig/src/passwd.c shadow-4.1.2.2/src/passwd.c
 --- shadow-4.1.2.2.orig/src/passwd.c	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/passwd.c	2009-01-03 16:32:39.916453154 -0500
++++ shadow-4.1.2.2/src/passwd.c	2009-01-04 17:39:10.697416330 -0500
 @@ -717,7 +717,7 @@
  	 * The program behaves differently when executed by root than when
  	 * executed by a normal user.
@@ -617,7 +772,7 @@ diff -Naur shadow-4.1.2.2.orig/src/passwd.c shadow-4.1.2.2/src/passwd.c
  
  	/*
  	 * Get the program name. The program name is used as a prefix to
-@@ -998,12 +998,14 @@
+@@ -998,19 +998,21 @@
  		exit (E_SUCCESS);
  	}
  #endif				/* USE_PAM */
@@ -632,9 +787,54 @@ diff -Naur shadow-4.1.2.2.orig/src/passwd.c shadow-4.1.2.2/src/passwd.c
  	if (spw_file_present ())
  		update_shadow ();
  	else
+ 		update_noshadow ();
+ 
+-	nscd_flush_cache ("passwd");
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("group");
+ 
+ 	SYSLOG ((LOG_INFO, "password for `%s' changed by `%s'", name, myname));
+ 	closelog ();
+diff -Naur shadow-4.1.2.2.orig/src/pwck.c shadow-4.1.2.2/src/pwck.c
+--- shadow-4.1.2.2.orig/src/pwck.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/pwck.c	2009-01-04 17:39:28.314083740 -0500
+@@ -636,7 +636,7 @@
+ 
+ 	close_files (changed);
+ 
+-	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("passwd");
+ 
+ 	/*
+ 	 * Tell the user what we did and exit.
+diff -Naur shadow-4.1.2.2.orig/src/pwconv.c shadow-4.1.2.2/src/pwconv.c
+--- shadow-4.1.2.2.orig/src/pwconv.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/pwconv.c	2009-01-04 17:39:39.097415639 -0500
+@@ -208,7 +208,7 @@
+ 	spw_unlock ();
+ 	pw_unlock ();
+ 
+-	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("passwd");
+ 
+ 	exit (E_SUCCESS);
+ }
+diff -Naur shadow-4.1.2.2.orig/src/pwunconv.c shadow-4.1.2.2/src/pwunconv.c
+--- shadow-4.1.2.2.orig/src/pwunconv.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/pwunconv.c	2009-01-04 17:39:49.297468490 -0500
+@@ -149,7 +149,7 @@
+ 	spw_unlock ();
+ 	pw_unlock ();
+ 
+-	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("passwd");
+ 
+ 	return 0;
+ }
 diff -Naur shadow-4.1.2.2.orig/src/suauth.c shadow-4.1.2.2/src/suauth.c
 --- shadow-4.1.2.2.orig/src/suauth.c	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/suauth.c	2009-01-03 16:32:55.693118219 -0500
++++ shadow-4.1.2.2/src/suauth.c	2009-01-04 17:35:46.200767525 -0500
 @@ -40,7 +40,7 @@
  #include "prototypes.h"
  
@@ -646,7 +846,7 @@ diff -Naur shadow-4.1.2.2.orig/src/suauth.c shadow-4.1.2.2/src/suauth.c
  #define	NOACTION	0
 diff -Naur shadow-4.1.2.2.orig/src/useradd.c shadow-4.1.2.2/src/useradd.c
 --- shadow-4.1.2.2.orig/src/useradd.c	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/useradd.c	2009-01-03 16:33:52.903758217 -0500
++++ shadow-4.1.2.2/src/useradd.c	2009-01-04 17:40:06.618042276 -0500
 @@ -64,11 +64,11 @@
  #include "shadowio.h"
  
@@ -662,9 +862,48 @@ diff -Naur shadow-4.1.2.2.orig/src/useradd.c shadow-4.1.2.2/src/useradd.c
  #endif
  /*
   * Needed for MkLinux DR1/2/2.1 - J.
+@@ -1751,8 +1751,8 @@
+ 
+ 	close_files ();
+ 
+-	nscd_flush_cache ("passwd");
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("group");
+ 
+ #ifdef USE_PAM
+ 	if (retval == PAM_SUCCESS)
+diff -Naur shadow-4.1.2.2.orig/src/userdel.c shadow-4.1.2.2/src/userdel.c
+--- shadow-4.1.2.2.orig/src/userdel.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/userdel.c	2009-01-04 17:40:20.458047660 -0500
+@@ -818,8 +818,8 @@
+ 	user_cancel (user_name);
+ 	close_files ();
+ 
+-	nscd_flush_cache ("passwd");
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("group");
+ 
+ #ifdef USE_PAM
+ 	if (retval == PAM_SUCCESS)
+diff -Naur shadow-4.1.2.2.orig/src/usermod.c shadow-4.1.2.2/src/usermod.c
+--- shadow-4.1.2.2.orig/src/usermod.c	2008-11-22 18:11:13.000000000 -0500
++++ shadow-4.1.2.2/src/usermod.c	2009-01-04 17:40:28.647917233 -0500
+@@ -1531,8 +1531,8 @@
+ 		grp_update ();
+ 	close_files ();
+ 
+-	nscd_flush_cache ("passwd");
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("group");
+ 
+ 	if (mflg)
+ 		move_home ();
 diff -Naur shadow-4.1.2.2.orig/src/vipw.c shadow-4.1.2.2/src/vipw.c
 --- shadow-4.1.2.2.orig/src/vipw.c	2008-11-22 18:11:13.000000000 -0500
-+++ shadow-4.1.2.2/src/vipw.c	2009-01-03 16:35:01.086439030 -0500
++++ shadow-4.1.2.2/src/vipw.c	2009-01-04 17:40:43.305534712 -0500
 @@ -257,7 +257,7 @@
  	textdomain (PACKAGE);
  
@@ -674,3 +913,14 @@ diff -Naur shadow-4.1.2.2.orig/src/vipw.c shadow-4.1.2.2/src/vipw.c
  
  	{
  		/*
+@@ -334,8 +334,8 @@
+ #endif
+ 	}
+ 
+-	nscd_flush_cache ("passwd");
+-	nscd_flush_cache ("group");
++//	nscd_flush_cache ("passwd");
++//	nscd_flush_cache ("group");
+ 
+ 	exit (E_SUCCESS);
+ }
