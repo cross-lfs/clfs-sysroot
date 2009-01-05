@@ -90,6 +90,16 @@ cd build</userinput></screen>
 
 <screen os="k"><userinput>make DESTDIR=${CLFS} install-libs</userinput></screen>
 
+    <para os="l">Remove absolute paths from the link destinations:</para>
+
+<screen os="m"><userinput>rm -v ${CLFS}/usr/lib/lib{blkid,com_err,e2p,ext2fs,ss,uuid}.so
+ln -sv ../../lib/libblkid.so.1 ${CLFS}/usr/lib/libblkid.so
+ln -sv ../../lib/libcom_err.so.2 ${CLFS}/usr/lib/libcom_err.so
+ln -sv ../../lib/libe2p.so.2 ${CLFS}/usr/lib/libe2p.so
+ln -sv ../../lib/libext2fs.so.2 ${CLFS}/usr/lib/libext2fs.so
+ln -sv ../../lib/libss.so.2 ${CLFS}/usr/lib/libss.so
+ln -sv ../../lib/libuuid.so.1 ${CLFS}/usr/lib/libuuid.so</userinput></screen>
+
   </sect2>
 
   <sect2 id="contents-e2fsprogs" role="content">
