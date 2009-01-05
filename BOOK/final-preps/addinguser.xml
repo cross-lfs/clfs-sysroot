@@ -21,7 +21,9 @@
   issue the following commands to add the new user:</para>
 
 <screen><userinput>groupadd clfs
-useradd -s /bin/bash -g clfs -m -k /dev/null clfs</userinput></screen>
+useradd -s /bin/bash -g clfs -d /home/clfs clfs
+mkdir -pv /home/clfs
+chown -v clfs:clfs /home/clfs</userinput></screen>
 
   <variablelist>
     <title>The meaning of the command line options:</title>
@@ -39,23 +41,6 @@ useradd -s /bin/bash -g clfs -m -k /dev/null clfs</userinput></screen>
       <listitem>
         <para>This option adds user <systemitem class="username">clfs</systemitem>
         to group <systemitem class="groupname">clfs</systemitem>.</para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term><parameter>-m</parameter></term>
-      <listitem>
-        <para>This creates a home directory for <systemitem
-        class="username">clfs</systemitem>.</para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term><parameter>-k /dev/null</parameter></term>
-      <listitem>
-        <para>This parameter prevents possible copying of files from a skeleton
-        directory (default is <filename class="directory">/etc/skel</filename>)
-        by changing the input location to the special null device.</para>
       </listitem>
     </varlistentry>
 

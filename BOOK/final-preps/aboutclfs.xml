@@ -5,10 +5,10 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-final-preps-aboutlfs">
-  <?dbhtml filename="aboutlfs.html"?>
+<sect1 id="ch-final-preps-aboutclfs">
+  <?dbhtml filename="aboutclfs.html"?>
 
-  <title>About $CLFS</title>
+  <title>About ${CLFS}</title>
 
   <para>Throughout this book, the environment variable <envar>CLFS</envar> will
   be used several times. It is paramount that this variable is always defined.
@@ -25,7 +25,7 @@
 <screen><userinput>export CLFS=/mnt/clfs</userinput></screen>
 
   <para>Having this variable set is beneficial in that commands such as
-  <command>install -d ${CLFS}/tools</command> can be typed literally. The shell
+  <command>install -dv ${CLFS}/tools</command> can be typed literally. The shell
   will automatically replace <quote>${CLFS}</quote> with
   <quote>/mnt/clfs</quote> (or whatever the variable was set to) when it
   processes the command line.</para>

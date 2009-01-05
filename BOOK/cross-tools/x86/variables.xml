@@ -24,7 +24,10 @@
   href="../arm/variables.xml"
   xpointer="xpointer(//*[@os='c'])"/>
 
-<screen os="d"><userinput>export CLFS_TARGET="{target triplet}"</userinput></screen>
+<screen os="d"><userinput>export CLFS_TARGET="[target triplet]"</userinput></screen>
+
+  <para os="t1">Replace [target triplet] with the appropriate machine triplet
+  using the table at the bottom of the page.</para>
 
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
   href="../arm/variables.xml"
