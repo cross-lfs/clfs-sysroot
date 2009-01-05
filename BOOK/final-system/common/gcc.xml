@@ -45,19 +45,20 @@ sed 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in.orig &gt; \
     libiberty/Makefile.in</userinput></screen>
 
     <para os="e1">GCC provides a <command>gccbug</command> script which detects at
-    compile time whether mktemp is present, and hardcodes the result in a test.
-    If mktemp is not found, the script will fall back to using less
-    random names for temporary files.  We will be installing mktemp
-    later, so the following sed will simulate its presence:</para>
+    compile time whether <command>mktemp</command> is present, and hardcodes
+    the result in a test. If <command>mktemp</command> is not found, the
+    script will fall back to using less random names for temporary files.
+    <command>mktemp</command> will be installed as part of Coreutils
+    later, so the following <command>sed</command> will simulate its presence:</para>
 
 <screen os="e2"><userinput>cp gcc/gccbug.in{,.orig}
 sed 's/@have_mktemp_command@/yes/' gcc/gccbug.in.orig > gcc/gccbug.in</userinput></screen>
 
-    <para os="s1">The fixincludes attempts to "fix" the system headers
-    installed so far. Since gcc is cross-compiled expecting the system
-    headers to be in <filename class="directory">/usr/include</filename>
-    the script will be looking at host headers. The following sed prevents
-    the fixincludes script from running:</para>
+    <para os="s1">The <command>fixincludes</command> script attempts to "fix"
+    the system headers installed so far. Since GCC is cross-compiled expecting
+    the system headers to be in <filename class="directory">/usr/include</filename>,
+    the script will be looking at the host system's headers. The following sed
+    prevents <command>fixincludes</command> from running:</para>
 
 <screen os="s2"><userinput>cp gcc/Makefile.in{,.orig}
 sed 's@\./fixinc\.sh@-c true@' gcc/Makefile.in.orig > gcc/Makefile.in</userinput></screen>

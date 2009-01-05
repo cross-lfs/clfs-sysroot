@@ -52,9 +52,9 @@
 sed -e "/binPROGRAMS_INSTALL=/s:./ginstall:install:" src/Makefile.in.orig > src/Makefile.in</userinput></screen>
 
     <para os="a">Configure can not properly determine how to get free space
-    when cross-compiling, Without putting the following entry into
-    <filename>config.cache</filename> the <command>df</command> program will
-    not be built.</para>
+    when cross-compiling - as a result, the <command>df</command> program will
+    not be built. Add the following entry to <filename>config.cache</filename>
+    to correct this:</para>
 
 <screen os="b"><userinput>echo "fu_cv_sys_stat_statfs2_bsize=yes" &gt; config.cache</userinput></screen>
 
