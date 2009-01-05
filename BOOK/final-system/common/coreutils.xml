@@ -32,15 +32,15 @@
 
 <screen os="p2"><userinput>patch -Np1 -i ../&coreutils-uname-patch;</userinput></screen>
 
-    <para os="aa">When the uname patch and the sed above were applied. The
-    source files for uname and touch were updated. Because they have a newer
-    timestamp then the man pages the <filename>Makefile</filename> is going to
-    try to regenerate the man pages. If executables for the target architecture
+    <para os="aa">The above patch modifies the source code for
+    <command>uname</command>. Because it now has a newer timestamp then
+    its man page, the <filename>Makefile</filename> is going to
+    try to regenerate the man page. If executables for the target architecture
     can not be executed by the host system, the build will fail. The following
-    command fixes this by giving the two man pages a newer timestamp then their
-    cooresponding source files:</para>
+    command fixes this by giving the man page a newer timestamp then its
+    corresponding source file:</para>
 
-<screen os="ab"><userinput>touch man/uname.1 man/touch.1 man/hostname.1</userinput></screen>
+<screen os="ab"><userinput>touch man/uname.1</userinput></screen>
 
     <para os="s1">Coreutils attempts to use the <command>install</command>
     program it just built to perform the install. This will not work if the
