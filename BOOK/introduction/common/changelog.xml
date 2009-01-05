@@ -40,6 +40,11 @@
       <para>Janurary 04, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Removed the vim cross-compile patch. It has been
+          sufficiently fixed upstream that so that config.cache entries are
+          enough.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Various Compilation fixes for the entire book.</para>
         </listitem>
         <listitem>

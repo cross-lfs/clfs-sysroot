@@ -37,10 +37,18 @@
     and (optionally) <filename>vim-&vim-version;-lang.tar.gz</filename>
     archives into the same directory.</para>
 
-    <para os="p1">The following patch fixes numerous issues with
-    cross-compiling Vim:</para>
+    <para os="cc1">The configure script is full of logic that aborts at the
+    first sign of cross compiling. Set the cached values of those tests with
+    the following command:</para>
 
-<screen os="p2"><userinput>patch -Np1 -i ../&vim-cross_compile-patch;</userinput></screen>
+<screen os="cc2"><userinput>echo "vim_cv_getcwd_broken=no" &gt; src/auto/config.cache
+echo "vim_cv_memmove_handles_overlap=yes" &gt;&gt; src/auto/config.cache
+echo "vim_cv_stat_ignores_slash=no" &gt;&gt; src/auto/config.cache
+echo "vim_cv_terminfo=yes" &gt;&gt; src/auto/config.cache
+echo "vim_cv_tgent=zero" &gt;&gt; src/auto/config.cache
+echo "vim_cv_toupper_broken=no" &gt;&gt; src/auto/config.cache
+echo "vim_cv_tty_group=world" &gt;&gt; src/auto/config.cache
+echo "ac_cv_sizeof_int=4" &gt;&gt; src/auto/config.cache</userinput></screen>
 
     <para os="b">Change the default location of
     the <filename>vimrc</filename> configuration file to <filename

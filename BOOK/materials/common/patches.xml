@@ -145,15 +145,6 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Vim Cross-Compile Patch - <token>&vim-cross_compile-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&vim-cross_compile-patch;"/></para>
-        <para>MD5 sum: <literal>&vim-cross_compile-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>Zlib fPIC Patch - <token>&zlib-fpic-patch-size;</token>:</term> <listitem>
         <para>Download: <ulink
         url="&patches-root;&zlib-fpic-patch;"/></para>
