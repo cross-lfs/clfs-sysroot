@@ -127,13 +127,6 @@ sed 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' login.defs.orig \
 
 <screen os="w"><userinput>mv -v ${CLFS}/usr/bin/passwd ${CLFS}/bin</userinput></screen>
 
-    <para os="x">Move Shadow's static and dynamic libraries to a more
-    appropriate location:</para>
-
-<screen os="y"><userinput>mv -v ${CLFS}/lib/libshadow.*a ${CLFS}/usr/lib
-rm -v ${CLFS}/lib/libshadow.so
-ln -sfv ../../lib/libshadow.so.0 ${CLFS}/usr/lib/libshadow.so</userinput></screen>
-
   </sect2>
 
   <sect2 id="conf-shadow" role="configuration">
