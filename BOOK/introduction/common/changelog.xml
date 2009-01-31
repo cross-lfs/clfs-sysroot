@@ -40,6 +40,10 @@
       <para>Janurary 31, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added command to make Perl use system-installed
+          Zlib. Fixes ticket #201.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Host System Requirements.</para>
         </listitem>
         <listitem>
