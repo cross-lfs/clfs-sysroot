@@ -30,7 +30,7 @@
     following tells it that we do:</para>
 
 <screen os="a2"><userinput>echo "ac_cv_func_malloc_0_nonnull=yes" &gt; config.cache
-echo "ac_cv_func_realloc_0_nonnull=yes" >> config.cache</userinput></screen>
+echo "ac_cv_func_realloc_0_nonnull=yes" &gt;&gt; config.cache</userinput></screen>
 
     <para os="a">Prepare Psmisc for compilation:</para>
 
