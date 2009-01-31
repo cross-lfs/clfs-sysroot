@@ -40,6 +40,10 @@
       <para>Janurary 31, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Udev to 137. Fixed nagging uucp group
+          issue for udev.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Update Bootscripts to 1.2-pre3.</para>
         </listitem>
         <listitem>

@@ -136,7 +136,8 @@ audio:x:&gid-audio;:
 video:x:&gid-video;:
 utmp:x:&gid-utmp;:
 usb:x:&gid-usb;:
-cdrom:x:&gid-cdrom;:</literal>
+cdrom:x:&gid-cdrom;:
+uucp:x:&gid-uucp;:</literal>
 EOF</userinput></screen>
 
   <variablelist os="c">
@@ -174,19 +175,13 @@ EOF</userinput></screen>
       </listitem>
     </varlistentry>
     <varlistentry>
-      <term><literal>uucp:x:&gid-uucp;:uucp</literal></term>
-      <listitem>
-        <para>Used by the Unix-to-Unix copy users</para>
-      </listitem>
-    </varlistentry>
-    <varlistentry>
-      <term><literal>users:&gid-users;:100:</literal></term>
+      <term><literal>users:x:&gid-users;:</literal></term>
       <listitem>
         <para>The default GID used by shadow for new users</para>
       </listitem>
     </varlistentry>
     <varlistentry>
-      <term><literal>nogroup:&gid-nogroup;:65533:</literal></term>
+      <term><literal>nogroup:x:&gid-nogroup;:</literal></term>
       <listitem>
         <para>This is a default group used by some programs that do not
         require a group</para>
