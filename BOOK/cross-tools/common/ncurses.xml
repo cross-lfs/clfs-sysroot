@@ -23,11 +23,11 @@
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../../final-system/common/ncurses.xml"
-    xpointer="xpointer(//*[@os='p1'])"/>
+    xpointer="xpointer(//*[@os='p3'])"/>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../../final-system/common/ncurses.xml"
-    xpointer="xpointer(//*[@os='p2'])"/>
+    xpointer="xpointer(//*[@os='p4'])"/>
 
     <para os="a">Prepare Ncurses for compilation:</para>
 

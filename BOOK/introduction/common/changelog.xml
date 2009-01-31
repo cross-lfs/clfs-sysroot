@@ -40,6 +40,10 @@
       <para>Janurary 31, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Ported the NCurses widec builds from trunk and
+          added the branch update patch.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added command to make Perl use system-installed
           Zlib. Fixes ticket #201.</para>
         </listitem>
