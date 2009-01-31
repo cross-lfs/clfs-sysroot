@@ -40,6 +40,9 @@
       <para>Janurary 31, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Update Bootscripts to 1.2-pre3.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Add the VIM Branch Update -5 Patch.</para>
         </listitem>
         <listitem>
