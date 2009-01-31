@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>Janurary 31, 2009</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Added patch that will fix a build issue with Kbd. The patch is
+                for the linux-headers in final-system.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>Janurary 04, 2009</para>
       <itemizedlist>
         <listitem>
