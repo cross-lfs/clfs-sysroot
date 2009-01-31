@@ -43,6 +43,9 @@
           <para>[jciccone] - Added patch that will fix a build issue with Kbd. The patch is
                 for the linux-headers in final-system.</para>
         </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Linux to 2.6.28.2.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 
