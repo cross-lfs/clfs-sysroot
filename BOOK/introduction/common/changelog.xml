@@ -40,6 +40,9 @@
       <para>Janurary 31, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Add the Binutils Branch Update -4 Patch.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Change hard-links to relative-links in
           bzip2.</para>
         </listitem>
