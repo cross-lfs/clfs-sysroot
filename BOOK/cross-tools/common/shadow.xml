@@ -40,7 +40,7 @@
     <para>Add the proper prefix to the <filename>passwd</filename> program:</para>
 
 <screen><userinput>cp config.h{,.orig}
-sed "/PASSWD_PROGRAM/s/passwd/${CLFS_TARGET}-&amp;/" config.h.orig > config.h</userinput></screen>
+sed "/PASSWD_PROGRAM/s/passwd/${CLFS_TARGET}-&amp;/" config.h.orig &gt; config.h</userinput></screen>
 
     <para>Compile the package:</para>
 
