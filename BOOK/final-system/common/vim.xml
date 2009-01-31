@@ -19,7 +19,12 @@
 
     <para>The Vim package contains a powerful text editor.</para>
 
-    <tip>
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Vim</title>
+
+    <tip os="t1">
       <title>Alternatives to Vim</title>
 
       <para>If you prefer another editor&mdash;such as Emacs, Joe, or
@@ -27,11 +32,6 @@
       url="&cblfs-root;index.php/Category:Text_Editors"/>
       for suggested installation instructions.</para>
     </tip>
-
-  </sect2>
-
-  <sect2 role="installation">
-    <title>Installation of Vim</title>
 
     <para os="a">First, unpack both <filename>vim-&vim-version;.tar.bz2</filename>
     and (optionally) <filename>vim-&vim-version;-lang.tar.gz</filename>
@@ -46,14 +46,16 @@
     first sign of cross compiling. Set the cached values of those tests with
     the following command:</para>
 
-<screen os="cc2"><userinput>echo "vim_cv_getcwd_broken=no" &gt; src/auto/config.cache
-echo "vim_cv_memmove_handles_overlap=yes" &gt;&gt; src/auto/config.cache
-echo "vim_cv_stat_ignores_slash=no" &gt;&gt; src/auto/config.cache
-echo "vim_cv_terminfo=yes" &gt;&gt; src/auto/config.cache
-echo "vim_cv_tgent=zero" &gt;&gt; src/auto/config.cache
-echo "vim_cv_toupper_broken=no" &gt;&gt; src/auto/config.cache
-echo "vim_cv_tty_group=world" &gt;&gt; src/auto/config.cache
-echo "ac_cv_sizeof_int=4" &gt;&gt; src/auto/config.cache</userinput></screen>
+<screen os="cc2"><userinput>cat &gt; src/auto/config.cache &lt;&lt; EOF
+vim_cv_getcwd_broken=no
+vim_cv_memmove_handles_overlap=yes
+vim_cv_stat_ignores_slash=no
+vim_cv_terminfo=yes
+vim_cv_tgent=zero
+vim_cv_toupper_broken=no
+vim_cv_tty_group=world
+ac_cv_sizeof_int=4
+EOF</userinput></screen>
 
     <para os="b">Change the default location of
     the <filename>vimrc</filename> configuration file to <filename
