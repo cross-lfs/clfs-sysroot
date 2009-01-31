@@ -40,6 +40,9 @@
       <para>Janurary 31, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated MPFR to 2.4.0.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated IPRoute2 to 2.6.28.</para>
         </listitem>
         <listitem>
