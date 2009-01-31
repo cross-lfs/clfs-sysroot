@@ -40,6 +40,10 @@
       <para>Janurary 31, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Change hard-links to relative-links in
+          bzip2.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Udev to 137. Fixed nagging uucp group
           issue for udev.</para>
         </listitem>
