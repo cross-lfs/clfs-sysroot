@@ -78,7 +78,7 @@ chmod -v 755 ${CLFS}/usr/bin/lex</userinput></screen>
 
       <seglistitem>
         <seg>flex and lex</seg>
-        <seg>libfl.a</seg>
+        <seg>libfl.a libfl_pic.a</seg>
       </seglistitem>
     </segmentedlist>
 
