@@ -25,7 +25,7 @@
 <!ENTITY gcc-branch_update-patch-size "812 KB">
 
 <!ENTITY gcc-posix-patch "gcc-&gcc-version;-posix-1.patch">
-<!ENTITY gcc-posix-patch-md5 "04c70ab253e9a1bfe242e1e5f37a51dd">
+<!ENTITY gcc-posix-patch-md5 "ed26ea522e014b2e39adf066bd44053b">
 <!ENTITY gcc-posix-patch-size "16 KB">
 
 <!ENTITY glibc-cross_hacks-patch "glibc-&glibc-version;-cross_hacks-1.patch">
