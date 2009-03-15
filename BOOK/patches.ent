@@ -72,9 +72,9 @@
 <!ENTITY ncurses-bashfix-patch-md5 "c6f7f2ab0ebaf7721ebeb266641352db">
 <!ENTITY ncurses-bashfix-patch-size "4 KB">
 
-<!ENTITY ncurses-branch_update-patch "ncurses-&ncurses-version;-branch_update-6.patch">
-<!ENTITY ncurses-branch_update-patch-md5 "39811fc1a46d4d6cd7b546e57ea4f3b6">
-<!ENTITY ncurses-branch_update-patch-size "584 KB">
+<!ENTITY ncurses-branch_update-patch "ncurses-&ncurses-version;-branch_update-10.patch">
+<!ENTITY ncurses-branch_update-patch-md5 "de6a37dcd5764ee8251e3df0960b7a58">
+<!ENTITY ncurses-branch_update-patch-size "767 KB">
 
 <!ENTITY perl-cross_compile-patch "perl-&perl-version;-cross_compile-5.patch">
 <!ENTITY perl-cross_compile-patch-md5 "7bbb78618e2dd95987ad04c6c54a81c6">
