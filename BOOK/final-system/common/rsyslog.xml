@@ -100,25 +100,25 @@ $IncludeConfig /etc/rsyslog.d/*.conf
 #######################################################################
 # Standard Log Files
 
-auth,authpriv.*			/var/log/auth.log
-*.*;auth,authpriv.none		-/var/log/syslog
-daemon.*			-/var/log/daemon.log
-kern.*				-/var/log/kern.log
-lpr.*				-/var/log/lpr.log
-mail.*				-/var/log/mail.log
-user.*				-/var/log/user.log
+auth,authpriv.*                        /var/log/auth.log
+*.*;auth,authpriv.none                -/var/log/syslog
+daemon.*                        -/var/log/daemon.log
+kern.*                                -/var/log/kern.log
+lpr.*                                -/var/log/lpr.log
+mail.*                                -/var/log/mail.log
+user.*                                -/var/log/user.log
 
 # Catch All Logs
 *.=debug;\
-	auth,authpriv.none;\
-	news.none;mail.none	-/var/log/debug
+        auth,authpriv.none;\
+        news.none;mail.none        -/var/log/debug
 *.=info;*.=notice;*.=warn;\
-	auth,authpriv.none;\
-	cron,daemon.none;\
-	mail,news.none		-/var/log/messages
+        auth,authpriv.none;\
+        cron,daemon.none;\
+        mail,news.none                -/var/log/messages
 
 # Emergency are shown to everyone
-*.emerg				*
+*.emerg                                *
 
 # End /etc/rsyslog.conf</literal>
 EOF</userinput></screen>

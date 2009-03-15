@@ -146,7 +146,7 @@
         <term><command>udevtrigger</command></term>
         <listitem>
           <para>Walks the sysfs tree for devices that need to be added to the
-	  system.</para>
+          system.</para>
           <indexterm zone="ch-system-udev udevtrigger">
             <primary sortas="b-udevtrigger">udevtrigger</primary>
           </indexterm>
@@ -168,7 +168,7 @@
       <varlistentry id="cdrom_id">
         <term><command>cdrom_id</command></term>
         <listitem>
-	  <para>Print the capabilities of a CDROM or DVDROM drive.</para>
+          <para>Print the capabilities of a CDROM or DVDROM drive.</para>
           <indexterm zone="ch-system-udev cdrom_id">
             <primary sortas="b-cdrom_id">cdrom_id</primary>
           </indexterm>
@@ -188,7 +188,7 @@
       <varlistentry id="dasd_id">
         <term><command>dasd_id</command></term>
         <listitem>
-	  <para>Read the label from an s390 block device.</para>
+          <para>Read the label from an s390 block device.</para>
           <indexterm zone="ch-system-udev dasd_id">
             <primary sortas="b-dasd_id">dasd_id</primary>
           </indexterm>
@@ -198,7 +198,7 @@
       <varlistentry id="edd_id">
         <term><command>edd_id</command></term>
         <listitem>
-	  <para>Identify x86 disk drives from Enhanced Disk Drive calls.</para>
+          <para>Identify x86 disk drives from Enhanced Disk Drive calls.</para>
           <indexterm zone="ch-system-udev edd_id">
             <primary sortas="b-edd_id">edd_id</primary>
           </indexterm>
@@ -208,7 +208,7 @@
       <varlistentry id="firmware.sh">
         <term><command>firmware.sh</command></term>
         <listitem>
-	  <para>Script to load firmware for a device</para>
+          <para>Script to load firmware for a device</para>
           <indexterm zone="ch-system-udev firmware.sh">
             <primary sortas="b-firmware.sh">firmware.sh</primary>
           </indexterm>
@@ -229,7 +229,7 @@
       <varlistentry id="scsi_id">
         <term><command>scsi_id</command></term>
         <listitem>
-	  <para>Retrieve or generate a unique SCSI identifier.</para>
+          <para>Retrieve or generate a unique SCSI identifier.</para>
           <indexterm zone="ch-system-udev scsi_id">
             <primary sortas="b-scsi_id">scsi_id</primary>
           </indexterm>
@@ -239,7 +239,7 @@
       <varlistentry id="usb_id">
         <term><command>usb_id</command></term>
         <listitem>
-	  <para>Identify a USB block device.</para>
+          <para>Identify a USB block device.</para>
           <indexterm zone="ch-system-udev usb_id">
             <primary sortas="b-usb_id">usb_id</primary>
           </indexterm>
@@ -249,7 +249,7 @@
       <varlistentry id="vol_id">
         <term><command>vol_id</command></term>
         <listitem>
-	  <para>Probe filesystem type and read label and uuid.</para>
+          <para>Probe filesystem type and read label and uuid.</para>
           <indexterm zone="ch-system-udev vol_id">
             <primary sortas="b-vol_id">vol_id</primary>
           </indexterm>

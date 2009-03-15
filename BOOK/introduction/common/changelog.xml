@@ -1183,7 +1183,7 @@
         </listitem>
         <listitem>
           <para>[jciccone] - Updated to Cross-LFS Bootscripts. Added check for
-	  for /etc/sysconfig/createfiles.</para>
+          for /etc/sysconfig/createfiles.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -1309,7 +1309,7 @@
     <listitem>
       <para>May 29, 2006</para>
       <itemizedlist>
-	<listitem>
+        <listitem>
           <para>[jciccone] - Updated to linux-2.6.16.20, linux-headers-2.6.16.20-06052006, and Bison-2.3.</para>
         </listitem>
         <listitem>
