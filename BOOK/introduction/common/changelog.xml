@@ -40,6 +40,9 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated GCC to 4.3.3.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated VIM Branch Update patch to -11.</para>
         </listitem>
         <listitem>
