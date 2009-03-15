@@ -40,6 +40,9 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added DHCPCD to the final system.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated NCurses Branch Update Patch to -10.</para>
         </listitem>
         <listitem>
