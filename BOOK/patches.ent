@@ -80,10 +80,6 @@
 <!ENTITY perl-cross_compile-patch-md5 "7bbb78618e2dd95987ad04c6c54a81c6">
 <!ENTITY perl-cross_compile-patch-size "140 KB">
 
-<!ENTITY readline-fixes-patch "readline-&readline-version;-fixes-5.patch">
-<!ENTITY readline-fixes-patch-md5 "353320fac0a48339f4eccec72591ae3b">
-<!ENTITY readline-fixes-patch-size "24 KB">
-
 <!ENTITY shadow-sysroot_hacks-patch "shadow-&shadow-version;-sysroot_hacks-2.patch">
 <!ENTITY shadow-sysroot_hacks-patch-md5 "cf5095a86c666728650e77f1cdc64874">
 <!ENTITY shadow-sysroot_hacks-patch-size "36 KB">
