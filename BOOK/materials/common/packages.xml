@@ -69,11 +69,11 @@
     </varlistentry>
 
     <varlistentry>
-      <term>CLFS-Bootscripts (&clfs-bootscripts-version;) - <token>&clfs-bootscripts-size;</token>:</term>
+      <term>CLFS-Bootscripts (&bootscripts-clfs-version;) - <token>&bootscripts-clfs-size;</token>:</term>
       <listitem>
-        <para>Home page: <ulink url="&clfs-bootscripts-home;"/></para>
-        <para>Download: <ulink url="&clfs-bootscripts-url;"/></para>
-        <para>MD5 sum: <literal>&clfs-bootscripts-md5;</literal></para>
+        <para>Home page: <ulink url="&bootscripts-clfs-home;"/></para>
+        <para>Download: <ulink url="&bootscripts-clfs-url;"/></para>
+        <para>MD5 sum: <literal>&bootscripts-clfs-md5;</literal></para>
       </listitem>
     </varlistentry>
 

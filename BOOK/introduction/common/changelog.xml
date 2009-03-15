@@ -40,6 +40,12 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Copied bootscript sections from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Bootscripts to 1.2-pre6.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added DHCPCD to the final system.</para>
         </listitem>
         <listitem>

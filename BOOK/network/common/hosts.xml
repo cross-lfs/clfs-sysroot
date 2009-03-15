@@ -5,20 +5,20 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-scripts-hosts">
+<sect1 id="ch-network-hosts">
   <?dbhtml filename="hosts.html"?>
 
   <title>Customizing the /etc/hosts File</title>
 
-  <indexterm zone="ch-scripts-hosts">
+  <indexterm zone="ch-network-hosts">
     <primary sortas="e-/etc/hosts">/etc/hosts</primary>
   </indexterm>
 
-  <indexterm zone="ch-scripts-hosts">
+  <indexterm zone="ch-network-hosts">
     <primary sortas="d-localnet">localnet</primary>
   <secondary>/etc/hosts</secondary></indexterm>
 
-  <indexterm zone="ch-scripts-hosts">
+  <indexterm zone="ch-network-hosts">
     <primary sortas="d-network">network</primary>
   <secondary>/etc/hosts</secondary></indexterm>
 

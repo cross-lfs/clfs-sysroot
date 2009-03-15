@@ -134,7 +134,7 @@
       <command>udevd</command> can't find a rule for the device it is creating,
       it will default permissions to <emphasis>660</emphasis> and ownership to
       <emphasis>root:root</emphasis>. Documentation on the syntax of the Udev
-      rules configuration files are available in
+      rules configuration files is available in
       <filename>/usr/share/doc/udev-&udev-version;/index.html</filename></para>
 
     </sect3>
@@ -154,8 +154,8 @@
       <filename>/sys/bus/pci/devices/0000:00:0d.0/modalias</filename> file
       might contain the string
       <quote>pci:v00001319d00000801sv00001319sd00001319bc04sc01i00</quote>.
-      The rules that CLFS installs will cause <command>udevd</command> to call
-      out to <command>/sbin/modprobe</command> with the contents of the
+      The default rules provided by Udev will cause <command>udevd</command>
+      to call out to <command>/sbin/modprobe</command> with the contents of the
       <envar>MODALIAS</envar> uevent environment variable (that should be the
       same as the contents of the <filename>modalias</filename> file in sysfs),
       thus loading all modules whose aliases match this string after wildcard
@@ -267,7 +267,8 @@
       <para>This usually happens if a rule unexpectedly matches a device. For
       example, a poorly-writen rule can match both a SCSI disk (as desired)
       and the corresponding SCSI generic device (incorrectly) by vendor.
-      Find the offending rule and make it more specific.</para>
+      Find the offending rule and make it more specific, with the help of
+      <command>udevadm info</command>.</para>
 
     </sect3>
 
@@ -316,7 +317,7 @@
       stable names based on some stable attributes of the device, such as a
       serial number or the output of various *_id utilities installed by Udev.
       See <xref linkend="ch-scripts-symlinks"/> and
-      <xref linkend="ch-scripts-network"/> for examples.</para>
+      <xref linkend="chapter-network"/> for examples.</para>
 
     </sect3>
 
@@ -333,11 +334,6 @@
       <listitem>
         <para remap="verbatim">A Userspace Implementation of <systemitem class="filesystem">devfs</systemitem>
         <ulink url="http://www.kroah.com/linux/talks/ols_2003_udev_paper/Reprint-Kroah-Hartman-OLS2003.pdf"/></para>
-      </listitem>
-
-      <listitem>
-        <para remap="verbatim">udev FAQ
-        <ulink url="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev-FAQ"/></para>
       </listitem>
 
       <listitem>

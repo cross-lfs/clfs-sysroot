@@ -8,7 +8,7 @@
 <sect1 id="ch-scripts-bootscripts" role="wrap">
   <?dbhtml filename="bootscripts.html"?>
 
-  <title>CLFS-Bootscripts-&clfs-bootscripts-version;</title>
+  <title>Bootscripts for CLFS &bootscripts-clfs-version;</title>
 
   <indexterm zone="ch-scripts-bootscripts">
     <primary sortas="a-Bootscripts">Bootscripts</primary>
@@ -17,22 +17,26 @@
   <sect2 role="package">
     <title/>
 
-    <para>The CLFS-Bootscripts package contains a set of scripts to
+    <para>The Bootscripts package contains a set of scripts to
     start/stop the CLFS system at bootup/shutdown.</para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of CLFS-Bootscripts</title>
+    <title>Installation of Bootscripts</title>
 
-    <para>Install the package:</para>
+    <para os="a">Install the package:</para>
 
-<screen><userinput>make DESTDIR=${CLFS} install-bootscripts</userinput></screen>
+<screen os="b"><userinput>make DESTDIR="${CLFS}" install-bootscripts</userinput></screen>
+
+    <para os="c">You can will need to run the following command to install support for Networking:</para>
+
+<screen os="d"><userinput>make DESTDIR="${CLFS}" install-network</userinput></screen>
 
   </sect2>
 
   <sect2 id="contents-bootscripts" role="content">
-    <title>Contents of CLFS-Bootscripts</title>
+    <title>Contents of Bootscripts</title>
 
     <segmentedlist>
       <segtitle>Installed scripts</segtitle>
@@ -40,7 +44,7 @@
       <seglistitem>
         <seg>checkfs, cleanfs, console, functions, halt, ifdown,
         ifup, localnet, mountfs, mountkernfs, network, rc, reboot, sendsignals,
-        setclock, static, swap, sysklogd, and template.</seg>
+        setclock, static, swap, sysklogd, template, and udev.</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -253,6 +257,16 @@
           daemons</para>
           <indexterm zone="ch-scripts-bootscripts template-bootscripts">
             <primary sortas="d-template">template</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="udev-bootscripts">
+        <term><command>udev</command></term>
+        <listitem>
+          <para>Starts and stops the Udev daemon</para>
+          <indexterm zone="ch-scripts-bootscripts udev-bootscripts">
+            <primary sortas="d-udev">udev</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -38,7 +38,7 @@
   to a value of <option>0</option> (zero) if the hardware clock
   is <emphasis>not</emphasis> set to UTC time.</para>
 
-  <para os="d">Create a new file <filename>${CLFS}/etc/sysconfig/clock</filename> by running
+  <para os="d">Create a new file <filename>/etc/sysconfig/clock</filename> by running
   the following:</para>
 
 <screen><userinput>cat &gt; ${CLFS}/etc/sysconfig/clock &lt;&lt; "EOF"

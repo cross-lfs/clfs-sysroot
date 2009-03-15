@@ -41,11 +41,11 @@
 <!ENTITY bzip2-md5 "3c15a0c8d1d3ee1c46a1634d00617b1a">
 <!ENTITY bzip2-home "http://www.bzip.org">
 
-<!ENTITY clfs-bootscripts-version "1.2-pre3">
-<!ENTITY clfs-bootscripts-size "40 KB">
-<!ENTITY clfs-bootscripts-url "&packages-root;bootscripts-cross-lfs-&clfs-bootscripts-version;.tar.bz2">
-<!ENTITY clfs-bootscripts-md5 "b02b13426d55d306c3cf9da75be790aa">
-<!ENTITY clfs-bootscripts-home " ">
+<!ENTITY bootscripts-clfs-version "1.2-pre3">
+<!ENTITY bootscripts-clfs-size "40 KB">
+<!ENTITY bootscripts-clfs-url "&packages-root;bootscripts-cross-lfs-&bootscripts-clfs-version;.tar.bz2">
+<!ENTITY bootscripts-clfs-md5 "b02b13426d55d306c3cf9da75be790aa">
+<!ENTITY bootscripts-clfs-home " ">
 
 <!ENTITY coreutils-version "6.12">
 <!ENTITY coreutils-size "8,808 KB">
