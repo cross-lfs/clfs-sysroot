@@ -24,14 +24,10 @@
   <sect2 role="installation">
     <title>Installation of Bash</title>
 
-    <para os="a">If you downloaded the Bash documentation tarball and wish to
-    install HTML documentation, issue the following commands:</para>
+    <para os="p1">The following patch contains updates from the maintainer. The
+    maintainer of Bash only releases these patches to fix serious issues:</para>
 
-<screen os="b"><userinput>tar -xvf ../bash-doc-&bash-doc-version;.tar.gz</userinput></screen>
-
-    <para os="p1">The following patch contains updates from the maintainer. The maintainer of Bash only releases these patches to fix serious issues:</para>
-
-<screen os="p2"><userinput>patch -Np1 -i ../&bash-fixes-patch;</userinput></screen>
+<screen os="p2"><userinput>patch -Np1 -i ../&bash-branch_update-patch;</userinput></screen>
 
     <para os="c">When bash is cross-compiled, it cannot test for the presence
     of named pipes, amoung other things. If you used <command>su</command> to

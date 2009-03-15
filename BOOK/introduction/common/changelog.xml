@@ -40,6 +40,9 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Bash to 4.0.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Tar to 1.22.</para>
         </listitem>
       </itemizedlist>
