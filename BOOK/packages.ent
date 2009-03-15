@@ -327,6 +327,12 @@
 <!ENTITY vim-language-md5 "d8884786979e0e520c112faf2e176f05">
 <!ENTITY vim-language-home " ">
 
+<!ENTITY xz-version "4.999.8beta">
+<!ENTITY xz-size "833 KB">
+<!ENTITY xz-url "http://tukaani.org/xz/xz-&xz-version;.tar.gz">
+<!ENTITY xz-md5 "f00967331a487e88d51207fe17c56f52">
+<!ENTITY xz-home "http://tukaani.org/xz/">
+
 <!ENTITY zlib-version "1.2.3">
 <!ENTITY zlib-size "485 KB">
 <!ENTITY zlib-url "http://www.zlib.net/zlib-&zlib-version;.tar.gz">
