@@ -40,6 +40,9 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added i18n Patch to Grep.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Diffutils wants ed as a editor. Changed it to Vim.</para>
         </listitem>
         <listitem>
