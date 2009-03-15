@@ -77,12 +77,12 @@
 <!ENTITY shadow-sysroot_hacks-patch-size "36 KB">
 
 <!ENTITY tar-man_page-patch "tar-&tar-version;-man_page-1.patch">
-<!ENTITY tar-man_page-patch-md5 "5bea72fd46830db0fed3c58b236f6ecf">
-<!ENTITY tar-man_page-patch-size "20 KB">
+<!ENTITY tar-man_page-patch-md5 "a8d01d18a3e550230302a5a52c686d25">
+<!ENTITY tar-man_page-patch-size "16 KB">
 
-<!ENTITY tar-revert_pipe_drain-patch "tar-&tar-version;-revert_pipe_drain-1.patch">
-<!ENTITY tar-revert_pipe_drain-patch-md5 "fd0543b6c8b4c033af0b702f28ec6608">
-<!ENTITY tar-revert_pipe_drain-patch-size "4 KB">
+<!ENTITY tar-new_compressors-patch "tar-&tar-version;-new_compressors-1.patch">
+<!ENTITY tar-new_compressors-patch-md5 "95a38ca73a39105a5aee528471c7fcc9">
+<!ENTITY tar-new_compressors-patch-size "2 KB">
 
 <!ENTITY vim-branch_update-patch "vim-&vim-version;-branch_update-5.patch">
 <!ENTITY vim-branch_update-patch-md5 "ad13a427a46ae23abe8740ab66fba15d">
