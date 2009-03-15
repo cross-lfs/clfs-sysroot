@@ -98,16 +98,16 @@ ln -sfv ../../bin/install ${CLFS}/usr/bin</userinput></screen>
       <segtitle>Installed programs</segtitle>
 
       <seglistitem>
-        <seg>[, base64, basename, cat, chgrp, chmod, chown, chroot, cksum,
-        comm, cp, csplit, cut, date, dd, df, dir, dircolors, dirname, du,
+        <seg>[, base64, basename, cat, chcon, chgrp, chmod, chown, chroot,
+        cksum, comm, cp, csplit, cut, date, dd, df, dir, dircolors, dirname, du,
         echo, env, expand, expr, factor, false, fmt, fold, groups, head,
         hostid, hostname, id, install, join, link, ln, logname, ls, md5sum,
-        mkdir, mkfifo, mknod, mv, nice, nl, nohup, od, paste, pathchk, pinky,
-        pr, printenv, printf, ptx, pwd, readlink, rm, rmdir, seq, sha1sum,
-        sha224sum, sha256sum, sha384sum, sha512sum, shred, shuf, sleep, sort,
-        split, stat, stty, sum, sync, tac, tail, tee, test, touch, tr, true,
-        tsort, tty, uname, unexpand, uniq, unlink, users, vdir, wc, who,
-        whoami, and yes</seg>
+        mkdir, mkfifo, mknod, mktemp, mv, nice, nl, nohup, od, paste, pathchk,
+        pinky, pr, printenv, printf, ptx, pwd, readlink, rm, rmdir, runcon, seq,
+        sha1sum, sha224sum, sha256sum, sha384sum, sha512sum, shred, shuf,
+        sleep, sort, split, stat, stty, sum, sync, tac, tail, tee, test,
+        timeout, touch, tr, true, truncate, tsort, tty, uname, unexpand, uniq,
+        unlink, users, vdir, wc, who, whoami, and yes</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -142,6 +142,16 @@ ln -sfv ../../bin/install ${CLFS}/usr/bin</userinput></screen>
           <para>Concatenates files to standard output</para>
           <indexterm zone="ch-system-coreutils cat">
             <primary sortas="b-cat">cat</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="chcon">
+        <term><command>chcon</command></term>
+        <listitem>
+          <para>Changes security context for files and directories</para>
+          <indexterm zone="ch-system-coreutils chcon">
+            <primary sortas="b-chcon">chcon</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -561,6 +571,17 @@ ln -sfv ../../bin/install ${CLFS}/usr/bin</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="mktemp">
+        <term><command>mktemp</command></term>
+        <listitem>
+          <para>Creates temporary files in a secure manner; it is used in
+          scripts</para>
+          <indexterm zone="ch-system-coreutils mktemp">
+            <primary sortas="b-mktemp">mktemp</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="mv">
         <term><command>mv</command></term>
         <listitem>
@@ -722,6 +743,16 @@ ln -sfv ../../bin/install ${CLFS}/usr/bin</userinput></screen>
           <para>Removes directories if they are empty</para>
           <indexterm zone="ch-system-coreutils rmdir">
             <primary sortas="b-rmdir">rmdir</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="runcon">
+        <term><command>runcon</command></term>
+        <listitem>
+          <para>Runs a command with specified security context</para>
+          <indexterm zone="ch-system-coreutils runcon">
+            <primary sortas="b-runcon">runcon</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -923,6 +954,16 @@ ln -sfv ../../bin/install ${CLFS}/usr/bin</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="timeout">
+        <term><command>timeout</command></term>
+        <listitem>
+          <para>Runs a command with a time limit</para>
+          <indexterm zone="ch-system-coreutils timeout">
+            <primary sortas="b-timeout">timeout</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="touch">
         <term><command>touch</command></term>
         <listitem>
@@ -953,6 +994,16 @@ ln -sfv ../../bin/install ${CLFS}/usr/bin</userinput></screen>
           indicating success</para>
           <indexterm zone="ch-system-coreutils true">
             <primary sortas="b-true">true</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="truncate">
+        <term><command>truncate</command></term>
+        <listitem>
+          <para>Shrinks or expands a file to the specified size</para>
+          <indexterm zone="ch-system-coreutils truncate">
+            <primary sortas="b-truncate">truncate</primary>
           </indexterm>
         </listitem>
       </varlistentry>
