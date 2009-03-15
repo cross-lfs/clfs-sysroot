@@ -9,20 +9,13 @@
   <?dbhtml filename="patches-alpha.html"?>
 
   <title>Additional Patches for Alpha</title>
+
 <!--
   <variablelist role="materials">
 
-    <varlistentry>
-      <term>Glibc sysdep_cancel Patch - <token>&glibc-sysdep_cancel-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&glibc-sysdep_cancel-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-sysdep_cancel-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
   </variablelist>
 -->
+
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
   href="../common/patches.xml"
   xpointer="xpointer(//*[@os='a'])"/>

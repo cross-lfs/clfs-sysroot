@@ -40,6 +40,9 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Glibc 2.9.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Coreutils to 7.1.</para>
         </listitem>
         <listitem>

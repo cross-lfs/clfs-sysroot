@@ -57,13 +57,6 @@
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='p6'])"/>
 
-<!--
-    <para os="hp1">This patch adds the TLS reloc numbers so Glibc can compile
-    with working NPTL support.</para>
-
-<screen os="hp2"><userinput>patch -Np1 -i ../&glibc-hppa_nptl-patch;</userinput></screen>
--->
-
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='b'])"/>

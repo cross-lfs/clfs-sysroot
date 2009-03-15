@@ -37,11 +37,11 @@
 <!ENTITY glibc-cross_hacks-patch-size "20 KB">
 
 <!ENTITY glibc-libgcc_eh-patch "glibc-&glibc-version;-libgcc_eh-1.patch">
-<!ENTITY glibc-libgcc_eh-patch-md5 "02bbf6bc29e34c4fc92fb478fddd43dd">
+<!ENTITY glibc-libgcc_eh-patch-md5 "1b5106b91ff4111fd97aba99437023ed">
 <!ENTITY glibc-libgcc_eh-patch-size "8 KB">
 
 <!ENTITY glibc-localedef_segfault-patch "glibc-&glibc-version;-localedef_segfault-1.patch">
-<!ENTITY glibc-localedef_segfault-patch-md5 "7f8d1687d78f18cc46db1531fb17f7fe">
+<!ENTITY glibc-localedef_segfault-patch-md5 "a52ecc9fc4ebb6677b772e37ab258120">
 <!ENTITY glibc-localedef_segfault-patch-size "4 KB">
 
 <!ENTITY gmp-branch_update-patch "gmp-&gmp-version;-branch_update-1.patch">
@@ -99,25 +99,3 @@
 <!ENTITY zlib-fpic-patch "zlib-&zlib-version;-fPIC-1.patch">
 <!ENTITY zlib-fpic-patch-md5 "545d60b20bfde6f53023de44438cef59">
 <!ENTITY zlib-fpic-patch-size "3.2 KB">
-
-<!-- Alpha Specific Patches -->
-
-<!--
-<!ENTITY glibc-sysdep_cancel-patch "glibc-&glibc-version;-sysdep_cancel-1.patch">
-<!ENTITY glibc-sysdep_cancel-patch-md5 "6b3f61df100c88e616b1e8aea81f98ce">
-<!ENTITY glibc-sysdep_cancel-patch-size "4 KB">
--->
-
-<!-- ARM Specific Patches -->
-
-<!ENTITY glibc-nptl_lowlevellock-patch "glibc-&glibc-version;-nptl_lowlevellock-1.patch">
-<!ENTITY glibc-nptl_lowlevellock-patch-md5 "0a428774cf459cf5fd23ff219390c141">
-<!ENTITY glibc-nptl-lowlevellock-patch-size "4 KB">
-
-<!-- PA-RISC Specific Patches -->
-
-<!--
-<!ENTITY glibc-hppa_nptl-patch "glibc-&glibc-version;-hppa_nptl-1.patch">
-<!ENTITY glibc-hppa_nptl-patch-md5 "fd059ea12d885bc3bfa18a39d9a4949f">
-<!ENTITY glibc-hppa_nptl-patch-size "4 KB">
--->

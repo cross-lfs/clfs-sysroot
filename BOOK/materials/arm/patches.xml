@@ -10,18 +10,11 @@
 
   <title>Additional Patches for ARM</title>
 
+<!--
   <variablelist role="materials">
 
-    <varlistentry>
-      <term>Glibc NPTL Low Level Lock Patch - <token>&glibc-nptl-lowlevellock-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&glibc-nptl_lowlevellock-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-nptl_lowlevellock-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
   </variablelist>
+-->
 
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
   href="../common/patches.xml"

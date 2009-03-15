@@ -9,20 +9,13 @@
   <?dbhtml filename="patches-hppa.html"?>
 
   <title>Additional Patches for PA-RISC</title>
+
 <!--
   <variablelist role="materials">
 
-    <varlistentry>
-      <term>Glibc NPTL Patch - <token>&glibc-hppa_nptl-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&glibc-hppa_nptl-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-hppa_nptl-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
   </variablelist>
 -->
+
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
   href="../common/patches.xml"
   xpointer="xpointer(//*[@os='a'])"/>
