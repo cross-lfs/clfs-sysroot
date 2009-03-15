@@ -47,10 +47,10 @@
 <!ENTITY bootscripts-clfs-md5 "b02b13426d55d306c3cf9da75be790aa">
 <!ENTITY bootscripts-clfs-home " ">
 
-<!ENTITY coreutils-version "6.12">
-<!ENTITY coreutils-size "8,808 KB">
+<!ENTITY coreutils-version "7.1">
+<!ENTITY coreutils-size "9,039 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.gz">
-<!ENTITY coreutils-md5 "2ca9ac69823dbd567b905a9e9f53c4f6">
+<!ENTITY coreutils-md5 "cbb2b3d1718ee1237b808e00b5c11b1e">
 <!ENTITY coreutils-home "&gnu-software;coreutils">
 
 <!ENTITY dhcpcd-version "4.0.12">
