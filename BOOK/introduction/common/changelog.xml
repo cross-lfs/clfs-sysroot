@@ -40,6 +40,9 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added i18n Patch to Diffutils.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added i18n Patch to Grep.</para>
         </listitem>
         <listitem>

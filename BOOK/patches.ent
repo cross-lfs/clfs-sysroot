@@ -20,6 +20,10 @@
 <!ENTITY coreutils-uname-patch-md5 "d299f910668ab8650e8ecbb6cdc2d5b1">
 <!ENTITY coreutils-uname-patch-size "8 KB">
 
+<!ENTITY diffutils-i18n-patch "diffutils-&diffutils-version;-i18n-1.patch">
+<!ENTITY diffutils-i18n-patch-md5 "2e176c390bf4dca2fb088e0a16261a96">
+<!ENTITY diffutils-i18n-patch-size "17 KB">
+
 <!ENTITY gcc-branch_update-patch "gcc-&gcc-version;-branch_update-4.patch">
 <!ENTITY gcc-branch_update-patch-md5 "3da38c6590de2abb42b8d5bd86f9cb08">
 <!ENTITY gcc-branch_update-patch-size "343 KB">
