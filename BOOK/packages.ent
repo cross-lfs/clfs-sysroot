@@ -153,17 +153,17 @@
 <!ENTITY iana-etc-md5 "3ba3afb1d1b261383d247f46cb135ee8">
 <!ENTITY iana-etc-home "http://www.sethwklein.net/projects/iana-etc">
 
-<!ENTITY inetutils-version "1.6">
-<!ENTITY inetutils-size "1,644 KB">
-<!ENTITY inetutils-url "&gnu;inetutils/inetutils-&inetutils-version;.tar.gz">
-<!ENTITY inetutils-md5 "23cc24bc77751bf77d50a07a7395f9b3">
-<!ENTITY inetutils-home "&gnu-software;inetutils">
-
 <!ENTITY iproute2-version "2.6.28">
 <!ENTITY iproute2-size "360 KB">
 <!ENTITY iproute2-url "http://developer.osdl.org/dev/iproute2/download/iproute2-&iproute2-version;.tar.bz2">
 <!ENTITY iproute2-md5 "595f9b17320f69e8d30d2fa80f1bca14">
 <!ENTITY iproute2-home "http://www.linuxfoundation.org/en/Net:Iproute2">
+
+<!ENTITY iputils-version "s20071127">
+<!ENTITY iputils-size "86 KB">
+<!ENTITY iputils-url "http://www.skbuff.net/iputils/iputils-&iputils-version;.tar.bz2">
+<!ENTITY iputils-md5 "12245e9927d60ff5cf4a99d265bcb7d3">
+<!ENTITY iputils-home "http://www.linuxfoundation.org/en/Net:Iputils">
 
 <!ENTITY kbd-version "1.15">
 <!ENTITY kbd-size "1,296 KB">

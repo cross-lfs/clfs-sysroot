@@ -52,9 +52,13 @@
 <!ENTITY grep-i18n-patch-md5 "337d017202d7e3b08d428a89da3ee572">
 <!ENTITY grep-i18n-patch-size "26 KB">
 
-<!ENTITY inetutils-man_pages-patch "inetutils-&inetutils-version;-no_server_man_pages-1.patch">
-<!ENTITY inetutils-man_pages-patch-md5 "ceddba1a8db7f18568a3832c11a69dff">
-<!ENTITY inetutils-man_pages-patch-size "4 KB">
+<!ENTITY iputils-fixes-patch "iputils-&iputils-version;-fixes-2.patch">
+<!ENTITY iputils-fixes-patch-md5 "31a39902b0d343233d48ef0f3c038559">
+<!ENTITY iputils-fixes-patch-size "6 KB">
+
+<!ENTITY iputils-manpages-patch "iputils-&iputils-version;-manpages-2.patch">
+<!ENTITY iputils-manpages-patch-md5 "fc3ceca15794cc0f9d84a43a21692aeb">
+<!ENTITY iputils-manpages-patch-size "29 KB">
 
 <!ENTITY linux-serial-patch "linux-&linux-version;-serial_h_fix-1.patch">
 <!ENTITY linux-serial-patch-md5 "aa82ce2ee0cd5ab270359a0a2ed89cde">
