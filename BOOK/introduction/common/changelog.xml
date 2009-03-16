@@ -40,6 +40,9 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Util-Linux-NG to 2.14.2.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated the Linux Kernel to 2.6.28.7.</para>
         </listitem>
         <listitem>
