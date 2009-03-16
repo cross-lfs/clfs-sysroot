@@ -40,6 +40,12 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Removed Get Counted page.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Hints URLs.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Grep to 2.5.4.</para>
         </listitem>
         <listitem>
