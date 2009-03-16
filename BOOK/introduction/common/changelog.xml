@@ -40,6 +40,12 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Add File Fixes Patch.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Added New Compressors patches to File, Man, Texinfo, Tar.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Binutils to 2.19.1.</para>
         </listitem>
         <listitem>
