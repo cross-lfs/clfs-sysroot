@@ -76,7 +76,7 @@ sed -e '/^BUILD_ZLIB/ s/True/False/' \
 
       <seglistitem>
         <seg>a2p, c2ph, cpan, dprofpp, enc2xs, find2perl, h2ph, h2xs, instmodsh, libnetcfg,
-        perl, perl&perl-version; (link to perl), perlbug, perlcc, perldoc,
+        perl, perl&perl-version; (link to perl), perlbug, perldoc,
         perlivp, piconv, pl2pm, pod2html, pod2latex, pod2man, pod2text,
         pod2usage, podchecker, podselect, prove, psed (link to s2p), pstruct (link
         to c2ph), s2p, splain, and xsubpp</seg>
@@ -225,16 +225,6 @@ sed -e '/^BUILD_ZLIB/ s/True/False/' \
           with it, and mail them</para>
           <indexterm zone="ch-system-perl perlbug">
             <primary sortas="b-perlbug">perlbug</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="perlcc">
-        <term><command>perlcc</command></term>
-        <listitem>
-          <para>Generates executables from Perl programs</para>
-          <indexterm zone="ch-system-perl perlcc">
-            <primary sortas="b-perlcc">perlcc</primary>
           </indexterm>
         </listitem>
       </varlistentry>
