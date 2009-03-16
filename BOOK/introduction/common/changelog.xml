@@ -40,6 +40,9 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Add Man Pages patch to Module-Init-Tools.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Add i18n patch to Procps.</para>
         </listitem>
         <listitem>
