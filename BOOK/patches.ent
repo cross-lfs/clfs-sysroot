@@ -68,10 +68,6 @@
 <!ENTITY iputils-manpages-patch-md5 "fc3ceca15794cc0f9d84a43a21692aeb">
 <!ENTITY iputils-manpages-patch-size "29 KB">
 
-<!ENTITY linux-serial-patch "linux-&linux-version;-serial_h_fix-1.patch">
-<!ENTITY linux-serial-patch-md5 "aa82ce2ee0cd5ab270359a0a2ed89cde">
-<!ENTITY linux-serial-patch-size "4 KB">
-
 <!ENTITY man-new_compressors-patch "man-&man-version;-new_compressors-1.patch">
 <!ENTITY man-new_compressors-patch-md5 "efebe29737e80c2f6de4833182f1edb6">
 <!ENTITY man-new_compressors-patch-size "2 KB">
