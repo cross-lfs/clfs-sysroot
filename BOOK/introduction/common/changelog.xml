@@ -40,6 +40,9 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Add i18n patch to Procps.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Udev to 140.</para>
         </listitem>
         <listitem>

@@ -84,6 +84,10 @@
 <!ENTITY perl-cross_compile-patch-md5 "7bbb78618e2dd95987ad04c6c54a81c6">
 <!ENTITY perl-cross_compile-patch-size "140 KB">
 
+<!ENTITY procps-i18n-patch "procps-&procps-version;-i18n-1.patch">
+<!ENTITY procps-i18n-patch-md5 "e3fd651b1293d8727e5f7cbde1260588">
+<!ENTITY procps-i18n-patch-size "4 KB">
+
 <!ENTITY shadow-sysroot_hacks-patch "shadow-&shadow-version;-sysroot_hacks-2.patch">
 <!ENTITY shadow-sysroot_hacks-patch-md5 "cf5095a86c666728650e77f1cdc64874">
 <!ENTITY shadow-sysroot_hacks-patch-size "36 KB">
