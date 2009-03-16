@@ -155,7 +155,7 @@
 
 <!ENTITY iproute2-version "2.6.28">
 <!ENTITY iproute2-size "360 KB">
-<!ENTITY iproute2-url "http://developer.osdl.org/dev/iproute2/download/iproute2-&iproute2-version;.tar.bz2">
+<!ENTITY iproute2-url "http://devresources.linux-foundation.org/dev/iproute2/download/iproute2-&iproute2-version;.tar.bz2">
 <!ENTITY iproute2-md5 "595f9b17320f69e8d30d2fa80f1bca14">
 <!ENTITY iproute2-home "http://www.linuxfoundation.org/en/Net:Iproute2">
 
@@ -245,7 +245,7 @@
 <!ENTITY perl-size "15,252 KB">
 <!ENTITY perl-url "http://ftp.funet.fi/pub/CPAN/src/perl-&perl-version;.tar.gz">
 <!ENTITY perl-md5 "d2c39b002ebfd2c3c5dba589365c5a71">
-<!ENTITY perl-home "http://www.perl.com">
+<!ENTITY perl-home "http://www.perl.org">
 
 <!ENTITY procps-version "3.2.7">
 <!ENTITY procps-size "280 KB">
