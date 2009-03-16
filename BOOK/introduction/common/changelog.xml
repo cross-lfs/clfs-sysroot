@@ -40,6 +40,9 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Udev to 140.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Replaced Inetutils 1.6 with IP Utils 29971127.</para>
         </listitem>
         <listitem>

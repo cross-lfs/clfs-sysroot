@@ -302,10 +302,10 @@
 <!ENTITY texinfo-md5 "71ba711519209b5fb583fed2b3d86fcb">
 <!ENTITY texinfo-home "&gnu-software;texinfo">
 
-<!ENTITY udev-version "136">
+<!ENTITY udev-version "140">
 <!ENTITY udev-size "440 KB">
 <!ENTITY udev-url "&kernel;linux/utils/kernel/hotplug/udev-&udev-version;.tar.bz2">
-<!ENTITY udev-md5 "9d5960024da9c80b54c8273ee05b31e1">
+<!ENTITY udev-md5 "7d1e5737a3557849eecd701a7fb068b4">
 <!ENTITY udev-home "http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html">
 
 <!ENTITY util-linux-ng-dl-version "2.14">
