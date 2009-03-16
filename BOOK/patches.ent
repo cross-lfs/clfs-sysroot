@@ -24,6 +24,10 @@
 <!ENTITY diffutils-i18n-patch-md5 "2e176c390bf4dca2fb088e0a16261a96">
 <!ENTITY diffutils-i18n-patch-size "17 KB">
 
+<!ENTITY file-cross_compile-patch "file-&file-version;-cross_compile-1.patch">
+<!ENTITY file-cross_compile-patch-md5 "17956303345b8514a9c2bdc3939a21e5">
+<!ENTITY file-cross_compile-patch-size "1 KB">
+
 <!ENTITY file-fixes-patch "file-&file-version;-fixes-2.patch">
 <!ENTITY file-fixes-patch-md5 "23725f364441a9b1f4b244b2b3cdcd27">
 <!ENTITY file-fixes-patch-size "5 KB">
