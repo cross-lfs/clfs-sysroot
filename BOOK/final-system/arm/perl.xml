@@ -47,10 +47,8 @@ sed -e "s@pldlflags=''@pldlflags=\"\$cccdlflags\"@g" \
     links against its own internal copy of Zlib. The following command will
     tell it use the system-installed Zlib:</para>
 
-<screen os="s4"><userinput>cp -v ext/Compress/Raw/Zlib/config.in{,.orig}
-sed -e '/^BUILD_ZLIB/ s/True/False/' \
+<screen os="s4"><userinput>sed -i -e '/^BUILD_ZLIB/ s/True/False/' \
         -e '/^INCLUDE\|^LIB/ s|\./zlib-src|/usr/include|' \
-        ext/Compress/Raw/Zlib/config.in.orig &gt; \
         ext/Compress/Raw/Zlib/config.in</userinput></screen>
 
     <para os="a">The Cross directory contains a Makefile for cross-compiling:</para>
