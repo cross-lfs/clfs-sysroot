@@ -22,13 +22,17 @@
     <para>The following value is added to <filename>config.cache</filename> to
     make sure that the <filename>passwd</filename> program is found:</para>
 
-<screen><userinput>echo "shadow_cv_passwd_dir=${CLFS}/bin" &gt; config.cache</userinput></screen>
+<screen><userinput>cat &gt; config.cache &lt;&lt; EOF
+shadow_cv_passwd_dir=${CLFS}/bin"
+EOF</userinput></screen>
 
     <para>The following value causes Shadow to use its internal lckpwdf
     instead of the one provided by Glibc. The one provided by Glibc will
     attempt to modify the host system:</para>
 
-<screen><userinput>echo "ac_cv_func_lckpwdf=no" &gt;&gt; config.cache</userinput></screen>
+<screen><userinput>cat &gt; config.cache &lt;&lt; EOF
+ac_cv_func_lckpwdf=no
+EOF</userinput></screen>
 
     <para>Prepare Shadow for compilation:</para>
 

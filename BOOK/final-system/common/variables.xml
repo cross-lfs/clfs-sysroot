@@ -24,12 +24,14 @@ export STRIP="${CLFS_TARGET}-strip"</userinput></screen>
   <para>Then add the build variables to <filename>~/.bashrc</filename> to
   prevent issues if you stop and come back later:</para>
 
-<screen><userinput>echo export CC=\""${CC}\"" &gt;&gt; ~/.bashrc
-echo export CXX=\""${CXX}\"" &gt;&gt; ~/.bashrc
-echo export AR=\""${AR}\"" &gt;&gt; ~/.bashrc
-echo export AS=\""${AS}\"" &gt;&gt; ~/.bashrc
-echo export RANLIB=\""${RANLIB}\"" &gt;&gt; ~/.bashrc
-echo export LD=\""${LD}\"" &gt;&gt; ~/.bashrc
-echo export STRIP=\""${STRIP}\"" &gt;&gt; ~/.bashrc</userinput></screen>
+<screen><userinput>cat &gt; config.cache &lt;&lt; EOF
+export CC="${CC}"
+export CXX="${CXX}"
+export AR="${AR}"
+export AS="${AS}"
+export RANLIB="${RANLIB}"
+export LD="${LD}"
+export STRIP="${STRIP}"
+EOF</userinput></screen>
 
 </sect1>

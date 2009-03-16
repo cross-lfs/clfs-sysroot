@@ -21,7 +21,9 @@
   <para>Create the <filename>/etc/sysconfig/network</filename> file
   and enter a hostname by running:</para>
 
-  <screen><userinput>echo "HOSTNAME=<replaceable>[clfs]</replaceable>" &gt; ${CLFS}/etc/sysconfig/network</userinput></screen>
+<screen><userinput>cat &gt; ${CLFS}/etc/sysconfig/network &lt;&lt; EOF
+HOSTNAME=<replaceable>[clfs]</replaceable>
+EOF</userinput></screen>
 
   <para><replaceable>[clfs]</replaceable> needs to be replaced with the
   name given to the computer. Do not enter the Fully Qualified

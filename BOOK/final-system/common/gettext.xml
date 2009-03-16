@@ -30,10 +30,12 @@
     <para os="c1">When Cross Compiling the configure script does not
     run a select few tests, Set the values manually:</para>
 
-<screen os="c2"><userinput>echo "am_cv_func_iconv_works=yes" &gt; config.cache
-echo "gl_cv_func_wcwidth_works=yes" &gt;&gt; config.cache
-echo "gt_cv_func_printf_posix=yes" &gt;&gt; config.cache
-echo "gt_cv_int_divbyzero_sigfpe=yes" &gt;&gt; config.cache</userinput></screen>
+<screen os="c2"><userinput>cat &gt; config.cache &lt;&lt; EOF
+am_cv_func_iconv_works=yes
+gl_cv_func_wcwidth_works=yes
+gt_cv_func_printf_posix=yes
+gt_cv_int_divbyzero_sigfpe=yes
+EOF</userinput></screen>
 
     <para os="a">Prepare Gettext for compilation:</para>
 

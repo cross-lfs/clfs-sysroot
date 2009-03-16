@@ -30,9 +30,11 @@
     <para os="c1">When Cross Compiling the configure script does not
     run a select few tests, Set the values manually:</para>
 
-<screen os="c2"><userinput>echo "gl_cv_func_wcwidth_works=yes" &gt; config.cache
-echo "gl_cv_header_working_fcntl_h=yes" &gt;&gt; config.cache
-echo "ac_cv_func_fnmatch_gnu=yes" &gt;&gt; config.cache</userinput></screen>
+<screen os="c2"><userinput>cat &gt; config.cache &lt;&lt; EOF
+gl_cv_func_wcwidth_works=yes
+gl_cv_header_working_fcntl_h=yes
+ac_cv_func_fnmatch_gnu=yes
+EOF</userinput></screen>
 
     <para os="a">Prepare Findutils for compilation:</para>
 

@@ -22,7 +22,9 @@ unset CXXFLAGS</userinput></screen>
   <para>Now add these to <filename>~/.bashrc</filename>, just in
   case you have to exit and restart building later:</para>
 
-<screen><userinput>echo unset CFLAGS &gt;&gt; ~/.bashrc
-echo unset CXXFLAGS &gt;&gt; ~/.bashrc</userinput></screen>
+<screen><userinput>cat &gt;&gt; ~/.bashrc &lt;&lt; EOF
+unset CFLAGS
+unset CXXFLAGS
+EOF</userinput></screen>
 
 </sect1>

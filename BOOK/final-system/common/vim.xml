@@ -61,7 +61,9 @@ EOF</userinput></screen>
     the <filename>vimrc</filename> configuration file to <filename
     class="directory">/etc</filename>:</para>
 
-<screen os="c"><userinput>echo '#define SYS_VIMRC_FILE "/etc/vimrc"' &gt;&gt; src/feature.h</userinput></screen>
+<screen os="c"><userinput>cat &gt;&gt; src/feature.h &lt;&lt; "EOF"
+#define SYS_VIMRC_FILE "/etc/vimrc"
+EOF</userinput></screen>
 
     <para os="d">Prepare Vim for compilation:</para>
 

@@ -56,7 +56,9 @@ sed -e "/binPROGRAMS_INSTALL=/s:./ginstall:install:" src/Makefile.in.orig &gt; s
     not be built. Add the following entry to <filename>config.cache</filename>
     to correct this:</para>
 
-<screen os="b"><userinput>echo "fu_cv_sys_stat_statfs2_bsize=yes" &gt; config.cache</userinput></screen>
+<screen os="b"><userinput>cat &gt; config.cache &lt;&lt; EOF
+fu_cv_sys_stat_statfs2_bsize=yes
+EOF</userinput></screen>
 
     <para os="c">Now prepare Coreutils for compilation:</para>
 

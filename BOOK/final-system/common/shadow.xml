@@ -36,7 +36,9 @@
     <para os="b">Create a config.cache containing information about a test that
     cannot be run when cross-compiling:</para>
 
-<screen os="c"><userinput>echo "ac_cv_func_setpgrp_void=yes" &gt; config.cache</userinput></screen>
+<screen os="c"><userinput>cat &gt; config.cache &lt;&lt; EOF
+ac_cv_func_setpgrp_void=yes
+EOF</userinput></screen>
 
     <para os="d">Prepare Shadow for compilation:</para>
 

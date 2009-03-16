@@ -32,7 +32,9 @@
     isn't installed by default but it may be installed on the host, Lets
     force the fallback value.</para>
 
-<screen os="b"><userinput>echo "ac_cv_path_ed_PROGRAM=ed" &gt; config.cache</userinput></screen>
+<screen os="b"><userinput>cat &gt; config.cache &lt;&lt; EOF
+ac_cv_path_ed_PROGRAM=ed
+EOF</userinput></screen>
 
     <para os="c">Prepare Patch for compilation:</para>
 

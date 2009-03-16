@@ -80,7 +80,9 @@ EOF</userinput></screen>
     <para os="f">The following line needs to be added to
     <filename>configparms</filename> to adjust installation paths:</para>
 
-<screen os="g"><userinput>echo "install_root=${CLFS}" &gt; configparms</userinput></screen>
+<screen os="g"><userinput>cat &gt; configparms &lt;&lt; EOF
+install_root=${CLFS}
+EOF</userinput></screen>
 
     <para os="h">Prepare Glibc for compilation:</para>
 

@@ -23,6 +23,8 @@
   point) to find out which CLFS version is installed on the system.
   Create this file by running:</para>
 
-<screen><userinput>echo CLFS-Sysroot-&version; &gt; ${CLFS}/etc/clfs-release</userinput></screen>
+<screen><userinput>cat &gt; ${CLFS}/etc/clfs-release &lt;&lt; EOF
+CLFS-Sysroot-&version;
+EOF</userinput></screen>
 
 </sect1>
