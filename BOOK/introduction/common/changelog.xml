@@ -40,6 +40,10 @@
       <para>March 15, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added Arch to Util-Linux-NG. Updated descriptions
+          of configure parameters.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Util-Linux-NG to 2.14.2.</para>
         </listitem>
         <listitem>
@@ -52,7 +56,8 @@
           <para>[jciccone] - Add File Fixes Patch.</para>
         </listitem>
         <listitem>
-          <para>[jciccone] - Added New Compressors patches to File, Man, Texinfo, Tar.</para>
+          <para>[jciccone] - Added New Compressors patches to File, Man,
+          Texinfo, Tar.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Updated Binutils to 2.19.1.</para>
@@ -106,7 +111,8 @@
           <para>[jciccone] - Added i18n Patch to Grep.</para>
         </listitem>
         <listitem>
-          <para>[jciccone] - Diffutils wants ed as a editor. Changed it to Vim.</para>
+          <para>[jciccone] - Diffutils wants ed as a editor. Changed it to
+          Vim.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Updated GCC to 4.3.3.</para>
@@ -115,7 +121,8 @@
           <para>[jciccone] - Updated VIM Branch Update patch to -11.</para>
         </listitem>
         <listitem>
-          <para>[jciccone] - Updated MPFR to 2.4.1 and added branch update patch.</para>
+          <para>[jciccone] - Updated MPFR to 2.4.1 and added branch update
+          patch.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Updated Bash to 4.0.</para>
