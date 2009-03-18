@@ -5,7 +5,7 @@
 <!-- Note: For empty *-home entities use " " not "" -->
 
 <!ENTITY autoconf-version "2.63">
-<!ENTITY autoconf-size "1,172 KB">
+<!ENTITY autoconf-size "1,167 KB">
 <!ENTITY autoconf-url "&gnu;autoconf/autoconf-&autoconf-version;.tar.bz2">
 <!ENTITY autoconf-md5 "7565809ed801bb5726da0631ceab3699">
 <!ENTITY autoconf-home "&gnu-software;autoconf">
@@ -35,17 +35,17 @@
 <!ENTITY bison-md5 "84e80a2a192c1a4c02d43fbf2bcc4ca4">
 <!ENTITY bison-home "&gnu-software;bison">
 
-<!ENTITY bzip2-version "1.0.5">
-<!ENTITY bzip2-size "828 KB">
-<!ENTITY bzip2-url "http://www.bzip.org/&bzip2-version;/bzip2-&bzip2-version;.tar.gz">
-<!ENTITY bzip2-md5 "3c15a0c8d1d3ee1c46a1634d00617b1a">
-<!ENTITY bzip2-home "http://www.bzip.org">
-
 <!ENTITY bootscripts-clfs-version "1.2-pre3">
 <!ENTITY bootscripts-clfs-size "40 KB">
 <!ENTITY bootscripts-clfs-url "&packages-root;bootscripts-cross-lfs-&bootscripts-clfs-version;.tar.bz2">
 <!ENTITY bootscripts-clfs-md5 "b02b13426d55d306c3cf9da75be790aa">
 <!ENTITY bootscripts-clfs-home " ">
+
+<!ENTITY bzip2-version "1.0.5">
+<!ENTITY bzip2-size "828 KB">
+<!ENTITY bzip2-url "http://www.bzip.org/&bzip2-version;/bzip2-&bzip2-version;.tar.gz">
+<!ENTITY bzip2-md5 "3c15a0c8d1d3ee1c46a1634d00617b1a">
+<!ENTITY bzip2-home "http://www.bzip.org">
 
 <!ENTITY coreutils-version "7.1">
 <!ENTITY coreutils-size "9,039 KB">
