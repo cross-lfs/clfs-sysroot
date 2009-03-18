@@ -471,7 +471,7 @@ diff -Naur glibc-2.9.orig/include-native/bits/libc-tsd.h glibc-2.9/include-nativ
 +++ glibc-2.9/include-native/bits/libc-tsd.h	2009-03-15 19:22:15.788787576 -0400
 @@ -0,0 +1,3 @@
 +#ifndef __libc_tsd_define
-+#define __libc_tsd_define(A,B)
++#define __libc_tsd_define(A,B,C)
 +#endif
 diff -Naur glibc-2.9.orig/include-native/config.h glibc-2.9/include-native/config.h
 --- glibc-2.9.orig/include-native/config.h	1969-12-31 19:00:00.000000000 -0500
