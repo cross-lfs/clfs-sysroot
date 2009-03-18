@@ -40,6 +40,9 @@
       <para>March 17, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated E2fsprogs to 1.41.4.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Applied Patch to Sysvinit. Fixed Various
           Issues.</para>
         </listitem>
