@@ -40,6 +40,10 @@
       <para>March 17, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Moved location of dumpkeys to /bin. Required by
+          bootscripts.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Added --enable-multibyte to Groff.</para>
         </listitem>
         <listitem>

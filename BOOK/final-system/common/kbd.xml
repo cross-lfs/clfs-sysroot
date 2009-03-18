@@ -52,7 +52,7 @@ EOF</userinput></screen>
     class="directory">/usr</filename> may not be available during the early
     stages of booting, those binaries need to be on the root partition:</para>
 
-<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/{kbd_mode,loadkeys,openvt,setfont} ${CLFS}/bin</userinput></screen>
+<screen os="i"><userinput>mv -v ${CLFS}/usr/bin/{kbd_mode,dumpkeys,loadkeys,openvt,setfont} ${CLFS}/bin</userinput></screen>
 
   </sect2>
 
