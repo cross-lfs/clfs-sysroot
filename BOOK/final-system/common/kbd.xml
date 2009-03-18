@@ -37,22 +37,7 @@ EOF</userinput></screen>
     <para os="a">Prepare Kbd for compilation:</para>
 
 <screen os="b"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
-    --prefix=/usr --datadir=/lib/kbd \
-    --cache-file=config.cache</userinput></screen>
-
-    <variablelist os="c">
-      <title>The meaning of the configure options:</title>
-
-      <varlistentry>
-        <term><parameter>--datadir</parameter></term>
-        <listitem>
-          <para>This option places the Kbd data and keymap files into /lib/kbd,
-          as they are used by some of the scripts in the CLFS-Bootscripts
-          package and must be on the root partition.</para>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
+    --prefix=/usr --cache-file=config.cache</userinput></screen>
 
     <para os="d">Compile the package:</para>
 
