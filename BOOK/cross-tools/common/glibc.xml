@@ -224,7 +224,7 @@ EOF</userinput></screen>
 <screen role="nodump"><userinput>mkdir -pv ${CLFS}/usr/lib/locale
 export I18NPATH=${PWD}/localedata
 export GCONV_PATH=${PWD}/iconvdata
-export LOCALEDEF="${PWD}/locale/localedef-native
+export LOCALEDEF="${PWD}/locale/localedef-native \
     --alias-file=../intl/locale.alias"
 cd ../glibc-&glibc-version;/localedata
 ${LOCALEDEF} -i locales/de_DE -f charmaps/ISO-8859-1 --prefix=${CLFS} de_DE
