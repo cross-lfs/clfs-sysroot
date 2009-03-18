@@ -40,6 +40,9 @@
       <para>March 17, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Module-Init-Tools to 3.6.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated to Linux 2.6.28.6.</para>
         </listitem>
         <listitem>
