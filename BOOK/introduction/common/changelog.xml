@@ -40,6 +40,9 @@
       <para>March 17, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added --enable-multibyte to Groff.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Removed redundant acknowlegements page in
           appendices.</para>
         </listitem>
