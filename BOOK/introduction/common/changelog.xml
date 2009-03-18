@@ -40,6 +40,10 @@
       <para>March 17, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Applied Patch to Sysvinit. Fixed Various
+          Issues.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Moved location of dumpkeys to /bin. Required by
           bootscripts.</para>
         </listitem>

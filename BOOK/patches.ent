@@ -108,6 +108,10 @@
 <!ENTITY shadow-sysroot_hacks-patch-md5 "cf5095a86c666728650e77f1cdc64874">
 <!ENTITY shadow-sysroot_hacks-patch-size "36 KB">
 
+<!ENTITY sysvinit-fixes-patch "sysvinit-&sysvinit-version;-fixes-1.patch">
+<!ENTITY sysvinit-fixes-patch-md5 "405d23896b54ca61afd53003a62592fd">
+<!ENTITY sysvinit-fixes-patch-size "24 KB">
+
 <!ENTITY tar-man_page-patch "tar-&tar-version;-man_page-1.patch">
 <!ENTITY tar-man_page-patch-md5 "a8d01d18a3e550230302a5a52c686d25">
 <!ENTITY tar-man_page-patch-size "16 KB">
