@@ -27,11 +27,11 @@
 
     <para os="a">Install the package:</para>
 
-<screen os="b"><userinput>make DESTDIR="${CLFS}" install-bootscripts</userinput></screen>
+<screen os="b"><userinput>make DESTDIR=${CLFS} install-bootscripts</userinput></screen>
 
     <para os="c">You can will need to run the following command to install support for Networking:</para>
 
-<screen os="d"><userinput>make DESTDIR="${CLFS}" install-network</userinput></screen>
+<screen os="d"><userinput>make DESTDIR=${CLFS} install-network</userinput></screen>
 
   </sect2>
 

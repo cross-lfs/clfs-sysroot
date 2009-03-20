@@ -41,7 +41,7 @@
 
 <screen os="f"><userinput>make PREFIX=/usr BINDIR=/sbin SYSCONFDIR=/etc \
     DBDIR=/var/lib/dhcpcd LIBEXECDIR=/usr/lib/dhcpcd \
-    DESTDIR="${CLFS}" install</userinput></screen>
+    DESTDIR=${CLFS} install</userinput></screen>
 
   </sect2>
 

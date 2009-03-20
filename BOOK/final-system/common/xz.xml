@@ -37,7 +37,7 @@
 
     <para os="e">Install the programs:</para>
 
-<screen os="f"><userinput>make DESTDIR="${CLFS}" install</userinput></screen>
+<screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
     <para os="g">Move the <filename>xz</filename> binary, and several symlinks
     that point to it, into the /bin directory:</para>

@@ -17,7 +17,7 @@
 
 <screen><userinput>tar -jxvf bootscripts-cross-lfs-&bootscripts-clfs-version;.tar.bz2
 cd -v bootscripts-cross-lfs-&bootscripts-clfs-version;
-make DESTDIR="${CLFS}" install-service-dhcpcd</userinput></screen>
+make DESTDIR=${CLFS} install-service-dhcpcd</userinput></screen>
 
     <para>Finally, create the
     <filename>/etc/sysconfig/network-devices/ifconfig.eth0/dhcpcd</filename>
