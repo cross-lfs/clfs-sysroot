@@ -48,8 +48,7 @@ sed '/^TARGETS/s@arpd@@g' misc/Makefile.orig &gt; misc/Makefile</userinput></scr
 
 <screen os="b"><userinput>make DESTDIR=${CLFS} CC="${CC}" \
     DOCDIR=/usr/share/doc/iproute2 \
-    MANDIR=/usr/share/man
-</userinput></screen>
+    MANDIR=/usr/share/man</userinput></screen>
 
     <variablelist os="c">
       <title>The meaning of the make option:</title>
