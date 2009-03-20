@@ -40,13 +40,13 @@
 
     <para os="d">Install the package:</para>
 
-<screen os="e"><userinput>install -v -m755 ping{,6} /bin
-install -v -m755 arping /usr/bin
-install -v -m755 clockdiff /usr/bin
-install -v -m755 rdisc /usr/bin
-install -v -m755 tracepath /usr/bin
-install -v -m755 trace{path,route}6 /usr/bin
-install -v -m644 doc/*.8 /usr/share/man/man8</userinput></screen>
+<screen os="e"><userinput>install -v -m755 ping{,6} ${CLFS}/bin
+install -v -m755 arping ${CLFS}/usr/bin
+install -v -m755 clockdiff ${CLFS}/usr/bin
+install -v -m755 rdisc ${CLFS}/usr/bin
+install -v -m755 tracepath ${CLFS}/usr/bin
+install -v -m755 trace{path,route}6 ${CLFS}/usr/bin
+install -v -m644 doc/*.8 ${CLFS}/usr/share/man/man8</userinput></screen>
 
   </sect2>
 
