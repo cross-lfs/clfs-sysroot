@@ -35,8 +35,7 @@ DHCP_START="-q"
 
 # Stop Command for DHCPCD
 DHCP_STOP="-k"</literal>
-EOF
-</userinput></screen>
+EOF</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="static.xml"

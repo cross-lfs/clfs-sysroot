@@ -271,11 +271,11 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Texinfo New Compressors Patch - <token>&tar-new_compressors-patch-size;</token>:</term>
+      <term>Texinfo New Compressors Patch - <token>&texinfo-new_compressors-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
-        url="&patches-root;&tar-new_compressors-patch;"/></para>
-        <para>MD5 sum: <literal>&tar-new_compressors-patch-md5;</literal></para>
+        url="&patches-root;&texinfo-new_compressors-patch;"/></para>
+        <para>MD5 sum: <literal>&texinfo-new_compressors-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
 
