@@ -8,10 +8,11 @@
 <sect1 id="ch-cross-tools-ncurses" role="wrap">
   <?dbhtml filename="ncurses.html"?>
 
-  <title>Ncurses-&ncurses-version;</title>
+  <title>Ncurses-&ncurses-version; - Native</title>
 
   <indexterm zone="ch-cross-tools-ncurses">
     <primary sortas="a-Ncurses">Ncurses</primary>
+    <secondary>cross tools</secondary>
   </indexterm>
 
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"

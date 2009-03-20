@@ -10,6 +10,11 @@
 
   <title>Shadow-&shadow-version; - Native</title>
 
+  <indexterm zone="ch-cross-tools-shadow">
+    <primary sortas="a-Shadow">Shadow</primary>
+    <secondary>cross tools</secondary>
+  </indexterm>
+
   <sect2 role="installation">
     <title>Installation of Shadow</title>
 

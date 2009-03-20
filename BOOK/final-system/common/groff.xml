@@ -33,7 +33,7 @@
     <para os="b">Prepare Groff for compilation:</para>
 
 <screen os="c"><userinput>PAGE=<replaceable>[paper_size]</replaceable> ./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
-    --prefix=/usr --enable-multibyte</userinput></screen>
+    --prefix=/usr</userinput></screen>
 
     <para os="d">Compile the package:</para>
 
