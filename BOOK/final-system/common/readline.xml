@@ -45,7 +45,7 @@
 
     <para os="h">Install the documentation:</para>
 
-<screen os="i"><userinput>make install-doc</userinput></screen>
+<screen os="i"><userinput>make DESTDIR=${CLFS} install-doc</userinput></screen>
 
     <para os="j">Now move the static libraries to a more appropriate location:</para>
 
