@@ -57,6 +57,16 @@ mv -v glibc-ports-&glibc-version; ports</userinput></screen>
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='p6'])"/>
 
+    <para os="arp1">The following patch adds a missing hidden alias for
+    __sigsetjmp:</para>
+
+<screen os="arp2"><userinput>patch -Np1 -i ../&glibc-arm_setjmp_fix-patch;</userinput></screen>
+
+    <para os="arp3">The following patch adds a missing include that fixes a
+    compilation error on arm.</para>
+
+<screen os="arp4"><userinput>patch -Np1 -i ../&glibc-nptl_lowlevellock-patch;</userinput></screen>
+
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/glibc.xml"
     xpointer="xpointer(//*[@os='b'])"/>

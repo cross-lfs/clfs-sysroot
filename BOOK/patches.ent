@@ -44,6 +44,10 @@
 <!ENTITY gcc-posix-patch-md5 "ccc0d5f959234bf4fed2b6fa338d6117">
 <!ENTITY gcc-posix-patch-size "13 KB">
 
+<!ENTITY glibc-arm_setjmp_fix-patch "glibc-&glibc-version;-arm_setjmp_fix-1.patch">
+<!ENTITY glibc-arm_setjmp_fix-patch-md5 "e7a669566af4c79251399fcad858b290">
+<!ENTITY glibc-arm_setjmp_fix-patch-size ".7 KB">
+
 <!ENTITY glibc-cross_hacks-patch "glibc-&glibc-version;-cross_hacks-2.patch">
 <!ENTITY glibc-cross_hacks-patch-md5 "65c72652824b4faa0d9fbcf291151e10">
 <!ENTITY glibc-cross_hacks-patch-size "46 KB">
@@ -55,6 +59,10 @@
 <!ENTITY glibc-localedef_segfault-patch "glibc-&glibc-version;-localedef_segfault-1.patch">
 <!ENTITY glibc-localedef_segfault-patch-md5 "a52ecc9fc4ebb6677b772e37ab258120">
 <!ENTITY glibc-localedef_segfault-patch-size "2 KB">
+
+<!ENTITY glibc-nptl_lowlevellock-patch "glibc-&glibc-version;-nptl_lowlevellock-1.patch">
+<!ENTITY glibc-nptl_lowlevellock-patch-md5 "0a428774cf459cf5fd23ff219390c141">
+<!ENTITY glibc-nptl_lowlevellock-patch-size ".8 KB">
 
 <!ENTITY gmp-branch_update-patch "gmp-&gmp-version;-branch_update-1.patch">
 <!ENTITY gmp-branch_update-patch-md5 "31606a19116f646a2d891d639fbfc339">
