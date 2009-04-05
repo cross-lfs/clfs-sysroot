@@ -104,9 +104,9 @@
 <!ENTITY ncurses-branch_update-patch-md5 "de6a37dcd5764ee8251e3df0960b7a58">
 <!ENTITY ncurses-branch_update-patch-size "767 KB">
 
-<!ENTITY perl-cross_compile-patch "perl-&perl-version;-cross_compile-5.patch">
-<!ENTITY perl-cross_compile-patch-md5 "7bbb78618e2dd95987ad04c6c54a81c6">
-<!ENTITY perl-cross_compile-patch-size "140 KB">
+<!ENTITY perl-cross_compile-patch "perl-&perl-version;-cross_compile-1.patch">
+<!ENTITY perl-cross_compile-patch-md5 "5efface8b393841a07c66a08dc7be847">
+<!ENTITY perl-cross_compile-patch-size "170 KB">
 
 <!ENTITY procps-i18n-patch "procps-&procps-version;-i18n-1.patch">
 <!ENTITY procps-i18n-patch-md5 "e3fd651b1293d8727e5f7cbde1260588">

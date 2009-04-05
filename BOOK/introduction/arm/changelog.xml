@@ -33,6 +33,16 @@
 -->
 
     <listitem>
+      <para>April 5, 2009</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Added 2 patches to Glibc to fix errors while
+          compiling.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 24, 2006</para>
       <itemizedlist>
         <listitem>

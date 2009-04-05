@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>April 5, 2009</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Created a new Perl Cross Compile patch for
+          Perl 5.10.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>March 17, 2009</para>
       <itemizedlist>
         <listitem>
