@@ -29,7 +29,8 @@
 
     <para os="a">Prepare XZ-Utils for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/usr</userinput></screen>
+<screen os="b"><userinput>./configure --build=${CLFS_HOST} --target=${CLFS_TARGET} \
+    --prefix=/usr</userinput></screen>
 
     <para os="c">Compile the package:</para>
 
