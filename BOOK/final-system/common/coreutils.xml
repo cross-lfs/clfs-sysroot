@@ -32,15 +32,11 @@
 
 <screen os="p2"><userinput>patch -Np1 -i ../&coreutils-uname-patch;</userinput></screen>
 
-    <para os="aa">The above patch modifies the source code for
-    <command>uname</command>. Because it now has a newer timestamp then
-    its man page, the <filename>Makefile</filename> is going to
-    try to regenerate the man page. If executables for the target architecture
-    can not be executed by the host system, the build will fail. The following
-    command fixes this by giving the man page a newer timestamp then its
-    corresponding source file:</para>
+    <para os="aa">The following command updates the timestamps on the uname
+    and hostname man pages so that the Makefile does not attempt to regenerate
+    them:</para>
 
-<screen os="ab"><userinput>touch man/uname.1</userinput></screen>
+<screen os="ab"><userinput>touch man/uname.1 man/hostname.1</userinput></screen>
 
     <para os="s1">Coreutils attempts to use the <command>install</command>
     program it just built to perform the install. This will not work if the
