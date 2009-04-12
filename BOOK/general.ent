@@ -49,3 +49,27 @@
 
 <!ENTITY % uid-gid-entities SYSTEM "users_groups.ent">
 %uid-gid-entities;
+
+<!ENTITY env-target '  <sect2 role="build-env">
+    <title>Environment Settings</title>
+
+    <para>This package requires compiler variables to be set for the target in the environment.</para>
+
+    <screen><userinput>export CC=&quot;${CLFS_TARGET}-gcc&quot;
+export CXX=&quot;${CLFS_TARGET}-g++&quot;
+export AR=&quot;${CLFS_TARGET}-ar&quot;
+export AS=&quot;${CLFS_TARGET}-as&quot;
+export RANLIB=&quot;${CLFS_TARGET}-ranlib&quot;
+export LD=&quot;${CLFS_TARGET}-ld&quot;
+export STRIP=&quot;${CLFS_TARGET}-strip&quot;</userinput></screen>
+
+  </sect2>'>
+
+<!ENTITY env-host '  <sect2 role="build-env">
+    <title>Environment Settings</title>
+
+    <para>This package requires compiler variables to be set for the host system.</para>
+
+    <screen><userinput>unset CC CXX AR AS RANLIB LD STRIP</userinput></screen>
+
+  </sect2>'>

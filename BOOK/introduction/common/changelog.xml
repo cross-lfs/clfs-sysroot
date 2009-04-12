@@ -37,6 +37,18 @@
 -->
 
     <listitem>
+      <para>April 12, 2009</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Add a sysroot wrapper.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated the build variables.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 5, 2009</para>
       <itemizedlist>
         <listitem>

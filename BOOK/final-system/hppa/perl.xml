@@ -18,6 +18,10 @@
   href="../arm/perl.xml"
   xpointer="xpointer(//*[@role='package'])"/>
 
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+  href="../arm/perl.xml"
+  xpointer="xpointer(//*[@role='build-env'])"/>
+
   <sect2 role="installation">
     <title>Installation of Perl</title>
 

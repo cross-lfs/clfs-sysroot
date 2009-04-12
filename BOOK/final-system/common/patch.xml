@@ -23,6 +23,8 @@
 
   </sect2>
 
+  &env-target;
+
   <sect2 role="installation">
     <title>Installation of Patch</title>
 

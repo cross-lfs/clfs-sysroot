@@ -19,8 +19,9 @@
 
     <para>The Tar package contains an archiving program.</para>
 
-
   </sect2>
+
+  &env-target;
 
   <sect2 role="installation">
     <title>Installation of Tar</title>

@@ -24,6 +24,8 @@
 
   </sect2>
 
+  &env-target;
+
   <sect2 role="installation">
     <title>Installation of Bzip2</title>
 
