@@ -35,7 +35,7 @@ EOF</userinput></screen>
     instead of the one provided by Glibc. The one provided by Glibc will
     attempt to modify the host system:</para>
 
-<screen><userinput>cat &gt; config.cache &lt;&lt; EOF
+<screen><userinput>cat &gt;&gt; config.cache &lt;&lt; EOF
 ac_cv_func_lckpwdf=no
 EOF</userinput></screen>
 
