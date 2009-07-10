@@ -40,6 +40,9 @@
       <para>July 9, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Util-Linux-NG to 2.15.1.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Udev to 143.</para>
         </listitem>
         <listitem>
