@@ -40,6 +40,9 @@
       <para>July 9, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Module Init Tools to 3.9.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated the Vim Branch Update patch to -15.</para>
         </listitem>
         <listitem>
