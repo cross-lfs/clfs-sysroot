@@ -40,6 +40,9 @@
       <para>July 9, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Added Readline Branch Update Patch.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated NCurses Branch Update Patch to -14.</para>
         </listitem>
         <listitem>
