@@ -79,7 +79,7 @@ ln -sfv ncursesw5-config ${CLFS}/usr/bin/ncurses5-config</userinput></screen>
     <para os="m">Now we will create a symlink for /usr/share/terminfo in
     <filename class="directory">/usr/lib</filename> for compatibility:</para>
 
-<screen os="n"><userinput>ln -sfv ../../usr/share/terminfo ${CLFS}/usr/lib/terminfo</userinput></screen>
+<screen os="n"><userinput>ln -sfv ../share/terminfo ${CLFS}/usr/lib/terminfo</userinput></screen>
 
   </sect2>
 
