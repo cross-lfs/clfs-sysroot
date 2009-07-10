@@ -40,6 +40,9 @@
       <para>July 9, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Procps to 3.2.8.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated the Binutils Branch Update patch to -5.</para>
         </listitem>
         <listitem>
