@@ -78,10 +78,10 @@
 <!ENTITY file-md5 "74cd5466416136da30a4e69f74dbc7a0">
 <!ENTITY file-home "http://www.darwinsys.com/file">
 
-<!ENTITY findutils-version "4.4.0">
-<!ENTITY findutils-size "1,982 KB">
+<!ENTITY findutils-version "4.4.2">
+<!ENTITY findutils-size "2,099 KB">
 <!ENTITY findutils-url "&gnu;findutils/findutils-&findutils-version;.tar.gz">
-<!ENTITY findutils-md5 "49e769ac4382fae6f104f99d54d0a112">
+<!ENTITY findutils-md5 "351cc4adb07d54877fa15f75fb77d39f">
 <!ENTITY findutils-home "&gnu-software;findutils">
 
 <!ENTITY flex-version "2.5.35">
