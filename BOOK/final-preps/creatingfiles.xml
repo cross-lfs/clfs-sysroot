@@ -130,7 +130,7 @@ audio:x:&gid-audio;:
 video:x:&gid-video;:
 utmp:x:&gid-utmp;:
 usb:x:&gid-usb;:
-cdrom:x:&gid-cdrom;:
+cdrom:x:&gid-cdrom;:</literal>
 EOF</userinput></screen>
 
   <variablelist os="c">
