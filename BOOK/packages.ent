@@ -123,10 +123,10 @@
 <!ENTITY glibc-ports-md5 "b0a06ad355312a6257a6fa41c72dfffb">
 <!ENTITY glibc-ports-home " ">
 
-<!ENTITY gmp-version "4.2.4">
-<!ENTITY gmp-size "1,670 KB">
+<!ENTITY gmp-version "4.3.1">
+<!ENTITY gmp-size "1,837 KB">
 <!ENTITY gmp-url "&gnu;gmp/gmp-&gmp-version;.tar.bz2">
-<!ENTITY gmp-md5 "fc1e3b3a2a5038d4d74138d0b9cf8dbe">
+<!ENTITY gmp-md5 "26cec15a90885042dd4a15c4003b08ae">
 <!ENTITY gmp-home "http://gmplib.org/">
 
 <!ENTITY grep-version "2.5.4">
