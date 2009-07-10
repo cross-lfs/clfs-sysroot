@@ -36,6 +36,15 @@
     </listitem>
 -->
 
+   <listitem>
+      <para>July 9, 2009</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - UUCP group no longer needed by udev.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>April 12, 2009</para>
       <itemizedlist>

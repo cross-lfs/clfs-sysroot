@@ -92,12 +92,6 @@ EOF</userinput></screen>
       </listitem>
     </varlistentry>
     <varlistentry>
-      <term><literal>uucp:x:&uid-uucp;:&gid-uucp;:uucp:/var/spool/uucp:/bin/false</literal></term>
-      <listitem>
-        <para>Often used for Unix-to-Unix Copy of files from one server to the next</para>
-      </listitem>
-    </varlistentry>
-    <varlistentry>
       <term><literal>operator:x:&uid-operator;:&gid-root;:operator:/root:/bin/bash</literal></term>
       <listitem>
         <para>Often used to allow system operators to access the system.</para>
@@ -137,7 +131,6 @@ video:x:&gid-video;:
 utmp:x:&gid-utmp;:
 usb:x:&gid-usb;:
 cdrom:x:&gid-cdrom;:
-uucp:x:&gid-uucp;:</literal>
 EOF</userinput></screen>
 
   <variablelist os="c">

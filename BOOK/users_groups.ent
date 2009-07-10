@@ -9,7 +9,6 @@
 <!ENTITY uid-lp "10">
 <!ENTITY uid-mail "30">
 <!ENTITY uid-news "31">
-<!ENTITY uid-uucp "32">
 <!ENTITY uid-operator "50">
 <!ENTITY uid-postmaster "51">
 <!ENTITY uid-nobody "65534">
@@ -37,7 +36,6 @@
 <!ENTITY gid-cdrw "18">
 <!ENTITY gid-mail "30">
 <!ENTITY gid-news "31">
-<!ENTITY gid-uucp "32">
 <!ENTITY gid-users "1000">
 <!ENTITY gid-nogroup "65533">
 <!ENTITY gid-nobody "65534">
