@@ -40,6 +40,9 @@
       <para>July 9, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Udev to 143.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated M4 to 1.4.13.</para>
         </listitem>
         <listitem>
