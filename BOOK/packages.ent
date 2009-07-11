@@ -47,6 +47,12 @@
 <!ENTITY bzip2-md5 "3c15a0c8d1d3ee1c46a1634d00617b1a">
 <!ENTITY bzip2-home "http://www.bzip.org">
 
+<!ENTITY cloog-ppl-version "0.15.3">
+<!ENTITY cloog-ppl-size "788 KB">
+<!ENTITY cloog-ppl-url "ftp://gcc.gnu.org/pub/gcc/infrastructure/cloog-ppl-0.15.3.tar.gz">
+<!ENTITY cloog-ppl-md5 "9e7a3ff38b3877625d46badc6d4bbef9">
+<!ENTITY cloog-ppl-home "http://cloog.org">
+
 <!ENTITY coreutils-version "7.4">
 <!ENTITY coreutils-size "9,481 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.gz">
@@ -246,6 +252,12 @@
 <!ENTITY perl-url "http://ftp.funet.fi/pub/CPAN/src/perl-&perl-version;.tar.gz">
 <!ENTITY perl-md5 "d2c39b002ebfd2c3c5dba589365c5a71">
 <!ENTITY perl-home "http://www.perl.org">
+
+<!ENTITY ppl-version "0.10.2">
+<!ENTITY ppl-size "9,589 KB">
+<!ENTITY ppl-url "http://www.cs.unipr.it/ppl/Download/ftp/releases/0.10.2/ppl-0.10.2.tar.bz2">
+<!ENTITY ppl-md5 "5667111f53150618b0fa522ffc53fc3e">
+<!ENTITY ppl-home "http://www.cs.unipr.it/ppl">
 
 <!ENTITY procps-version "3.2.8">
 <!ENTITY procps-size "279 KB">

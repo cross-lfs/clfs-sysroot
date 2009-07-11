@@ -37,6 +37,16 @@
 -->
 
    <listitem>
+      <para>July 11, 2009</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Add CLooG and PPL for GCC, Based on Winkie's work
+          in the main branch.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+   <listitem>
       <para>July 9, 2009</para>
       <itemizedlist>
         <listitem>

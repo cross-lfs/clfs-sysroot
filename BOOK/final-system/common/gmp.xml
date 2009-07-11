@@ -30,7 +30,7 @@
 
     <para os="a">Prepare GMP for compilation:</para>
 
-<screen os="b"><userinput>./configure --prefix=/usr \
+<screen os="b"><userinput>CPPFLAGS=-fexceptions ./configure --prefix=/usr \
     --build=${CLFS_HOST} --host=${CLFS_TARGET} \
     --enable-cxx --enable-mpbsd</userinput></screen>
 
