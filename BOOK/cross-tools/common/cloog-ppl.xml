@@ -34,9 +34,9 @@
 
     <para os="a">Prepare CLooG-PPL for compilation:</para>
 
-<screen os="b"><userinput>LDFLAGS="-Wl,-rpath,/cross-tools/lib" \
-    ./configure --prefix=/cross-tools --enable-shared --with-bits=gmp \
-    --with-gmp=/cross-tools --with-ppl=/cross-tools</userinput></screen>
+<screen os="b"><userinput>LDFLAGS="-Wl,-rpath,${CLFS}/cross-tools/lib" \
+    ./configure --prefix=${CLFS}/cross-tools --enable-shared --with-bits=gmp \
+    --with-gmp=${CLFS}/cross-tools --with-ppl=${CLFS}/cross-tools</userinput></screen>
 
     <para os="c">Compile the package:</para>
 
