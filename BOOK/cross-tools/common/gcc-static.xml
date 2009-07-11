@@ -58,6 +58,7 @@
     --without-headers --with-newlib --disable-decimal-float \
     --disable-libgomp --disable-libmudflap --disable-libssp \
     --with-mpfr=${CLFS}/cross-tools --with-gmp=${CLFS}/cross-tools \
+    --with-ppl=${CLFS}/cross-tools --with-cloog=${CLFS}/cross-tools \
     --disable-shared --disable-threads --enable-languages=c</userinput></screen>
 
     <variablelist os="af">
