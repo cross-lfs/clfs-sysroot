@@ -44,9 +44,9 @@
 
 <screen os="p2"><userinput>patch -Np1 -i ../&vim-branch_update-patch;</userinput></screen>
 
-    <para os="cc1">The configure script is full of logic that aborts at the
-    first sign of cross compiling. Set the cached values of those tests with
-    the following command:</para>
+    <para os="cc1">The <command>configure</command> script is full of logic
+    that aborts at the first sign of cross compiling. Set the cached values
+    of those tests with the following command:</para>
 
 <screen os="cc2"><userinput>cat &gt; src/auto/config.cache &lt;&lt; EOF
 vim_cv_getcwd_broken=no
