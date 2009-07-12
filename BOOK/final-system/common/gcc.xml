@@ -73,11 +73,19 @@ cd ../gcc-build</userinput></screen>
 
     <para os="e">Prepare GCC for compilation:</para>
 
-<screen os="f"><userinput>../gcc-&gcc-version;/configure --prefix=/usr --libexecdir=/usr/lib \
+<screen os="f"><userinput>LDFLAGS="-Wl,-rpath-link,${CLFS}/cross-tools/${CLFS_TARGET}/lib" \
+    ../gcc-&gcc-version;/configure --prefix=/usr --libexecdir=/usr/lib \
     --build=${CLFS_HOST} --host=${CLFS_TARGET} --target=${CLFS_TARGET} \
     --enable-shared --enable-threads=posix --enable-__cxa_atexit \
     --enable-c99 --enable-long-long --enable-clocale=gnu \
     --enable-languages=c,c++ --disable-libstdcxx-pch</userinput></screen>
+
+    <para os="ts1">The following will prevent GCC from looking in the wrong
+    directories for headers and libraries:</para>
+
+<screen os="ts2"><userinput>cp Makefile{,.orig}
+sed "/^HOST_\(GMP\|PPL\|CLOOG\)\(LIBS\|INC\)/s:-[IL]/\(lib\|include\)::" \
+    Makefile.orig &gt; Makefile</userinput></screen>
 
     <para os="g">Compile the package:</para>
 
