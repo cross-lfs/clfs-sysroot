@@ -27,14 +27,6 @@
   <sect2 role="installation">
     <title>Installation of File</title>
 
-    <para os="p1">The following patch will fix an issue due to utf-8 with file on documents:</para>
-
-<screen os="p2"><userinput>patch -Np1 -i ../&file-fixes-patch;</userinput></screen>
-
-    <para os="p3">The following patch will add support for new compressors like XZ Utils:</para>
-
-<screen os="p4"><userinput>patch -Np1 -i ../&file-new_compressors-patch;</userinput></screen>
-
     <para os="ap1">The following patch will fix a compile issue that would prevent
     a proper creation of the <filename>magic.mgc</filename> file. This would
     show up as an error messsage.

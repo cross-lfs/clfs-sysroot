@@ -77,11 +77,11 @@
 <!ENTITY e2fsprogs-md5 "732c559db400c8fc994f4f38568c9f1f">
 <!ENTITY e2fsprogs-home "http://e2fsprogs.sourceforge.net">
 
-<!ENTITY file-version "5.00">
-<!ENTITY file-size "586 KB">
-<!-- <!ENTITY file-url "ftp://ftp.astron.com/pub/file/file-&file-version;.tar.gz"> -->
-<!ENTITY file-url "&packages-root;file-&file-version;.tar.gz">
-<!ENTITY file-md5 "74cd5466416136da30a4e69f74dbc7a0">
+<!ENTITY file-version "5.03">
+<!ENTITY file-size "601 KB">
+<!ENTITY file-url "ftp://ftp.astron.com/pub/file/file-&file-version;.tar.gz">
+<!--<!ENTITY file-url "&packages-root;file-&file-version;.tar.gz">-->
+<!ENTITY file-md5 "d05f08a53e5c2f51f8ee6a4758c0cc53">
 <!ENTITY file-home "http://www.darwinsys.com/file">
 
 <!ENTITY findutils-version "4.4.2">
@@ -175,10 +175,10 @@
 <!ENTITY kbd-md5 "ba3fd20e6c79e58422c3cc6b28718939">
 <!ENTITY kbd-home " ">
 
-<!ENTITY less-version "418">
-<!ENTITY less-size "292 KB">
+<!ENTITY less-version "429">
+<!ENTITY less-size "296 KB">
 <!ENTITY less-url "http://www.greenwoodsoftware.com/less/less-&less-version;.tar.gz">
-<!ENTITY less-md5 "b5864d76c54ddf4627fd57ab333c88b4">
+<!ENTITY less-md5 "206f2f13b9b0a35e45df660fcb6af31d">
 <!ENTITY less-home "http://www.greenwoodsoftware.com/less">
 
 <!ENTITY libtool-version "2.2.6a">
