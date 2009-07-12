@@ -46,6 +46,13 @@
 
 <screen os="i"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
+    <para os="j">At this time, Libtool does not support searching a sysroot
+    for libraries. Leaving the .la files in place will cause Libtool to look
+    in the wrong place for libraries. These files are not required for
+    linking on Linux. Remove them with the following command:</para>
+
+<screen os="k"><userinput>rm -v ${CLFS}/usr/lib/lib{ppl,ppl_c,pwl}.la</userinput></screen>
+
   </sect2>
 
   <sect2 id="contents-ppl" role="content">
