@@ -5,20 +5,20 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-cross-tools-glibc" role="wrap">
-  <?dbhtml filename="glibc.html"?>
+<sect1 id="ch-cross-tools-eglibc" role="wrap">
+  <?dbhtml filename="eglibc.html"?>
 
-  <title>Glibc-&glibc-version;</title>
+  <title>EGlibc-&eglibc-version;</title>
 
-  <indexterm zone="ch-cross-tools-glibc">
-    <primary sortas="a-Glibc">Glibc</primary>
+  <indexterm zone="ch-cross-tools-eglibc">
+    <primary sortas="a-EGlibc">EGlibc</primary>
     <secondary>cross tools</secondary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>The Glibc package contains the main C library. This library provides
+    <para>The EGlibc package contains the main C library. This library provides
     the basic routines for allocating memory, searching directories, opening and
     closing files, reading and writing files, string handling, pattern matching,
     arithmetic, and so on.</para>
@@ -26,7 +26,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Glibc</title>
+    <title>Installation of EGlibc</title>
 
     <note os="a">
       <para>Some packages outside of CLFS suggest installing GNU libiconv in
@@ -34,42 +34,28 @@
       home page (<ulink url="http://www.gnu.org/software/libiconv/"/>) says
       <quote>This library provides an <function>iconv()</function>
       implementation, for use on systems which don't have one, or whose
-      implementation cannot convert from/to Unicode.</quote> Glibc provides
+      implementation cannot convert from/to Unicode.</quote> EGlibc provides
       an <function>iconv()</function> implementation and can convert from/to
       Unicode, therefore libiconv is not required on an CLFS system.</para>
     </note>
 
-    <para os="p1">The Glibc build will expect to find
-    <filename>libgcc_eh</filename>, but this library is not installed when GCC
-    is built without "--enable-shared". As a result, the Glibc build will fail.
-    The following patch will force Glibc to  check for the existance of
-    <filename>libgcc_eh</filename> and try to link to it only if it exists:</para>
+    <para os="p1">EGlibc has various issues addressed by the following patch:</para>
 
-<screen os="p2"><userinput>patch -Np1 -i ../&glibc-libgcc_eh-patch;</userinput></screen>
+<screen os="p2"><userinput>patch -Np1 -i ../&eglibc-fixes-patch;</userinput></screen>
 
-    <para os="p3">The following patch fixes an issue that can
-    cause <command>localdef</command> to segfault:</para>
+    <para os="s1">Disable linking to <filename>libgcc_eh</filename>:</para>
 
-<screen os="p4"><userinput>patch -Np1 -i ../&glibc-localedef_segfault-patch;</userinput></screen>
+<screen os="s2"><userinput>cp -v Makeconfig{,.orig}
+sed -e 's/-lgcc_eh//g' Makeconfig.orig > Makeconfig</userinput></screen>
 
-    <para os="p5">The following patch builds <filename>zic-native</filename>,
-    <filename>localedef-native</filename>, and
-    <filename>rpcgen-native</filename>. <filename>zic-native</filename> is used
-    to generate the zoneinfo, <filename>localedef-native</filename> is used to
-    generate the locale archive, and <filename>rpcgen-native</filename> is used
-    to generate part of <filename>librpcsvc.a</filename>. All of these programs
-    would normally not be available when cross-compiling:</para>
-
-<screen os="p6"><userinput>patch -Np1 -i ../&glibc-cross_hacks-patch;</userinput></screen>
-
-    <para os="b">The Glibc documentation recommends building Glibc outside of the
+    <para os="b">The EGlibc documentation recommends building EGlibc outside of the
     source directory in a dedicated build directory:</para>
 
-<screen os="c"><userinput>mkdir -v ../glibc-build
-cd ../glibc-build</userinput></screen>
+<screen os="c"><userinput>mkdir -v ../eglibc-build
+cd ../eglibc-build</userinput></screen>
 
     <para os="d">The following lines need to be added to
-    <filename>config.cache</filename> for Glibc to support NPTL:</para>
+    <filename>config.cache</filename> for EGlibc to support NPTL:</para>
 
 <screen os="e"><userinput>cat &gt; config.cache &lt;&lt; EOF
 libc_cv_forced_unwind=yes
@@ -84,12 +70,12 @@ EOF</userinput></screen>
 install_root=${CLFS}
 EOF</userinput></screen>
 
-    <para os="h">Prepare Glibc for compilation:</para>
+    <para os="h">Prepare EGlibc for compilation:</para>
 
 <screen os="i"><userinput>BUILD_CC="gcc" CC="${CLFS_TARGET}-gcc" \
     AR="${CLFS_TARGET}-ar" RANLIB="${CLFS_TARGET}-ranlib" \
-    ../glibc-&glibc-version;/configure --prefix=/usr \
-    --libexecdir=/usr/lib/glibc --host=${CLFS_TARGET} --build=${CLFS_HOST} \
+    ../eglibc-&eglibc-version;/configure --prefix=/usr \
+    --libexecdir=/usr/lib/eglibc --host=${CLFS_TARGET} --build=${CLFS_HOST} \
     --disable-profile --enable-add-ons --with-tls --enable-kernel=2.6.0 \
     --with-__thread --with-binutils=${CLFS}/cross-tools/bin \
     --with-headers=${CLFS}/usr/include --cache-file=config.cache</userinput></screen>
@@ -100,15 +86,15 @@ EOF</userinput></screen>
       <varlistentry os="j1">
         <term><parameter>BUILD_CC="gcc"</parameter></term>
         <listitem>
-          <para>This tells Glibc to use the compiler on the host system. This is
-          used to create the tools Glibc uses during its build.</para>
+          <para>This tells EGlibc to use the compiler on the host system. This is
+          used to create the tools EGlibc uses during its build.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry os="j2">
         <term><parameter>CC="${CLFS_TARGET}-gcc"</parameter></term>
         <listitem>
-          <para>This forces Glibc to use the GCC compiler that we made for our target
+          <para>This forces EGlibc to use the GCC compiler that we made for our target
           architecture.</para>
         </listitem>
       </varlistentry>
@@ -116,7 +102,7 @@ EOF</userinput></screen>
       <varlistentry os="j3">
         <term><parameter>AR="${CLFS_TARGET}-ar"</parameter></term>
         <listitem>
-          <para>This forces Glibc to use the <command>ar</command> utility
+          <para>This forces EGlibc to use the <command>ar</command> utility
           we made for our target architecture.</para>
         </listitem>
       </varlistentry>
@@ -124,7 +110,7 @@ EOF</userinput></screen>
       <varlistentry os="j4">
         <term><parameter>RANLIB="${CLFS_TARGET}-ranlib"</parameter></term>
         <listitem>
-          <para>This forces Glibc to use the <command>ranlib</command> utility
+          <para>This forces EGlibc to use the <command>ranlib</command> utility
           we made for our target architecture.</para>
         </listitem>
       </varlistentry>
@@ -140,7 +126,7 @@ EOF</userinput></screen>
       <varlistentry os="j6">
         <term><parameter>--enable-add-ons</parameter></term>
         <listitem>
-          <para>This tells Glibc to utilize all add-ons that are
+          <para>This tells EGlibc to utilize all add-ons that are
           available.</para>
         </listitem>
       </varlistentry>
@@ -148,14 +134,14 @@ EOF</userinput></screen>
       <varlistentry os="j7">
         <term><parameter>--with-tls</parameter></term>
         <listitem>
-          <para>This tells Glibc to use Thread Local Storage.</para>
+          <para>This tells EGlibc to use Thread Local Storage.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry os="j8">
         <term><parameter>--with-__thread</parameter></term>
         <listitem>
-          <para>This tells Glibc to use use the __thread for libc and
+          <para>This tells EGlibc to use use the __thread for libc and
           libpthread builds.</para>
         </listitem>
       </varlistentry>
@@ -163,7 +149,7 @@ EOF</userinput></screen>
       <varlistentry os="j9">
         <term><parameter>--with-binutils=${CLFS}/cross-tools/bin</parameter></term>
         <listitem>
-          <para>This tells Glibc to use the Binutils that are specific to
+          <para>This tells EGlibc to use the Binutils that are specific to
           our target architecture.</para>
         </listitem>
       </varlistentry>
@@ -171,7 +157,7 @@ EOF</userinput></screen>
       <varlistentry os="j10">
         <term><parameter>--cache-file=config.cache</parameter></term>
         <listitem>
-          <para>This tells Glibc to utilize a premade cache file.</para>
+          <para>This tells EGlibc to utilize a premade cache file.</para>
         </listitem>
       </varlistentry>
 
@@ -199,7 +185,7 @@ EOF</userinput></screen>
 
   </sect2>
 
-  <sect2 id="i18n-glibc" role="configuration">
+  <sect2 id="i18n-eglibc" role="configuration">
     <title>Internationalization</title>
 
     <para>The locales that can make the system respond in a different
@@ -210,10 +196,10 @@ EOF</userinput></screen>
 
     <para>To save time, an alternative to running the previous command (which
     generates and installs every locale listed in the
-    glibc-&glibc-version;/localedata/SUPPORTED file) is to install only
+    eglibc-&eglibc-version;/localedata/SUPPORTED file) is to install only
     those locales that are wanted and needed. This can be achieved by using
     the <command>localedef</command> command. Information on this command is
-    located in the <filename>INSTALL</filename> file in the Glibc source.
+    located in the <filename>INSTALL</filename> file in the EGlibc source.
     However, there are a number of locales that are essential in order for the
     tests of future packages to pass, in particular, the
     <emphasis>libstdc++</emphasis> tests from GCC. The following instructions,
@@ -226,7 +212,7 @@ export I18NPATH=${PWD}/localedata
 export GCONV_PATH=${PWD}/iconvdata
 export LOCALEDEF="${PWD}/locale/localedef-native \
     --alias-file=../intl/locale.alias"
-cd ../glibc-&glibc-version;/localedata
+cd ../eglibc-&eglibc-version;/localedata
 ${LOCALEDEF} -i locales/de_DE -f charmaps/ISO-8859-1 --prefix=${CLFS} de_DE
 ${LOCALEDEF} -i locales/de_DE@euro -f charmaps/ISO-8859-15 \
     --prefix=${CLFS} de_DE@euro
@@ -259,20 +245,20 @@ unset I18NPATH GCONV_PATH LOCALEDEF</userinput></screen>
 
   </sect2>
 
-  <sect2 id="conf-glibc" role="configuration">
-    <title>Configuring Glibc</title>
+  <sect2 id="conf-eglibc" role="configuration">
+    <title>Configuring EGlibc</title>
 
-    <indexterm zone="conf-glibc">
+    <indexterm zone="conf-eglibc">
       <primary sortas="e-/etc/nsswitch.conf">/etc/nsswitch.conf</primary>
     </indexterm>
 
-    <indexterm zone="conf-glibc">
+    <indexterm zone="conf-eglibc">
       <primary sortas="e-/etc/localtime">/etc/localtime</primary>
     </indexterm>
 
     <para>The <filename>/etc/nsswitch.conf</filename> file needs to be created
-    because, although Glibc provides defaults when this file is missing or
-    corrupt, the Glibc defaults do not work well in a networked environment.
+    because, although EGlibc provides defaults when this file is missing or
+    corrupt, the EGlibc defaults do not work well in a networked environment.
     The time zone also needs to be configured.</para>
 
     <para>Create a new file <filename>/etc/nsswitch.conf</filename> by running
@@ -363,8 +349,8 @@ EOF</userinput></screen>
 
   </sect2>
 
-  <sect2 id="contents-glibc" role="content">
-    <title>Contents of Glibc</title>
+  <sect2 id="contents-eglibc" role="content">
+    <title>Contents of EGlibc</title>
 
     <segmentedlist>
       <segtitle>Installed programs</segtitle>
@@ -395,7 +381,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Can be used to create a stack trace when a program
           terminates with a segmentation fault</para>
-          <indexterm zone="ch-cross-tools-glibc catchsegv">
+          <indexterm zone="ch-cross-tools-eglibc catchsegv">
             <primary sortas="b-catchsegv">catchsegv</primary>
           </indexterm>
         </listitem>
@@ -405,7 +391,7 @@ EOF</userinput></screen>
         <term><command>gencat</command></term>
         <listitem>
           <para>Generates message catalogues</para>
-          <indexterm zone="ch-cross-tools-glibc gencat">
+          <indexterm zone="ch-cross-tools-eglibc gencat">
             <primary sortas="b-gencat">gencat</primary>
           </indexterm>
         </listitem>
@@ -416,7 +402,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Displays the system configuration values for file system specific
           variables</para>
-          <indexterm zone="ch-cross-tools-glibc getconf">
+          <indexterm zone="ch-cross-tools-eglibc getconf">
             <primary sortas="b-getconf">getconf</primary>
           </indexterm>
         </listitem>
@@ -426,7 +412,7 @@ EOF</userinput></screen>
         <term><command>getent</command></term>
         <listitem>
           <para>Gets entries from an administrative database</para>
-          <indexterm zone="ch-cross-tools-glibc getent">
+          <indexterm zone="ch-cross-tools-eglibc getent">
             <primary sortas="b-getent">getent</primary>
           </indexterm>
         </listitem>
@@ -436,7 +422,7 @@ EOF</userinput></screen>
         <term><command>iconv</command></term>
         <listitem>
           <para>Performs character set conversion</para>
-          <indexterm zone="ch-cross-tools-glibc iconv">
+          <indexterm zone="ch-cross-tools-eglibc iconv">
             <primary sortas="b-iconv">iconv</primary>
           </indexterm>
         </listitem>
@@ -447,7 +433,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Creates fastloading <command>iconv</command> module configuration
           files</para>
-          <indexterm zone="ch-cross-tools-glibc iconvconfig">
+          <indexterm zone="ch-cross-tools-eglibc iconvconfig">
             <primary sortas="b-iconvconfig">iconvconfig</primary>
           </indexterm>
         </listitem>
@@ -457,7 +443,7 @@ EOF</userinput></screen>
         <term><command>ldconfig</command></term>
         <listitem>
           <para>Configures the dynamic linker runtime bindings</para>
-          <indexterm zone="ch-cross-tools-glibc ldconfig">
+          <indexterm zone="ch-cross-tools-eglibc ldconfig">
             <primary sortas="b-ldconfig">ldconfig</primary>
           </indexterm>
         </listitem>
@@ -468,7 +454,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Reports which shared libraries are required
           by each given program or shared library</para>
-          <indexterm zone="ch-cross-tools-glibc ldd">
+          <indexterm zone="ch-cross-tools-eglibc ldd">
             <primary sortas="b-ldd">ldd</primary>
           </indexterm>
         </listitem>
@@ -478,7 +464,7 @@ EOF</userinput></screen>
         <term><command>lddlibc4</command></term>
         <listitem>
           <para>Assists <command>ldd</command> with object files</para>
-          <indexterm zone="ch-cross-tools-glibc lddlibc4">
+          <indexterm zone="ch-cross-tools-eglibc lddlibc4">
             <primary sortas="b-lddlibc4">lddlibc4</primary>
           </indexterm>
         </listitem>
@@ -489,7 +475,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Tells the compiler to enable or disable the use of POSIX locales
           for built-in operations</para>
-          <indexterm zone="ch-cross-tools-glibc locale">
+          <indexterm zone="ch-cross-tools-eglibc locale">
             <primary sortas="b-locale">locale</primary>
           </indexterm>
         </listitem>
@@ -499,7 +485,7 @@ EOF</userinput></screen>
         <term><command>localedef</command></term>
         <listitem>
           <para>Compiles locale specifications</para>
-          <indexterm zone="ch-cross-tools-glibc localedef">
+          <indexterm zone="ch-cross-tools-eglibc localedef">
             <primary sortas="b-localedef">localedef</primary>
           </indexterm>
         </listitem>
@@ -510,7 +496,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Reads and interprets a memory trace file and
           displays a summary in human-readable format</para>
-          <indexterm zone="ch-cross-tools-glibc mtrace">
+          <indexterm zone="ch-cross-tools-eglibc mtrace">
             <primary sortas="b-mtrace">mtrace</primary>
           </indexterm>
         </listitem>
@@ -521,7 +507,7 @@ EOF</userinput></screen>
         <listitem>
           <para>A daemon that provides a cache for the most common name
           service requests</para>
-          <indexterm zone="ch-cross-tools-glibc nscd">
+          <indexterm zone="ch-cross-tools-eglibc nscd">
             <primary sortas="b-nscd">nscd</primary>
           </indexterm>
         </listitem>
@@ -531,7 +517,7 @@ EOF</userinput></screen>
         <term><command>pcprofiledump</command></term>
         <listitem>
           <para>Dumps information generated by PC profiling</para>
-          <indexterm zone="ch-cross-tools-glibc pcprofiledump">
+          <indexterm zone="ch-cross-tools-eglibc pcprofiledump">
             <primary sortas="b-pcprofiledump">pcprofiledump</primary>
           </indexterm>
         </listitem>
@@ -542,7 +528,7 @@ EOF</userinput></screen>
         <listitem>
           <para>A helper program for <command>grantpt</command> to set the owner,
           group and access permissions of a slave pseudo terminal</para>
-          <indexterm zone="ch-cross-tools-glibc pt_chown">
+          <indexterm zone="ch-cross-tools-eglibc pt_chown">
             <primary sortas="b-pt_chown">pt_chown</primary>
           </indexterm>
         </listitem>
@@ -553,7 +539,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Generates C code to implement the Remote Procecure Call (RPC)
           protocol</para>
-          <indexterm zone="ch-cross-tools-glibc rpcgen">
+          <indexterm zone="ch-cross-tools-eglibc rpcgen">
             <primary sortas="b-rpcgen">rpcgen</primary>
           </indexterm>
         </listitem>
@@ -563,7 +549,7 @@ EOF</userinput></screen>
         <term><command>rpcinfo</command></term>
         <listitem>
           <para>Makes an RPC call to an RPC server</para>
-          <indexterm zone="ch-cross-tools-glibc rpcinfo">
+          <indexterm zone="ch-cross-tools-eglibc rpcinfo">
             <primary sortas="b-rpcinfo">rpcinfo</primary>
           </indexterm>
         </listitem>
@@ -573,7 +559,7 @@ EOF</userinput></screen>
         <term><command>sln</command></term>
         <listitem>
           <para>A statically linked program that creates symbolic links</para>
-          <indexterm zone="ch-cross-tools-glibc sln">
+          <indexterm zone="ch-cross-tools-eglibc sln">
             <primary sortas="b-sln">sln</primary>
           </indexterm>
         </listitem>
@@ -583,7 +569,7 @@ EOF</userinput></screen>
         <term><command>sprof</command></term>
         <listitem>
           <para>Reads and displays shared object profiling data</para>
-          <indexterm zone="ch-cross-tools-glibc sprof">
+          <indexterm zone="ch-cross-tools-eglibc sprof">
             <primary sortas="b-sprof">sprof</primary>
           </indexterm>
         </listitem>
@@ -594,7 +580,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Asks the user about the location of the
           system and reports the corresponding time zone description</para>
-          <indexterm zone="ch-cross-tools-glibc tzselect">
+          <indexterm zone="ch-cross-tools-eglibc tzselect">
             <primary sortas="b-tzselect">tzselect</primary>
           </indexterm>
         </listitem>
@@ -605,7 +591,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Traces the execution of a program by
           printing the currently executed function</para>
-          <indexterm zone="ch-cross-tools-glibc xtrace">
+          <indexterm zone="ch-cross-tools-eglibc xtrace">
             <primary sortas="b-xtrace">xtrace</primary>
           </indexterm>
         </listitem>
@@ -615,7 +601,7 @@ EOF</userinput></screen>
         <term><command>zdump</command></term>
         <listitem>
           <para>The time zone dumper</para>
-          <indexterm zone="ch-cross-tools-glibc zdump">
+          <indexterm zone="ch-cross-tools-eglibc zdump">
             <primary sortas="b-zdump">zdump</primary>
           </indexterm>
         </listitem>
@@ -625,7 +611,7 @@ EOF</userinput></screen>
         <term><command>zic</command></term>
         <listitem>
           <para>The time zone compiler</para>
-          <indexterm zone="ch-cross-tools-glibc zic">
+          <indexterm zone="ch-cross-tools-eglibc zic">
             <primary sortas="b-zic">zic</primary>
           </indexterm>
         </listitem>
@@ -635,7 +621,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">ld.so</filename></term>
         <listitem>
           <para>The helper program for shared library executables</para>
-          <indexterm zone="ch-cross-tools-glibc ld.so">
+          <indexterm zone="ch-cross-tools-eglibc ld.so">
             <primary sortas="c-ld.so">ld.so</primary>
           </indexterm>
         </listitem>
@@ -645,7 +631,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libBrokenLocale</filename></term>
         <listitem>
           <para>Used by programs, such as Mozilla, to solve broken locales</para>
-          <indexterm zone="ch-cross-tools-glibc libBrokenLocale">
+          <indexterm zone="ch-cross-tools-eglibc libBrokenLocale">
             <primary sortas="c-libBrokenLocale">libBrokenLocale</primary>
           </indexterm>
         </listitem>
@@ -655,7 +641,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libSegFault</filename></term>
         <listitem>
           <para>The segmentation fault signal handler</para>
-          <indexterm zone="ch-cross-tools-glibc libSegFault">
+          <indexterm zone="ch-cross-tools-eglibc libSegFault">
             <primary sortas="c-libSegFault">libSegFault</primary>
           </indexterm>
         </listitem>
@@ -665,7 +651,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libanl</filename></term>
         <listitem>
           <para>An asynchronous name lookup library</para>
-          <indexterm zone="ch-cross-tools-glibc libanl">
+          <indexterm zone="ch-cross-tools-eglibc libanl">
             <primary sortas="c-libanl">libanl</primary>
           </indexterm>
         </listitem>
@@ -677,7 +663,7 @@ EOF</userinput></screen>
           <para>Provides the portability needed
           in order to run certain Berkey Software Distribution (BSD) programs
           under Linux</para>
-          <indexterm zone="ch-cross-tools-glibc libbsd-compat">
+          <indexterm zone="ch-cross-tools-eglibc libbsd-compat">
             <primary sortas="c-libbsd-compat">libbsd-compat</primary>
           </indexterm>
         </listitem>
@@ -687,7 +673,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libc</filename></term>
         <listitem>
           <para>The main C library</para>
-          <indexterm zone="ch-cross-tools-glibc libc">
+          <indexterm zone="ch-cross-tools-eglibc libc">
             <primary sortas="c-libc">libc</primary>
           </indexterm>
         </listitem>
@@ -697,7 +683,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libcrypt</filename></term>
         <listitem>
           <para>The cryptography library</para>
-          <indexterm zone="ch-cross-tools-glibc libcrypt">
+          <indexterm zone="ch-cross-tools-eglibc libcrypt">
             <primary sortas="c-libcrypt">libcrypt</primary>
           </indexterm>
         </listitem>
@@ -707,7 +693,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libdl</filename></term>
         <listitem>
           <para>The dynamic linking interface library</para>
-          <indexterm zone="ch-cross-tools-glibc libdl">
+          <indexterm zone="ch-cross-tools-eglibc libdl">
             <primary sortas="c-libdl">libdl</primary>
           </indexterm>
         </listitem>
@@ -717,7 +703,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libg</filename></term>
         <listitem>
           <para>A runtime library for <command>g++</command></para>
-          <indexterm zone="ch-cross-tools-glibc libg">
+          <indexterm zone="ch-cross-tools-eglibc libg">
             <primary sortas="c-libg">libg</primary>
           </indexterm>
         </listitem>
@@ -728,7 +714,7 @@ EOF</userinput></screen>
         <listitem>
           <para>The Institute of Electrical and Electronic Engineers (IEEE)
           floating point library</para>
-          <indexterm zone="ch-cross-tools-glibc libieee">
+          <indexterm zone="ch-cross-tools-eglibc libieee">
             <primary sortas="c-libieee">libieee</primary>
           </indexterm>
         </listitem>
@@ -738,7 +724,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libm</filename></term>
         <listitem>
           <para>The mathematical library</para>
-          <indexterm zone="ch-cross-tools-glibc libm">
+          <indexterm zone="ch-cross-tools-eglibc libm">
             <primary sortas="c-libm">libm</primary>
           </indexterm>
         </listitem>
@@ -748,7 +734,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libmcheck</filename></term>
         <listitem>
           <para>Contains code run at boot</para>
-          <indexterm zone="ch-cross-tools-glibc libmcheck">
+          <indexterm zone="ch-cross-tools-eglibc libmcheck">
             <primary sortas="c-libmcheck">libmcheck</primary>
           </indexterm>
         </listitem>
@@ -757,10 +743,10 @@ EOF</userinput></screen>
       <varlistentry id="libmemusage">
         <term><filename class="libraryfile">libmemusage</filename></term>
         <listitem>
-          <para>Used by <command>memusage</command> (included in Glibc, but
+          <para>Used by <command>memusage</command> (included in EGlibc, but
           not built in a base CLFS system as it has additional dependencies)
           to help collect information about the memory usage of a program</para>
-          <indexterm zone="ch-cross-tools-glibc libmemusage">
+          <indexterm zone="ch-cross-tools-eglibc libmemusage">
             <primary sortas="c-libmemusage">libmemusage</primary>
           </indexterm>
         </listitem>
@@ -770,7 +756,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libnsl</filename></term>
         <listitem>
           <para>The network services library</para>
-          <indexterm zone="ch-cross-tools-glibc libnsl">
+          <indexterm zone="ch-cross-tools-eglibc libnsl">
             <primary sortas="c-libnsl">libnsl</primary>
           </indexterm>
         </listitem>
@@ -782,7 +768,7 @@ EOF</userinput></screen>
           <para>The Name Service Switch libraries, containing functions for
           resolving host names, user names, group names, aliases, services,
           protocols, etc.</para>
-          <indexterm zone="ch-cross-tools-glibc libnss">
+          <indexterm zone="ch-cross-tools-eglibc libnss">
             <primary sortas="c-libnss">libnss</primary>
           </indexterm>
         </listitem>
@@ -793,7 +779,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Contains profiling functions used to track the amount of CPU
           time spent in specific source code lines</para>
-          <indexterm zone="ch-cross-tools-glibc libpcprofile">
+          <indexterm zone="ch-cross-tools-eglibc libpcprofile">
             <primary sortas="c-libpcprofile">libpcprofile</primary>
           </indexterm>
         </listitem>
@@ -803,7 +789,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libpthread</filename></term>
         <listitem>
           <para>The POSIX threads library</para>
-          <indexterm zone="ch-cross-tools-glibc libpthread">
+          <indexterm zone="ch-cross-tools-eglibc libpthread">
             <primary sortas="c-libpthread">libpthread</primary>
           </indexterm>
         </listitem>
@@ -814,7 +800,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Contains functions for creating, sending, and interpreting
           packets to the Internet domain name servers</para>
-          <indexterm zone="ch-cross-tools-glibc libresolv">
+          <indexterm zone="ch-cross-tools-eglibc libresolv">
             <primary sortas="c-libresolv">libresolv</primary>
           </indexterm>
         </listitem>
@@ -824,7 +810,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">librpcsvc</filename></term>
         <listitem>
           <para>Contains functions providing miscellaneous RPC services</para>
-          <indexterm zone="ch-cross-tools-glibc librpcsvc">
+          <indexterm zone="ch-cross-tools-eglibc librpcsvc">
             <primary sortas="c-librpcsvc">librpcsvc</primary>
           </indexterm>
         </listitem>
@@ -835,7 +821,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Contains functions providing most of the interfaces specified by
           the POSIX.1b Realtime Extension</para>
-          <indexterm zone="ch-cross-tools-glibc librt">
+          <indexterm zone="ch-cross-tools-eglibc librt">
             <primary sortas="c-librt">librt</primary>
           </indexterm>
         </listitem>
@@ -846,7 +832,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Contains functions useful for
           building debuggers for multi-threaded programs</para>
-          <indexterm zone="ch-cross-tools-glibc libthread_db">
+          <indexterm zone="ch-cross-tools-eglibc libthread_db">
             <primary sortas="c-libthread_db">libthread_db</primary>
           </indexterm>
         </listitem>
@@ -857,7 +843,7 @@ EOF</userinput></screen>
         <listitem>
           <para>Contains code for <quote>standard</quote> functions used in
           many different Unix utilities</para>
-          <indexterm zone="ch-cross-tools-glibc libutil">
+          <indexterm zone="ch-cross-tools-eglibc libutil">
             <primary sortas="c-libutil">libutil</primary>
           </indexterm>
         </listitem>

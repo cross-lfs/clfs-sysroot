@@ -64,6 +64,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>EGlibc Fixes Patch - <token>&eglibc-fixes-patch-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink
+        url="&patches-root;&eglibc-fixes-patch;"/></para>
+        <para>MD5 sum: <literal>&eglibc-fixes-patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>File Cross-Compile Patch - <token>&file-cross_compile-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
@@ -105,33 +114,6 @@
         <para>Download: <ulink
         url="&patches-root;&gcc-posix-patch;"/></para>
         <para>MD5 sum: <literal>&gcc-posix-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term>Glibc Cross-Compiling Hacks Patch- <token>&glibc-cross_hacks-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&glibc-cross_hacks-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-cross_hacks-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
- 
-    <varlistentry>
-      <term>Glibc Disable linking with libgcc_eh.a - <token>&glibc-libgcc_eh-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&glibc-libgcc_eh-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-libgcc_eh-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term>Glibc Localedef Segfault - <token>&glibc-localedef_segfault-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink
-        url="&patches-root;&glibc-localedef_segfault-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-localedef_segfault-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
 

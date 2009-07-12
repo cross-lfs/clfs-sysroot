@@ -24,6 +24,10 @@
 <!ENTITY diffutils-i18n-patch-md5 "2e176c390bf4dca2fb088e0a16261a96">
 <!ENTITY diffutils-i18n-patch-size "17 KB">
 
+<!ENTITY eglibc-fixes-patch "eglibc-&eglibc-version;-fixes-1.patch">
+<!ENTITY eglibc-fixes-patch-md5 "d6291ad34fbf3f75f5fabc7c3089da06">
+<!ENTITY eglibc-fixes-patch-size "2 KB">
+
 <!ENTITY file-cross_compile-patch "file-&file-version;-cross_compile-1.patch">
 <!ENTITY file-cross_compile-patch-md5 "17956303345b8514a9c2bdc3939a21e5">
 <!ENTITY file-cross_compile-patch-size "1 KB">
@@ -43,26 +47,6 @@
 <!ENTITY gcc-posix-patch "gcc-&gcc-version;-posix-1.patch">
 <!ENTITY gcc-posix-patch-md5 "22e096640c1ac70421336cba0f80d70f">
 <!ENTITY gcc-posix-patch-size "14 KB">
-
-<!ENTITY glibc-arm_setjmp_fix-patch "glibc-&glibc-version;-arm_setjmp_fix-1.patch">
-<!ENTITY glibc-arm_setjmp_fix-patch-md5 "e7a669566af4c79251399fcad858b290">
-<!ENTITY glibc-arm_setjmp_fix-patch-size ".7 KB">
-
-<!ENTITY glibc-cross_hacks-patch "glibc-&glibc-version;-cross_hacks-2.patch">
-<!ENTITY glibc-cross_hacks-patch-md5 "65c72652824b4faa0d9fbcf291151e10">
-<!ENTITY glibc-cross_hacks-patch-size "46 KB">
-
-<!ENTITY glibc-libgcc_eh-patch "glibc-&glibc-version;-libgcc_eh-1.patch">
-<!ENTITY glibc-libgcc_eh-patch-md5 "1b5106b91ff4111fd97aba99437023ed">
-<!ENTITY glibc-libgcc_eh-patch-size "4 KB">
-
-<!ENTITY glibc-localedef_segfault-patch "glibc-&glibc-version;-localedef_segfault-1.patch">
-<!ENTITY glibc-localedef_segfault-patch-md5 "a52ecc9fc4ebb6677b772e37ab258120">
-<!ENTITY glibc-localedef_segfault-patch-size "2 KB">
-
-<!ENTITY glibc-nptl_lowlevellock-patch "glibc-&glibc-version;-nptl_lowlevellock-1.patch">
-<!ENTITY glibc-nptl_lowlevellock-patch-md5 "0a428774cf459cf5fd23ff219390c141">
-<!ENTITY glibc-nptl_lowlevellock-patch-size ".8 KB">
 
 <!ENTITY grep-i18n-patch "grep-&grep-version;-i18n-1.patch">
 <!ENTITY grep-i18n-patch-md5 "337d017202d7e3b08d428a89da3ee572">

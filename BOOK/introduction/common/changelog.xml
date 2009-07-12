@@ -40,6 +40,12 @@
       <para>July 11, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Bootscripts to 1.2-pre8.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated Glibc to EGlibc 2.10.1.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Add CLooG and PPL for GCC, Based on Winkie's work
           in the main branch.</para>
         </listitem>

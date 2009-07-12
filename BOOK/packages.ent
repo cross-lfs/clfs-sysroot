@@ -35,10 +35,10 @@
 <!ENTITY bison-md5 "84e80a2a192c1a4c02d43fbf2bcc4ca4">
 <!ENTITY bison-home "&gnu-software;bison">
 
-<!ENTITY bootscripts-clfs-version "1.2-pre6">
+<!ENTITY bootscripts-clfs-version "1.2-pre8">
 <!ENTITY bootscripts-clfs-size "39 KB">
 <!ENTITY bootscripts-clfs-url "&packages-root;bootscripts-cross-lfs-&bootscripts-clfs-version;.tar.bz2">
-<!ENTITY bootscripts-clfs-md5 "5cd96840c29a6aef01931b7180ba2795">
+<!ENTITY bootscripts-clfs-md5 "4aee3da55c0a4c3f0f50ae6ff209169d">
 <!ENTITY bootscripts-clfs-home " ">
 
 <!ENTITY bzip2-version "1.0.5">
@@ -114,20 +114,18 @@
 <!ENTITY gettext-md5 "58a2bc6d39c0ba57823034d55d65d606">
 <!ENTITY gettext-home "&gnu-software;gettext">
 
-<!ENTITY glibc-version "2.9">
-<!ENTITY glibc-size "15,172 KB">
-<!-- <!ENTITY glibc-url "&gnu;glibc/glibc-&glibc-version;.tar.bz2"> -->
-<!ENTITY glibc-url "&packages-root;glibc-&glibc-version;.tar.bz2">
-<!ENTITY glibc-md5 "c7d99cfb51aa9132132da068dd648d28">
-<!ENTITY glibc-home "&gnu-software;libc">
-<!ENTITY glibc-ld-name "ld-&glibc-version;.so">
+<!ENTITY eglibc-version "2.10.1">
+<!ENTITY eglibc-size "15,905 KB">
+<!ENTITY eglibc-url "&packages-root;eglibc-&eglibc-version;.tar.bz2">
+<!ENTITY eglibc-md5 "7aa42c218bfcfe8b7253e9b829c3a2d6">
+<!ENTITY eglibc-home "http://www.eglibc.org/home">
+<!ENTITY eglibc-ld-name "ld-&eglibc-version;.so">
 
-<!ENTITY glibc-ports-version "&glibc-version;">
-<!ENTITY glibc-ports-size "438 KB">
-<!--<!ENTITY glibc-ports-url "&gnu;glibc/glibc-ports-&glibc-ports-version;.tar.bz2"> -->
-<!ENTITY glibc-ports-url "&packages-root;glibc-ports-&glibc-version;.tar.bz2">
-<!ENTITY glibc-ports-md5 "b0a06ad355312a6257a6fa41c72dfffb">
-<!ENTITY glibc-ports-home " ">
+<!ENTITY eglibc-ports-version "&eglibc-version;">
+<!ENTITY eglibc-ports-size "592 KB">
+<!ENTITY eglibc-ports-url "&packages-root;eglibc-ports-&eglibc-version;.tar.bz2">
+<!ENTITY eglibc-ports-md5 "5fd870dfdc02d8e2e93525fb7363c34">
+<!ENTITY eglibc-ports-home " ">
 
 <!ENTITY gmp-version "4.3.1">
 <!ENTITY gmp-size "1,837 KB">

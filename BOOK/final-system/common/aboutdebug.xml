@@ -28,12 +28,12 @@
       <para>a bash binary without debugging symbols: 480 KB</para>
     </listitem>
     <listitem os="c3">
-      <para>Glibc and GCC files (<filename class="directory">/lib</filename>
+      <para>EGlibc and GCC files (<filename class="directory">/lib</filename>
       and <filename class="directory">/usr/lib</filename>) with debugging
       symbols: 87 MB</para>
     </listitem>
     <listitem os="c4">
-      <para>Glibc and GCC files without debugging symbols: 16 MB</para>
+      <para>EGlibc and GCC files without debugging symbols: 16 MB</para>
     </listitem>
   </itemizedlist>
 

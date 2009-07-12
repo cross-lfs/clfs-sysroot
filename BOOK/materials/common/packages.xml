@@ -123,6 +123,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>EGlibc (&eglibc-version;) - <token>&eglibc-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&eglibc-home;"/></para>
+        <para>Download: <ulink url="&eglibc-url;"/></para>
+        <para>MD5 sum: <literal>&eglibc-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>File (&file-version;) - <token>&file-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&file-home;"/></para>
@@ -182,15 +191,6 @@
         <para>Home page: <ulink url="&gettext-home;"/></para>
         <para>Download: <ulink url="&gettext-url;"/></para>
         <para>MD5 sum: <literal>&gettext-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term>Glibc (&glibc-version;) - <token>&glibc-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&glibc-home;"/></para>
-        <para>Download: <ulink url="&glibc-url;"/></para>
-        <para>MD5 sum: <literal>&glibc-md5;</literal></para>
       </listitem>
     </varlistentry>
 

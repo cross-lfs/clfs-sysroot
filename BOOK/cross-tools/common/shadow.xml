@@ -32,7 +32,7 @@ shadow_cv_passwd_dir=${CLFS}/bin"
 EOF</userinput></screen>
 
     <para>The following value causes Shadow to use its internal lckpwdf
-    instead of the one provided by Glibc. The one provided by Glibc will
+    instead of the one provided by EGlibc. The one provided by EGlibc will
     attempt to modify the host system:</para>
 
 <screen><userinput>cat &gt;&gt; config.cache &lt;&lt; EOF
