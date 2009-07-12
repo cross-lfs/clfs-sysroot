@@ -40,6 +40,9 @@
       <para>July 11, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Automake to 1.11.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated DHCPCD to 4.0.4.</para>
         </listitem>
         <listitem>
