@@ -92,11 +92,11 @@
 
     <para os="ag">Continue with compiling the package:</para>
 
-<screen os="ah"><userinput>make</userinput></screen>
+<screen os="ah"><userinput>make all-gcc all-target-libgcc</userinput></screen>
 
     <para os="ai">Install the package:</para>
 
-<screen os="aj"><userinput>make install</userinput></screen>
+<screen os="aj"><userinput>make install-gcc install-target-libgcc</userinput></screen>
 
   </sect2>
 
