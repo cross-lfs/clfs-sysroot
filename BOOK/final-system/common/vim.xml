@@ -70,7 +70,7 @@ EOF</userinput></screen>
 
     <para os="d">Prepare Vim for compilation:</para>
 
-<screen os="e"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
+<screen os="e"><userinput>CPPFLAGS="-DUNUSED=" ./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
     --prefix=/usr --enable-multibyte --enable-gui=no \
     --disable-gtktest --disable-xim --with-features=normal \
     --disable-gpm --without-x --disable-netbeans \
