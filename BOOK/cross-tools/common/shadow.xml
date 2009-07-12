@@ -44,7 +44,7 @@ EOF</userinput></screen>
 <screen><userinput>./configure --prefix=${CLFS}/cross-tools --sbindir=${CLFS}/cross-tools/bin \
     --sysconfdir=$CLFS/etc --disable-shared --without-libpam \
     --without-audit --without-selinux --program-prefix=${CLFS_TARGET}- \
-    --cache-file=config.cache</userinput></screen>
+    --without-nscd --cache-file=config.cache</userinput></screen>
 
     <para>Add the proper prefix to the <filename>passwd</filename> program:</para>
 
