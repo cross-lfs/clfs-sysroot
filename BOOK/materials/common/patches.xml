@@ -64,7 +64,7 @@
     </varlistentry>
 
     <varlistentry>
-      <term>EGlibc Fixes Patch - <token>&eglibc-fixes-patch-size;</token>:</term>
+      <term>EGLIBC Fixes Patch - <token>&eglibc-fixes-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink
         url="&patches-root;&eglibc-fixes-patch;"/></para>

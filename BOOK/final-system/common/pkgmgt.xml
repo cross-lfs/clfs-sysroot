@@ -49,7 +49,7 @@
 
     <itemizedlist>
       <listitem>
-        <para>If one of the toolchain packages (EGlibc, GCC or Binutils) needs
+        <para>If one of the toolchain packages (EGLIBC, GCC or Binutils) needs
         to be upgraded to a newer minor version, it is safer to
         rebuild CLFS. Though you <emphasis>may</emphasis> be able to get by
         rebuilding all the packages in their dependency order, we do not

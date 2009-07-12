@@ -52,7 +52,7 @@
           <para>[jciccone] - Updated Bootscripts to 1.2-pre8.</para>
         </listitem>
         <listitem>
-          <para>[jciccone] - Updated Glibc to EGlibc 2.10.1.</para>
+          <para>[jciccone] - Updated Glibc to EGLIBC 2.10.1.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Add CLooG and PPL for GCC, Based on Winkie's work

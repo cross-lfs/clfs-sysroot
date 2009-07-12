@@ -29,9 +29,9 @@
   <sect2 role="installation">
     <title>Installation of Bzip2</title>
 
-    <para os="s1">Bzip2's default Makefile target automatically runs
-    the testsuite as well. Disable the tests since you can not run the
-    cross-compiled binaries causing all of the tests to fail:</para>
+    <para os="s1">Bzip2's default <filename>Makefile</filename> target
+    automatically runs the testsuite as well. Disable the tests since they
+    won't work on a multi-architecture build:</para>
 
 <screen os="s2"><userinput>cp Makefile{,.orig}
 sed -e "/^all:/s/ test//" Makefile.orig &gt; Makefile</userinput></screen>

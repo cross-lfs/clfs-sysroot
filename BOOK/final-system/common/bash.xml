@@ -31,13 +31,13 @@
 
 <screen os="p2"><userinput>patch -Np1 -i ../&bash-branch_update-patch;</userinput></screen>
 
-    <para os="c">When bash is cross-compiled, it cannot test for the presence
-    of named pipes, amoung other things. If you used <command>su</command> to
+    <para os="c">When bBsh is cross-compiled, it cannot test for the presence
+    of named pipes, among other things. If you used <command>su</command> to
     become an unprivileged user, this combination will cause Bash to build
     without <emphasis>process substitution</emphasis>, which will break one
-    of the c++ test scripts in <literal>eglibc</literal>. The following prevents
-    future problems by skipping tests that can not run while cross-compiling
-    or that do not run properly:</para>
+    of the C++ test scripts in <literal>eglibc</literal>. The following prevents
+    future problems by skipping the check for named pipes, as well as other
+    tests that can not run while cross-compiling or that do not run properly:</para>
 
 <screen os="d"><userinput>cat &gt; config.cache &lt;&lt; "EOF"
 ac_cv_func_mmap_fixed_mapped=yes

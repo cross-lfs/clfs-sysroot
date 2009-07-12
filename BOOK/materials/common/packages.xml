@@ -123,7 +123,7 @@
     </varlistentry>
 
     <varlistentry>
-      <term>EGlibc (&eglibc-version;) - <token>&eglibc-size;</token>:</term>
+      <term>EGLIBC (&eglibc-version;) - <token>&eglibc-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&eglibc-home;"/></para>
         <para>Download: <ulink url="&eglibc-url;"/></para>

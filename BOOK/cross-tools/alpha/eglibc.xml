@@ -6,12 +6,12 @@
 ]>
 
 <sect1 id="ch-cross-tools-eglibc" role="wrap">
-  <title>EGlibc-&eglibc-version;</title>
+  <title>EGLIBC-&eglibc-version;</title>
 
   <?dbhtml filename="eglibc.html"?>
 
   <indexterm zone="ch-cross-tools-eglibc">
-    <primary sortas="a-EGlibc">EGlibc</primary>
+    <primary sortas="a-EGLIBC">EGLIBC</primary>
   </indexterm>
 
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
@@ -19,7 +19,7 @@
   xpointer="xpointer(//*[@role='package'])"/>
 
   <sect2 role="installation">
-    <title>Installation of EGlibc</title>
+    <title>Installation of EGLIBC</title>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/eglibc.xml"
