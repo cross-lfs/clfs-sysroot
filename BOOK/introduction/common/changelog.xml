@@ -40,7 +40,10 @@
       <para>July 11, 2009</para>
       <itemizedlist>
         <listitem>
-          <para>[jciccone] - Moved DHCPCD to the Network section</para>
+          <para>[jciccone] - Updated Bash Branch Update Patch to -5.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Moved DHCPCD to the Network section.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Updated Less to 429.</para>
