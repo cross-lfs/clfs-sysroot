@@ -29,27 +29,23 @@
     <para os="a">Prepare Sed for compilation:</para>
 
 <screen os="b"><userinput>./configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
-    --prefix=/usr --bindir=/bin --enable-html</userinput></screen>
+    --prefix=/usr --bindir=/bin</userinput></screen>
 
-    <variablelist os="c">
-      <title>The meaning of the new configure option:</title>
+    <para os="c">Compile the package:</para>
 
-      <varlistentry>
-        <term><parameter>--enable-html</parameter></term>
-        <listitem>
-          <para>This option tells Sed to build and install its HTML
-          documentation.</para>
-        </listitem>
-      </varlistentry>
-    </variablelist>
+<screen os="d"><userinput>make</userinput></screen>
 
-    <para os="d">Compile the package:</para>
+    <para os="e">Build the HTML documentation:</para>
 
-<screen os="e"><userinput>make</userinput></screen>
+<screen os="f"><userinput>make html</userinput></screen>
 
-    <para os="f">Install the package:</para>
+    <para os="g">Install the package:</para>
 
-<screen os="g"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
+<screen os="h"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
+
+    <para os="i">Install the HTML documentation:</para>
+
+<screen os="j"><userinput>make -C doc DESTDIR=${CLFS} install-html</userinput></screen>
 
   </sect2>
 
