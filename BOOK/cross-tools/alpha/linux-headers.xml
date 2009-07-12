@@ -32,8 +32,12 @@
 <screen os="c"><userinput>make mrproper
 make ARCH=alpha headers_check
 make ARCH=alpha INSTALL_HDR_PATH=dest headers_install
-cp -rv dest/include/* ${CLFS}/usr/include</userinput></screen>
+cp -rv dest/include/* ${CLFS}/usr/include
+find ${CLFS}/usr/include -name .install -or -name ..install.cmd | xargs rm -fv</userinput></screen>
 
+    <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
+    href="../arm/linux-headers.xml"
+    xpointer="xpointer(//*[@os='d'])"/>
 
   </sect2>
 
