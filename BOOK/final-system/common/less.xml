@@ -52,7 +52,8 @@
 
 <screen os="g"><userinput>make prefix=${CLFS}/usr install</userinput></screen>
 
-    <para os="h">Move less to /bin:</para>
+    <para os="h">Move <command>less</command> to
+    <filename class="directory">/bin</filename>:</para>
 
 <screen os="i"><userinput>mv -v ${CLFS}/usr/bin/less ${CLFS}/bin</userinput></screen>
 

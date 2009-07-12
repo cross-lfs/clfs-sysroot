@@ -49,7 +49,8 @@ done</userinput></screen>
 
 <screen os="f"><userinput>make DESTDIR=${CLFS} install</userinput></screen>
 
-    <para os="g">Now we will move some of utilities to /usr/bin to meet FHS compliance:</para>
+    <para os="g">Now we will move some of utilities to
+    <filename class="directory">/usr/bin</filename> to meet FHS compliance:</para>
 
 <screen os="h"><userinput>mv ${CLFS}/bin/z{egrep,cmp,diff,fgrep,force,grep,less,more,new} \
     ${CLFS}/usr/bin</userinput></screen>
