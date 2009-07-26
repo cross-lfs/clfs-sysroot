@@ -59,10 +59,10 @@
 <!ENTITY coreutils-md5 "c52f4f64dda9a245c38e74c09fdd86d2">
 <!ENTITY coreutils-home "&gnu-software;coreutils">
 
-<!ENTITY dhcpcd-version "5.0.4">
-<!ENTITY dhcpcd-size "60 KB">
+<!ENTITY dhcpcd-version "5.0.6">
+<!ENTITY dhcpcd-size "61 KB">
 <!ENTITY dhcpcd-url "http://roy.marples.name/downloads/dhcpcd/dhcpcd-&dhcpcd-version;.tar.bz2">
-<!ENTITY dhcpcd-md5 "0b920a8094ee3a8c16c973794561feef">
+<!ENTITY dhcpcd-md5 "600716ddbfa2525a7ef7ae0968a8158a">
 <!ENTITY dhcpcd-home "http://roy.marples.name/projects/dhcpcd">
 
 <!ENTITY diffutils-version "2.8.7">
