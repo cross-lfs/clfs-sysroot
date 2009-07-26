@@ -40,6 +40,9 @@
       <para>July 26, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated Udev to 145.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Use Util-Linux-NG for libuuid and libblkid
           instead of E2fsprogs.</para>
         </listitem>
