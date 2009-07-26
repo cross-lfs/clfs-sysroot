@@ -40,6 +40,9 @@
       <para>July 26, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated the Vim Branch Update Patch to -19.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated the Ncurses Branch Update Patch to
           -18.</para>
         </listitem>
