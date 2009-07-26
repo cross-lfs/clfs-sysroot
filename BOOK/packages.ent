@@ -71,10 +71,10 @@
 <!ENTITY diffutils-md5 "18d6587cb915e7aa110a5d463d6ed156">
 <!ENTITY diffutils-home "&gnu-software;diffutils">
 
-<!ENTITY e2fsprogs-version "1.41.6">
-<!ENTITY e2fsprogs-size "4,318 KB">
+<!ENTITY e2fsprogs-version "1.41.8">
+<!ENTITY e2fsprogs-size "4,336 KB">
 <!ENTITY e2fsprogs-url "&sourceforge;e2fsprogs/e2fsprogs-&e2fsprogs-version;.tar.gz">
-<!ENTITY e2fsprogs-md5 "732c559db400c8fc994f4f38568c9f1f">
+<!ENTITY e2fsprogs-md5 "6708cc8e484809fc5cfb232882e48489">
 <!ENTITY e2fsprogs-home "http://e2fsprogs.sourceforge.net">
 
 <!ENTITY file-version "5.03">
