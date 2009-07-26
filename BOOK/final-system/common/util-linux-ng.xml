@@ -113,12 +113,13 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
       <seglistitem>
         <seg>addpart, agetty, blockdev, cal, cfdisk, chkdupexe, col, colcrt,
         colrm, column, ctrlaltdel, cytune, ddate, delpart, dmesg, fdformat,
-        fdisk, flock, fsck.cramfs, fsck.minix, getopt, hexdump, hwclock, ionice,
-        ipcrm, ipcs, isosize, line, logger, look, losetup, mcookie, mkfs,
-        mkfs.bfs, mkfs.cramfs, mkfs.minix, mkswap, more, mount, namei, partx,
-        pg, pivot_root, readprofile, rename, renice, rev, rtcwake, script,
-        scriptreplay, setarch, setsid, setterm, sfdisk, swapoff (link to swapon),
-        swapon, tailf, taskset, tunelp, ul, umount, whereis, and write</seg>
+        fdisk, flock, fsck, fsck.cramfs, fsck.minix, getopt, hexdump, hwclock,
+        ionice, ipcrm, ipcs, isosize, line, logger, look, losetup, mcookie,
+        mkfs, mkfs.bfs, mkfs.cramfs, mkfs.minix, mkswap, more, mount, namei,
+        partx, pg, pivot_root, readprofile, rename, renice, rev, rtcwake,
+        script, scriptreplay, setarch, setsid, setterm, sfdisk,
+        swapoff (link to swapon), swapon, tailf, taskset, tunelp, ul, umount,
+        whereis, and write</seg>
         <seg>libblkid.[a,so] and libuuid.[a,so]</seg>
       </seglistitem>
     </segmentedlist>
@@ -311,6 +312,16 @@ mkdir -pv ${CLFS}/var/lib/hwclock</userinput></screen>
           held</para>
           <indexterm zone="ch-system-util-linux-ng flock">
             <primary sortas="b-flock">flock</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="fsck">
+        <term><command>fsck</command></term>
+        <listitem>
+          <para>Is used to check, and optionally repair, file systems</para>
+          <indexterm zone="ch-system-util-linux-ng fsck">
+            <primary sortas="b-fsck">fsck</primary>
           </indexterm>
         </listitem>
       </varlistentry>
