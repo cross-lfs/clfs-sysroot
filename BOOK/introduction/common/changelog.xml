@@ -40,7 +40,10 @@
       <para>July 26, 2009</para>
       <itemizedlist>
         <listitem>
-          <para>[jciccone] - Updated Updated DHCPCD to 5.0.6.</para>
+          <para>[jciccone] - Updated Shadow to 4.1.4.2.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated DHCPCD to 5.0.6.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Updated Gawk to 3.1.7.</para>
