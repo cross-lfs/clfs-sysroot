@@ -27,11 +27,9 @@
 
     <para os="u1">This architecture is no longer supported in the main eglibc
     tree, so we have to extract the eglibc-ports-&eglibc-version; package into
-    our eglibc-&eglibc-version; directory. Then we move ports to the location
-    expected by our build and patches:</para>
+    our eglibc-&eglibc-version; directory:</para>
 
-<screen os="u2"><userinput>tar -jxvf ../eglibc-ports-&eglibc-ports-version;.tar.bz2
-mv -v eglibc-ports-&eglibc-version; ports</userinput></screen>
+<screen os="u2"><userinput>tar -jxvf ../eglibc-ports-&eglibc-ports-dl-version;.tar.bz2</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2003/XInclude"
     href="../common/eglibc.xml"
