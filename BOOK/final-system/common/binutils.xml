@@ -27,11 +27,6 @@
   <sect2 role="installation">
     <title>Installation of Binutils</title>
 
-    <para os="p1">To make sure that the proper syntax is used for a couple of
-    tools, apply the following patch:</para>
-
-<screen os="p2"><userinput>patch -Np1 -i ../&binutils-posix-patch;</userinput></screen>
-
     <para os="p3">The following patch contains a number of updates to the
     &binutils-version; branch by the Binutils developers:</para>
 

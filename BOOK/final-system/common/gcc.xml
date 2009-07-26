@@ -27,11 +27,6 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
-    <para os="p1">To make sure that a couple of tools use the proper syntax,
-    apply the following patch:</para>
-
-<screen os="p2"><userinput>patch -Np1 -i ../&gcc-posix-patch;</userinput></screen>
-
     <para os="p3">The following patch contains a number of updates to the
     &gcc-version; branch by the GCC developers:</para>
 
