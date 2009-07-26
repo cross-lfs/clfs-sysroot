@@ -115,7 +115,7 @@ ln -sv ../../lib/libss.so.2 ${CLFS}/usr/lib/libss.so</userinput></screen>
         <seg>badblocks, blkid, chattr, compile_et, debugfs, dumpe2fs,
         e2fsck, e2image, e2label, filefrag, findfs, fsck, fsck.ext2, fsck.ext3,
         logsave, lsattr, mk_cmds, mke2fs, mkfs.ext2, mkfs.ext3,
-        mklost+found, resize2fs, tune2fs, and uuidgen.</seg>
+        mklost+found, resize2fs, and tune2fs.</seg>
         <seg>libcom_err.[a,so], libe2p.[a,so],
         libext2fs.[a,so], and libss.[a,so]</seg>
       </seglistitem>
@@ -383,18 +383,6 @@ ln -sv ../../lib/libss.so.2 ${CLFS}/usr/lib/libss.so</userinput></screen>
           class="filesystem">ext2</systemitem> file system</para>
           <indexterm zone="ch-system-e2fsprogs tune2fs">
             <primary sortas="b-tune2fs">tune2fs</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="uuidgen">
-        <term><command>uuidgen</command></term>
-        <listitem>
-          <para>Creates new UUIDs. Each new UUID can reasonably be considered
-          unique among all UUIDs created, on the local system and on other
-          systems, in the past and in the future</para>
-          <indexterm zone="ch-system-e2fsprogs uuidgen">
-            <primary sortas="b-uuidgen">uuidgen</primary>
           </indexterm>
         </listitem>
       </varlistentry>
