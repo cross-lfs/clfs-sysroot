@@ -115,17 +115,26 @@
 <!ENTITY gettext-home "&gnu-software;gettext">
 
 <!ENTITY eglibc-version "2.10.1">
-<!ENTITY eglibc-size "15,905 KB">
+<!ENTITY eglibc-dl-version "&eglibc-version;-20090726-r8632">
+<!ENTITY eglibc-size "15,848 KB">
 <!ENTITY eglibc-url "&packages-root;eglibc-&eglibc-version;.tar.bz2">
-<!ENTITY eglibc-md5 "7aa42c218bfcfe8b7253e9b829c3a2d6">
+<!ENTITY eglibc-md5 "11463bd364a0933c5af5b62a1e1abb76">
 <!ENTITY eglibc-home "http://www.eglibc.org/home">
 <!ENTITY eglibc-ld-name "ld-&eglibc-version;.so">
 
 <!ENTITY eglibc-ports-version "&eglibc-version;">
+<!ENTITY eglibc-ports-dl-version "&eglibc-dl-version;">
 <!ENTITY eglibc-ports-size "592 KB">
-<!ENTITY eglibc-ports-url "&packages-root;eglibc-ports-&eglibc-version;.tar.bz2">
-<!ENTITY eglibc-ports-md5 "5fd870dfdc02d8e2e93525fb7363c34">
+<!ENTITY eglibc-ports-url "&packages-root;eglibc-ports-&eglibc-dl-version;.tar.bz2">
+<!ENTITY eglibc-ports-md5 "6dea1134ce62a373b376cb2ece25afc1">
 <!ENTITY eglibc-ports-home " ">
+
+<!ENTITY eglibc-localedef-version "&eglibc-version;">
+<!ENTITY eglibc-localedef-dl-version "&eglibc-dl-version;">
+<!ENTITY eglibc-localedef-size "592 KB">
+<!ENTITY eglibc-localedef-url "&packages-root;eglibc-localedef-&eglibc-dl-version;.tar.bz2">
+<!ENTITY eglibc-localedef-md5 "93415df45b9f70d0251de6e9c99c6d87">
+<!ENTITY eglibc-localedef-home " ">
 
 <!ENTITY gmp-version "4.3.1">
 <!ENTITY gmp-size "1,837 KB">
