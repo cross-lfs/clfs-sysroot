@@ -1,5 +1,5 @@
 Submitted By: Jim Gifford (jim at cross-lfs dot org)
-Date: 06-07-2009
+Date: 07-26-2009
 Initial Package Version: 2.10.1
 Origin: Upstream
 Upstream Status: Applied
@@ -7,8 +7,8 @@ Description: These are fixes eglibc-2.10.1, and should be
              rechecked periodically.
 
 diff -Naur libc.orig/elf/ldd.bash.in libc/elf/ldd.bash.in
---- libc.orig/elf/ldd.bash.in	2009-02-13 18:31:14.000000000 +0000
-+++ libc/elf/ldd.bash.in	2009-06-07 23:26:18.000000000 +0000
+--- libc.orig/elf/ldd.bash.in	2009-02-13 13:31:14.533608000 -0500
++++ libc/elf/ldd.bash.in	2009-07-26 17:57:12.160403278 -0400
 @@ -1,4 +1,4 @@
 -#! @BASH@
 +#! /bin/bash
@@ -16,8 +16,8 @@ diff -Naur libc.orig/elf/ldd.bash.in libc/elf/ldd.bash.in
  # This file is part of the GNU C Library.
  
 diff -Naur libc.orig/libio/Makefile libc/libio/Makefile
---- libc.orig/libio/Makefile	2009-02-05 14:29:56.000000000 +0000
-+++ libc/libio/Makefile	2009-06-07 23:26:18.000000000 +0000
+--- libc.orig/libio/Makefile	2009-07-02 16:03:14.096441000 -0400
++++ libc/libio/Makefile	2009-07-26 17:57:12.160403278 -0400
 @@ -170,6 +170,7 @@
  tst-fopenloc-ENV = LOCPATH=$(common-objpfx)localedata \
  		   MALLOC_TRACE=$(objpfx)tst-fopenloc.mtrace
@@ -26,21 +26,9 @@ diff -Naur libc.orig/libio/Makefile libc/libio/Makefile
  tst-ungetwc1-ENV = LOCPATH=$(common-objpfx)localedata
  tst-ungetwc2-ENV = LOCPATH=$(common-objpfx)localedata
  bug-ungetwc2-ENV = LOCPATH=$(common-objpfx)localedata
-diff -Naur libc.orig/libio/tst-fgetwc.c libc/libio/tst-fgetwc.c
---- libc.orig/libio/tst-fgetwc.c	2009-02-05 14:29:56.000000000 +0000
-+++ libc/libio/tst-fgetwc.c	2009-06-07 23:26:18.000000000 +0000
-@@ -6,7 +6,7 @@
- static int
- do_test (void)
- {
--  if (setlocale (LC_ALL, "de_DE.utf8") == NULL)
-+  if (setlocale (LC_ALL, "de_DE.UTF-8") == NULL)
-     {
-       puts ("setlocale failed");
-       return 1;
 diff -Naur libc.orig/sunrpc/Makefile libc/sunrpc/Makefile
---- libc.orig/sunrpc/Makefile	2008-04-25 11:12:05.000000000 +0000
-+++ libc/sunrpc/Makefile	2009-06-07 23:26:18.000000000 +0000
+--- libc.orig/sunrpc/Makefile	2008-04-25 07:12:05.875033000 -0400
++++ libc/sunrpc/Makefile	2009-07-26 17:57:12.157073385 -0400
 @@ -144,11 +144,11 @@
  	$(+link)
  
@@ -56,8 +44,8 @@ diff -Naur libc.orig/sunrpc/Makefile libc/sunrpc/Makefile
  # This makes sure -DNOT_IN_libc is passed for all these modules.
  cpp-srcs-left := $(rpcgen-objs:.o=.c)
 diff -Naur libc.orig/timezone/Makefile libc/timezone/Makefile
---- libc.orig/timezone/Makefile	2009-03-03 13:14:09.000000000 +0000
-+++ libc/timezone/Makefile	2009-06-07 23:26:18.000000000 +0000
+--- libc.orig/timezone/Makefile	2009-03-03 08:14:09.770962000 -0500
++++ libc/timezone/Makefile	2009-07-26 17:57:12.157073385 -0400
 @@ -181,11 +181,11 @@
  $(objpfx)zic: $(addprefix $(objpfx), $(zic-objs))
  

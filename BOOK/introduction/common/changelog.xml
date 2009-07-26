@@ -40,6 +40,9 @@
       <para>July 26, 2009</para>
       <itemizedlist>
         <listitem>
+          <para>[jciccone] - Updated the EGlibc fixes patch to -2.</para>
+        </listitem>
+        <listitem>
           <para>[jciccone] - Updated Shadow to 4.1.4.2.</para>
         </listitem>
         <listitem>

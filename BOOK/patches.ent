@@ -20,8 +20,8 @@
 <!ENTITY diffutils-i18n-patch-md5 "2e176c390bf4dca2fb088e0a16261a96">
 <!ENTITY diffutils-i18n-patch-size "17 KB">
 
-<!ENTITY eglibc-fixes-patch "eglibc-&eglibc-version;-fixes-1.patch">
-<!ENTITY eglibc-fixes-patch-md5 "d6291ad34fbf3f75f5fabc7c3089da06">
+<!ENTITY eglibc-fixes-patch "eglibc-&eglibc-version;-fixes-2.patch">
+<!ENTITY eglibc-fixes-patch-md5 "082eb9a8e2019ce31dff6a9b1f8d2a7c">
 <!ENTITY eglibc-fixes-patch-size "2 KB">
 
 <!ENTITY file-cross_compile-patch "file-&file-version;-cross_compile-1.patch">
