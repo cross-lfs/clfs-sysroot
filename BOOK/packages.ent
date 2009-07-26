@@ -318,12 +318,12 @@
 <!ENTITY udev-md5 "d15d1886c0bfa756969f25ddaecf34da">
 <!ENTITY udev-home "http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html">
 
-<!ENTITY util-linux-ng-dl-version "2.15">
+<!ENTITY util-linux-ng-dl-version "2.16">
 
-<!ENTITY util-linux-ng-version "2.15.1">
-<!ENTITY util-linux-ng-size "3,310 KB">
+<!ENTITY util-linux-ng-version "2.16">
+<!ENTITY util-linux-ng-size "3,392 KB">
 <!ENTITY util-linux-ng-url "&kernel;linux/utils/util-linux-ng/v&util-linux-ng-dl-version;/util-linux-ng-&util-linux-ng-version;.tar.bz2">
-<!ENTITY util-linux-ng-md5 "a06d94c4dc94c56a636c6e456698e40d">
+<!ENTITY util-linux-ng-md5 "9623380641b0c2e0449f5b1ecc567663">
 <!ENTITY util-linux-ng-home "http://userweb.kernel.org/~kzak/util-linux-ng/">
 
 <!ENTITY vim-version "7.2">
