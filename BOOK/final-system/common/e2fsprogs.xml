@@ -38,9 +38,10 @@ cd build</userinput></screen>
 
     <para os="c">Prepare E2fsprogs for compilation:</para>
 
-<screen os="d"><userinput>../configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
+<screen os="d"><userinput>PKG_CONFIG=true ../configure --build=${CLFS_HOST} --host=${CLFS_TARGET} \
     --prefix=/usr --with-root-prefix="" \
-    --enable-elf-shlibs</userinput></screen>
+    --enable-elf-shlibs --disable-libblkid \
+    --disable-libuuid --disable-fsck --disable-uuidd</userinput></screen>
 
     <variablelist os="e">
       <title>The meaning of the configure options:</title>
@@ -95,13 +96,11 @@ cd build</userinput></screen>
 
     <para os="l">Remove absolute paths from the link destinations:</para>
 
-<screen os="m"><userinput>rm -v ${CLFS}/usr/lib/lib{blkid,com_err,e2p,ext2fs,ss,uuid}.so
-ln -sv ../../lib/libblkid.so.1 ${CLFS}/usr/lib/libblkid.so
+<screen os="m"><userinput>rm -v ${CLFS}/usr/lib/lib{com_err,e2p,ext2fs,ss}.so
 ln -sv ../../lib/libcom_err.so.2 ${CLFS}/usr/lib/libcom_err.so
 ln -sv ../../lib/libe2p.so.2 ${CLFS}/usr/lib/libe2p.so
 ln -sv ../../lib/libext2fs.so.2 ${CLFS}/usr/lib/libext2fs.so
-ln -sv ../../lib/libss.so.2 ${CLFS}/usr/lib/libss.so
-ln -sv ../../lib/libuuid.so.1 ${CLFS}/usr/lib/libuuid.so</userinput></screen>
+ln -sv ../../lib/libss.so.2 ${CLFS}/usr/lib/libss.so</userinput></screen>
 
   </sect2>
 
@@ -117,8 +116,8 @@ ln -sv ../../lib/libuuid.so.1 ${CLFS}/usr/lib/libuuid.so</userinput></screen>
         e2fsck, e2image, e2label, filefrag, findfs, fsck, fsck.ext2, fsck.ext3,
         logsave, lsattr, mk_cmds, mke2fs, mkfs.ext2, mkfs.ext3,
         mklost+found, resize2fs, tune2fs, and uuidgen.</seg>
-        <seg>libblkid.[a,so], libcom_err.[a,so], libe2p.[a,so],
-        libext2fs.[a,so], libss.[a,so], and libuuid.[a,so]</seg>
+        <seg>libcom_err.[a,so], libe2p.[a,so],
+        libext2fs.[a,so], and libss.[a,so]</seg>
       </seglistitem>
     </segmentedlist>
 

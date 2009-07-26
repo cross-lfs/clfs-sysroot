@@ -37,6 +37,22 @@
 -->
 
    <listitem>
+      <para>July 26, 2009</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jciccone] - Use Util-Linux-NG for libuuid and libblkid
+          instead of E2fsprogs.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Update Util-Linux-NG to 2.16.</para>
+        </listitem>
+        <listitem>
+          <para>[jciccone] - Updated E2fsprogs to 1.41.8.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>July 11, 2009</para>
       <itemizedlist>
         <listitem>
@@ -52,7 +68,7 @@
           <para>[jciccone] - Updated DHCPCD to 4.0.4.</para>
         </listitem>
         <listitem>
-          <para>[jciccone] - Updated Bash Branch Update Patch to -5.</para>
+           <para>[jciccone] - Updated Bash Branch Update Patch to -5.</para>
         </listitem>
         <listitem>
           <para>[jciccone] - Moved DHCPCD to the Network section.</para>
