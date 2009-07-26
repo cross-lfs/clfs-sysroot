@@ -253,16 +253,6 @@ ln -sv ../../lib/libss.so.2 ${CLFS}/usr/lib/libss.so</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="fsck">
-        <term><command>fsck</command></term>
-        <listitem>
-          <para>Is used to check, and optionally repair, file systems</para>
-          <indexterm zone="ch-system-e2fsprogs fsck">
-            <primary sortas="b-fsck">fsck</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
       <varlistentry id="fsck.ext2">
         <term><command>fsck.ext2</command></term>
         <listitem>
@@ -387,17 +377,6 @@ ln -sv ../../lib/libss.so.2 ${CLFS}/usr/lib/libss.so</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libblkid">
-        <term><filename class="libraryfile">libblkid</filename></term>
-        <listitem>
-          <para>Contains routines for device identification and token
-          extraction</para>
-          <indexterm zone="ch-system-e2fsprogs libblkid">
-            <primary sortas="c-libblkid">libblkid</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
       <varlistentry id="libcom_err">
         <term><filename class="libraryfile">libcom_err</filename></term>
         <listitem>
@@ -436,17 +415,6 @@ ln -sv ../../lib/libss.so.2 ${CLFS}/usr/lib/libss.so</userinput></screen>
           <para>Used by <command>debugfs</command></para>
           <indexterm zone="ch-system-e2fsprogs libss">
             <primary sortas="c-libss">libss</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libuuid">
-        <term><filename class="libraryfile">libuuid</filename></term>
-        <listitem>
-          <para>Contains routines for generating unique identifiers for objects
-          that may be accessible beyond the local system</para>
-          <indexterm zone="ch-system-e2fsprogs libuuid">
-            <primary sortas="c-libuuid">libuuid</primary>
           </indexterm>
         </listitem>
       </varlistentry>
