@@ -117,7 +117,7 @@
 <!ENTITY eglibc-version "2.10.1">
 <!ENTITY eglibc-dl-version "&eglibc-version;-20090726-r8632">
 <!ENTITY eglibc-size "15,848 KB">
-<!ENTITY eglibc-url "&packages-root;eglibc-&eglibc-version;.tar.bz2">
+<!ENTITY eglibc-url "&packages-root;eglibc-&eglibc-dl-version;.tar.bz2">
 <!ENTITY eglibc-md5 "11463bd364a0933c5af5b62a1e1abb76">
 <!ENTITY eglibc-home "http://www.eglibc.org/home">
 <!ENTITY eglibc-ld-name "ld-&eglibc-version;.so">

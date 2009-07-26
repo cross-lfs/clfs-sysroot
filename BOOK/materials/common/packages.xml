@@ -132,6 +132,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>EGLIBC Localedef (&eglibc-localedef-version;) - <token>&eglibc-localedef-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&eglibc-localedef-home;"/></para>
+        <para>Download: <ulink url="&eglibc-localedef-url;"/></para>
+        <para>MD5 sum: <literal>&eglibc-localedef-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>File (&file-version;) - <token>&file-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&file-home;"/></para>

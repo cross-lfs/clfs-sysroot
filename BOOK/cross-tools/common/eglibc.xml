@@ -188,11 +188,28 @@ EOF</userinput></screen>
   <sect2 id="i18n-eglibc" role="configuration">
     <title>Internationalization</title>
 
+    <para>To install locales we need to compile our own version of
+    localedef to run nativly on the host system, so we have to extract the
+    eglibc-localedef-&eglibc-version; package into our eglibc-&eglibc-version;
+    directory:</para>
+
+<screen><userinput>tar -jxvf ../eglibc-localedef-&eglibc-ports-dl-version;.tar.bz2
+cd localedef</userinput></screen>
+
+    <para>Prepare localedef for compilation:</para>
+
+<screen><userinput>./configure --prefix=${CLFS}/usr \
+    --with-glibc=../../eglibc-&eglibc-version;</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput>make</userinput></screen>
+
     <para>The locales that can make the system respond in a different
-    language were not installed by the above command. Install them
+    language were not installed with EGLIBC. Install them
     with:</para>
 
-<screen><userinput>make localedata/install-locales</userinput></screen>
+<screen><userinput>make install-locales</userinput></screen>
 
     <para>To save time, an alternative to running the previous command (which
     generates and installs every locale listed in the
@@ -215,7 +232,7 @@ EOF</userinput></screen>
     fa_IR/UTF-8 \
     fr_FR.UTF-8/UTF-8 fr_FR/ISO-8859-1 fr_FR@euro/ISO-8859-15 \
     it_IT.UTF-8/UTF-8 it_IT/ISO-8859-1 \
-    ja_JP.EUC-JP/EUC-JP ja_JP.UTF-8/UTF-8" localedata/install-locales</userinput></screen>
+    ja_JP.EUC-JP/EUC-JP ja_JP.UTF-8/UTF-8" install-locales</userinput></screen>
 
     <para>Some locales installed by the <command>make
     localedata/install-locales</command> command above are not properly
